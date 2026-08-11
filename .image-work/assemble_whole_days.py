@@ -17,8 +17,8 @@ from PIL import Image, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ORIGINAL = ROOT / "image-manifest.csv"
-PHOTOS = ROOT / "src" / "photos"
+ORIGINAL = ROOT / "docs/image-manifest.csv"
+PHOTOS = ROOT / "public" / "photos"
 OUTPUT = ROOT / ".image-work" / "whole_days.csv"
 USER_AGENT = "Mozilla/5.0 DubaiPhotoCurator/1.0"
 FIELDS = [

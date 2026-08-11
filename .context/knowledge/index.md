@@ -14,4 +14,4 @@ Use this directory for things like:
 - If a note becomes stable repo truth, move it into `/docs/` and leave only a short breadcrumb here.
 
 ## Topics
-Add topic files as needed; each line should include a link and a one-line summary.
+- [`minisite-deployment.md`](minisite-deployment.md) — Exact production target, release/rollback sequence, and current Minisite cache/atomicity caveats.

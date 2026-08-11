@@ -15,9 +15,17 @@ from PIL import Image
 
 
 VALID_STATUSES = {"downloaded", "added", "not_found"}
+VALID_DISPOSITIONS = {
+    "selected",
+    "waived",
+    "defer_until_event",
+    "defer_until_reopen",
+    "active_gap",
+}
 REQUIRED_COLUMNS = {
     "filename",
     "status",
+    "disposition",
     "actual_url",
     "source_page",
     "request_url",
@@ -87,10 +95,17 @@ def validate_rows(rows: list[dict[str, str]], photos: Path) -> list[str]:
     for line, row in enumerate(rows, 2):
         filename = row.get("filename", "").strip()
         status = row.get("status", "").strip()
+        disposition = row.get("disposition", "").strip()
         prefix = f"row {line} ({filename or row.get('activity', 'unnamed')})"
         if status not in VALID_STATUSES:
             errors.append(f"{prefix}: invalid status {status!r}")
             continue
+        if disposition not in VALID_DISPOSITIONS:
+            errors.append(f"{prefix}: invalid disposition {disposition!r}")
+        elif status == "not_found" and disposition == "selected":
+            errors.append(f"{prefix}: not_found row cannot be selected")
+        elif status != "not_found" and disposition != "selected":
+            errors.append(f"{prefix}: usable asset must have selected disposition")
         if filename:
             filenames[filename] += 1
         if status == "not_found":
@@ -172,8 +187,8 @@ def validate_rows(rows: list[dict[str, str]], photos: Path) -> list[str]:
 def main() -> int:
     """Run the audit and return a shell-friendly status code."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--manifest", type=Path, default=Path("image-manifest.csv"))
-    parser.add_argument("--photos", type=Path, default=Path("src/photos"))
+    parser.add_argument("--manifest", type=Path, default=Path("docs/image-manifest.csv"))
+    parser.add_argument("--photos", type=Path, default=Path("public/photos"))
     args = parser.parse_args()
 
     rows, errors = read_rows(args.manifest)
@@ -186,7 +201,11 @@ def main() -> int:
         return 1
 
     totals = Counter(row["status"] for row in rows)
-    print(f"Photo manifest audit passed: {len(rows)} rows; {dict(totals)}")
+    dispositions = Counter(row["disposition"] for row in rows)
+    print(
+        f"Photo manifest audit passed: {len(rows)} rows; "
+        f"statuses={dict(totals)}; dispositions={dict(dispositions)}"
+    )
     return 0
 
 

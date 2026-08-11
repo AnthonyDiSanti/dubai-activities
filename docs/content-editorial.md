@@ -1,0 +1,63 @@
+# Activity content and editorial ordering
+
+`src/data/activities.ts` is the canonical source for the six featured hero IDs, chapter labels, activity metadata, recommendation rank, and gallery counts. Pure ordering and card-treatment rules live in `src/domain/activity.ts`; React components consume those typed results without maintaining a second content model.
+
+## Editorial voice
+
+Write as a well-informed close friend: warm, direct, and specific about how to make an outing work. Second-person guidance is welcome, but activity copy must not invent a narrator's tastes, memories, plans, relationship, or skill level. Confirmed site-level personal facts belong in explicit configuration such as `src/config/site.ts`, never buried in generated prose.
+
+- Avoid first-person language in chapter names and visitor-facing activity fields.
+- Ground enthusiasm in something concrete: setting, format, timing, scale, atmosphere, or a useful trade-off.
+- Prefer a practical recommendation over generic praise. Say when to go, what to pair, what to book, or why one option suits a particular mood.
+- Keep `blurb` compact enough for cards while giving each activity a distinct reason to exist.
+- Keep `cta` short, active, and specific to the experience.
+- Preserve factual qualifiers in `when`, `where`, `ahead`, `facts`, `advisory`, and `dated`; do not turn uncertain or future details into claims.
+- Use `facts` for compact, source-backed planning details and `advisory` for one caveat that materially changes the visit. Attribute an operator's welfare claim rather than presenting it as independent verification.
+- Keep facts selective: one to four unique labels, no restatement of automatic Date/When/Where/Book ahead rows, and no filler added merely because the sheet supports a grid. Keep the single advisory under 240 characters.
+
+The primary-source snapshot behind the expanded planning fields lives in [activity-planning-sources.md](activity-planning-sources.md). Update the ledger whenever a structured claim changes; prices, schedules, temporary closures, and availability are intentionally treated as reviewable facts rather than timeless copy.
+
+The content audit scans every displayed copy field, including structured fact labels and values. Link paths are intentionally excluded because URL strings can contain coincidental first-person tokens.
+
+## Chapter ordering and treatments
+
+Array position is the recommendation rank for undated activities within a chapter. `orderChapterItems` applies the shared dated-event rule:
+
+1. Extract entries with `dated` metadata.
+2. Sort them chronologically by the ISO `dated.on` value, retaining source order for a tie.
+3. Distribute them as evenly as possible through the ranked undated entries.
+
+This keeps date-stamped cards chronological and prevents them from forming a repetitive block. Moving a dated declaration around the source array does not choose its rendered slot; changing the undated rank or the set of dated entries does. Keep dated declarations themselves in chronological source order for readability.
+
+Card treatment precedence is dated, book-ahead, intentional no-photo fallback, then the repeating standard sequence `bleed`, `letter`, `top`, `slab`, `columns`, `bite`. A dated activity keeps the shared calendar treatment even when it also carries `ahead`; the sheet still exposes the booking warning. The standard counter resets for each chapter and does not advance for a special treatment. All current activities have local photography, so the no-photo fallback is not active.
+
+Use `ahead` for genuinely high-friction planning such as mandatory advance contact, scarce inventory, or a seasonal closure—not merely because a reservation is available. An ongoing seasonal reopening belongs in `when`, `ahead`, or `advisory`; reserve `dated` for a specific event date or bounded event range.
+
+Every `dated.on` value must be on or after the local `ARRIVAL_DATE_KEY` in `src/config/site.ts`. Advance a recurring event to its next verified occurrence, remove an expired one-off, and leave a seasonal opening undated until the operator publishes an exact day. Retiring an activity also means removing its selected gallery files, canonical manifest rows, and active image-work fragment rows; history remains available in Git and the source ledger.
+
+## Final animal chapter
+
+`Fur, feathers and scales` is intentionally the twelfth and final chapter so it remains visibly new to readers of the earlier guide. Its curated order is:
+
+`rasalkhor` → `falconhospital` → `turtlerehab` → `platinumcamel` → `vibrissae` → `camelfarm` → `butterflygarden` → `meowtropolis` → `fluffin`
+
+The order leads with the most distinctive conservation experiences and strongest photography, keeps the three real book-ahead treatments at positions 2, 4, and 6, and places the venues with thinner public operating detail later. None is a true dated event. Crocodile Park, Dubai Safari Park, The Cat Café Arjan, rescue meetups, and redundant or low-confidence venues remain outside the published roster.
+
+## Hero carousel
+
+The featured list lives in the `HERO` constant in `src/data/activities.ts`. The current sequence is:
+
+`nest` → `teamlab` → `rasalkhor` → `elrow` → `skydive` → `laperle`
+
+The selection favors recommendation quality and photography, moving from intimate desert to immersive art, a wild wetland against the skyline, nightlife spectacle, iconic Dubai action, and live performance. Ras Al Khor gives the new chapter one conservation-first feature while removing the former second quiet-desert image. A hero activity must have at least three local gallery images, including a valid `-01.jpg` lead frame. Judge every replacement at mobile and desktop crops and avoid near-duplicate visual stories merely because a gallery is large.
+
+## Verification
+
+After changing activities, chapters, dates, heroes, or photo counts, run:
+
+```sh
+npm run audit:content
+python3 scripts/audit-photo-manifest.py
+```
+
+The TypeScript audit checks chapter and activity IDs, required copy, first-person language, links, structured-fact/advisory limits, real and post-arrival ISO dates, chronological rendered order, optimal dated-card separation, hero references, gallery depth, retired IDs, and the one-to-one relationship between activity counts and JPEGs in `public/photos/`.

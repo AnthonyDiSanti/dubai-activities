@@ -16,10 +16,10 @@ from PIL import Image, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "image-manifest.csv"
+MANIFEST = ROOT / "docs/image-manifest.csv"
 MAPPING = ROOT / ".image-work/rides_wandering_quiet_trips_sources.csv"
 OUTPUT = ROOT / ".image-work/rides_wandering_quiet_trips.csv"
-PHOTOS = ROOT / "src/photos"
+PHOTOS = ROOT / "public/photos"
 CHAPTERS = {
     "Rides and slides",
     "Wandering and buying things",

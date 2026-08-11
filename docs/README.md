@@ -17,7 +17,12 @@ This directory is optimized for agents first and humans second.
 - Roll vendor/external-system knowledge into the relevant topic when it matters to this repo.
 
 ## Topic map
-- Add the repo’s real topic files here as they are created.
+
+- [Architecture and deployment](architecture.md) — React/TypeScript boundaries, Vite output, public assets, and static S3 delivery.
+- [Site interactions](site-interactions.md) — Entry point, card and detail-sheet behavior, responsive breakpoints, and browser QA.
+- [Activity content and editorial ordering](content-editorial.md) — Voice, recommendation rank, dated-card spacing, hero selection, and content verification.
+- [Activity planning source ledger](activity-planning-sources.md) — Primary-source snapshot for structured facts, caveats, schedule corrections, and retired cards.
+- [Photo asset workflow](photo-assets.md) — Manifest semantics, provenance requirements, parallel merge flow, and verification gates.
 
 ## Maintenance
 - Update relevant topic files in the same change as any behavior or navigation change.

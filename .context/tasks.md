@@ -3,13 +3,61 @@
 Task IDs are ULIDs; keep titles short and human-readable.
 
 ## Active
-- id: 01HZZQ9G6R4Y2T8M8K4T0Q9Z3N — title: Example task title — owner: Codex (model: gpt-5.2-codex) — status: doing — last update: 2026-01-20
-  - Goal: Describe the desired outcome.
-  - Next: Identify the next concrete step.
-  - Links: branch/PR/issue
+- None
 
 ## Paused / Blocked
-- None
+- id: 01K2HZ8V4M7Q1R5T9C3N6B0XFD — title: Clear production photo rights — owner: Unassigned — status: paused — last update: 2026-08-11
+  - Goal: Make every selected public asset publishable and expose all required creator/license credits in the deployed site.
+  - Blocker: Several exact-venue editorial/listing photographs have provenance but no recorded reuse grant; Creative Commons selections have no deployed attribution surface yet.
+  - Next: Replace or license the affected editorial/listing files, build a public credits surface from the canonical manifest, and rerun the photo plus browser gates.
+  - Links: `docs/image-manifest.csv`, `docs/photo-assets.md`, `.context/handoff.md`
 
 ## Completed (recent; keep last ~10)
-- None
+- id: 01K2JDK9Q6N3V8R1T5M7C4XZHF — title: Deploy the React guide — owner: Codex (GPT-5) — status: done — last update: 2026-08-11
+  - Goal: Publish the complete uncommitted React migration to the existing S3/CloudFront production target with a recoverable and verified release.
+  - Result: Preserved all 404 prior objects in a temporary rollback snapshot, passed the 143-test application and 431-row photo gates, deployed 430 files, removed 12 intentional stale objects, completed CloudFront invalidation `I2XIJ6R3B2YECOISFTUA7G0RMX`, and verified the live root plus chapter/activity deep links.
+  - Follow-up: Resolve the still-open photo-rights/credits task and run native sharing on a real phone; the deployment instruction accepted release timing risk but did not clear third-party rights.
+  - Links: `docs/architecture.md`, `.context/knowledge/minisite-deployment.md`, `https://dubai.anthonydisanti.com/`
+- id: 01K2J9Q6N3V8R1T5M7C4X0ZHFD — title: Add guide deep links — owner: Codex (GPT-5) — status: done — last update: 2026-08-11
+  - Goal: Make every chapter and activity sheet directly linkable without changing the static S3 hosting model or breaking shared favorites.
+  - Result: Added native chapter and activity fragments, real navigational anchors, validated URL parsing, Back/Forward sheet state, safe direct-link dismissal, invalid-ID handling, and focus fallback to the owning chapter.
+  - Links: `src/domain/deepLinks.ts`, `src/hooks/useDeepLink.ts`, `src/App.tsx`, `docs/site-interactions.md`
+- id: 01K2J5R8M4C7V2N9Q1T6H3XZFD — title: Enrich original activity sheets — owner: Codex (GPT-5) — status: done — last update: 2026-08-11
+  - Goal: Use the expanded detail-sheet format where practical planning information materially improves an existing recommendation, while keeping dated events current and visually consistent.
+  - Result: Added selective facts/advisories to 39 original activities, made every dated sheet show its full trip-year date, gave dated styling precedence, corrected stale schedules/locations/links, dated three workshop series, and retired three unavailable cards plus ten orphaned assets. Current state is 123 activities and 401 JPEGs; 113 tests, all audits, and 390/999/1000/1440 px rendered checks pass.
+  - Follow-up: Recheck volatile facts near the trip, especially Ossiano's conflicting status, Formula Rossa, Global Village's opening date, Hatta/Jebel Jais operations, and rotating market dates.
+  - Links: `src/data/activities.ts`, `src/components/ActivityDialog.tsx`, `docs/activity-planning-sources.md`, `scripts/audit-activity-content.ts`
+- id: 01K2G7M4N8Q1R5T9V3X6Z0C2HD — title: Publish animal chapter — owner: Codex (GPT-5) — status: done — last update: 2026-08-11
+  - Goal: Turn Addendum 3 into a selective, final chapter with robust research, candid caveats, differentiated photography, and the existing ordering/treatment rules.
+  - Result: Published nine new activities as the 12th and final `Fur, feathers and scales` chapter; added structured facts/advisories and 36 verified JPEGs; promoted Ras Al Khor into the hero; reached 126 activities and 411 activity JPEGs; and passed automated plus 390/1440 px rendered QA.
+  - Follow-up: Clear photo reuse rights and deployed Creative Commons attribution before public launch; complete the native-share smoke test on a real phone.
+  - Links: `src/data/activities.ts`, `docs/content-editorial.md`, `docs/image-manifest.csv`, `activities/Dubai Activities Addendum 3 - Wildlife.md`
+- id: 01K26TC4V7N9Q2M5R8H1J3X6ZD — title: Expand chapter header toggles — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
+  - Goal: Let the full chapter heading surface fold or open its section instead of requiring a precise click on the arrow.
+  - Result: Made each heading one full-width native accordion button, preserved the controlled panel relationship while collapsed, added keyboard/focus coverage, and verified all four responsive breakpoints.
+  - Links: `src/components/ChapterSection.tsx`, `src/styles/layout.css`, `docs/site-interactions.md`
+- id: 01K26R8M4C7V2N9Q5T1H3J6XZD — title: Replace the custom runtime with React — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
+  - Goal: Treat the generated custom framework as a behavior specification and replace it with a maintainable Vite, React, and strict-TypeScript client that deploys as static S3 assets.
+  - Result: Removed the custom runtime and duplicate entry points; added typed React components, domain rules, accessible dialogs, self-hosted fonts, public-photo delivery, 63 tests, production audits, and four-viewport browser QA.
+  - Links: `src/App.tsx`, `src/components/`, `src/domain/`, `src/data/activities.ts`, `docs/architecture.md`
+- id: 01K22V6N9C4R7M2X5Q8F1H3JZD — title: Standardize the static site architecture — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
+  - Goal: Turn the single-file prototype into a conventional static site without adding a framework or build step.
+  - Result: Split CSS, application logic, content data, and generated runtime into focused assets; replaced all inline styles with semantic classes; retained only the runtime-required one-line adapter; and added static plus four-viewport regression checks.
+  - Superseded by: `01K26R8M4C7V2N9Q5T1H3J6XZD`; this was an intermediate boundary, not the target architecture.
+  - Links: `docs/architecture.md`, `docs/site-interactions.md`
+- id: 01K22P8XH7M4C9V6N2R5T1Z3QW — title: Refine activity recommendations — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
+  - Goal: Reconsider chapter and hero promotion order, preserve chronological visual spacing for dated events, and remove invented first-person opinions from every activity.
+  - Result: Re-ranked all 11 chapters, rewrote 117 blurbs and CTAs in a warm expert-friend voice, promoted Skydive into a six-image hero sequence, and added automated content/order verification plus four-viewport browser QA.
+  - Links: `src/data/activities.ts`, `src/domain/activity.ts`, `scripts/audit-activity-content.ts`, `docs/content-editorial.md`
+- id: 01K22M3W6R9B4N8Q5T1Y7C2HXF — title: Gate favorites sharing by capability — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
+  - Goal: Preserve native sharing wherever the browser supports the exact payload, using a recognizable control rather than an ambiguous arrow.
+  - Result: Kept Copy as the primary action, added a capability-gated curved-arrow share button at every viewport, retained shared-link restoration, and verified mobile and desktop layouts.
+  - Links: `src/components/FavoritesDialog.tsx`, `src/domain/favorites.ts`, `docs/site-interactions.md`
+- id: 01K22JKR8E1F7XQ3P4M9V6D2AZ — title: Improve activity sheet interactions — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
+  - Goal: Open sheets from the full non-action card surface and make the gallery larger, clearer, and easier to dismiss.
+  - Result: Added delegated card opening, full-viewport desktop details with a sticky in-sheet X, responsive media, whole-image forward navigation, direct photo pills, Escape support, and desktop/mobile browser coverage.
+  - Links: `src/components/ActivityCard.tsx`, `src/components/ActivityDialog.tsx`, `docs/site-interactions.md`
+- id: 01K22F7Q80Y7DM9VSMR1Z4X8CJ — title: Resolve high-value photo gaps — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
+  - Goal: Replace weak imagery, fill the most important missing requests, add differentiated frames, and give every remaining miss an explicit editorial disposition.
+  - Result: Added or improved 10 local photos; canonical manifest has 377 selected assets and no active gaps.
+  - Links: `docs/image-manifest.csv`, `docs/photo-assets.md`

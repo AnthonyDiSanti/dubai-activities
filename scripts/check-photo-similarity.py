@@ -85,8 +85,8 @@ def successful_filenames(manifest: Path) -> list[str]:
 def main() -> int:
     """Hash every selected photo and print pairs that merit visual review."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--manifest", type=Path, default=Path("image-manifest.csv"))
-    parser.add_argument("--photos", type=Path, default=Path("src/photos"))
+    parser.add_argument("--manifest", type=Path, default=Path("docs/image-manifest.csv"))
+    parser.add_argument("--photos", type=Path, default=Path("public/photos"))
     parser.add_argument("--threshold", type=int, default=12)
     args = parser.parse_args()
 

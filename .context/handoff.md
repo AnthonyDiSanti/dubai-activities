@@ -1,21 +1,48 @@
 # Handoff
 
 ## Current State
-- What works:
-- What’s in progress:
-- What’s broken / flaky:
+- What works: A Vite + React + strict-TypeScript implementation now owns activity data, domain rules, cards, dialogs, favorites, chapter navigation, countdown behavior, and responsive styles. React is a bundled dependency; `vite.config.ts` emits prefix-portable static output to `dist/` with `base: './'`.
+- What works: Canonical photography now lives in `public/photos/`, which Vite copies unchanged to `dist/photos/`. The manifest, similarity, sourcing, and photo-count tools default to that path and `src/data/activities.ts`.
+- What works: Content now spans 12 chapters, 123 activities, six hero slides, and 401 contiguous activity JPEGs. Dated entries retain chronological, maximally dispersed rendering; every dated sheet adds its full trip-year Date automatically, and dated styling wins when an item is also book-ahead.
+- What works: Thirty-nine original activities now use selective source-backed facts and candid advisories for eligibility, timing, inclusions, booking terms, temporary status, or travel logistics. Terra Solis, the pre-arrival cyanotype session, and RAW's sold-out class were retired with their ten gallery assets instead of left as misleading watch-list cards.
+- What works: Favorites preserve `naima.favs.v1` and `#list=` sharing while validating unknown, duplicate, and malformed input. Clipboard failures are represented honestly, native share remains capability-gated, and native dialogs provide modal semantics and focus restoration.
+- What works: Chapters and sheets have durable native fragments (`#animals`, `#activity-rasalkhor`). Main navigation and labeled activity destinations are real anchors; URL validation, direct loads, Back/Forward reopening, safe direct-link dismissal, invalid IDs, filter relaxation, and owning-chapter focus fallback are covered.
+- What works: Each chapter heading is a full-width native accordion button, so its title, open space, and arrow share one pointer target while retaining keyboard activation, focus visibility, and a persistent ARIA panel relationship.
+- What works: The former `src/index.html`, `src/js/`, custom template language, runtime evaluator, global namespaces, and CDN boot dependencies are gone. Root `index.html` plus `src/main.tsx` is the only application entry point.
+- What works: `npm run check` passes 143 tests, strict TypeScript, typed ESLint, the production build, content integrity, and static-output inspection. Photo audits pass all 431 manifest rows and 401 JPEGs with zero similarity candidates.
+- What works: Production-browser QA passes the established 390, 999, 1000, and 1440 px interaction gate. The current pass confirms direct chapter/activity loads, real anchor destinations, Back/Forward sheet traversal, direct-close chapter focus, invalid-ID fallback, favorites-link compatibility, the exact bottom-sheet/full-screen breakpoint, zero horizontal overflow, and zero site-origin console warnings or errors.
+- What works: Production is live at `https://dubai.anthonydisanti.com/` through stack `minisite-dubai-anthonydisanti-com-36364597` and CloudFront distribution `EU943ZSJ1FOAO`. The 2026-08-11 release uploaded 430 objects, removed 12 intentional stale objects, completed invalidation `I2XIJ6R3B2YECOISFTUA7G0RMX`, and served a byte-identical `index.html`; live `#animals` and activity-sheet smoke tests passed. A pre-release rollback snapshot remains at `/tmp/dubai-activities-production-backup.bs2dwl/` for the current machine/session.
+- What works: Canonical docs now describe the React source boundaries, interaction invariants, public-photo workflow, static build contract, S3/CloudFront deployment policy, and the 2026-08-11 primary-source ledger behind volatile planning facts.
+- What works: Addendum 3 is implemented as the final `Fur, feathers and scales` chapter with nine new activities in conservation-first order: Ras Al Khor, Falcon Hospital, Turtle Rehabilitation, Platinum Heritage, Vibrissae, Camel Farm, Butterfly Garden, Meowtropolis, and Fluffin. Ras Al Khor replaces Balloon in the hero; Green Planet and SeaWorld remain in their previously reviewed chapters.
+- What’s in progress: None.
+- What’s broken / flaky: Production was published under Anthony's explicit deployment instruction despite unresolved reuse rights for editorial/listing photographs and the missing Creative Commons creator/license credits surface. This remains a release risk, not a cleared issue. The operating-system share sheet also still needs one real-phone smoke test.
+
+## Local Environment
+- `AGENTS.local.md` records a machine-only npm workaround: prefix npm commands with `npm_config_cache=/tmp/dubai-activities-npm-cache` because the default cache contains root-owned files. Do not promote this override into shared setup documentation.
 
 ## Next Steps (ordered)
-1.
-2.
-3.
-
-## Active Tasks
-(See `tasks.md`)
+1. Treat photo rights as the urgent post-release issue: replace or license the identified editorial/listing photographs and add a deployed creator/license credits surface for selected Creative Commons images.
+2. On a phone, share one populated favorites list and reopen the generated link end to end.
+3. Improve the Minisite release path to apply the documented per-path cache headers and retain old fingerprinted bundles until the new document has propagated.
+4. Recheck volatile operating facts near the trip. Resolve Ossiano's conflicting live-site/partner-notice status, advance ARTE after 29 August, add Global Village's exact opening when published, and verify Formula Rossa plus Hatta/Jebel Jais operations.
+5. After the September 5, 2026 ATB event, replace the deferred candid request if a strong attributable frame appears; reassess Ossiano's two deferred gallery requests once its operating status is unambiguous.
 
 ## Quick Verify
-- Fast checks:
-- Full gate:
+- Application gate: `npm run check`
+- Content/assets: `npm run audit:content && npm run audit:photos`
+- Post-build structure: `npm run audit:site` (also included after build in `npm run check`)
+- Final hygiene: `git diff --check`
 
 ## Recent Updates (keep last ~15; prune older)
-- YYYY-MM-DD HH:MM — (agent/human) — summary of change
+- 2026-08-11 — Codex (GPT-5) — Deployed the verified 430-file build to `dubai.anthonydisanti.com`, completed CloudFront invalidation, and passed byte-level plus live deep-link smoke checks.
+- 2026-08-11 — Codex (GPT-5) — Added native chapter and activity deep links with real anchors, browser-history synchronization, safe direct-sheet closing, focus fallback, and favorites-hash compatibility.
+- 2026-08-11 — Codex (GPT-5) — Enriched 39 original sheets with selective planning detail, corrected stale dates/links/operations, retired three unavailable cards and ten assets, and added post-arrival/date-treatment regression gates.
+- 2026-08-11 — Codex (GPT-5) — Published the final nine-card animal chapter, added 36 verified gallery images and structured planning detail, promoted Ras Al Khor into the hero, and completed the full automated plus rendered gate.
+- 2026-08-11 — Codex (GPT-5) — Reviewed the wildlife addendum, verified the named venues and seasonal caveats, and recommended a curated 12th chapter rather than scattering animal-first activities.
+- 2026-08-07 — Codex (GPT-5) — Expanded every chapter heading into one accessible full-width fold/open control and verified pointer activation across all responsive breakpoints.
+- 2026-08-07 — Codex (GPT-5) — Completed the React/Vite cutover, removed the generated runtime and duplicate entry points, self-hosted fonts, and passed the full static plus four-viewport production gate.
+- 2026-08-07 — Codex (GPT-5) — Superseded the custom component runtime with a build-time-only Vite, React, and strict-TypeScript architecture targeting static S3 output.
+- 2026-08-07 — Codex (GPT-5) — Migrated photo tooling and canonical documentation to public assets, production build audits, and explicit S3/CloudFront delivery rules.
+- 2026-08-07 — Codex (GPT-5) — Split the former no-build page into semantic CSS, application, data, and runtime assets as an intermediate migration step.
+- 2026-08-07 — Codex (GPT-5) — Re-ranked all activity chapters, rewrote 117 recommendations without a first-person narrator, and promoted Skydive into the hero.
+- 2026-08-07 — Codex (GPT-5) — Filled high-value photo gaps, replaced weak images, classified every remaining miss, and synchronized the manifest.

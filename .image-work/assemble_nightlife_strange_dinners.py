@@ -13,10 +13,10 @@ from PIL import Image, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "image-manifest.csv"
+MANIFEST = ROOT / "docs/image-manifest.csv"
 MAPPING = ROOT / ".image-work/nightlife_strange_dinners_sources.csv"
 OUTPUT = ROOT / ".image-work/nightlife_strange_dinners.csv"
-PHOTOS = ROOT / "src/photos"
+PHOTOS = ROOT / "public/photos"
 CHAPTERS = {"Nights that go loud", "Genuinely strange", "Long dinners"}
 # The root agent owns these dinner activities; exclude them to keep fragments disjoint.
 RELEASED_ACTIVITIES = {

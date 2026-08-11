@@ -1,0 +1,17 @@
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  // Relative build URLs make the output portable across S3 bucket prefixes.
+  base: './',
+  plugins: [react()],
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    css: true,
+  },
+});

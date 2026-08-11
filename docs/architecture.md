@@ -1,0 +1,94 @@
+# Architecture and deployment
+
+## System boundary
+
+This repository is a client-only React application written in strict TypeScript. Vite performs the build and emits `dist/`; the production site consists only of static HTML, CSS, JavaScript, bundled fonts, and local images. There is no server process, API, database, authentication layer, or server-side secret.
+
+The root `index.html` contains metadata, `#root`, and the Vite module entry. `src/main.tsx` mounts `src/App.tsx` inside `AppErrorBoundary`. React, React DOM, and the `@fontsource` font files are bundled dependencies: production must not load a framework runtime or critical font from a CDN, evaluate generated application code, or retain the former custom-component markup.
+
+## Source layers
+
+- `src/data/activities.ts` owns the editorial source: chapters, activities, hero IDs, dates, links, and gallery counts.
+- `src/domain/` owns pure, browser-independent rules such as dated-card ordering, treatment selection, photo/map URLs, favorite validation, and share-message formatting.
+- `src/hooks/` owns lifecycle behavior such as local favorites, current-chapter tracking, and media preferences.
+- `src/browser/` contains small capability adapters whose failures must be represented honestly in UI state.
+- `src/components/` owns semantic React markup and interaction composition. Activity IDs and chapter keys are the stable React keys.
+- `src/styles/` owns bundled font declarations, global tokens, the deliberately varied visual treatments, and responsive rules. The 1000 px boundary remains CSS-driven.
+- `public/photos/` owns the 401 activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
+
+Do not reintroduce a global application namespace, runtime template compiler, `new Function`, inline executable script, or a parallel entry point under `src/`. Add behavior through typed modules and cover pure rules with Vitest.
+
+## Client data flows
+
+Activity data is compiled into the JavaScript bundle. No production fetch is needed to render the guide. Gallery URLs resolve to `photos/<activity-id>-<slot>.jpg`, so activity IDs and contiguous slot numbers are durable content identifiers.
+
+URL fragments are the client-only navigation boundary:
+
+- `#<chapter-key>` targets a chapter, for example `#animals`.
+- `#activity-<activity-id>` opens one detail sheet, for example `#activity-rasalkhor`.
+- `#list=<comma-separated-activity-ids>` retains the existing shared-favorites contract.
+
+`src/domain/deepLinks.ts` validates and builds chapter/activity fragments; `src/hooks/useDeepLink.ts` owns session-history synchronization. The hash is the source of truth for an open activity, so Back closes an in-page sheet and Forward reopens it. App-created activity entries carry a namespaced history-state marker; closing a directly loaded sheet replaces it with its owning chapter rather than navigating the visitor away. Unknown, retired, malformed, and favorites fragments do not open a sheet.
+
+Favorites use the existing `naima.favs.v1` local-storage key. A validated `#list=<comma-separated-activity-ids>` hash can initialize a shared list; invalid, unknown, and duplicate IDs must not enter state. Chapter and activity fragments leave stored favorites authoritative. Hash navigation is intentionally client-side and is not sent to S3 or CloudFront as part of the HTTP request.
+
+Clipboard and Web Share are progressive enhancements. The native Share control appears only when the browser accepts the exact payload, and copy/share failures must not be reported as successes.
+
+## Build contract
+
+The development toolchain requires Node 22.13 or newer; `package.json` records this boundary. `vite.config.ts` uses `base: './'` so the output remains portable when mounted at an S3 or CloudFront prefix. A prefixed public URL must retain its trailing slash (for example `/guide/`), because relative asset URLs at `/guide` would resolve from the parent path. Build with:
+
+```sh
+npm run build
+npm run audit:site
+```
+
+The audit requires a completed `dist/` and verifies:
+
+- The source uses the React/Vite entry point and contains no legacy runtime entry point.
+- `dist/index.html` refers only to relative, fingerprinted application assets.
+- Every local HTML asset reference resolves inside `dist/`.
+- `dist/photos/` mirrors `public/photos/` by filename and byte count.
+- Production bundles contain neither the former custom runtime nor its CDN React loader.
+
+`dist/` is generated output and must not become a source of truth. Rebuild it rather than editing it.
+
+## S3 and CloudFront deployment
+
+Deploy the contents of `dist/`, not the repository or `src/`. Configure `index.html` as the S3 website index or the CloudFront default root object. The site has one document route and uses URL fragments for chapters, activity sheets, and shared favorites, so it does not need an SPA fallback or server-side rewrite.
+
+### Production target
+
+Production is `https://dubai.anthonydisanti.com/`. The existing Minisite stack owns the private S3 origin and CloudFront distribution:
+
+- AWS profile: `personal`
+- CloudFormation stack: `minisite-dubai-anthonydisanti-com-36364597`
+- S3 bucket: `minisite-dubai-anthonydisanti-com-36364-sitebucket-uydjwsn8kgq4`
+- CloudFront distribution: `EU943ZSJ1FOAO`
+
+Run the release from the repository root after the complete application and photo gates:
+
+```sh
+npm run check
+npm run audit:photos
+minisite deploy --dry-run --profile personal dubai.anthonydisanti.com ./dist
+minisite deploy --profile personal dubai.anthonydisanti.com ./dist
+```
+
+The bucket is not versioned and Minisite releases are not atomic. Before a material release, copy the current bucket into a temporary local rollback directory with `aws s3 sync ... --profile personal`; keep `dist/` unchanged while the deployment runs. Record the returned invalidation ID, wait for it with `aws cloudfront wait invalidation-completed`, then compare the live root document with `dist/index.html` and smoke-test representative chapter and activity fragments.
+
+Preserve the generated MIME types when uploading: HTML as `text/html`, CSS as `text/css`, JavaScript as `text/javascript`, SVG as `image/svg+xml`, and JPEGs as `image/jpeg`.
+
+Use HTTPS through CloudFront or equivalent. Clipboard and Web Share are secure-context capabilities and can be unavailable on a plain S3 website endpoint.
+
+Recommended cache policy:
+
+- `assets/*`: `public, max-age=31536000, immutable` because Vite fingerprints these files.
+- `index.html`: `no-cache` or a short lifetime so new bundle references propagate promptly.
+- `photos/*`: a moderate lifetime unless deployment invalidates changed stable filenames. Photo filenames are editorially stable rather than content-hashed.
+
+The current Minisite client applies `public, max-age=0, must-revalidate, s-maxage=86400` to every object and requests a `/*` invalidation after a successful upload/delete pass. That is operationally safe for the current small personal site, but it does not implement the per-path policy above or preserve old fingerprinted bundles through propagation. Treat the per-path policy and atomic release ordering as the desired deployment improvement, not as behavior the present client already supplies.
+
+Upload new fingerprinted assets before replacing `index.html`. Do not delete the previous fingerprinted assets until the new document has propagated through caches. When a photo is replaced under the same filename, invalidate that path or wait for its configured lifetime.
+
+Fonts are emitted as fingerprinted build assets and retain system fallbacks. The application has no required production CDN, which permits a strict same-origin Content Security Policy without introducing a backend.

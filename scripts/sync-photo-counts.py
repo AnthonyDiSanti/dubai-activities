@@ -53,15 +53,15 @@ def synchronize(source: Path, counts: dict[str, int]) -> str:
         seen.add(activity_id)
     missing = sorted(counts.keys() - seen)
     if missing:
-        raise ValueError(f"manifest IDs absent from activities.js: {missing}")
+        raise ValueError(f"manifest IDs absent from src/data/activities.ts: {missing}")
     return "".join(updated)
 
 
 def main() -> None:
     """Apply the synchronized counts after all integrity checks pass."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--manifest", type=Path, default=Path("image-manifest.csv"))
-    parser.add_argument("--activities", type=Path, default=Path("src/activities.js"))
+    parser.add_argument("--manifest", type=Path, default=Path("docs/image-manifest.csv"))
+    parser.add_argument("--activities", type=Path, default=Path("src/data/activities.ts"))
     args = parser.parse_args()
     content = synchronize(args.activities, photo_counts(args.manifest))
     args.activities.write_text(content, encoding="utf-8")
