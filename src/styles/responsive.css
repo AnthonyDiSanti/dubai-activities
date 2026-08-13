@@ -1,5 +1,59 @@
 /* Desktop navigation and the detail gallery expand without viewport state in JS. */
 @media (min-width: 1000px) {
+  .credits-sheet {
+    top: 0;
+    border-radius: 0;
+  }
+
+  .credits-sheet__inner {
+    padding: 0 28px 60px;
+  }
+
+  .credits-sheet__toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 58px;
+    margin: 0 -28px 34px;
+    padding: 0 28px;
+    background: rgba(28, 21, 17, .94);
+    backdrop-filter: blur(12px);
+  }
+
+  .credits-sheet__close-x {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid rgba(244, 239, 230, .18);
+    border-radius: 50%;
+    background: rgba(244, 239, 230, .07);
+    color: var(--paper);
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .credits-sheet__handle,
+  .credits-sheet__close-text {
+    display: none;
+  }
+
+  .credits-sheet__header {
+    margin-bottom: 48px;
+  }
+
+  .credits-sheet__title {
+    font-size: 54px;
+  }
+
+  .credits-sheet__activity {
+    grid-template-columns: minmax(180px, 230px) minmax(0, 1fr);
+    gap: 24px;
+  }
+
   .chapter-sidebar {
     position: sticky;
     top: 78px;
@@ -107,7 +161,8 @@
   .chapter__activities,
   .floating-favorites,
   .favorites-sheet,
-  .detail-sheet__panel {
+  .detail-sheet__panel,
+  .credits-sheet {
     animation: none;
   }
 }

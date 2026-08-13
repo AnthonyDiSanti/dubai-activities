@@ -29,6 +29,7 @@ npm run preview
 - `src/styles/` — design tokens, card treatments, dialogs, layout, and responsive rules.
 - `public/photos/` — local JPEG galleries and brand icons, copied to `dist/photos/` unchanged.
 - `docs/image-manifest.csv` — canonical photo selection and provenance manifest.
+- `docs/photo-attributions.csv` — canonical human-reviewed credits, published through the footer and generated machine-readable catalogs.
 - `docs/` — architecture, behavior, editorial, and asset workflow documentation.
 
 See [docs/architecture.md](docs/architecture.md) for application boundaries and S3 deployment constraints.
@@ -40,6 +41,7 @@ Run the application gate, content/asset audits, and the post-build static-output
 ```sh
 npm run check
 npm run audit:photos
+npm run audit:attributions
 git diff --check
 ```
 

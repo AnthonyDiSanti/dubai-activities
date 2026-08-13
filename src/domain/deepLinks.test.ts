@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   activityHash,
   chapterHash,
+  creditsHash,
   parseDeepLink,
   type DeepLink,
 } from './deepLinks';
@@ -11,17 +12,19 @@ const chapterKeys = new Set(['quiet', 'animals']);
 const activityIds = new Set(['nest', 'rasalkhor']);
 
 describe('deep-link fragments', () => {
-  it('builds distinct native anchors for chapters and activity sheets', () => {
+  it('builds distinct native anchors for chapters, activity sheets, and credits', () => {
     expect(chapterHash('animals')).toBe('#animals');
     expect(activityHash('rasalkhor')).toBe('#activity-rasalkhor');
     expect(chapterHash('night markets')).toBe('#night%20markets');
     expect(activityHash('art & light')).toBe('#activity-art%20%26%20light');
+    expect(creditsHash()).toBe('#credits');
   });
 
   it.each<[string, DeepLink]>([
     ['#animals', { type: 'chapter', chapterKey: 'animals' }],
     ['#activity-rasalkhor', { type: 'activity', activityId: 'rasalkhor' }],
     ['#activity-ras%61lkhor', { type: 'activity', activityId: 'rasalkhor' }],
+    ['#credits', { type: 'credits' }],
   ])('parses the known fragment %s', (hash, expected) => {
     expect(parseDeepLink(hash, chapterKeys, activityIds)).toEqual(expected);
   });

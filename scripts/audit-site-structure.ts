@@ -47,6 +47,9 @@ const requiredPaths = [
   'src/domain/activity.ts',
   'src/domain/favorites.ts',
   'src/styles/index.css',
+  'docs/photo-attributions.csv',
+  'public/photo-attributions.json',
+  'public/photo-attributions.jsonld',
   'public/photos',
 ];
 for (const relativePath of requiredPaths) {
@@ -69,6 +72,9 @@ if (/<style\b/i.test(sourceIndex) || /\sstyle\s*=/i.test(sourceIndex)) {
 if (/<(?:x-dc|sc-if|sc-for)\b|data-dc-script|dc-runtime/i.test(sourceIndex)) {
   fail('index.html still contains custom-runtime markup.');
 }
+if (!/<link\b[^>]*href=["']\.\/photo-attributions\.jsonld["'][^>]*type=["']application\/ld\+json["']/i.test(sourceIndex)) {
+  fail('index.html must expose the generated JSON-LD photo attribution catalog.');
+}
 
 for (const legacyPath of ['src/index.html', 'src/js', 'src/css']) {
   if (fs.existsSync(absolute(legacyPath))) fail(`Legacy source path still exists: ${legacyPath}`);
@@ -83,7 +89,17 @@ if (packageJsonText) {
     devDependencies?: Record<string, string>;
   };
   if (packageJson.type !== 'module') fail('package.json must declare type=module.');
-  for (const script of ['dev', 'build', 'preview', 'lint', 'test', 'typecheck', 'check']) {
+  for (const script of [
+    'dev',
+    'build',
+    'preview',
+    'lint',
+    'test',
+    'typecheck',
+    'audit:attributions',
+    'generate:attributions',
+    'check',
+  ]) {
     if (!packageJson.scripts?.[script]) fail(`package.json is missing the ${script} script.`);
   }
   for (const dependency of ['react', 'react-dom']) {
@@ -133,6 +149,11 @@ if (!SOURCE_ONLY) {
     }
     if (/\/src\/|\.tsx?\b|data-dc-script|dc-runtime|<x-dc\b/i.test(distIndex)) {
       fail('Built index contains a source-only or legacy-runtime reference.');
+    }
+    for (const attributionFile of ['photo-attributions.json', 'photo-attributions.jsonld']) {
+      if (!fs.existsSync(absolute(`dist/${attributionFile}`))) {
+        fail(`Built site is missing generated attribution data: ${attributionFile}`);
+      }
     }
 
     // Every local HTML reference must resolve inside dist; external fonts are intentionally ignored.

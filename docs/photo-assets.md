@@ -4,14 +4,38 @@
 
 - `docs/image-manifest.csv` is the canonical editorial and provenance record.
 - `docs/brand-marks.csv` separately records the two SVG brand marks.
+- `docs/photo-attributions.csv` is the canonical human-reviewed credit ledger for every selected asset.
 - `public/photos/` contains selected assets named `<activity-id>-<slot>.jpg` plus the local brand SVGs.
+- `public/photo-attributions.json` and `public/photo-attributions.jsonld` are generated public credit catalogs; never edit them directly.
 - `.image-work/*.csv` contains chapter-scoped sourcing fragments used for parallel research.
 
 Vite copies `public/photos/` unchanged into `dist/photos/`. Application data stores only an activity's contiguous photo count; `src/domain/activity.ts` derives the public URL.
 
 Every successful manifest row records the exact downloaded asset URL in `actual_url`, the page that establishes context in `source_page`, and the file's verified width, height, and byte count. A `not_found` row intentionally has no local file or `actual_url` and retains an explanatory note.
 
-Provenance is not the same as reuse permission. Before a public deployment, confirm that each selected asset is owned, licensed, or otherwise cleared for this use. Creative Commons images need a deployed creator/license attribution surface; a source URL that lives only in this non-deployed manifest is not sufficient. Editorial and venue-listing photographs without an explicit reuse grant remain a publication risk even when their source is recorded accurately.
+Provenance is not the same as reuse permission. This private personal guide intentionally treats permission review as non-blocking, but public credit is a project standard: name the creator and exact license when available, otherwise credit the recorded source without implying permission or endorsement. The footer's Photo credits sheet is the human-readable surface; the generated JSON and JSON-LD provide the same information to software.
+
+## Attribution ledger
+
+`scripts/photo-attributions.py` joins the selected manifest rows to `docs/photo-attributions.csv`. The ledger is keyed one-to-one by `filename` and records title, creator, creator type/link, source label, exact license/link, credit basis, disclosed modifications, verification date, and internal notes. Use these controlled `credit_basis` values:
+
+- `creative_commons` — exact Commons creator and license metadata.
+- `stock_license` — a named stock-platform license.
+- `public_domain` — copyright-released media such as CC0.
+- `creator_credit` — a creator or supplier is identified but no reusable license is claimed.
+- `source_credit` — only the venue, publisher, or originating page can be identified.
+- `trademark` — copyright provenance is recorded for a brand mark while trademark rules still apply.
+
+Run `sync` after selected manifest rows change. It preserves existing reviewed rows and creates honest source-level fallbacks for new files, so missing creator research does not block deployment. Use the network refresh when open-license metadata needs to be added or rechecked:
+
+```sh
+npm run sync:attributions
+npm run sync:attributions -- --refresh-open
+npm run generate:attributions
+npm run audit:attributions
+```
+
+The default audit enforces exact one-to-one coverage, schema validity, safe links, current generated output, and all known Creative Commons/stock fields. `python3 scripts/photo-attributions.py audit --strict` additionally fails on enrichment warnings. Neither audit is a reuse-permission gate; adding a visible source credit does not assert that the site has a republication license.
 
 ## Editorial state
 
@@ -58,6 +82,9 @@ python3 scripts/merge-photo-results.py \
   --output docs/image-manifest.csv
 python3 scripts/audit-photo-manifest.py
 python3 scripts/sync-photo-counts.py
+npm run sync:attributions
+npm run generate:attributions
+npm run audit:attributions
 npm run audit:photos
 npm run audit:content
 npm run check

@@ -7,6 +7,7 @@ import {
   ChapterSidebar,
 } from './components/ChapterNavigation';
 import { ChapterSection } from './components/ChapterSection';
+import { CreditsDialog } from './components/CreditsDialog';
 import { FavoritesDialog } from './components/FavoritesDialog';
 import { HeroCarousel } from './components/HeroCarousel';
 import { ARRIVAL_DATE_KEY, TRIP_TIME_ZONE } from './config/site';
@@ -17,6 +18,7 @@ import { useCountdown } from './hooks/useCountdown';
 import { useCurrentChapter } from './hooks/useCurrentChapter';
 import { useDeepLink } from './hooks/useDeepLink';
 import { useFavorites } from './hooks/useFavorites';
+import { usePhotoAttributions } from './hooks/usePhotoAttributions';
 import { useReducedMotion } from './hooks/useReducedMotion';
 
 const ALL_CHAPTER_KEYS = CHAPTERS.map(({ key }) => key);
@@ -78,14 +80,19 @@ export function App() {
       return;
     }
 
+    if (next.type === 'credits') return;
+
     const chapter = CHAPTERS.find(({ key }) => key === next.chapterKey);
     if (chapter) setOpenChapterKeys(new Set([chapter.key]));
   }, [activitiesById]);
-  const { closeActivity, deepLink, navigateToActivity, navigateToChapter } = useDeepLink(
-    knownChapterKeys,
-    knownActivityIds,
-    synchronizeDeepLinkState,
-  );
+  const {
+    closeActivity,
+    closeCredits,
+    deepLink,
+    navigateToActivity,
+    navigateToChapter,
+    navigateToCredits,
+  } = useDeepLink(knownChapterKeys, knownActivityIds, synchronizeDeepLinkState);
 
   const chapterModels = useMemo(
     () =>
@@ -125,6 +132,8 @@ export function App() {
   const activeActivity = deepLink?.type === 'activity'
     ? activitiesById.get(deepLink.activityId) ?? null
     : null;
+  const creditsOpen = deepLink?.type === 'credits';
+  const photoAttributions = usePhotoAttributions(creditsOpen);
 
   useEffect(() => {
     if (deepLink?.type !== 'chapter') return;
@@ -211,7 +220,7 @@ export function App() {
       <LiveArrivalBar />
       <HeroCarousel
         activeIndex={heroIndex}
-        autoRotate={!favoritesOpen && activeActivity === null}
+        autoRotate={!favoritesOpen && activeActivity === null && !creditsOpen}
         chapters={CHAPTERS}
         isFavorite={(activityId) => favoriteIds.has(activityId)}
         items={heroItems}
@@ -237,10 +246,27 @@ export function App() {
               open={openChapterKeys.has(chapter.key)}
             />
           ))}
-          <p className="site-signoff">
-            Everything here was worth writing down. Nothing here is a plan.
-            <br />— A.
-          </p>
+          <footer className="site-footer">
+            <p className="site-signoff">
+              Everything here was worth writing down. Nothing here is a plan.
+              <br />— A.
+            </p>
+            <a
+              className="site-footer__credits"
+              href="#credits"
+              id="photo-credits-link"
+              onClick={(event) => {
+                // Preserve copy-link, new-tab, and modified-click browser behavior.
+                if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+                  return;
+                }
+                event.preventDefault();
+                navigateToCredits();
+              }}
+            >
+              Photo credits
+            </a>
+          </footer>
         </main>
       </div>
 
@@ -268,6 +294,14 @@ export function App() {
           isFavorite={favoriteIds.has(activeActivity.id)}
           onClose={() => closeActivity(activeActivity.id, activeActivity.ch)}
           onToggleFavorite={toggleFavorite}
+        />
+      )}
+      {creditsOpen && (
+        <CreditsDialog
+          catalog={photoAttributions.catalog}
+          onClose={closeCredits}
+          onRetry={photoAttributions.retry}
+          status={photoAttributions.status}
         />
       )}
     </div>

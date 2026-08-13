@@ -2,6 +2,7 @@ import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-li
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { App } from './App';
+import photoAttributionCatalog from '../public/photo-attributions.json';
 import { CHAPTERS, HERO, ITEMS } from './data/activities';
 import type { Activity } from './domain/activity';
 
@@ -16,6 +17,7 @@ afterEach(() => {
   cleanup();
   document.documentElement.style.overflow = '';
   vi.restoreAllMocks();
+  vi.unstubAllGlobals();
 });
 
 describe('App', () => {
@@ -113,6 +115,50 @@ describe('App', () => {
     expect(window.location.search).toBe('?from=message');
     expect(window.location.hash).toBe('#animals');
     expect(screen.getByRole('button', { name: 'Fur, feathers and scales' })).toHaveFocus();
+  });
+
+  it('opens the footer credits link as a history-aware sheet', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      json: vi.fn().mockResolvedValue(photoAttributionCatalog),
+      ok: true,
+      status: 200,
+    }));
+    const back = vi.spyOn(window.history, 'back').mockImplementation(() => undefined);
+    render(<App />);
+    const link = screen.getByRole('link', { name: 'Photo credits' });
+    link.focus();
+
+    fireEvent.click(link);
+
+    const dialog = screen.getByRole('dialog', { name: 'Photo credits' });
+    expect(window.location.hash).toBe('#credits');
+    expect(await within(dialog).findByRole('heading', { name: 'Fur, feathers and scales' }))
+      .toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Ras Al Khor Wildlife Sanctuary' }))
+      .toBeInTheDocument();
+
+    fireEvent.click(within(dialog).getByRole('button', { name: 'Close photo credits' }));
+    await waitFor(() => { expect(screen.queryByRole('dialog', { name: 'Photo credits' })).not.toBeInTheDocument(); });
+    expect(back).toHaveBeenCalledOnce();
+    expect(link).toHaveFocus();
+  });
+
+  it('closes a direct credits link without leaving the guide', async () => {
+    window.history.replaceState(null, '', '/guide/?from=message#credits');
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      json: vi.fn().mockResolvedValue(photoAttributionCatalog),
+      ok: true,
+      status: 200,
+    }));
+    render(<App />);
+
+    fireEvent.click(screen.getByRole('button', { name: 'Close photo credits' }));
+
+    await waitFor(() => { expect(screen.queryByRole('dialog', { name: 'Photo credits' })).not.toBeInTheDocument(); });
+    expect(window.location.pathname).toBe('/guide/');
+    expect(window.location.search).toBe('?from=message');
+    expect(window.location.hash).toBe('');
+    expect(screen.getByRole('link', { name: 'Photo credits' })).toHaveFocus();
   });
 
   it('synchronizes an activity sheet with Back and Forward history traversal', async () => {

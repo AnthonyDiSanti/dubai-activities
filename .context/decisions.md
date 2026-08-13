@@ -4,6 +4,13 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-13 — Credit every deployed photo without making permission a release gate
+- Decider: Anthony
+- Decision: Keep the private personal guide's existing photo set, publish a lightweight footer credits sheet, and expose matching compact JSON plus Schema.org JSON-LD. Record the exact creator and license where available; otherwise credit the identified creator or recorded source without implying permission or endorsement.
+- Rationale: The site is a private toy for Anthony and Naima with no profit or promotion, so rights clearance is not proportionate as a deployment gate. Creators still deserve visible, durable credit, especially where Creative Commons terms specify it.
+- Alternatives considered: Block releases until every reuse right is documented; hide credits in source metadata only; add a credit link to every activity sheet; build a searchable or collapsed credits directory.
+- Consequences / follow-ups: `docs/photo-attributions.csv` is the reviewed one-row-per-asset ledger. Generated JSON powers the flat footer sheet, generated JSON-LD provides machine-readable attribution, and `#credits` is a durable route. Structural coverage is audited, but unknown creators fall back to source-level credit and do not block deployment. New selected photos must be synchronized into the ledger in the same content change.
+
 ## 2026-08-13 — Stop hero autoplay through pagination
 - Decider: Anthony
 - Decision: Remove the separate Pause/Resume control and make any hero pagination choice permanently stop autoplay for the current page.

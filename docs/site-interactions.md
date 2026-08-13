@@ -2,7 +2,7 @@
 
 ## Entry point and state ownership
 
-The root `index.html` loads `src/main.tsx`, which mounts `src/App.tsx` inside `AppErrorBoundary` and React Strict Mode and imports `src/styles/index.css`. `App` composes the hero, chapter navigation, activity sections, favorites, and details. It owns chapter/filter/dialog selection; focused hooks own countdown, favorites persistence, reduced-motion preference, and current-chapter tracking. The root error boundary keeps a reload path visible if an unexpected render failure escapes component tests.
+The root `index.html` loads `src/main.tsx`, which mounts `src/App.tsx` inside `AppErrorBoundary` and React Strict Mode and imports `src/styles/index.css`. `App` composes the hero, chapter navigation, activity sections, favorites, details, and photo credits. It owns chapter/filter/dialog selection; focused hooks own countdown, favorites persistence, reduced-motion preference, current-chapter tracking, and lazy attribution loading. The root error boundary keeps a reload path visible if an unexpected render failure escapes component tests.
 
 Activity data is compiled from `src/data/activities.ts`. Pure transformations and URL rules live under `src/domain/`; UI must not recreate those rules in component-local view models. See [architecture.md](architecture.md) for build and S3 boundaries.
 
@@ -55,7 +55,7 @@ Do not turn the wrapper into a button or add `role="button"`: cards contain nest
 
 ## Modal behavior
 
-Favorites and activity details use the shared native-dialog wrapper in `src/components/Modal.tsx`. Only one dialog can be selected at a time.
+Favorites, activity details, and photo credits use the shared native-dialog wrapper in `src/components/Modal.tsx`. Only one dialog can be selected at a time.
 
 - `showModal()` supplies modal semantics and makes the rest of the document inert.
 - Opening focuses the sheet panel and locks document scrolling.
@@ -66,6 +66,14 @@ Favorites and activity details use the shared native-dialog wrapper in `src/comp
 - Each dialog is named by its visible heading and, where useful, described by visible copy.
 
 Keep new modal interactions inside this shared boundary instead of adding document-level key or focus handlers to individual sheets.
+
+## Photo credits
+
+The footer exposes one lightweight `Photo credits` link. Ordinary activation opens the full credits sheet and writes `#credits`; modified clicks and copied links remain native. Back closes an in-page sheet, Forward reopens it, and dismissing a directly loaded `#credits` URL removes only that fragment while preserving the path and query.
+
+Credits are deliberately complete and flat rather than searchable or collapsed. They follow manifest order, group exact duplicate statements within an activity, and show every selected image through a photo-slot label. Creator, source, exact license, and modification disclosure appear when known. When creator or license research is incomplete, the recorded source remains visible and the introduction explicitly avoids implying permission or endorsement.
+
+`src/hooks/usePhotoAttributions.ts` fetches `photo-attributions.json` only while the sheet is requested and caches a validated catalog for later opens. Loading, failure, and retry are visible states. The public JSON-LD graph is separately advertised from `index.html`; neither generated file is hand-edited.
 
 ## Detail sheet and gallery
 
@@ -104,13 +112,15 @@ Check at 390×844, 999×800, 1000×800, and 1440×900:
 9. Confirm gallery Save does not advance; test desktop X, Escape, backdrop, mobile Close, initial focus, scroll lock, and trigger-focus restoration.
 10. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify honest Copy success/failure and capability-gated Share at every width.
 11. Check keyboard navigation, visible focus, console output, final image loads, and centered crops.
-12. Paste `#animals` and `#activity-rasalkhor` into a fresh tab. Verify the owning chapter, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
+12. Paste `#animals`, `#activity-rasalkhor`, and `#credits` into a fresh tab. Verify the owning chapter, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
+13. Open Photo credits from the footer. Confirm the full 403-asset catalog is readable, external creator/source/license links are present, the loading/error states do not affect the guide, the sticky X and mobile bottom Close work, and focus returns to the footer link.
 
 Finish with:
 
 ```sh
 npm run check
 npm run audit:photos
+npm run audit:attributions
 ```
 
 Exercise one populated native-share handoff manually on a real phone before deployment when the payload or hosting origin changes.

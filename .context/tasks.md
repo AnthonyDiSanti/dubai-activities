@@ -6,17 +6,18 @@ Task IDs are ULIDs; keep titles short and human-readable.
 - None
 
 ## Paused / Blocked
-- id: 01K2HZ8V4M7Q1R5T9C3N6B0XFD — title: Clear production photo rights — owner: Unassigned — status: paused — last update: 2026-08-11
-  - Goal: Make every selected public asset publishable and expose all required creator/license credits in the deployed site.
-  - Blocker: Several exact-venue editorial/listing photographs have provenance but no recorded reuse grant; Creative Commons selections have no deployed attribution surface yet.
-  - Next: Replace or license the affected editorial/listing files, build a public credits surface from the canonical manifest, and rerun the photo plus browser gates.
-  - Links: `docs/image-manifest.csv`, `docs/photo-assets.md`, `.context/handoff.md`
+- None
 
 ## Completed (recent; keep last ~10)
+- id: 01K2Q4F8N6M1R9T3V7C5H0XZPD — title: Publish complete photo attribution — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
+  - Goal: Credit every selected photo visibly and in machine-readable form without turning reuse permission into a deployment gate for the private guide.
+  - Result: Added a reviewed 403-row attribution ledger, exact Commons and stock-license metadata, honest creator/source fallbacks, generated compact JSON and JSON-LD, a lazy `#credits` footer sheet, structural audits, 169-test coverage, and responsive rendered QA. Deployed the 432-object build, completed invalidation `I23VTL008EGCX8UOQ0TL261VK3`, and verified byte-identical live data plus mobile/desktop interaction health.
+  - Follow-up: Run attribution sync whenever selected manifest rows change; refresh open-license metadata when sources or licenses are rechecked.
+  - Links: `docs/photo-attributions.csv`, `scripts/photo-attributions.py`, `src/components/CreditsDialog.tsx`, `docs/photo-assets.md`
 - id: 01K2PC8N5R1T7V4Q9H3M6X0ZFD — title: Deploy hero and countdown revision — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
   - Goal: Publish every current hero and countdown change to the existing static production target with a verified rollback path.
   - Result: Captured a fresh 430-object rollback snapshot, passed the 156-test application and 431-row photo gates, uploaded 430 objects, removed only two superseded bundles, completed invalidation `IAJXSIZ8K37Q9IM5J6KG58C9TY`, and passed byte-level, MIME, countdown, carousel-stop, passive-sheet, and direct-link live checks.
-  - Follow-up: Resolve the still-open photo-rights/credits task; deployment authorization did not clear third-party rights.
+  - Follow-up: Superseded by the later attribution standard: visible credits are required, while reuse permission remains acknowledged but non-blocking for this private guide.
   - Links: `.context/knowledge/minisite-deployment.md`, `https://dubai.anthonydisanti.com/`
 - id: 01K2PB7M4N9R1T6V3Q5H8C0XZD — title: Simplify hero autoplay controls — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
   - Goal: Remove the redundant Pause/Resume button and let hero pagination own the visitor's manual stop intent.

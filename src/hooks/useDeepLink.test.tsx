@@ -30,6 +30,31 @@ describe('useDeepLink', () => {
     });
   });
 
+  it('pushes and closes the global credits route through browser history', () => {
+    const back = vi.spyOn(window.history, 'back').mockImplementation(() => undefined);
+    const { result } = renderDeepLink();
+
+    act(() => { result.current.navigateToCredits(); });
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#credits');
+    expect(result.current.deepLink).toEqual({ type: 'credits' });
+
+    act(() => { result.current.closeCredits(); });
+    expect(back).toHaveBeenCalledOnce();
+    expect(result.current.deepLink).toBeNull();
+  });
+
+  it('closes a direct credits link without navigating away from the document', () => {
+    window.history.replaceState(null, '', '/guide/?ref=naima#credits');
+    const back = vi.spyOn(window.history, 'back');
+    const { result } = renderDeepLink();
+
+    act(() => { result.current.closeCredits(); });
+
+    expect(back).not.toHaveBeenCalled();
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima');
+    expect(result.current.deepLink).toBeNull();
+  });
+
   it('pushes an activity URL while preserving the current path and query', () => {
     const { result } = renderDeepLink();
 

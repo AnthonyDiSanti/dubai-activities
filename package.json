@@ -7,7 +7,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "predev": "npm run generate:attributions",
     "dev": "vite",
+    "prebuild": "npm run generate:attributions",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . --max-warnings 0",
@@ -15,8 +17,11 @@
     "test:watch": "vitest",
     "typecheck": "tsc -b",
     "audit:content": "tsx scripts/audit-activity-content.ts",
+    "audit:attributions": "python3 scripts/photo-attributions.py audit",
     "audit:site": "tsx scripts/audit-site-structure.ts",
     "audit:photos": "python3 scripts/audit-photo-manifest.py && python3 scripts/check-photo-similarity.py",
+    "generate:attributions": "python3 scripts/photo-attributions.py generate",
+    "sync:attributions": "python3 scripts/photo-attributions.py sync",
     "check": "npm run lint && npm run test && npm run build && npm run audit:content && npm run audit:site"
   },
   "dependencies": {

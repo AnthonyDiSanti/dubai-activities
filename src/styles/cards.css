@@ -628,11 +628,30 @@
   text-wrap: pretty;
 }
 
-.site-signoff {
+.site-footer {
   margin: 60px 0 0;
   padding: 0 20px;
+  text-align: center;
+}
+
+.site-signoff {
+  margin: 0;
   color: rgba(244, 239, 230, .4);
   font: 300 12px/1.8 var(--font-body);
-  text-align: center;
   text-wrap: pretty;
+}
+
+.site-footer__credits {
+  display: inline-block;
+  margin-top: 13px;
+  color: rgba(244, 239, 230, .58);
+  font: 500 9px var(--font-mono);
+  letter-spacing: .13em;
+  text-decoration-color: rgba(244, 239, 230, .28);
+  text-underline-offset: 4px;
+  text-transform: uppercase;
+}
+
+.site-footer__credits:hover {
+  color: var(--gold);
 }

@@ -15,20 +15,22 @@ The root `index.html` contains metadata, `#root`, and the Vite module entry. `sr
 - `src/components/` owns semantic React markup and interaction composition. Activity IDs and chapter keys are the stable React keys.
 - `src/styles/` owns bundled font declarations, global tokens, the deliberately varied visual treatments, and responsive rules. The 1000 px boundary remains CSS-driven.
 - `public/photos/` owns the 401 activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
+- `docs/photo-attributions.csv` owns reviewed photo credits. Build-time generation emits `public/photo-attributions.json` for the UI and `public/photo-attributions.jsonld` for machine readers.
 
 Do not reintroduce a global application namespace, runtime template compiler, `new Function`, inline executable script, or a parallel entry point under `src/`. Add behavior through typed modules and cover pure rules with Vitest.
 
 ## Client data flows
 
-Activity data is compiled into the JavaScript bundle. No production fetch is needed to render the guide. Gallery URLs resolve to `photos/<activity-id>-<slot>.jpg`, so activity IDs and contiguous slot numbers are durable content identifiers.
+Activity data is compiled into the JavaScript bundle. No production fetch is needed to render the guide. Gallery URLs resolve to `photos/<activity-id>-<slot>.jpg`, so activity IDs and contiguous slot numbers are durable content identifiers. Photo credits load lazily only when the footer sheet opens; a failed credit request produces an honest retry state without affecting the guide itself.
 
 URL fragments are the client-only navigation boundary:
 
 - `#<chapter-key>` targets a chapter, for example `#animals`.
 - `#activity-<activity-id>` opens one detail sheet, for example `#activity-rasalkhor`.
+- `#credits` opens the complete photo-credit sheet.
 - `#list=<comma-separated-activity-ids>` retains the existing shared-favorites contract.
 
-`src/domain/deepLinks.ts` validates and builds chapter/activity fragments; `src/hooks/useDeepLink.ts` owns session-history synchronization. The hash is the source of truth for an open activity, so Back closes an in-page sheet and Forward reopens it. App-created activity entries carry a namespaced history-state marker; closing a directly loaded sheet replaces it with its owning chapter rather than navigating the visitor away. Unknown, retired, malformed, and favorites fragments do not open a sheet.
+`src/domain/deepLinks.ts` validates and builds chapter/activity/credits fragments; `src/hooks/useDeepLink.ts` owns session-history synchronization. The hash is the source of truth for an open sheet, so Back closes an in-page sheet and Forward reopens it. App-created sheet entries carry a namespaced history-state marker; closing a directly loaded activity replaces it with its owning chapter, while closing direct `#credits` strips only the fragment. Unknown, retired, malformed, and favorites fragments do not open a sheet.
 
 Favorites use the existing `naima.favs.v1` local-storage key. A validated `#list=<comma-separated-activity-ids>` hash can initialize a shared list; invalid, unknown, and duplicate IDs must not enter state. Chapter and activity fragments leave stored favorites authoritative. Hash navigation is intentionally client-side and is not sent to S3 or CloudFront as part of the HTTP request.
 
@@ -49,6 +51,7 @@ The audit requires a completed `dist/` and verifies:
 - `dist/index.html` refers only to relative, fingerprinted application assets.
 - Every local HTML asset reference resolves inside `dist/`.
 - `dist/photos/` mirrors `public/photos/` by filename and byte count.
+- The compact attribution catalog and JSON-LD graph exist in both `public/` and `dist/`, and the document advertises the JSON-LD file.
 - Production bundles contain neither the former custom runtime nor its CDN React loader.
 
 `dist/` is generated output and must not become a source of truth. Rebuild it rather than editing it.
@@ -71,6 +74,7 @@ Run the release from the repository root after the complete application and phot
 ```sh
 npm run check
 npm run audit:photos
+npm run audit:attributions
 minisite deploy --dry-run --profile personal dubai.anthonydisanti.com ./dist
 minisite deploy --profile personal dubai.anthonydisanti.com ./dist
 ```
