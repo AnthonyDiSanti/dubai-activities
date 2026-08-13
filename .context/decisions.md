@@ -4,6 +4,27 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-13 — Stop hero autoplay through pagination
+- Decider: Anthony
+- Decision: Remove the separate Pause/Resume control and make any hero pagination choice permanently stop autoplay for the current page.
+- Rationale: Pagination already expresses the visitor's intent to take control of the carousel, making a neighboring pause button redundant.
+- Alternatives considered: Keep both controls; pause only while a pagination button retains focus; resume automatically after a manual selection.
+- Consequences / follow-ups: Choosing the active item freezes the current progress position, while choosing another item starts that slide with a stopped empty fill. Hover, focus, and dialogs remain temporary pauses, and a reload starts autoplay again.
+
+## 2026-08-13 — Count arrival by Dubai calendar dates
+- Decider: Anthony and Codex (model: GPT-5)
+- Decision: Calculate the arrival label from the difference between Dubai calendar dates rather than flooring elapsed 24-hour blocks. Keep the configured landing target date-only until an actual scheduled time is known.
+- Rationale: Thursday to Sunday is three ordinary calendar days even when fewer than 72 elapsed hours remain. The earlier duration calculation produced “2 days” later on Thursday and its midnight arrival timestamp invented hour-level certainty the source data does not contain.
+- Alternatives considered: Change `Math.floor` to `Math.ceil`; retain a fabricated midnight arrival and switch to hours on Saturday; use the visitor's local date fields.
+- Consequences / follow-ups: `Asia/Dubai` is an explicit configuration boundary. Saturday reads “1 day until I land,” Sunday stays “I land today,” and Monday becomes day 2. If an exact flight arrival time is later supplied, model it separately rather than encoding it as an assumed midnight.
+
+## 2026-08-13 — Make the hero surface and timer visible
+- Decider: Anthony
+- Decision: Let any passive hero image or copy surface open the featured activity sheet, and place a thin left-to-right progress track directly below the image whose completed fill advances the carousel.
+- Rationale: The prior slide looked broadly interactive but required a precise More-button click, while its seven-second automatic change had no visible timing cue. A shared visual clock makes both behaviors discoverable.
+- Alternatives considered: Wrap the whole slide in a link; add a second overlay button; keep an independent JavaScript interval beside a decorative animation.
+- Consequences / follow-ups: Keep Save and detail anchors independently operable and retain a real link as the keyboard path. The fill animation is the rotation clock, pauses and resumes at the same position with interaction/dialog state, remounts at zero when the active slide changes, and is omitted with reduced motion. The later pagination-stop decision governs manual selection.
+
 ## 2026-08-11 — Publish through the existing Minisite stack
 - Decider: Anthony
 - Decision: Deploy the complete current `dist/` build to `https://dubai.anthonydisanti.com/` through the owned S3/CloudFront Minisite stack, while retaining a pre-release object snapshot and explicitly carrying the unresolved photo-rights issue as post-release risk.

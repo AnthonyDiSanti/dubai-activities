@@ -13,6 +13,25 @@ Task IDs are ULIDs; keep titles short and human-readable.
   - Links: `docs/image-manifest.csv`, `docs/photo-assets.md`, `.context/handoff.md`
 
 ## Completed (recent; keep last ~10)
+- id: 01K2PC8N5R1T7V4Q9H3M6X0ZFD — title: Deploy hero and countdown revision — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
+  - Goal: Publish every current hero and countdown change to the existing static production target with a verified rollback path.
+  - Result: Captured a fresh 430-object rollback snapshot, passed the 156-test application and 431-row photo gates, uploaded 430 objects, removed only two superseded bundles, completed invalidation `IAJXSIZ8K37Q9IM5J6KG58C9TY`, and passed byte-level, MIME, countdown, carousel-stop, passive-sheet, and direct-link live checks.
+  - Follow-up: Resolve the still-open photo-rights/credits task; deployment authorization did not clear third-party rights.
+  - Links: `.context/knowledge/minisite-deployment.md`, `https://dubai.anthonydisanti.com/`
+- id: 01K2PB7M4N9R1T6V3Q5H8C0XZD — title: Simplify hero autoplay controls — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
+  - Goal: Remove the redundant Pause/Resume button and let hero pagination own the visitor's manual stop intent.
+  - Result: Made every pagination choice stop autoplay for the current page, including the active item, while preserving temporary hover/focus/dialog pauses and reduced-motion behavior.
+  - Links: `src/components/HeroCarousel.tsx`, `src/components/HeroCarousel.test.tsx`, `docs/site-interactions.md`
+- id: 01K2P9C4V7N1R5T8M3Q6H0XZFD — title: Correct arrival-day countdown — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
+  - Goal: Make Thursday-to-Sunday display three days instead of flooring the remaining elapsed hours to two.
+  - Result: Replaced the fabricated midnight/elapsed-duration model with Dubai calendar-date arithmetic, added date-relative/day-N copy, and covered non-midnight, equivalent-zone, Dubai-midnight, invalid-date, and live hook-update boundaries.
+  - Follow-up: Keep the configuration date-only unless an exact scheduled landing time is supplied.
+  - Links: `src/domain/countdown.ts`, `src/config/site.ts`, `src/hooks/useCountdown.test.tsx`, `docs/site-interactions.md`
+- id: 01K2P6V9R4M7C1T8N3Q5H0XZFD — title: Expose hero timing and sheet opening — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
+  - Goal: Show when the hero will advance and let its passive image/copy surface open the featured activity without requiring the More link.
+  - Result: Made the progress fill the single autoplay clock, preserved its position through temporary pause sources, remounted it at zero when the active slide changed, omitted it for reduced motion, and added delegated passive hero opening with control isolation and meaningful focus restoration. The later pagination task made every manual choice a persistent stop; the full gate then reached 156 tests.
+  - Follow-up: Superseded by `01K2PB7M4N9R1T6V3Q5H8C0XZD` and deployed by `01K2PC8N5R1T7V4Q9H3M6X0ZFD`.
+  - Links: `src/components/HeroCarousel.tsx`, `src/styles/layout.css`, `docs/site-interactions.md`
 - id: 01K2JDK9Q6N3V8R1T5M7C4XZHF — title: Deploy the React guide — owner: Codex (GPT-5) — status: done — last update: 2026-08-11
   - Goal: Publish the complete uncommitted React migration to the existing S3/CloudFront production target with a recoverable and verified release.
   - Result: Preserved all 404 prior objects in a temporary rollback snapshot, passed the 143-test application and 431-row photo gates, deployed 430 files, removed 12 intentional stale objects, completed CloudFront invalidation `I2XIJ6R3B2YECOISFTUA7G0RMX`, and verified the live root plus chapter/activity deep links.

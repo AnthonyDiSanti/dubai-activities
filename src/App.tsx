@@ -9,7 +9,7 @@ import {
 import { ChapterSection } from './components/ChapterSection';
 import { FavoritesDialog } from './components/FavoritesDialog';
 import { HeroCarousel } from './components/HeroCarousel';
-import { ARRIVAL_DATE } from './config/site';
+import { ARRIVAL_DATE_KEY, TRIP_TIME_ZONE } from './config/site';
 import { CHAPTERS, HERO, ITEMS } from './data/activities';
 import type { Activity, ChapterKey } from './domain/activity';
 import { parseDeepLink, type DeepLink } from './domain/deepLinks';
@@ -25,7 +25,7 @@ const DEFAULT_CHAPTER_KEY: ChapterKey = 'loud';
 
 function LiveArrivalBar() {
   // Keep the clock's 30-second updates outside the full activity-card application tree.
-  const countdown = useCountdown(ARRIVAL_DATE);
+  const countdown = useCountdown(ARRIVAL_DATE_KEY, TRIP_TIME_ZONE);
   return <ArrivalBar countdown={countdown} />;
 }
 

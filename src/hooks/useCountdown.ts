@@ -4,7 +4,7 @@ import { formatArrivalCountdown } from '../domain/countdown';
 
 const UPDATE_INTERVAL_MS = 30_000;
 
-export function useCountdown(arrival: Date): string {
+export function useCountdown(arrivalDateKey: string, timeZone: string): string {
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
@@ -13,6 +13,5 @@ export function useCountdown(arrival: Date): string {
     return () => window.clearInterval(timer);
   }, []);
 
-  return formatArrivalCountdown(now, arrival);
+  return formatArrivalCountdown(now, arrivalDateKey, timeZone);
 }
-

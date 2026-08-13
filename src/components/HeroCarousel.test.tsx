@@ -51,8 +51,18 @@ function props(overrides: Partial<HeroCarouselProps> = {}): HeroCarouselProps {
 
 afterEach(() => {
   cleanup();
-  vi.useRealTimers();
 });
+
+function progressFill(container: HTMLElement): HTMLElement {
+  const fill = container.querySelector<HTMLElement>('.hero__progress-fill');
+  if (!fill) throw new Error('Expected a hero progress fill');
+  return fill;
+}
+
+function finishProgress(fill: HTMLElement) {
+  // React selects the WebKit animation event in jsdom's dual-prefix style environment.
+  fireEvent(fill, new window.Event('webkitAnimationEnd', { bubbles: true }));
+}
 
 describe('HeroCarousel', () => {
   it('labels the carousel and exposes complete activity names as controls', () => {
@@ -72,10 +82,22 @@ describe('HeroCarousel', () => {
     expect(screen.getByText('Quiet and dark')).toBeInTheDocument();
   });
 
-  it('keeps selection controlled by the parent', () => {
+  it('keeps selection controlled, stops autoplay, and resets progress for a new slide', () => {
     const onActiveIndexChange = vi.fn();
     const initialProps = props({ onActiveIndexChange });
-    const { rerender } = render(<HeroCarousel {...initialProps} />);
+    const { container, rerender } = render(<HeroCarousel {...initialProps} />);
+    const firstProgress = progressFill(container);
+
+    fireEvent.click(screen.getByRole('button', { name: firstItem.name }));
+    expect(onActiveIndexChange).toHaveBeenCalledWith(0);
+    expect(firstProgress).toHaveStyle({ animationPlayState: 'paused' });
+    expect(screen.getByRole('navigation', { name: 'Choose featured activity' })).toHaveAccessibleDescription(
+      'Choosing a featured activity stops automatic rotation.',
+    );
+
+    onActiveIndexChange.mockClear();
+    finishProgress(firstProgress);
+    expect(onActiveIndexChange).not.toHaveBeenCalled();
 
     fireEvent.click(screen.getByRole('button', { name: secondItem.name }));
     expect(onActiveIndexChange).toHaveBeenCalledWith(1);
@@ -83,69 +105,144 @@ describe('HeroCarousel', () => {
 
     rerender(<HeroCarousel {...initialProps} activeIndex={1} />);
     expect(screen.getByRole('heading', { name: secondItem.name })).toBeInTheDocument();
+    expect(progressFill(container)).not.toBe(firstProgress);
+    expect(progressFill(container)).toHaveStyle({ animationPlayState: 'paused' });
+    onActiveIndexChange.mockClear();
+    finishProgress(progressFill(container));
+    expect(onActiveIndexChange).not.toHaveBeenCalled();
+    expect(screen.queryByRole('button', { name: /slideshow/i })).not.toBeInTheDocument();
   });
 
-  it('rotates on schedule and pauses explicitly or while the pointer is inside', () => {
-    vi.useFakeTimers();
+  it('uses the completed progress animation as its rotation clock', () => {
     const onActiveIndexChange = vi.fn();
-    render(<HeroCarousel {...props({ onActiveIndexChange })} />);
+    const { container } = render(<HeroCarousel {...props({ onActiveIndexChange })} />);
+    const fill = progressFill(container);
+
+    expect(fill.parentElement).toHaveAttribute('aria-hidden', 'true');
+    expect(fill).toHaveStyle({
+      animationDuration: '1000ms',
+      animationPlayState: 'running',
+    });
+
+    finishProgress(fill);
+
+    expect(onActiveIndexChange).toHaveBeenCalledOnce();
+    expect(onActiveIndexChange).toHaveBeenCalledWith(1);
+  });
+
+  it('freezes the same progress cycle while the pointer remains inside', () => {
+    const onActiveIndexChange = vi.fn();
+    const { container } = render(<HeroCarousel {...props({ onActiveIndexChange })} />);
     const carousel = screen.getByRole('region', { name: 'Featured activities' });
+    const fill = progressFill(container);
 
     fireEvent.mouseEnter(carousel);
-    vi.advanceTimersByTime(1_000);
+    expect(fill).toHaveStyle({ animationPlayState: 'paused' });
+    finishProgress(fill);
     expect(onActiveIndexChange).not.toHaveBeenCalled();
 
     fireEvent.mouseLeave(carousel);
-    vi.advanceTimersByTime(1_000);
-    expect(onActiveIndexChange).toHaveBeenCalledWith(1);
-
-    onActiveIndexChange.mockClear();
-    fireEvent.click(screen.getByRole('button', { name: 'Pause slideshow' }));
-    vi.advanceTimersByTime(1_000);
-    expect(onActiveIndexChange).not.toHaveBeenCalled();
-
-    fireEvent.click(screen.getByRole('button', { name: 'Resume slideshow' }));
-    vi.advanceTimersByTime(1_000);
+    expect(fill).toHaveStyle({ animationPlayState: 'running' });
+    finishProgress(fill);
     expect(onActiveIndexChange).toHaveBeenCalledWith(1);
   });
 
   it('pauses while keyboard focus remains inside the carousel', () => {
-    vi.useFakeTimers();
     const onActiveIndexChange = vi.fn();
-    render(<HeroCarousel {...props({ onActiveIndexChange })} />);
+    const { container } = render(<HeroCarousel {...props({ onActiveIndexChange })} />);
     const firstSelector = screen.getByRole('button', { name: firstItem.name });
+    const fill = progressFill(container);
 
     fireEvent.focus(firstSelector);
-    vi.advanceTimersByTime(1_000);
+    expect(fill).toHaveStyle({ animationPlayState: 'paused' });
+    finishProgress(fill);
     expect(onActiveIndexChange).not.toHaveBeenCalled();
 
     fireEvent.blur(firstSelector, { relatedTarget: null });
-    vi.advanceTimersByTime(1_000);
+    expect(fill).toHaveStyle({ animationPlayState: 'running' });
+    finishProgress(fill);
     expect(onActiveIndexChange).toHaveBeenCalledWith(1);
   });
 
-  it('disables autoplay when reduced motion is requested', () => {
-    vi.useFakeTimers();
+  it('freezes progress while an external surface disables autoplay', () => {
     const onActiveIndexChange = vi.fn();
-    render(<HeroCarousel {...props({ onActiveIndexChange, reducedMotion: true })} />);
+    const { container, rerender } = render(
+      <HeroCarousel {...props({ autoRotate: false, onActiveIndexChange })} />,
+    );
+    const fill = progressFill(container);
 
-    vi.advanceTimersByTime(5_000);
-
+    expect(fill).toHaveStyle({ animationPlayState: 'paused' });
+    finishProgress(fill);
     expect(onActiveIndexChange).not.toHaveBeenCalled();
-    expect(screen.getByRole('button', { name: 'Slideshow paused' })).toBeDisabled();
+
+    rerender(<HeroCarousel {...props({ autoRotate: true, onActiveIndexChange })} />);
+    expect(fill).toHaveStyle({ animationPlayState: 'running' });
+    finishProgress(fill);
+    expect(onActiveIndexChange).toHaveBeenCalledWith(1);
   });
 
-  it('routes hero actions for the current activity', () => {
+  it('disables autoplay and omits an advancing bar for reduced motion', () => {
+    const onActiveIndexChange = vi.fn();
+    const { container } = render(
+      <HeroCarousel {...props({ onActiveIndexChange, reducedMotion: true })} />,
+    );
+
+    expect(onActiveIndexChange).not.toHaveBeenCalled();
+    expect(container.querySelector('.hero__progress')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /slideshow/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: firstItem.name })).toBeEnabled();
+    expect(screen.getByRole('button', { name: secondItem.name })).toBeEnabled();
+  });
+
+  it('opens the active activity from passive image and text surfaces', () => {
+    const onOpen = vi.fn();
+    render(<HeroCarousel {...props({ onOpen })} />);
+    const slide = screen.getByRole('group', { name: '1 of 2' });
+    const image = slide.querySelector('img');
+    if (!image) throw new Error('Expected the active hero image');
+
+    fireEvent.click(image);
+    fireEvent.click(screen.getByRole('heading', { name: firstItem.name }));
+    fireEvent.click(screen.getByText(firstItem.blurb));
+
+    expect(onOpen).toHaveBeenCalledTimes(3);
+    expect(onOpen).toHaveBeenNthCalledWith(1, firstItem.id);
+  });
+
+  it('isolates hero controls from the passive slide action', () => {
     const onOpen = vi.fn();
     const onToggleFavorite = vi.fn();
     render(<HeroCarousel {...props({ isFavorite: () => true, onOpen, onToggleFavorite })} />);
 
-    const activityLink = screen.getByRole('link', { name: firstItem.cta });
-    expect(activityLink).toHaveAttribute('href', `#activity-${firstItem.id}`);
-    fireEvent.click(activityLink);
-    fireEvent.click(screen.getByRole('button', { name: `Remove ${firstItem.name} from favorites` }));
+    const primaryLink = screen.getByRole('link', { name: firstItem.cta });
+    const moreLink = screen.getByRole('link', { name: 'More' });
+    const favoriteButton = screen.getByRole('button', {
+      name: `Remove ${firstItem.name} from favorites`,
+    });
+    expect(primaryLink).toHaveAttribute('href', `#activity-${firstItem.id}`);
+    expect(moreLink).toHaveAttribute('href', `#activity-${firstItem.id}`);
 
-    expect(onOpen).toHaveBeenCalledWith(firstItem.id);
+    fireEvent.click(favoriteButton);
     expect(onToggleFavorite).toHaveBeenCalledWith(firstItem.id);
+    expect(onOpen).not.toHaveBeenCalled();
+
+    fireEvent.click(primaryLink);
+    fireEvent.click(moreLink);
+    expect(onOpen).toHaveBeenCalledTimes(2);
+
+    fireEvent.click(primaryLink, { metaKey: true });
+    fireEvent.click(moreLink, { button: 1 });
+    expect(onOpen).toHaveBeenCalledTimes(2);
+  });
+
+  it('omits autoplay progress when only one slide exists', () => {
+    const onActiveIndexChange = vi.fn();
+    const { container } = render(
+      <HeroCarousel {...props({ items: [firstItem], onActiveIndexChange })} />,
+    );
+
+    expect(container.querySelector('.hero__progress')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /slideshow/i })).not.toBeInTheDocument();
+    expect(onActiveIndexChange).not.toHaveBeenCalled();
   });
 });

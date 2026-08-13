@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { App } from './App';
 import { CHAPTERS, HERO, ITEMS } from './data/activities';
@@ -15,6 +15,7 @@ beforeEach(() => {
 afterEach(() => {
   cleanup();
   document.documentElement.style.overflow = '';
+  vi.restoreAllMocks();
 });
 
 describe('App', () => {
@@ -60,6 +61,25 @@ describe('App', () => {
     expect(screen.getByRole('dialog', { name: 'Honeycomb Hi-Fi' })).toBeInTheDocument();
     expect(screen.getByAltText('Honeycomb Hi-Fi, photo 1 of 4')).toBeInTheDocument();
     expect(window.location.hash).toBe('#activity-honeycomb');
+  });
+
+  it('opens a hero sheet from its passive text surface and restores its detail link', async () => {
+    const back = vi.spyOn(window.history, 'back').mockImplementation(() => undefined);
+    render(<App />);
+    const hero = screen.getByRole('region', { name: 'Featured activities' });
+    const detailLink = within(hero).getByRole('link', { name: 'More' });
+
+    fireEvent.click(within(hero).getByRole('heading', { name: 'The Nest by Nara' }));
+
+    expect(screen.getByRole('dialog', { name: 'The Nest by Nara' })).toBeInTheDocument();
+    expect(window.location.hash).toBe('#activity-nest');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Close activity details' }));
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog', { name: 'The Nest by Nara' })).not.toBeInTheDocument();
+    });
+    expect(detailLink).toHaveFocus();
+    expect(back).toHaveBeenCalledOnce();
   });
 
   it('opens a directly linked chapter as the only expanded section', () => {
@@ -154,6 +174,8 @@ describe('App', () => {
       .toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('button', { name: 'Open favorites, 1 saved' })).toBeInTheDocument();
     expect(JSON.parse(window.localStorage.getItem('naima.favs.v1') ?? '[]')).toEqual(['nest']);
+    expect(screen.queryByRole('dialog', { name: 'The Nest by Nara' })).not.toBeInTheDocument();
+    expect(window.location.hash).toBe('');
 
     fireEvent.click(screen.getByRole('button', { name: 'Open favorites, 1 saved' }));
     expect(screen.getByRole('dialog', { name: 'The ones you want' })).toHaveTextContent(

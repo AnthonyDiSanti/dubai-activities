@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FocusEvent, type MouseEvent } from 'react';
+import { useMemo, useState, type FocusEvent, type MouseEvent } from 'react';
 
 import { activityPhotoUrl, type Activity, type Chapter } from '../domain/activity';
 import { activityHash } from '../domain/deepLinks';
@@ -18,6 +18,10 @@ export type HeroCarouselProps = {
 
 const DEFAULT_ROTATION_INTERVAL_MS = 7_000;
 
+function isModifiedClick(event: MouseEvent<HTMLElement>): boolean {
+  return event.button !== 0 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
+}
+
 function handleActivityLinkClick(
   event: MouseEvent<HTMLAnchorElement>,
   activityId: Activity['id'],
@@ -25,14 +29,33 @@ function handleActivityLinkClick(
 ) {
   // Keep browser-native copy/new-tab behavior while routing ordinary activation in-page.
   if (
-    event.button !== 0 ||
-    event.altKey ||
-    event.ctrlKey ||
-    event.metaKey ||
-    event.shiftKey
+    isModifiedClick(event)
   ) return;
 
   event.preventDefault();
+  onOpen(activityId);
+}
+
+function handlePassiveSlideClick(
+  event: MouseEvent<HTMLElement>,
+  activityId: Activity['id'],
+  onOpen: HeroCarouselProps['onOpen'],
+) {
+  const target = event.target instanceof Element ? event.target : null;
+  const selection = window.getSelection();
+
+  // Preserve embedded actions, browser click variants, and intentional text selection.
+  if (
+    event.defaultPrevented ||
+    isModifiedClick(event) ||
+    target?.closest('a,button') ||
+    (selection && !selection.isCollapsed)
+  ) return;
+
+  // Give the modal a stable control to restore after a pointer-opened sheet closes.
+  event.currentTarget
+    .querySelector<HTMLElement>('[data-hero-detail-link]')
+    ?.focus({ preventScroll: true });
   onOpen(activityId);
 }
 
@@ -53,7 +76,7 @@ export function HeroCarousel({
   reducedMotion,
   rotationIntervalMs = DEFAULT_ROTATION_INTERVAL_MS,
 }: HeroCarouselProps) {
-  const [manuallyPaused, setManuallyPaused] = useState(false);
+  const [navigationPaused, setNavigationPaused] = useState(false);
   const [pointerInside, setPointerInside] = useState(false);
   const [focusInside, setFocusInside] = useState(false);
   const normalizedIndex = normalizeIndex(activeIndex, items.length);
@@ -63,21 +86,17 @@ export function HeroCarousel({
     [chapters],
   );
   const interactionPaused = pointerInside || focusInside;
-  const rotationPaused = !autoRotate || reducedMotion || manuallyPaused || interactionPaused;
-
-  useEffect(() => {
-    if (rotationPaused || items.length < 2) return;
-
-    const intervalId = window.setInterval(() => {
-      onActiveIndexChange((normalizedIndex + 1) % items.length);
-    }, rotationIntervalMs);
-    return () => window.clearInterval(intervalId);
-  }, [items.length, normalizedIndex, onActiveIndexChange, rotationIntervalMs, rotationPaused]);
+  const rotationPaused = !autoRotate || reducedMotion || navigationPaused || interactionPaused;
+  // A positive finite duration keeps the CSS clock deterministic for every caller.
+  const cycleDurationMs = Number.isFinite(rotationIntervalMs)
+    ? Math.max(1, rotationIntervalMs)
+    : DEFAULT_ROTATION_INTERVAL_MS;
 
   if (!activeItem) return null;
 
   const favorite = isFavorite(activeItem.id);
   const slideId = 'hero-active-slide';
+  const paginationInstructionsId = 'hero-pagination-instructions';
 
   const handleBlur = (event: FocusEvent<HTMLElement>) => {
     // Moving between controls inside the carousel must not briefly restart its timer.
@@ -100,6 +119,9 @@ export function HeroCarousel({
           aria-roledescription="slide"
           className="hero__slide"
           id={slideId}
+          onClick={(event) => {
+            handlePassiveSlideClick(event, activeItem.id, onOpen);
+          }}
           role="group"
         >
           <div className="media-placeholder" />
@@ -136,6 +158,7 @@ export function HeroCarousel({
               </a>
               <a
                 className="pill-button pill-button--secondary pill-button--hero"
+                data-hero-detail-link
                 href={activityHash(activeItem.id)}
                 onClick={(event) => {
                   handleActivityLinkClick(event, activeItem.id, onOpen);
@@ -147,32 +170,50 @@ export function HeroCarousel({
           </div>
         </article>
       </div>
-      <nav aria-label="Choose featured activity" className="hero-pills">
+      {items.length > 1 && !reducedMotion && (
+        <div aria-hidden="true" className="hero__progress">
+          <span
+            className="hero__progress-fill"
+            key={`${activeItem.id}:${String(cycleDurationMs)}`}
+            onAnimationEnd={() => {
+              // The visual fill is the autoplay clock, so the slide changes exactly at 100%.
+              if (!rotationPaused) {
+                onActiveIndexChange((normalizedIndex + 1) % items.length);
+              }
+            }}
+            style={{
+              animationDuration: `${String(cycleDurationMs)}ms`,
+              animationPlayState: rotationPaused ? 'paused' : 'running',
+            }}
+          />
+        </div>
+      )}
+      <nav
+        aria-describedby={items.length > 1 ? paginationInstructionsId : undefined}
+        aria-label="Choose featured activity"
+        className="hero-pills"
+      >
+        {items.length > 1 && (
+          <span className="visually-hidden" id={paginationInstructionsId}>
+            Choosing a featured activity stops automatic rotation.
+          </span>
+        )}
         {items.map((item, index) => (
           <button
             aria-controls={slideId}
             aria-current={index === normalizedIndex ? 'true' : undefined}
             className="hero-pills__button"
             key={item.id}
-            onClick={() => onActiveIndexChange(index)}
+            onClick={() => {
+              // A deliberate slide choice ends autoplay, making pagination the only stop control.
+              setNavigationPaused(true);
+              onActiveIndexChange(index);
+            }}
             type="button"
           >
             {item.name}
           </button>
         ))}
-        {items.length > 1 && (
-          <button
-            aria-pressed={manuallyPaused || reducedMotion}
-            className="hero-pills__button"
-            disabled={reducedMotion}
-            onClick={() => setManuallyPaused((paused) => !paused)}
-            type="button"
-          >
-            {reducedMotion
-              ? 'Slideshow paused'
-              : manuallyPaused ? 'Resume slideshow' : 'Pause slideshow'}
-          </button>
-        )}
       </nav>
     </section>
   );

@@ -14,15 +14,24 @@ npm run dev
 
 Use `npm run build && npm run preview` for a production-output check. A plain file server pointed at `src/` is not a valid development path.
 
+## Arrival countdown
+
+The arrival bar counts Dubai calendar dates, not completed 24-hour periods. `ARRIVAL_DATE_KEY` and `TRIP_TIME_ZONE` in `src/config/site.ts` are therefore passed separately into the countdown domain rule: Thursday through Sunday reads `3 days until I land` throughout Thursday in Dubai, Saturday reads `1 day until I land`, and Sunday reads `I land today` regardless of the viewer's browser timezone. The trip only records a landing date, not a scheduled time, so do not reintroduce hour-level claims or imply that arrival has happened partway through Sunday. Monday begins `I'm here — day 2`.
+
+`src/hooks/useCountdown.ts` refreshes the label every 30 seconds so a Dubai midnight transition appears without a reload. Tests must include a non-midnight Thursday instant and a UTC instant on either side of Dubai midnight; exact-midnight-only cases will not catch elapsed-duration regressions.
+
 ## Hero carousel
 
 - Exactly one of the six featured activities is rendered as the active slide.
 - The lead image is decorative because the activity name and description are adjacent.
+- Clicking or tapping any passive image, shade, or copy surface opens the active activity sheet. Save and the two detail links keep their independent native behavior; the wrapper itself is not a button because it contains interactive descendants.
 - Pagination uses full activity names and reports the selected control through `aria-current`.
-- Automatic rotation runs every seven seconds only when at least two slides exist.
-- Rotation pauses while the pointer or keyboard focus is inside the carousel, while a dialog is open, after the visitor chooses Pause, and whenever reduced motion is requested.
-- Manual slide selection does not permanently disable rotation; Pause/Resume is the explicit persistent control.
+- A thin visual-only progress track sits between the image and pagination. Its fill is the autoplay clock: completing the seven-second animation advances the slide.
+- Automatic rotation runs only when at least two slides exist. The progress animation pauses at its current position while the pointer or keyboard focus is inside the carousel or while a dialog is open, then resumes the same cycle.
+- Reduced-motion visitors receive neither automatic rotation nor the animated progress track; the manual selectors remain available.
+- Choosing any pagination item permanently stops autoplay for the current page. Choosing the active item freezes the current fill; choosing another slide remounts its fill at zero. There is no separate Pause/Resume control, and the pagination navigation carries a screen-reader instruction that explains its stop behavior.
 - Hero Save is a true toggle with an activity-specific accessible name and `aria-pressed`.
+- A passive pointer opening focuses the existing More link before opening so modal dismissal restores a meaningful hero control without adding another tab stop.
 
 ## Chapter navigation
 
@@ -84,17 +93,18 @@ Interactive controls use a shared high-contrast `:focus-visible` ring. Do not su
 
 Check at 390×844, 999×800, 1000×800, and 1440×900:
 
-1. Confirm six hero slides, Pause/Resume behavior, interaction pause, and reduced-motion pause.
-2. Click passive surfaces in all standard, dated, and ahead card treatments; confirm the correct sheet opens at photo 1.
-3. Click Save and every external-action shape; confirm they do not open a sheet.
-4. Exercise chapter selection, fold/open all, Escape menu dismissal, and the book-ahead filter.
-5. Confirm the 999/1000 px boundary changes from rounded bottom sheet to full-viewport details without horizontal overflow.
-6. Click the left, center, and right of the gallery image; each click should advance exactly once.
-7. Advance the six-image gallery through its last photo, confirm wrap, then jump backward and forward with pills.
-8. Confirm gallery Save does not advance; test desktop X, Escape, backdrop, mobile Close, initial focus, scroll lock, and trigger-focus restoration.
-9. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify honest Copy success/failure and capability-gated Share at every width.
-10. Check keyboard navigation, visible focus, console output, final image loads, and centered crops.
-11. Paste `#animals` and `#activity-rasalkhor` into a fresh tab. Verify the owning chapter, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
+1. Confirm six hero slides and one complete seven-second progress/rotation cycle. Verify hover/focus/dialog freeze-and-resume, permanent stop after choosing both the active and a different pagination item, no separate Pause/Resume control, and no autoplay/progress under reduced motion.
+2. Click the hero image, shade, title, and blurb; confirm each opens the active sheet once. Confirm Save, CTA, More, and pagination do not trigger the passive slide action and that closing a passive-opened sheet restores the More link.
+3. Click passive surfaces in all standard, dated, and ahead card treatments; confirm the correct sheet opens at photo 1.
+4. Click Save and every external-action shape; confirm they do not open a sheet.
+5. Exercise chapter selection, fold/open all, Escape menu dismissal, and the book-ahead filter.
+6. Confirm the 999/1000 px boundary changes from rounded bottom sheet to full-viewport details without horizontal overflow.
+7. Click the left, center, and right of the gallery image; each click should advance exactly once.
+8. Advance the six-image gallery through its last photo, confirm wrap, then jump backward and forward with pills.
+9. Confirm gallery Save does not advance; test desktop X, Escape, backdrop, mobile Close, initial focus, scroll lock, and trigger-focus restoration.
+10. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify honest Copy success/failure and capability-gated Share at every width.
+11. Check keyboard navigation, visible focus, console output, final image loads, and centered crops.
+12. Paste `#animals` and `#activity-rasalkhor` into a fresh tab. Verify the owning chapter, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
 
 Finish with:
 
