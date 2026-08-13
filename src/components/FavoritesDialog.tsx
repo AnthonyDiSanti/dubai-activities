@@ -2,13 +2,19 @@ import { useId, useMemo, useState, type MouseEvent } from 'react';
 
 import { copyText } from '../browser/copyText';
 import { activityPhotoUrl, type Activity, type Chapter } from '../domain/activity';
-import { createFavoriteSharePayload, formatFavoriteMessage } from '../domain/favorites';
+import { activityHash } from '../domain/deepLinks';
+import {
+  createFavoriteSharePayload,
+  formatFavoriteMessage,
+  groupFavoriteActivities,
+} from '../domain/favorites';
 import { Modal } from './Modal';
 
 export type FavoritesDialogProps = {
   readonly chapters: readonly Chapter[];
   readonly favorites: readonly Activity[];
   readonly onClose: () => void;
+  readonly onOpenActivity: (activityId: Activity['id']) => void;
   readonly onToggleFavorite: (activityId: Activity['id']) => void;
 };
 
@@ -32,10 +38,136 @@ function isShareCancellation(error: unknown): boolean {
   return error instanceof Error && error.name === 'AbortError';
 }
 
+type FavoriteRowProps = {
+  readonly chapterName: string;
+  readonly favorite: Activity;
+  readonly kind: 'book-ahead' | 'dated' | 'other';
+  readonly onOpenActivity: FavoritesDialogProps['onOpenActivity'];
+  readonly onToggleFavorite: FavoritesDialogProps['onToggleFavorite'];
+};
+
+function FavoriteRow({
+  chapterName,
+  favorite,
+  kind,
+  onOpenActivity,
+  onToggleFavorite,
+}: FavoriteRowProps) {
+  const detail = kind === 'dated'
+    ? favorite.when
+    : favorite.ahead ?? favorite.where;
+
+  return (
+    <div className={`favorite-row favorite-row--${kind}`}>
+      <a
+        aria-label={`Open details for ${favorite.name}`}
+        className="favorite-row__open"
+        href={activityHash(favorite.id)}
+        onClick={(event) => {
+          // Keep copied links and new-tab gestures native; ordinary activation opens in-app.
+          if (
+            event.button !== 0
+            || event.metaKey
+            || event.ctrlKey
+            || event.shiftKey
+            || event.altKey
+          ) return;
+          event.preventDefault();
+          onOpenActivity(favorite.id);
+        }}
+      >
+        {favorite.dated ? (
+          <time
+            aria-label={`${favorite.dated.w} ${favorite.dated.d} ${favorite.dated.m} ${favorite.dated.on.slice(0, 4)}`}
+            className="favorite-row__date"
+            dateTime={favorite.dated.on}
+          >
+            <span className="favorite-row__date-weekday">{favorite.dated.w}</span>
+            <span className="favorite-row__date-day">{favorite.dated.d}</span>
+            <span className="favorite-row__date-month">{favorite.dated.m}</span>
+          </time>
+        ) : (
+          <span className="favorite-row__thumb">
+            <img alt="" className="media-fill" src={activityPhotoUrl(favorite)} />
+          </span>
+        )}
+        <span className="favorite-row__copy">
+          <span className="favorite-row__name">{favorite.name}</span>
+          <span className="favorite-row__chapter">{chapterName}</span>
+          <span className="favorite-row__detail">{detail}</span>
+        </span>
+      </a>
+      <button
+        aria-label={`Remove ${favorite.name} from favorites`}
+        className="favorite-row__remove"
+        onClick={(event: MouseEvent<HTMLButtonElement>) => {
+          event.stopPropagation();
+          onToggleFavorite(favorite.id);
+        }}
+        type="button"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+  );
+}
+
+type FavoriteGroupProps = {
+  readonly chapterNames: ReadonlyMap<Activity['ch'], string>;
+  readonly favorites: readonly Activity[];
+  readonly headingId: string;
+  readonly kind: FavoriteRowProps['kind'];
+  readonly onOpenActivity: FavoritesDialogProps['onOpenActivity'];
+  readonly onToggleFavorite: FavoritesDialogProps['onToggleFavorite'];
+  readonly showHeading: boolean;
+  readonly title: string;
+};
+
+function FavoriteGroup({
+  chapterNames,
+  favorites,
+  headingId,
+  kind,
+  onOpenActivity,
+  onToggleFavorite,
+  showHeading,
+  title,
+}: FavoriteGroupProps) {
+  if (favorites.length === 0) return null;
+
+  return (
+    <section
+      aria-label={showHeading ? undefined : title}
+      aria-labelledby={showHeading ? headingId : undefined}
+      className={`favorites-group favorites-group--${kind}`}
+    >
+      {showHeading && (
+        <div className="favorites-group__heading">
+          <h3 id={headingId}>{title}</h3>
+          <span aria-label={`${String(favorites.length)} saved`}>{favorites.length}</span>
+        </div>
+      )}
+      <div className="favorites-group__items">
+        {favorites.map((favorite) => (
+          <FavoriteRow
+            chapterName={chapterNames.get(favorite.ch) ?? ''}
+            favorite={favorite}
+            key={favorite.id}
+            kind={kind}
+            onOpenActivity={onOpenActivity}
+            onToggleFavorite={onToggleFavorite}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function FavoritesDialog({
   chapters,
   favorites,
   onClose,
+  onOpenActivity,
   onToggleFavorite,
 }: FavoritesDialogProps) {
   const titleId = useId();
@@ -49,6 +181,17 @@ export function FavoritesDialog({
     () => new Map(chapters.map((chapter) => [chapter.key, chapter.name])),
     [chapters],
   );
+  const groupedFavorites = useMemo(
+    () => groupFavoriteActivities(favorites),
+    [favorites],
+  );
+  const visibleGroupCount = [
+    groupedFavorites.dated,
+    groupedFavorites.bookAhead,
+    groupedFavorites.other,
+  ].filter((group) => group.length > 0).length;
+  // Group labels add orientation only when there is another category to distinguish.
+  const showGroupHeadings = visibleGroupCount > 1;
   const activitiesById = useMemo(
     () => new Map(favorites.map((activity) => [activity.id, activity])),
     [favorites],
@@ -122,28 +265,40 @@ export function FavoritesDialog({
             : 'Saved on this phone only.'}
         </p>
 
-        {favorites.map((favorite) => (
-          <div className="favorite-row" key={favorite.id}>
-            <div className="favorite-row__thumb">
-              <img alt="" className="media-fill" src={activityPhotoUrl(favorite)} />
-            </div>
-            <div className="favorite-row__copy">
-              <p className="favorite-row__name">{favorite.name}</p>
-              <p className="favorite-row__chapter">{chapterNames.get(favorite.ch)}</p>
-            </div>
-            <button
-              aria-label={`Remove ${favorite.name} from favorites`}
-              className="favorite-row__remove"
-              onClick={(event: MouseEvent<HTMLButtonElement>) => {
-                event.stopPropagation();
-                onToggleFavorite(favorite.id);
-              }}
-              type="button"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+        {favorites.length > 0 && (
+          <div className="favorites-sheet__groups">
+            <FavoriteGroup
+              chapterNames={chapterNames}
+              favorites={groupedFavorites.dated}
+              headingId={`${titleId}-dated`}
+              kind="dated"
+              onOpenActivity={onOpenActivity}
+              onToggleFavorite={onToggleFavorite}
+              showHeading={showGroupHeadings}
+              title="Dated events"
+            />
+            <FavoriteGroup
+              chapterNames={chapterNames}
+              favorites={groupedFavorites.bookAhead}
+              headingId={`${titleId}-ahead`}
+              kind="book-ahead"
+              onOpenActivity={onOpenActivity}
+              onToggleFavorite={onToggleFavorite}
+              showHeading={showGroupHeadings}
+              title="Book ahead"
+            />
+            <FavoriteGroup
+              chapterNames={chapterNames}
+              favorites={groupedFavorites.other}
+              headingId={`${titleId}-other`}
+              kind="other"
+              onOpenActivity={onOpenActivity}
+              onToggleFavorite={onToggleFavorite}
+              showHeading={showGroupHeadings}
+              title="Everything else"
+            />
           </div>
-        ))}
+        )}
 
         {favorites.length === 0 && (
           <p className="favorites-sheet__empty">

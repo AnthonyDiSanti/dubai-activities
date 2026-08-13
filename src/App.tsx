@@ -284,6 +284,7 @@ export function App() {
           chapters={CHAPTERS}
           favorites={favoriteActivities}
           onClose={() => setFavoritesOpen(false)}
+          onOpenActivity={openActivity}
           onToggleFavorite={toggleFavorite}
         />
       )}

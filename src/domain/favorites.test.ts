@@ -4,6 +4,7 @@ import type { Activity } from './activity';
 import {
   createFavoriteSharePayload,
   formatFavoriteMessage,
+  groupFavoriteActivities,
   parseSharedFavoriteIds,
   sanitizeFavoriteIds,
 } from './favorites';
@@ -24,6 +25,49 @@ describe('favorite ID validation', () => {
     expect(parseSharedFavoriteIds('#list=teamlab%2Cunknown%2Cnest', knownIds)).toEqual([
       'teamlab',
       'nest',
+    ]);
+  });
+});
+
+describe('favorite planning groups', () => {
+  it('sorts dated activities chronologically and keeps the other groups in save order', () => {
+    const activities: Activity[] = [
+      {
+        id: 'ordinary-first', ch: 'quiet', name: 'Ordinary first', blurb: 'A.', when: 'Daily',
+        where: 'Dubai', cta: 'Go', photos: 1,
+      },
+      {
+        id: 'later-date', ch: 'loud', name: 'Later date', blurb: 'B.', when: 'Night',
+        where: 'Dubai', dated: { d: '24', m: 'OCT', w: 'SAT', on: '2026-10-24' },
+        ahead: 'Tickets sell out', cta: 'Book', photos: 1,
+      },
+      {
+        id: 'ahead-first', ch: 'quiet', name: 'Ahead first', blurb: 'C.', when: 'Daily',
+        where: 'Dubai', ahead: 'Reserve first', cta: 'Book', photos: 1,
+      },
+      {
+        id: 'earlier-date', ch: 'takehome', name: 'Earlier date', blurb: 'D.', when: 'Evening',
+        where: 'Dubai', dated: { d: '29', m: 'AUG', w: 'SAT', on: '2026-08-29' },
+        cta: 'Join', photos: 1,
+      },
+      {
+        id: 'ordinary-second', ch: 'strange', name: 'Ordinary second', blurb: 'E.', when: 'Daily',
+        where: 'Dubai', cta: 'Go', photos: 1,
+      },
+      {
+        id: 'ahead-second', ch: 'animals', name: 'Ahead second', blurb: 'F.', when: 'Daily',
+        where: 'Dubai', ahead: 'Message first', cta: 'Ask', photos: 1,
+      },
+    ];
+
+    const grouped = groupFavoriteActivities(activities);
+
+    expect(grouped.dated.map(({ id }) => id)).toEqual(['earlier-date', 'later-date']);
+    expect(grouped.bookAhead.map(({ id }) => id)).toEqual(['ahead-first', 'ahead-second']);
+    expect(grouped.other.map(({ id }) => id)).toEqual(['ordinary-first', 'ordinary-second']);
+    expect(activities.map(({ id }) => id)).toEqual([
+      'ordinary-first', 'later-date', 'ahead-first', 'earlier-date',
+      'ordinary-second', 'ahead-second',
     ]);
   });
 });

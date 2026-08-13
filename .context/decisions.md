@@ -4,6 +4,13 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-13 — Organize Favorites by planning urgency
+- Decider: Anthony and Codex (model: gpt-5.2-codex)
+- Decision: Divide the favorites sheet into Dated events, Book ahead, and Everything else. Give dated status precedence, sort those events chronologically, preserve save order elsewhere, and make each saved item a native detail link while keeping removal independent.
+- Rationale: A flat saved list captures interest but does little to help turn it into a plan. Calendar commitments and scarce reservations need to surface before flexible ideas, and direct sheet access removes the need to hunt for an activity again.
+- Alternatives considered: Keep one list with inline badges; group by chapter; sort every group editorially; duplicate dated-and-ahead activities in two sections.
+- Consequences / follow-ups: Dated favorites appear exactly once with a semantic date tile. Empty groups are omitted, and the lone remaining visible group header is suppressed when only one category is populated. Semantic region labels remain available, the copied/shared favorite order remains unchanged, and modified clicks retain native link behavior.
+
 ## 2026-08-13 — Credit every deployed photo without making permission a release gate
 - Decider: Anthony
 - Decision: Keep the private personal guide's existing photo set, publish a lightweight footer credits sheet, and expose matching compact JSON plus Schema.org JSON-LD. Record the exact creator and license where available; otherwise credit the identified creator or recorded source without implying permission or endorsement.

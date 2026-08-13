@@ -9,6 +9,10 @@ Task IDs are ULIDs; keep titles short and human-readable.
 - None
 
 ## Completed (recent; keep last ~10)
+- id: 01K2Q9M4R7V1N5T8C3H6X0ZPFD — title: Organize saved activities — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
+  - Goal: Turn the Favorites sheet into a more useful planning view without changing persistence or sharing contracts.
+  - Result: Added chronological dated events with semantic date tiles, separate book-ahead and flexible groups, save-order preservation, native detail links, independent removal, and responsive panel styling. Group headers appear only when at least two categories are populated. Passed the 173-test full gate, deployed 432 objects, completed invalidation `I7HKUQGJBQIWLAFLOVOPP8B7HT`, and verified both single- and multi-category states on production.
+  - Links: `src/domain/favorites.ts`, `src/components/FavoritesDialog.tsx`, `docs/site-interactions.md`
 - id: 01K2Q4F8N6M1R9T3V7C5H0XZPD — title: Publish complete photo attribution — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
   - Goal: Credit every selected photo visibly and in machine-readable form without turning reuse permission into a deployment gate for the private guide.
   - Result: Added a reviewed 403-row attribution ledger, exact Commons and stock-license metadata, honest creator/source fallbacks, generated compact JSON and JSON-LD, a lazy `#credits` footer sheet, structural audits, 169-test coverage, and responsive rendered QA. Deployed the 432-object build, completed invalidation `I23VTL008EGCX8UOQ0TL261VK3`, and verified byte-identical live data plus mobile/desktop interaction health.
@@ -36,7 +40,7 @@ Task IDs are ULIDs; keep titles short and human-readable.
 - id: 01K2JDK9Q6N3V8R1T5M7C4XZHF — title: Deploy the React guide — owner: Codex (GPT-5) — status: done — last update: 2026-08-11
   - Goal: Publish the complete uncommitted React migration to the existing S3/CloudFront production target with a recoverable and verified release.
   - Result: Preserved all 404 prior objects in a temporary rollback snapshot, passed the 143-test application and 431-row photo gates, deployed 430 files, removed 12 intentional stale objects, completed CloudFront invalidation `I2XIJ6R3B2YECOISFTUA7G0RMX`, and verified the live root plus chapter/activity deep links.
-  - Follow-up: Resolve the still-open photo-rights/credits task and run native sharing on a real phone; the deployment instruction accepted release timing risk but did not clear third-party rights.
+  - Follow-up: Superseded by the completed attribution standard and populated real-phone share validation; permission remains intentionally non-blocking for this private guide.
   - Links: `docs/architecture.md`, `.context/knowledge/minisite-deployment.md`, `https://dubai.anthonydisanti.com/`
 - id: 01K2J9Q6N3V8R1T5M7C4X0ZHFD — title: Add guide deep links — owner: Codex (GPT-5) — status: done — last update: 2026-08-11
   - Goal: Make every chapter and activity sheet directly linkable without changing the static S3 hosting model or breaking shared favorites.
@@ -50,7 +54,7 @@ Task IDs are ULIDs; keep titles short and human-readable.
 - id: 01K2G7M4N8Q1R5T9V3X6Z0C2HD — title: Publish animal chapter — owner: Codex (GPT-5) — status: done — last update: 2026-08-11
   - Goal: Turn Addendum 3 into a selective, final chapter with robust research, candid caveats, differentiated photography, and the existing ordering/treatment rules.
   - Result: Published nine new activities as the 12th and final `Fur, feathers and scales` chapter; added structured facts/advisories and 36 verified JPEGs; promoted Ras Al Khor into the hero; reached 126 activities and 411 activity JPEGs; and passed automated plus 390/1440 px rendered QA.
-  - Follow-up: Clear photo reuse rights and deployed Creative Commons attribution before public launch; complete the native-share smoke test on a real phone.
+  - Follow-up: Superseded by the deployed attribution catalog and completed real-phone share validation; permission remains intentionally non-blocking for this private guide.
   - Links: `src/data/activities.ts`, `docs/content-editorial.md`, `docs/image-manifest.csv`, `activities/Dubai Activities Addendum 3 - Wildlife.md`
 - id: 01K26TC4V7N9Q2M5R8H1J3X6ZD — title: Expand chapter header toggles — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
   - Goal: Let the full chapter heading surface fold or open its section instead of requiring a precise click on the arrow.
@@ -71,7 +75,7 @@ Task IDs are ULIDs; keep titles short and human-readable.
   - Links: `src/data/activities.ts`, `src/domain/activity.ts`, `scripts/audit-activity-content.ts`, `docs/content-editorial.md`
 - id: 01K22M3W6R9B4N8Q5T1Y7C2HXF — title: Gate favorites sharing by capability — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
   - Goal: Preserve native sharing wherever the browser supports the exact payload, using a recognizable control rather than an ambiguous arrow.
-  - Result: Kept Copy as the primary action, added a capability-gated curved-arrow share button at every viewport, retained shared-link restoration, and verified mobile and desktop layouts.
+  - Result: Kept Copy as the primary action, added a capability-gated curved-arrow share button at every viewport, retained shared-link restoration, verified mobile and desktop layouts, and completed a populated real-phone share-and-reopen test on 2026-08-13.
   - Links: `src/components/FavoritesDialog.tsx`, `src/domain/favorites.ts`, `docs/site-interactions.md`
 - id: 01K22JKR8E1F7XQ3P4M9V6D2AZ — title: Improve activity sheet interactions — owner: Codex (GPT-5) — status: done — last update: 2026-08-07
   - Goal: Open sheets from the full non-action card surface and make the gallery larger, clearer, and easier to dismiss.

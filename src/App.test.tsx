@@ -224,9 +224,15 @@ describe('App', () => {
     expect(window.location.hash).toBe('');
 
     fireEvent.click(screen.getByRole('button', { name: 'Open favorites, 1 saved' }));
-    expect(screen.getByRole('dialog', { name: 'The ones you want' })).toHaveTextContent(
-      'The Nest by Nara',
+    const favoritesDialog = screen.getByRole('dialog', { name: 'The ones you want' });
+    expect(favoritesDialog).toHaveTextContent('The Nest by Nara');
+
+    fireEvent.click(
+      within(favoritesDialog).getByRole('link', { name: 'Open details for The Nest by Nara' }),
     );
+    expect(screen.queryByRole('dialog', { name: 'The ones you want' })).not.toBeInTheDocument();
+    expect(screen.getByRole('dialog', { name: 'The Nest by Nara' })).toBeInTheDocument();
+    expect(window.location.hash).toBe('#activity-nest');
   });
 
   it('filters the guide to book-ahead activities and removes empty chapters', () => {

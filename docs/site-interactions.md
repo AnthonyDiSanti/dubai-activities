@@ -91,9 +91,15 @@ Credits are deliberately complete and flat rather than searchable or collapsed. 
 
 Favorites use the existing `naima.favs.v1` storage key. Both stored and shared IDs are validated against current activity IDs, deduplicated, and kept in insertion order. A present `#list=` hash takes precedence over local state and the validated result becomes the local list; malformed storage falls back to an empty list instead of breaking render.
 
+The favorites sheet turns the saved list into three mutually exclusive planning groups. Dated events come first and sort globally by their ISO date key, including a visible semantic date tile. Undated activities with `ahead` guidance follow in save order, then every remaining favorite in save order. A dated activity appears only in Dated events even when it also needs advance booking. Empty groups are omitted, and the remaining group's visible heading is also omitted when every favorite falls into that one category; its semantic region label remains available to assistive technology.
+
+Each saved row is a native `#activity-<id>` detail link across its thumbnail/date and copy area. Ordinary activation closes Favorites and opens that activity sheet; copied links and modified/new-tab activation remain native. The separate remove button never opens details. Desktop uses a contained panel while mobile retains the bottom sheet, and copy/share actions stay after the organized list.
+
 **Copy as a message** copies a human-readable list of activity names and chapters. Success and failure have different labels and are announced through a polite status region; clipboard absence or rejection must never claim success.
 
 Browsers that support the Web Share API for the exact payload receive the curved-arrow **Share favorites** control at every viewport. Its URL contains `#list=<activity-ids>` and preserves the current path and query. Unsupported browsers remain copy-only. Treat native share cancellation as expected; automated QA should stub the API rather than invoke the operating-system sheet.
+
+The current production payload and origin passed a populated real-phone share-and-reopen test on 13 August 2026. Repeat that manual handoff when the payload structure or hosting origin changes.
 
 Interactive controls use a shared high-contrast `:focus-visible` ring. Do not suppress it when adding a new card action, navigation control, or dialog button.
 
@@ -110,7 +116,7 @@ Check at 390×844, 999×800, 1000×800, and 1440×900:
 7. Click the left, center, and right of the gallery image; each click should advance exactly once.
 8. Advance the six-image gallery through its last photo, confirm wrap, then jump backward and forward with pills.
 9. Confirm gallery Save does not advance; test desktop X, Escape, backdrop, mobile Close, initial focus, scroll lock, and trigger-focus restoration.
-10. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify honest Copy success/failure and capability-gated Share at every width.
+10. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify dated/book-ahead/everything-else grouping, chronological date order, native row links, independent removal, honest Copy success/failure, and capability-gated Share at every width.
 11. Check keyboard navigation, visible focus, console output, final image loads, and centered crops.
 12. Paste `#animals`, `#activity-rasalkhor`, and `#credits` into a fresh tab. Verify the owning chapter, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
 13. Open Photo credits from the footer. Confirm the full 403-asset catalog is readable, external creator/source/license links are present, the loading/error states do not affect the guide, the sticky X and mobile bottom Close work, and focus returns to the footer link.
@@ -123,4 +129,4 @@ npm run audit:photos
 npm run audit:attributions
 ```
 
-Exercise one populated native-share handoff manually on a real phone before deployment when the payload or hosting origin changes.
+Repeat the populated real-phone native-share handoff before deployment whenever the payload or hosting origin changes.

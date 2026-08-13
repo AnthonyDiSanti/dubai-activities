@@ -1,5 +1,56 @@
 /* Desktop navigation and the detail gallery expand without viewport state in JS. */
 @media (min-width: 1000px) {
+  .favorites-sheet {
+    right: 32px;
+    bottom: 32px;
+    left: auto;
+    width: min(720px, calc(100vw - 64px));
+    max-height: calc(100vh - 64px);
+    padding: 24px 28px 28px;
+    border-radius: 22px;
+  }
+
+  .sheet-handle--favorites {
+    display: none;
+  }
+
+  .favorites-sheet__close {
+    top: 22px;
+    right: 26px;
+  }
+
+  .favorites-sheet__title {
+    font-size: 34px;
+  }
+
+  .favorites-sheet__note {
+    margin-bottom: 26px;
+  }
+
+  .favorites-sheet__groups {
+    gap: 32px;
+  }
+
+  .favorite-row__open {
+    grid-template-columns: 62px minmax(0, 1fr);
+    padding: 10px 0;
+  }
+
+  .favorite-row__thumb,
+  .favorite-row__date {
+    width: 62px;
+    height: 62px;
+  }
+
+  .favorite-row__name {
+    font-size: 14px;
+  }
+
+  .favorites-sheet__actions {
+    bottom: -28px;
+    padding-bottom: 28px;
+  }
+
   .credits-sheet {
     top: 0;
     border-radius: 0;

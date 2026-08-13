@@ -5,6 +5,37 @@ export type SharePayload = {
   readonly url: string;
 };
 
+export type FavoriteActivityGroups = {
+  readonly dated: readonly Activity[];
+  readonly bookAhead: readonly Activity[];
+  readonly other: readonly Activity[];
+};
+
+/** Separate planning-sensitive favorites while retaining meaningful source order. */
+export function groupFavoriteActivities(
+  favorites: readonly Activity[],
+): FavoriteActivityGroups {
+  const dated = favorites
+    .map((activity, sourceIndex) => ({ activity, sourceIndex }))
+    .filter(
+      (entry): entry is { activity: Activity & { dated: NonNullable<Activity['dated']> }; sourceIndex: number } =>
+        Boolean(entry.activity.dated),
+    )
+    .sort(
+      (left, right) =>
+        left.activity.dated.on.localeCompare(right.activity.dated.on)
+        || left.sourceIndex - right.sourceIndex,
+    )
+    .map(({ activity }) => activity);
+
+  return {
+    dated,
+    // Dated activities appear once in the calendar group even when booking is also urgent.
+    bookAhead: favorites.filter((activity) => !activity.dated && Boolean(activity.ahead)),
+    other: favorites.filter((activity) => !activity.dated && !activity.ahead),
+  };
+}
+
 /** Remove unknown and duplicate IDs before favorites can enter application state. */
 export function sanitizeFavoriteIds(
   candidateIds: readonly unknown[],
