@@ -16,7 +16,7 @@ Use `npm run build && npm run preview` for a production-output check. A plain fi
 
 ## Arrival countdown
 
-The arrival bar counts Dubai calendar dates, not completed 24-hour periods. `ARRIVAL_DATE_KEY` and `TRIP_TIME_ZONE` in `src/config/site.ts` are therefore passed separately into the countdown domain rule: Thursday through Sunday reads `3 days until I land` throughout Thursday in Dubai, Saturday reads `1 day until I land`, and Sunday reads `I land today` regardless of the viewer's browser timezone. The trip only records a landing date, not a scheduled time, so do not reintroduce hour-level claims or imply that arrival has happened partway through Sunday. Monday begins `I'm here — day 2`.
+The arrival bar counts Dubai calendar dates, not completed 24-hour periods. `ARRIVAL_DATE_KEY` and `TRIP_TIME_ZONE` in `src/config/site.ts` are therefore passed separately into the countdown domain rule: Thursday through Sunday reads `3 days until I land` throughout Thursday in Dubai, Saturday reads `1 day until I land`, and Sunday reads `I land today` regardless of the viewer's browser timezone. The trip only records a landing date, not a scheduled time, so do not reintroduce hour-level claims or imply that arrival has happened partway through Sunday. The next Dubai date shows `Tonight, it's you + me` and counts as trip day 1; the following date begins the visible numbered sequence at day 2.
 
 `src/hooks/useCountdown.ts` refreshes the label every 30 seconds so a Dubai midnight transition appears without a reload. Tests must include a non-midnight Thursday instant and a UTC instant on either side of Dubai midnight; exact-midnight-only cases will not catch elapsed-duration regressions.
 

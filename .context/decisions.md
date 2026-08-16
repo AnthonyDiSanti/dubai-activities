@@ -30,7 +30,7 @@ Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` fo
 - Decision: Calculate the arrival label from the difference between Dubai calendar dates rather than flooring elapsed 24-hour blocks. Keep the configured landing target date-only until an actual scheduled time is known.
 - Rationale: Thursday to Sunday is three ordinary calendar days even when fewer than 72 elapsed hours remain. The earlier duration calculation produced “2 days” later on Thursday and its midnight arrival timestamp invented hour-level certainty the source data does not contain.
 - Alternatives considered: Change `Math.floor` to `Math.ceil`; retain a fabricated midnight arrival and switch to hours on Saturday; use the visitor's local date fields.
-- Consequences / follow-ups: `Asia/Dubai` is an explicit configuration boundary. Saturday reads “1 day until I land,” Sunday stays “I land today,” and Monday becomes day 2. If an exact flight arrival time is later supplied, model it separately rather than encoding it as an assumed midnight.
+- Consequences / follow-ups: `Asia/Dubai` is an explicit configuration boundary. Saturday reads “1 day until I land,” Sunday stays “I land today,” Monday uses “Tonight, it's you + me” as trip day 1, and Tuesday begins the visible numbered sequence at day 2. If an exact flight arrival time is later supplied, model it separately rather than encoding it as an assumed midnight.
 
 ## 2026-08-13 — Make the hero surface and timer visible
 - Decider: Anthony

@@ -57,5 +57,7 @@ export function formatArrivalCountdown(
   if (days > 1) return `${String(days)} days until I land`;
   if (days === 1) return '1 day until I land';
   if (days === 0) return 'I land today';
-  return `I'm here — day ${String(Math.abs(days) + 1)}`;
+  // The first full Dubai day gets one personal message before trip-day numbering resumes.
+  if (days === -1) return "Tonight, it's you + me";
+  return `I'm here — day ${String(Math.abs(days))}`;
 }

@@ -29,7 +29,7 @@ Task IDs are ULIDs; keep titles short and human-readable.
   - Links: `src/components/HeroCarousel.tsx`, `src/components/HeroCarousel.test.tsx`, `docs/site-interactions.md`
 - id: 01K2P9C4V7N1R5T8M3Q6H0XZFD — title: Correct arrival-day countdown — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
   - Goal: Make Thursday-to-Sunday display three days instead of flooring the remaining elapsed hours to two.
-  - Result: Replaced the fabricated midnight/elapsed-duration model with Dubai calendar-date arithmetic, added date-relative/day-N copy, and covered non-midnight, equivalent-zone, Dubai-midnight, invalid-date, and live hook-update boundaries.
+  - Result: Replaced the fabricated midnight/elapsed-duration model with Dubai calendar-date arithmetic, added date-relative/day-N copy plus a one-day reunion message, and covered non-midnight, equivalent-zone, Dubai-midnight, invalid-date, and live hook-update boundaries. Deployed the 432-object build, completed invalidation `IBH9S9V4TO18DTVA2NDYIKY8QG`, and verified the current arrival-day label on production.
   - Follow-up: Keep the configuration date-only unless an exact scheduled landing time is supplied.
   - Links: `src/domain/countdown.ts`, `src/config/site.ts`, `src/hooks/useCountdown.test.tsx`, `docs/site-interactions.md`
 - id: 01K2P6V9R4M7C1T8N3Q5H0XZFD — title: Expose hero timing and sheet opening — owner: Codex (GPT-5) — status: done — last update: 2026-08-13

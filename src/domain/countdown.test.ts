@@ -13,8 +13,10 @@ describe('formatArrivalCountdown', () => {
     ['2026-08-15T23:59:59+04:00', '1 day until I land'],
     ['2026-08-16T00:00:00+04:00', 'I land today'],
     ['2026-08-16T23:59:59+04:00', 'I land today'],
-    ['2026-08-17T00:00:00+04:00', "I'm here — day 2"],
-    ['2026-08-18T00:00:00+04:00', "I'm here — day 3"],
+    ['2026-08-17T00:00:00+04:00', "Tonight, it's you + me"],
+    ['2026-08-17T23:59:59+04:00', "Tonight, it's you + me"],
+    ['2026-08-18T00:00:00+04:00', "I'm here — day 2"],
+    ['2026-08-19T00:00:00+04:00', "I'm here — day 3"],
   ])('formats %s as %s', (now, expected) => {
     expect(formatArrivalCountdown(new Date(now), ARRIVAL_DATE_KEY, TRIP_TIME_ZONE)).toBe(expected);
   });
