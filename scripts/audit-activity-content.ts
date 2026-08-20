@@ -25,7 +25,7 @@ const RESERVED_FACT_LABELS = new Set(['date', 'when', 'where', 'book ahead']);
 const RETIRED_ACTIVITY_IDS = new Set(['terrasolis', 'cyanotype', 'rawbarista']);
 const FIRST_PERSON = /\b(?:i|i['’](?:m|ve|d|ll)|me|my|mine|myself|we|we['’](?:re|ve|d|ll)|us|our|ours|ourselves|let['’]s)\b/i;
 const EXPECTED_CHAPTERS = 12;
-const EXPECTED_ACTIVITIES = 123;
+const EXPECTED_ACTIVITIES = 124;
 const EXPECTED_HEROES = 6;
 
 const errors: string[] = [];

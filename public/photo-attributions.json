@@ -7323,6 +7323,78 @@
       "creditText": "Dubai Butterfly Garden — photo 4, via Dubai Miracle Garden. Resized for web display and shown with responsive cropping."
     },
     {
+      "filename": "opa-01.jpg",
+      "activityId": "opa",
+      "activityName": "OPA Dubai",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": "OPA plate smashing",
+      "creator": {
+        "name": "Jure Ursic",
+        "type": "person",
+        "url": null
+      },
+      "source": {
+        "name": "What’s On Dubai",
+        "url": "https://whatson.ae/2023/08/dont-miss-the-next-legendary-summer-brunch-at-opa/"
+      },
+      "license": null,
+      "creditBasis": "creator_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "OPA plate smashing by Jure Ursic, via What’s On Dubai. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "opa-02.jpg",
+      "activityId": "opa",
+      "activityName": "OPA Dubai",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "OPA",
+        "url": "https://opaworld.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP and resized for responsive web display.",
+      "creditText": "OPA Dubai — photo 2, via OPA. Converted from WebP and resized for responsive web display."
+    },
+    {
+      "filename": "opa-03.jpg",
+      "activityId": "opa",
+      "activityName": "OPA Dubai",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "OPA",
+        "url": "https://opaworld.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP and resized for responsive web display.",
+      "creditText": "OPA Dubai — photo 3, via OPA. Converted from WebP and resized for responsive web display."
+    },
+    {
+      "filename": "opa-04.jpg",
+      "activityId": "opa",
+      "activityName": "OPA Dubai",
+      "chapterName": "Long dinners",
+      "slot": 4,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "OPA",
+        "url": "https://opaworld.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP and resized for responsive web display.",
+      "creditText": "OPA Dubai — photo 4, via OPA. Converted from WebP and resized for responsive web display."
+    },
+    {
       "filename": "icon-google-maps.svg",
       "activityId": null,
       "activityName": "Interface marks",

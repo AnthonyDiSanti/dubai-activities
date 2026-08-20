@@ -14,7 +14,7 @@ The root `index.html` contains metadata, `#root`, and the Vite module entry. `sr
 - `src/browser/` contains small capability adapters whose failures must be represented honestly in UI state.
 - `src/components/` owns semantic React markup and interaction composition. Activity IDs and chapter keys are the stable React keys.
 - `src/styles/` owns bundled font declarations, global tokens, the deliberately varied visual treatments, and responsive rules. The 1000 px boundary remains CSS-driven.
-- `public/photos/` owns the 401 activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
+- `public/photos/` owns the 405 activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
 - `docs/photo-attributions.csv` owns reviewed photo credits. Build-time generation emits `public/photo-attributions.json` for the UI and `public/photo-attributions.jsonld` for machine readers.
 
 Do not reintroduce a global application namespace, runtime template compiler, `new Function`, inline executable script, or a parallel entry point under `src/`. Add behavior through typed modules and cover pure rules with Vitest.

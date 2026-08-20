@@ -4,6 +4,13 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-20 — Add OPA without inventing a plate-stack promise
+- Decider: Anthony and Codex (model: gpt-5.2-codex)
+- Decision: Add OPA Dubai to Long dinners as a book-ahead dinner-show activity, led by an exact plate-smashing photograph and supported by a four-image venue-specific gallery. State that plate smashing is part of the experience, but do not promise a stack size, included quantity, or add-on price that the current venue pages do not publish.
+- Rationale: OPA's current official site confirms the Fairmont Dubai restaurant, live entertainment, and plate smashing, making it a strong match for Anthony's long-standing interest. Its booking path is live, but the official sources leave the plate allocation and closing time partly ambiguous.
+- Alternatives considered: Omit OPA until the number of plates is published; present plate smashing as a guaranteed stack; place it under Odd little worlds instead of dinner experiences.
+- Consequences / follow-ups: Keep the card in Long dinners, ask about plate quantity and entertainment timing when reserving, and retain the explicit floor-only safety guidance. Recheck the venue's live schedule and plate policy before booking.
+
 ## 2026-08-13 — Organize Favorites by planning urgency
 - Decider: Anthony and Codex (model: gpt-5.2-codex)
 - Decision: Divide the favorites sheet into Dated events, Book ahead, and Everything else. Give dated status precedence, sort those events chronologically, preserve save order elsewhere, and make each saved item a native detail link while keeping removal independent.

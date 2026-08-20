@@ -67,6 +67,7 @@ SOURCE_LABELS = {
     "monster-experience.com": "Monster Experience",
     "museumofthefuture.ae": "Museum of the Future",
     "oola-lab.com": "Oo La Lab",
+    "opaworld.com": "OPA",
     "pauloakenfold.com": "Paul Oakenfold",
     "rameehotels.com": "Ramee Hotels",
     "ruyarestaurants.com": "Rüya",

@@ -9,6 +9,11 @@ Task IDs are ULIDs; keep titles short and human-readable.
 - None
 
 ## Completed (recent; keep last ~10)
+- id: 01K35R8M4C7V2N9Q5T1H3J6XZD — title: Add OPA plate-smashing dinner — owner: Codex (GPT-5) — status: done — last update: 2026-08-20
+  - Goal: Verify the rumored Greek plate-smashing dinner and add it only if the current venue, experience, booking path, and photography hold up.
+  - Result: Confirmed OPA Dubai at Fairmont Dubai, added it to Long dinners with a direct reservation link and honest plate-allocation/timing caveats, curated four exact-venue images led by the smashing moment, added complete source/creator attribution, and passed 179 tests plus the 435-row photo and 407-row attribution gates. Deployed 436 objects, removed only the superseded JavaScript bundle, completed invalidation `I4KWEITBTS42VAXREN12WYAF89`, and verified byte-identical live assets plus all four public credit entries.
+  - Follow-up: Confirm the live entertainment time, included plate quantity, and any extra-stack price when reserving.
+  - Links: `src/data/activities.ts`, `docs/activity-planning-sources.md`, `docs/image-manifest.csv`, `docs/photo-attributions.csv`
 - id: 01K2Q9M4R7V1N5T8C3H6X0ZPFD — title: Organize saved activities — owner: Codex (GPT-5) — status: done — last update: 2026-08-13
   - Goal: Turn the Favorites sheet into a more useful planning view without changing persistence or sharing contracts.
   - Result: Added chronological dated events with semantic date tiles, separate book-ahead and flexible groups, save-order preservation, native detail links, independent removal, and responsive panel styling. Group headers appear only when at least two categories are populated. Passed the 173-test full gate, deployed 432 objects, completed invalidation `I7HKUQGJBQIWLAFLOVOPP8B7HT`, and verified both single- and multi-category states on production.

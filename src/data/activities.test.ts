@@ -16,6 +16,7 @@ const FACT_ENRICHED_IDS = [
   'moonrise',
   'ossiano',
   'dits',
+  'opa',
   'sevenpaintings',
   'thepods',
   'oolalab',
@@ -82,5 +83,18 @@ describe('activity planning content', () => {
   it('keeps unannounced seasonal openings out of the dated stream', () => {
     expect(activitiesById.get('globalvillage')?.dated).toBeUndefined();
     expect(activitiesById.get('artemarket')?.dated?.on).toBe('2026-08-29');
+  });
+
+  it('keeps OPA actionable without promising an unpublished plate stack', () => {
+    const opa = activitiesById.get('opa');
+
+    // The venue confirms plate smashing, but its current pages do not guarantee a quantity or add-on price.
+    expect(opa).toMatchObject({
+      ch: 'dinners',
+      name: 'OPA Dubai',
+      photos: 4,
+      book: 'https://www.sevenrooms.com/reservations/opadubai/website-opa-dubai',
+    });
+    expect(opa?.advisory).toMatch(/does not publish how many smashing plates/i);
   });
 });

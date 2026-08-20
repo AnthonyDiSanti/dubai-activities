@@ -119,7 +119,7 @@ Check at 390×844, 999×800, 1000×800, and 1440×900:
 10. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify dated/book-ahead/everything-else grouping, chronological date order, native row links, independent removal, honest Copy success/failure, and capability-gated Share at every width.
 11. Check keyboard navigation, visible focus, console output, final image loads, and centered crops.
 12. Paste `#animals`, `#activity-rasalkhor`, and `#credits` into a fresh tab. Verify the owning chapter, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
-13. Open Photo credits from the footer. Confirm the full 403-asset catalog is readable, external creator/source/license links are present, the loading/error states do not affect the guide, the sticky X and mobile bottom Close work, and focus returns to the footer link.
+13. Open Photo credits from the footer. Confirm the full 407-asset catalog is readable, external creator/source/license links are present, the loading/error states do not affect the guide, the sticky X and mobile bottom Close work, and focus returns to the footer link.
 
 Finish with:
 

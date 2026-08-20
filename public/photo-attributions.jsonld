@@ -4411,6 +4411,50 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/opa-01.jpg",
+      "contentUrl": "./photos/opa-01.jpg",
+      "name": "OPA plate smashing",
+      "creditText": "OPA plate smashing by Jure Ursic, via What’s On Dubai. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://whatson.ae/2023/08/dont-miss-the-next-legendary-summer-brunch-at-opa/",
+      "encodingFormat": "image/jpeg",
+      "creator": {
+        "@type": "Person",
+        "name": "Jure Ursic"
+      },
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/opa-02.jpg",
+      "contentUrl": "./photos/opa-02.jpg",
+      "name": "OPA Dubai — photo 2",
+      "creditText": "OPA Dubai — photo 2, via OPA. Converted from WebP and resized for responsive web display.",
+      "isBasedOn": "https://opaworld.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP and resized for responsive web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/opa-03.jpg",
+      "contentUrl": "./photos/opa-03.jpg",
+      "name": "OPA Dubai — photo 3",
+      "creditText": "OPA Dubai — photo 3, via OPA. Converted from WebP and resized for responsive web display.",
+      "isBasedOn": "https://opaworld.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP and resized for responsive web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/opa-04.jpg",
+      "contentUrl": "./photos/opa-04.jpg",
+      "name": "OPA Dubai — photo 4",
+      "creditText": "OPA Dubai — photo 4, via OPA. Converted from WebP and resized for responsive web display.",
+      "isBasedOn": "https://opaworld.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP and resized for responsive web display."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",
