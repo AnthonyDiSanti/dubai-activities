@@ -141,7 +141,6 @@ SOURCE_LABELS = {
     "www.theagenda.com": "The Agenda",
     "www.thenationalnews.com": "The National",
     "www.thepenthouse.co": "The Penthouse Dubai",
-    "www.thewallclimbinggym.ae": "The Wall Climbing Gym",
     "www.topchefdubai.com": "Top Chef Dubai",
     "www.travelsforstars.com": "Travels for Stars",
     "www.untold.ae": "UNTOLD Dubai",

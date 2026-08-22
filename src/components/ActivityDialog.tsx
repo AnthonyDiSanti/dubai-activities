@@ -12,6 +12,7 @@ export type ActivityDialogProps = {
   readonly activity: Activity;
   readonly fallbackFocusId?: string;
   readonly isFavorite: boolean;
+  readonly isVerified: boolean;
   readonly onClose: () => void;
   readonly onToggleFavorite: (activityId: Activity['id']) => void;
 };
@@ -25,6 +26,7 @@ export function ActivityDialog({
   activity,
   fallbackFocusId,
   isFavorite,
+  isVerified,
   onClose,
   onToggleFavorite,
 }: ActivityDialogProps) {
@@ -125,6 +127,11 @@ export function ActivityDialog({
           <p className="detail-sheet__hint">Tap or click the photo for the next picture</p>
 
           <div className="detail-sheet__copy">
+            {isVerified && (
+              <p className="detail-sheet__verified">
+                <span aria-hidden="true">✓</span> Tried &amp; liked
+              </p>
+            )}
             {activity.eyebrow && <p className="detail-sheet__eyebrow">{activity.eyebrow}</p>}
             <h2 className="detail-sheet__title" id={titleId}>{activity.name}</h2>
             <p className="detail-sheet__blurb" id={descriptionId}>{activity.blurb}</p>

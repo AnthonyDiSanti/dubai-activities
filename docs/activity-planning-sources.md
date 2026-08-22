@@ -11,6 +11,7 @@ The final animal chapter was researched as a separate addendum and retains its s
 | `terrasolis` | Remove; the Dubai chapter ended rather than pausing seasonally. | [Terra Solis](https://www.terrasolisdubai.com/) |
 | `cyanotype` | Remove; the only published session was 15 Aug 2026, before arrival. | [Tashkeel workshop](https://tashkeel.org/workshops/cyanotype-printing-zine-making) |
 | `rawbarista` | Remove; sold out with no future session published. | [RAW training catalogue](https://rawcoffeecompany.com/pages/training-courses), [course page](https://rawcoffeecompany.com/products/home-barista) |
+| `thewall` | Reject after an in-person visit; retain the outcome in the firsthand ledger rather than the active guide. | Anthony's firsthand decision, 22 Aug 2026 |
 
 ## Nights, unusual experiences, and dinners
 
@@ -74,4 +75,4 @@ The final animal chapter was researched as a separate addendum and retains its s
 
 ## Maintenance rule
 
-When a fact changes, update the card and this ledger together. A dated activity must not precede `ARRIVAL_DATE_KEY`; a closed, sold-out-without-a-future-date, or pre-arrival one-off activity should leave active data and have its selected gallery rows/files removed in lockstep. Do not turn an expired one-off into a recurring activity without a new source.
+When a fact changes, update the card and this ledger together. A dated activity must not precede `ARRIVAL_DATE_KEY`; a closed, sold-out-without-a-future-date, pre-arrival one-off, or firsthand rejection should leave active data and have its selected gallery rows/files removed in lockstep. Preserve user decisions in `src/data/archive.ts`, and do not turn an expired one-off into a recurring activity without a new source.

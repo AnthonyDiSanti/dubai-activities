@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { CHAPTERS, HERO, ITEMS } from '../src/data/activities';
+import { ARCHIVE_ENTRIES } from '../src/data/archive';
 import { ARRIVAL_DATE_KEY } from '../src/config/site';
 import { orderChapterItems, type Activity } from '../src/domain/activity';
 
@@ -25,7 +26,7 @@ const RESERVED_FACT_LABELS = new Set(['date', 'when', 'where', 'book ahead']);
 const RETIRED_ACTIVITY_IDS = new Set(['terrasolis', 'cyanotype', 'rawbarista']);
 const FIRST_PERSON = /\b(?:i|i['’](?:m|ve|d|ll)|me|my|mine|myself|we|we['’](?:re|ve|d|ll)|us|our|ours|ourselves|let['’]s)\b/i;
 const EXPECTED_CHAPTERS = 12;
-const EXPECTED_ACTIVITIES = 124;
+const EXPECTED_ACTIVITIES = 123;
 const EXPECTED_HEROES = 6;
 
 const errors: string[] = [];
@@ -49,6 +50,23 @@ for (const chapter of CHAPTERS) {
   if (FIRST_PERSON.test(chapter.name)) fail(`First-person voice in chapter ${chapter.key}: ${chapter.name}`);
 }
 
+const archiveIds = new Set<string>();
+const rejectedActivityIds = new Set<string>();
+const verifiedActivityIds = new Set<string>();
+for (const entry of ARCHIVE_ENTRIES) {
+  // Archive entries are release data: reject ambiguous records before they reach the footer sheet.
+  if (!entry.id || !entry.name || !entry.note || !entry.originalChapterName) {
+    fail(`Archive entry is missing required copy: ${JSON.stringify(entry)}`);
+  }
+  if (archiveIds.has(entry.id)) fail(`Duplicate archive activity id: ${entry.id}`);
+  archiveIds.add(entry.id);
+  if (!isRealIsoDate(entry.recordedOn)) {
+    fail(`Archive entry ${entry.id} has an invalid recordedOn date: ${entry.recordedOn}`);
+  }
+  if (entry.status === 'rejected') rejectedActivityIds.add(entry.id);
+  if (entry.status === 'verified') verifiedActivityIds.add(entry.id);
+}
+
 const itemIds = new Set<string>();
 const expectedPhotos = new Set<string>();
 if (ITEMS.length !== EXPECTED_ACTIVITIES) {
@@ -58,6 +76,7 @@ for (const item of ITEMS) {
   if (!item.id) fail(`Activity is missing an id: ${JSON.stringify(item)}`);
   if (itemIds.has(item.id)) fail(`Duplicate activity id: ${item.id}`);
   if (RETIRED_ACTIVITY_IDS.has(item.id)) fail(`Retired activity returned to the guide: ${item.id}`);
+  if (rejectedActivityIds.has(item.id)) fail(`Rejected activity returned to the guide: ${item.id}`);
   itemIds.add(item.id);
   if (!chapterKeys.has(item.ch)) fail(`${item.id} references unknown chapter ${item.ch}.`);
   if (!item.blurb || !item.cta || !item.when || !item.where) {
@@ -116,6 +135,13 @@ for (const item of ITEMS) {
   }
   for (let slot = 1; slot <= item.photos; slot += 1) {
     expectedPhotos.add(`${item.id}-${String(slot).padStart(2, '0')}.jpg`);
+  }
+}
+
+for (const verifiedActivityId of verifiedActivityIds) {
+  // A firsthand recommendation remains useful only while its activity is still live.
+  if (!itemIds.has(verifiedActivityId)) {
+    fail(`Verified activity is missing from the active guide: ${verifiedActivityId}`);
   }
 }
 

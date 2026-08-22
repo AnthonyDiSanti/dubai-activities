@@ -55,6 +55,7 @@ describe('ActivityDialog', () => {
       <ActivityDialog
         activity={activity}
         isFavorite={false}
+        isVerified={false}
         onClose={vi.fn()}
         onToggleFavorite={vi.fn()}
       />,
@@ -82,6 +83,7 @@ describe('ActivityDialog', () => {
       <ActivityDialog
         activity={activity}
         isFavorite={false}
+        isVerified={false}
         onClose={vi.fn()}
         onToggleFavorite={vi.fn()}
       />,
@@ -92,6 +94,7 @@ describe('ActivityDialog', () => {
       <ActivityDialog
         activity={secondActivity}
         isFavorite={false}
+        isVerified={false}
         onClose={vi.fn()}
         onToggleFavorite={vi.fn()}
       />,
@@ -109,6 +112,7 @@ describe('ActivityDialog', () => {
       <ActivityDialog
         activity={activity}
         isFavorite={false}
+        isVerified={false}
         onClose={vi.fn()}
         onToggleFavorite={onToggleFavorite}
       />,
@@ -130,6 +134,7 @@ describe('ActivityDialog', () => {
       <ActivityDialog
         activity={activity}
         isFavorite
+        isVerified={false}
         onClose={onClose}
         onToggleFavorite={vi.fn()}
       />,
@@ -146,6 +151,7 @@ describe('ActivityDialog', () => {
       <ActivityDialog
         activity={activity}
         isFavorite={false}
+        isVerified={false}
         onClose={vi.fn()}
         onToggleFavorite={vi.fn()}
       />,
@@ -164,6 +170,7 @@ describe('ActivityDialog', () => {
       <ActivityDialog
         activity={datedActivity}
         isFavorite={false}
+        isVerified={false}
         onClose={vi.fn()}
         onToggleFavorite={vi.fn()}
       />,
@@ -181,11 +188,27 @@ describe('ActivityDialog', () => {
       <ActivityDialog
         activity={{ ...activity, dated }}
         isFavorite={false}
+        isVerified={false}
         onClose={vi.fn()}
         onToggleFavorite={vi.fn()}
       />,
     );
 
     expect(screen.getByText(display)).toBeInTheDocument();
+  });
+
+  it('carries the firsthand recommendation into the detail sheet', () => {
+    render(
+      <ActivityDialog
+        activity={activity}
+        isFavorite={false}
+        isVerified
+        onClose={vi.fn()}
+        onToggleFavorite={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByText('Tried & liked', { selector: '.detail-sheet__verified' }))
+      .toBeInTheDocument();
   });
 });

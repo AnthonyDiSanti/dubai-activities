@@ -55,6 +55,31 @@ describe('useDeepLink', () => {
     expect(result.current.deepLink).toBeNull();
   });
 
+  it('pushes and closes the archive through browser history', () => {
+    const back = vi.spyOn(window.history, 'back').mockImplementation(() => undefined);
+    const { result } = renderDeepLink();
+
+    act(() => { result.current.navigateToArchive(); });
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#archive');
+    expect(result.current.deepLink).toEqual({ type: 'archive' });
+
+    act(() => { result.current.closeArchive(); });
+    expect(back).toHaveBeenCalledOnce();
+    expect(result.current.deepLink).toBeNull();
+  });
+
+  it('closes a direct archive link without navigating away from the document', () => {
+    window.history.replaceState(null, '', '/guide/?ref=naima#archive');
+    const back = vi.spyOn(window.history, 'back');
+    const { result } = renderDeepLink();
+
+    act(() => { result.current.closeArchive(); });
+
+    expect(back).not.toHaveBeenCalled();
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima');
+    expect(result.current.deepLink).toBeNull();
+  });
+
   it('pushes an activity URL while preserving the current path and query', () => {
     const { result } = renderDeepLink();
 
@@ -100,6 +125,12 @@ describe('useDeepLink', () => {
     expect(result.current.deepLink).toEqual({ type: 'chapter', chapterKey: 'animals' });
 
     act(() => {
+      window.history.replaceState(null, '', '/guide/#everything');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    });
+    expect(result.current.deepLink).toEqual({ type: 'everything' });
+
+    act(() => {
       window.history.replaceState(null, '', '/guide/#list=rasalkhor%2Choneycomb');
       window.dispatchEvent(new HashChangeEvent('hashchange'));
     });
@@ -117,5 +148,41 @@ describe('useDeepLink', () => {
     expect(pushState).not.toHaveBeenCalled();
     expect(replaceState).toHaveBeenCalledOnce();
     expect(result.current.deepLink).toEqual({ type: 'chapter', chapterKey: 'animals' });
+  });
+
+  it('pushes the explicit everything view while preserving foreign history state', () => {
+    window.history.replaceState(
+      { __naimaDeepLink: { type: 'activity', activityId: 'rasalkhor' }, foreign: 'kept' },
+      '',
+      '/guide/?ref=naima#animals',
+    );
+    const pushState = vi.spyOn(window.history, 'pushState');
+    const replaceState = vi.spyOn(window.history, 'replaceState');
+    const onDeepLinkChange = vi.fn();
+    const { result } = renderDeepLink(onDeepLinkChange);
+
+    act(() => { result.current.navigateToEverything(); });
+
+    expect(pushState).toHaveBeenCalledWith(
+      { foreign: 'kept' },
+      '',
+      '/guide/?ref=naima#everything',
+    );
+    expect(replaceState).not.toHaveBeenCalled();
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#everything');
+    expect(result.current.deepLink).toEqual({ type: 'everything' });
+    expect(onDeepLinkChange).toHaveBeenCalledWith({ type: 'everything' });
+  });
+
+  it('does not push another entry when the everything view is already current', () => {
+    window.history.replaceState(null, '', '/guide/?ref=naima#everything');
+    const pushState = vi.spyOn(window.history, 'pushState');
+    const { result } = renderDeepLink();
+
+    act(() => { result.current.navigateToEverything(); });
+
+    expect(pushState).not.toHaveBeenCalled();
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#everything');
+    expect(result.current.deepLink).toEqual({ type: 'everything' });
   });
 });

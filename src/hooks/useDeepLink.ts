@@ -3,25 +3,31 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ChapterKey } from '../domain/activity';
 import {
   activityHash,
+  archiveHash,
   chapterHash,
   creditsHash,
+  everythingHash,
   parseDeepLink,
   type DeepLink,
 } from '../domain/deepLinks';
 
 const HISTORY_MARKER_KEY = '__naimaDeepLink';
+type GlobalSheetType = 'archive' | 'credits';
 
 type DeepLinkHistoryMarker =
   | { readonly activityId: string; readonly type: 'activity' }
-  | { readonly type: 'credits' };
+  | { readonly type: GlobalSheetType };
 
 type UseDeepLinkResult = {
   readonly closeActivity: (activityId: string, chapterKey: ChapterKey) => void;
+  readonly closeArchive: () => void;
   readonly closeCredits: () => void;
   readonly deepLink: DeepLink | null;
   readonly navigateToActivity: (activityId: string) => void;
+  readonly navigateToArchive: () => void;
   readonly navigateToChapter: (chapterKey: ChapterKey) => void;
   readonly navigateToCredits: () => void;
+  readonly navigateToEverything: () => void;
 };
 
 type DeepLinkChangeHandler = (deepLink: DeepLink | null) => void;
@@ -35,7 +41,9 @@ function sameDeepLink(left: DeepLink | null, right: DeepLink | null): boolean {
   if (left?.type === 'chapter' && right?.type === 'chapter') {
     return left.chapterKey === right.chapterKey;
   }
+  if (left?.type === 'archive' && right?.type === 'archive') return true;
   if (left?.type === 'credits' && right?.type === 'credits') return true;
+  if (left?.type === 'everything' && right?.type === 'everything') return true;
   return left === null && right === null;
 }
 
@@ -68,7 +76,15 @@ function deepLinkHistoryMarker(): DeepLinkHistoryMarker | null {
   if (candidate.type === 'activity' && typeof candidate.activityId === 'string') {
     return { type: 'activity', activityId: candidate.activityId };
   }
-  return candidate.type === 'credits' ? { type: 'credits' } : null;
+  if (candidate.type === 'archive' || candidate.type === 'credits') {
+    return { type: candidate.type };
+  }
+  return null;
+}
+
+function globalSheetHash(type: GlobalSheetType): string {
+  // Global sheets share history mechanics but retain readable, distinct fragments.
+  return type === 'archive' ? archiveHash() : creditsHash();
 }
 
 /** Synchronize validated fragments with React state and native session history. */
@@ -140,20 +156,41 @@ export function useDeepLink(
     commitDeepLink(next, true);
   }, [commitDeepLink, knownChapterKeys]);
 
-  const navigateToCredits = useCallback(() => {
-    const next: DeepLink = { type: 'credits' };
-    const hash = creditsHash();
+  const navigateToEverything = useCallback(() => {
+    // An explicit route lets load and history traversal restore the all-chapters state.
+    const next: DeepLink = { type: 'everything' };
+    const hash = everythingHash();
+    const state = historyStateWithoutMarker();
+    if (window.location.hash === hash) {
+      window.history.replaceState(state, '', currentDocumentUrl(hash));
+    } else {
+      window.history.pushState(state, '', currentDocumentUrl(hash));
+    }
+    commitDeepLink(next, true);
+  }, [commitDeepLink]);
+
+  const navigateToGlobalSheet = useCallback((type: GlobalSheetType) => {
+    const next: DeepLink = type === 'archive' ? { type: 'archive' } : { type: 'credits' };
+    const hash = globalSheetHash(type);
     if (window.location.hash === hash) {
       commitDeepLink(next, true);
       return;
     }
 
     const state = historyStateWithoutMarker();
-    state[HISTORY_MARKER_KEY] = { type: 'credits' } satisfies DeepLinkHistoryMarker;
+    state[HISTORY_MARKER_KEY] = { type } satisfies DeepLinkHistoryMarker;
     window.history.pushState(state, '', currentDocumentUrl(hash));
-    // pushState emits no location event, so the credits route updates explicitly.
+    // pushState emits no location event, so the requested global sheet updates explicitly.
     commitDeepLink(next, true);
   }, [commitDeepLink]);
+  const navigateToArchive = useCallback(
+    () => navigateToGlobalSheet('archive'),
+    [navigateToGlobalSheet],
+  );
+  const navigateToCredits = useCallback(
+    () => navigateToGlobalSheet('credits'),
+    [navigateToGlobalSheet],
+  );
 
   const closeActivity = useCallback((activityId: string, chapterKey: ChapterKey) => {
     const marker = deepLinkHistoryMarker();
@@ -177,9 +214,9 @@ export function useDeepLink(
     commitDeepLink(next, true);
   }, [commitDeepLink]);
 
-  const closeCredits = useCallback(() => {
+  const closeGlobalSheet = useCallback((type: GlobalSheetType) => {
     const marker = deepLinkHistoryMarker();
-    if (marker?.type === 'credits' && window.location.hash === creditsHash()) {
+    if (marker?.type === type && window.location.hash === globalSheetHash(type)) {
       commitDeepLink(null);
       window.history.back();
       return;
@@ -188,13 +225,24 @@ export function useDeepLink(
     window.history.replaceState(historyStateWithoutMarker(), '', currentDocumentUrl(''));
     commitDeepLink(null, true);
   }, [commitDeepLink]);
+  const closeArchive = useCallback(
+    () => closeGlobalSheet('archive'),
+    [closeGlobalSheet],
+  );
+  const closeCredits = useCallback(
+    () => closeGlobalSheet('credits'),
+    [closeGlobalSheet],
+  );
 
   return {
     closeActivity,
+    closeArchive,
     closeCredits,
     deepLink,
     navigateToActivity,
+    navigateToArchive,
     navigateToChapter,
     navigateToCredits,
+    navigateToEverything,
   };
 }

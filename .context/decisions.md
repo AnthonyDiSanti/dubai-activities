@@ -4,6 +4,20 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-22 — Represent the all-open guide with `#everything`
+- Decider: Anthony
+- Decision: Clicking Open everything pushes `#everything`. Parsing that route explicitly opens all chapters on direct load, Back, or Forward. Repeating the action at `#everything` does not create another entry; filters continue changing view state without creating navigation history. A fragment-free first load still defaults to every chapter open.
+- Rationale: A copied URL should reproduce the visible expansion state, and explicit chapter navigation already participates in session history. A fragment-free history entry proved ambiguous because route synchronization correctly interpreted it as no navigation instruction and therefore could not restore the all-open state after Back/Forward.
+- Alternatives considered: Leave the chapter fragment in place; use a fragment-free pushed entry; remove the fragment with `replaceState`; push history for filters whenever they expand all chapters.
+- Consequences / follow-ups: `src/domain/deepLinks.ts` recognizes `#everything`, and `src/hooks/useDeepLink.ts` preserves the current path, query, and unrelated history state while navigating to it. The App route synchronizer owns reopening all chapters. Browser QA should confirm the production traversal when a controllable browser is connected.
+
+## 2026-08-22 — Preserve firsthand outcomes separately from candidate research
+- Decider: Anthony
+- Decision: Keep one durable firsthand ledger with `verified` and `rejected` outcomes. Verified activities remain in the active guide with a date-stamp-style thumbs-up over the card image, a textual `Tried & liked` sheet callout, and an exclusive filter; rejected activities leave active content and production galleries but remain visible in the footer's `Tried & decided` archive.
+- Rationale: A positive visit is stronger evidence than editorial research and should make a recommendation easier to find, while an explicit rejection must survive later content refreshes so a weak activity cannot quietly return.
+- Alternatives considered: Remove rejected activities without a record; mix verified status into favorites; keep rejected cards in the main guide with a warning; maintain separate unconnected lists for tried and rejected places.
+- Consequences / follow-ups: `src/data/archive.ts` is the canonical outcome ledger. Content audits require rejected IDs to be inactive and verified IDs to stay active. A rejection removes its selected public photos, manifest/attribution rows, and active image-work rows in lockstep; a verified entry gains an image-contained card stamp, a sheet callout, and the sticky filter without changing favorites. Changing either planning filter expands every chapter so the new result set never inherits a collapsed navigation state.
+
 ## 2026-08-20 — Add OPA without inventing a plate-stack promise
 - Decider: Anthony and Codex (model: gpt-5.2-codex)
 - Decision: Add OPA Dubai to Long dinners as a book-ahead dinner-show activity, led by an exact plate-smashing photograph and supported by a four-image venue-specific gallery. State that plate smashing is part of the experience, but do not promise a stack size, included quantity, or add-on price that the current venue pages do not publish.

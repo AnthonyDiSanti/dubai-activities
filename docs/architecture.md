@@ -8,13 +8,14 @@ The root `index.html` contains metadata, `#root`, and the Vite module entry. `sr
 
 ## Source layers
 
-- `src/data/activities.ts` owns the editorial source: chapters, activities, hero IDs, dates, links, and gallery counts.
+- `src/data/activities.ts` owns active editorial content: chapters, activities, hero IDs, dates, links, and gallery counts.
+- `src/data/archive.ts` owns firsthand outcomes. Rejected IDs must not appear in active content; verified IDs must remain active so badges and filtering cannot point at stale records.
 - `src/domain/` owns pure, browser-independent rules such as dated-card ordering, treatment selection, photo/map URLs, favorite validation, and share-message formatting.
 - `src/hooks/` owns lifecycle behavior such as local favorites, current-chapter tracking, and media preferences.
 - `src/browser/` contains small capability adapters whose failures must be represented honestly in UI state.
 - `src/components/` owns semantic React markup and interaction composition. Activity IDs and chapter keys are the stable React keys.
 - `src/styles/` owns bundled font declarations, global tokens, the deliberately varied visual treatments, and responsive rules. The 1000 px boundary remains CSS-driven.
-- `public/photos/` owns the 405 activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
+- `public/photos/` owns the 403 activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
 - `docs/photo-attributions.csv` owns reviewed photo credits. Build-time generation emits `public/photo-attributions.json` for the UI and `public/photo-attributions.jsonld` for machine readers.
 
 Do not reintroduce a global application namespace, runtime template compiler, `new Function`, inline executable script, or a parallel entry point under `src/`. Add behavior through typed modules and cover pure rules with Vitest.
@@ -27,10 +28,11 @@ URL fragments are the client-only navigation boundary:
 
 - `#<chapter-key>` targets a chapter, for example `#animals`.
 - `#activity-<activity-id>` opens one detail sheet, for example `#activity-rasalkhor`.
+- `#archive` opens the firsthand `Tried & decided` ledger.
 - `#credits` opens the complete photo-credit sheet.
 - `#list=<comma-separated-activity-ids>` retains the existing shared-favorites contract.
 
-`src/domain/deepLinks.ts` validates and builds chapter/activity/credits fragments; `src/hooks/useDeepLink.ts` owns session-history synchronization. The hash is the source of truth for an open sheet, so Back closes an in-page sheet and Forward reopens it. App-created sheet entries carry a namespaced history-state marker; closing a directly loaded activity replaces it with its owning chapter, while closing direct `#credits` strips only the fragment. Unknown, retired, malformed, and favorites fragments do not open a sheet.
+`src/domain/deepLinks.ts` validates and builds chapter/activity/global-sheet fragments plus the explicit `#everything` route; `src/hooks/useDeepLink.ts` owns session-history synchronization. The hash is the source of truth for chapter expansion and open sheets, so Back/Forward restores a selected chapter, the all-open state, or an in-page sheet. App-created sheet entries carry a namespaced history-state marker; closing a directly loaded activity replaces it with its owning chapter, while closing direct `#archive` or `#credits` strips only the fragment. Unknown, retired, malformed, and favorites fragments do not open a sheet.
 
 Favorites use the existing `naima.favs.v1` local-storage key. A validated `#list=<comma-separated-activity-ids>` hash can initialize a shared list; invalid, unknown, and duplicate IDs must not enter state. Chapter and activity fragments leave stored favorites authoritative. Hash navigation is intentionally client-side and is not sent to S3 or CloudFront as part of the HTTP request.
 

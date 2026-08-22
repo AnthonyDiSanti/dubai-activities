@@ -17,6 +17,7 @@ export type ChapterSectionProps = {
   readonly onToggle: (chapterKey: ChapterKey) => void;
   readonly onToggleFavorite: (activityId: Activity['id']) => void;
   readonly open: boolean;
+  readonly verifiedIds: ReadonlySet<Activity['id']>;
 };
 
 export const ChapterSection = memo(function ChapterSection({
@@ -27,6 +28,7 @@ export const ChapterSection = memo(function ChapterSection({
   onToggle,
   onToggleFavorite,
   open,
+  verifiedIds,
 }: ChapterSectionProps) {
   const cards = useMemo(() => {
     const orderedItems = orderChapterItems(items);
@@ -75,6 +77,7 @@ export const ChapterSection = memo(function ChapterSection({
           cards.map(({ item, treatment }) => (
             <ActivityCard
               isFavorite={favoriteIds.has(item.id)}
+              isVerified={verifiedIds.has(item.id)}
               item={item}
               key={item.id}
               onOpen={onOpenActivity}

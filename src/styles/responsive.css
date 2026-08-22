@@ -1,3 +1,24 @@
+@media (max-width: 600px) {
+  .chapter-bar__inner {
+    gap: 7px;
+  }
+
+  .chapter-bar__label {
+    display: none;
+  }
+
+  .chapter-bar__current {
+    font-size: 15px;
+  }
+
+  .chapter-bar__filter,
+  .chapter-bar__menu-button {
+    padding-right: 9px;
+    padding-left: 9px;
+    font-size: 9.5px;
+  }
+}
+
 /* Desktop navigation and the detail gallery expand without viewport state in JS. */
 @media (min-width: 1000px) {
   .favorites-sheet {
@@ -51,16 +72,16 @@
     padding-bottom: 28px;
   }
 
-  .credits-sheet {
+  .reference-sheet {
     top: 0;
     border-radius: 0;
   }
 
-  .credits-sheet__inner {
+  .reference-sheet__inner {
     padding: 0 28px 60px;
   }
 
-  .credits-sheet__toolbar {
+  .reference-sheet__toolbar {
     position: sticky;
     top: 0;
     z-index: 2;
@@ -74,7 +95,7 @@
     backdrop-filter: blur(12px);
   }
 
-  .credits-sheet__close-x {
+  .reference-sheet__close-x {
     display: grid;
     width: 36px;
     height: 36px;
@@ -87,16 +108,16 @@
     line-height: 1;
   }
 
-  .credits-sheet__handle,
-  .credits-sheet__close-text {
+  .reference-sheet__handle,
+  .reference-sheet__close-text {
     display: none;
   }
 
-  .credits-sheet__header {
+  .reference-sheet__header {
     margin-bottom: 48px;
   }
 
-  .credits-sheet__title {
+  .reference-sheet__title {
     font-size: 54px;
   }
 

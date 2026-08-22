@@ -19,6 +19,12 @@ The primary-source snapshot behind the expanded planning fields lives in [activi
 
 The content audit scans every displayed copy field, including structured fact labels and values. Link paths are intentionally excluded because URL strings can contain coincidental first-person tokens.
 
+## Firsthand outcomes
+
+`src/data/archive.ts` is the durable ledger for places Anthony has personally tried or deliberately ruled out. Use `verified` only after a positive firsthand visit: the activity stays in `ITEMS` and gains a visible marker plus access through the Tried & liked filter. Use `rejected` after a negative visit or explicit rejection: remove the activity from `ITEMS`, its selected public gallery, canonical manifest/attribution rows, and active image-work fragments, but retain a concise dated archive record.
+
+Do not infer an outcome from generated editorial copy, ratings, source research, or a favorite. The ledger records user-supplied experience, while the main guide continues to use the warm expert-friend voice without pretending generated opinions are firsthand.
+
 ## Chapter ordering and treatments
 
 Array position is the recommendation rank for undated activities within a chapter. `orderChapterItems` applies the shared dated-event rule:
@@ -60,4 +66,4 @@ npm run audit:content
 python3 scripts/audit-photo-manifest.py
 ```
 
-The TypeScript audit checks chapter and activity IDs, required copy, first-person language, links, structured-fact/advisory limits, real and post-arrival ISO dates, chronological rendered order, optimal dated-card separation, hero references, gallery depth, retired IDs, and the one-to-one relationship between activity counts and JPEGs in `public/photos/`.
+The TypeScript audit checks chapter and activity IDs, required copy, first-person language, links, structured-fact/advisory limits, real and post-arrival ISO dates, chronological rendered order, optimal dated-card separation, hero references, gallery depth, archive invariants, retired IDs, and the one-to-one relationship between activity counts and JPEGs in `public/photos/`.

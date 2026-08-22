@@ -66,24 +66,24 @@ export function CreditsDialog({ catalog, onClose, onRetry, status }: CreditsDial
       labelId={titleId}
       onClose={onClose}
     >
-      <div className="credits-sheet" data-dialog-panel tabIndex={-1}>
-        <div className="credits-sheet__inner">
-          <div className="credits-sheet__toolbar">
-            <span className="credits-sheet__toolbar-label">Photography</span>
+      <div className="reference-sheet credits-sheet" data-dialog-panel tabIndex={-1}>
+        <div className="reference-sheet__inner">
+          <div className="reference-sheet__toolbar">
+            <span className="reference-sheet__toolbar-label">Photography</span>
             <button
               aria-label="Close photo credits"
-              className="credits-sheet__close-x"
+              className="reference-sheet__close-x"
               onClick={onClose}
               type="button"
             >
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div className="credits-sheet__handle" />
-          <header className="credits-sheet__header">
-            <p className="credits-sheet__eyebrow">The people behind the pictures</p>
-            <h2 className="credits-sheet__title" id={titleId}>Photo credits</h2>
-            <p className="credits-sheet__intro" id={descriptionId}>
+          <div className="reference-sheet__handle" />
+          <header className="reference-sheet__header">
+            <p className="reference-sheet__eyebrow">The people behind the pictures</p>
+            <h2 className="reference-sheet__title" id={titleId}>Photo credits</h2>
+            <p className="reference-sheet__intro" id={descriptionId}>
               Creators are named wherever they could be identified. Otherwise, the original
               venue, publisher, or source is credited without implying permission or endorsement.
             </p>
@@ -123,7 +123,7 @@ export function CreditsDialog({ catalog, onClose, onRetry, status }: CreditsDial
             </div>
           )}
 
-          <button className="credits-sheet__close-text" onClick={onClose} type="button">
+          <button className="reference-sheet__close-text" onClick={onClose} type="button">
             Close
           </button>
         </div>

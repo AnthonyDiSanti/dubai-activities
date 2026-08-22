@@ -39,6 +39,7 @@ function props(overrides: Partial<ChapterSectionProps> = {}): ChapterSectionProp
     onToggle: vi.fn(),
     onToggleFavorite: vi.fn(),
     open: true,
+    verifiedIds: new Set(),
     ...overrides,
   };
 }
@@ -117,5 +118,18 @@ describe('ChapterSection', () => {
 
     expect(onOpenActivity).toHaveBeenCalledWith('standard-one');
     expect(onToggleFavorite).toHaveBeenCalledWith('standard-two');
+  });
+
+  it('marks only activities present in the verified ledger', () => {
+    render(<ChapterSection {...props({ verifiedIds: new Set(['standard-one']) })} />);
+
+    const verifiedCard = screen.getByRole('heading', { name: 'standard-one' }).closest('.activity-card');
+    const unverifiedCard = screen.getByRole('heading', { name: 'standard-two' }).closest('.activity-card');
+    expect(verifiedCard).not.toBeNull();
+    expect(unverifiedCard).not.toBeNull();
+    expect(within(verifiedCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
+      .toHaveClass('verified-stamp');
+    expect(within(unverifiedCard as HTMLElement).queryByRole('img', { name: 'Tried and liked' }))
+      .not.toBeInTheDocument();
   });
 });

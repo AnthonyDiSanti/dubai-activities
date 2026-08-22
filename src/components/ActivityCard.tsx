@@ -13,6 +13,7 @@ export type ActivityCardProps = {
   readonly item: Activity;
   readonly treatment: ActivityTreatment;
   readonly isFavorite: boolean;
+  readonly isVerified: boolean;
   readonly onToggleFavorite: (activityId: Activity['id']) => void;
   readonly onOpen: (activityId: Activity['id']) => void;
 };
@@ -34,10 +35,27 @@ type CardActionsProps = {
 
 type PhotoProps = {
   readonly item: Activity;
+  readonly isVerified: boolean;
   readonly placeholderModifier?: 'ahead' | 'dated';
 };
 
-function Photo({ item, placeholderModifier }: PhotoProps) {
+function VerifiedStamp() {
+  return (
+    <span aria-label="Tried and liked" className="verified-stamp" role="img">
+      <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+        <path
+          d="M7.5 10.25 11.7 4.5c.55-.75 1.75-.36 1.75.57v3.68h4.48a2 2 0 0 1 1.95 2.43l-1.62 7.25A2 2 0 0 1 16.3 20H7.5m0-9.75V20H3.25v-9.75H7.5Z"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+        />
+      </svg>
+    </span>
+  );
+}
+
+function Photo({ isVerified, item, placeholderModifier }: PhotoProps) {
   const placeholderClassName = placeholderModifier
     ? `media-placeholder media-placeholder--${placeholderModifier}`
     : 'media-placeholder';
@@ -52,6 +70,7 @@ function Photo({ item, placeholderModifier }: PhotoProps) {
         loading="lazy"
         src={activityPhotoUrl(item)}
       />
+      {isVerified && <VerifiedStamp />}
     </>
   );
 }
@@ -199,12 +218,12 @@ function DateStamp({ item, ahead = false }: { readonly item: Activity; readonly 
 }
 
 function BleedCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
 
   return (
     <>
       <article className="card card--bleed">
-        <Photo item={item} />
+        <Photo isVerified={isVerified} item={item} />
         <div className="card--bleed__shade" />
         <FavoriteButton className="favorite-button--bleed" {...props} />
         <a className="card--bleed__open" {...openLinkProps(item, onOpen)}>
@@ -225,13 +244,13 @@ function BleedCard(props: PresentationProps) {
 }
 
 function LetterCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
 
   return (
     <article className="card card--letter">
       <div className="card--letter__frame">
         <div className="card--letter__media">
-          <Photo item={item} />
+          <Photo isVerified={isVerified} item={item} />
         </div>
         <FavoriteButton className="favorite-button--corner" {...props} />
         <h3 className="card--letter__title">{item.name}</h3>
@@ -246,11 +265,11 @@ function LetterCard(props: PresentationProps) {
 }
 
 function TopCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
 
   return (
     <article className="card card--top">
-      <Photo item={item} />
+      <Photo isVerified={isVerified} item={item} />
       <div className="card--top__shade" />
       <a className="card--top__open" {...openLinkProps(item, onOpen)}>
         <Eyebrow item={item} />
@@ -266,11 +285,11 @@ function TopCard(props: PresentationProps) {
 }
 
 function SlabCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
 
   return (
     <article className="card card--slab">
-      <Photo item={item} />
+      <Photo isVerified={isVerified} item={item} />
       <div className="card--slab__shade" />
       <FavoriteButton className="favorite-button--slab" {...props} />
       <div className="card--slab__panel">
@@ -286,12 +305,12 @@ function SlabCard(props: PresentationProps) {
 }
 
 function ColumnsCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
 
   return (
     <article className="card card--columns">
       <div className="card--columns__media">
-        <Photo item={item} />
+        <Photo isVerified={isVerified} item={item} />
         <FavoriteButton className="favorite-button--corner" {...props} />
       </div>
       <a className="card--columns__open" {...openLinkProps(item, onOpen)}>
@@ -307,12 +326,12 @@ function ColumnsCard(props: PresentationProps) {
 }
 
 function BiteCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
 
   return (
     <article className="card card--bite">
       <div className="card--bite__media">
-        <Photo item={item} />
+        <Photo isVerified={isVerified} item={item} />
         <FavoriteButton className="favorite-button--corner" {...props} />
         <div className="card--bite__heading">
           <Eyebrow item={item} modifier="small" />
@@ -328,14 +347,14 @@ function BiteCard(props: PresentationProps) {
 }
 
 function DatedCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
   const primaryUrl = activityPrimaryUrl(item);
 
   return (
     <article className="card card--dated">
       <div className="card--dated__ticket">
         <div className="card--dated__media">
-          <Photo item={item} placeholderModifier="dated" />
+          <Photo isVerified={isVerified} item={item} placeholderModifier="dated" />
           <DateStamp item={item} />
         </div>
         <a className="ticket-copy" {...openLinkProps(item, onOpen)}>
@@ -363,7 +382,7 @@ function DatedCard(props: PresentationProps) {
 }
 
 function AheadCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
   const primaryUrl = activityPrimaryUrl(item);
 
   return (
@@ -375,7 +394,7 @@ function AheadCard(props: PresentationProps) {
         </div>
         <div className="card--ahead__body">
           <div className="card--ahead__media">
-            <Photo item={item} placeholderModifier="ahead" />
+            <Photo isVerified={isVerified} item={item} placeholderModifier="ahead" />
             <DateStamp ahead item={item} />
           </div>
           <a className="ticket-copy" {...openLinkProps(item, onOpen)}>
@@ -400,12 +419,13 @@ function AheadCard(props: PresentationProps) {
 }
 
 function TypeCard(props: PresentationProps) {
-  const { item, onOpen } = props;
+  const { isVerified, item, onOpen } = props;
 
   return (
     <article className="card card--type">
       <div className="card--type__media">
         <div className="card--type__pattern" />
+        {isVerified && <VerifiedStamp />}
         <FavoriteButton className="favorite-button--type" {...props} />
         <a className="card--type__heading" {...openLinkProps(item, onOpen)}>
           <span className="card__rule" />

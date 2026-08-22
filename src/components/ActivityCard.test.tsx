@@ -40,6 +40,7 @@ describe('ActivityCard', () => {
     const { container } = render(
       <ActivityCard
         isFavorite={false}
+        isVerified={false}
         item={item}
         onOpen={vi.fn()}
         onToggleFavorite={vi.fn()}
@@ -54,6 +55,7 @@ describe('ActivityCard', () => {
     const { container } = render(
       <ActivityCard
         isFavorite={false}
+        isVerified={false}
         item={item}
         onOpen={vi.fn()}
         onToggleFavorite={vi.fn()}
@@ -72,6 +74,7 @@ describe('ActivityCard', () => {
     const { container } = render(
       <ActivityCard
         isFavorite={false}
+        isVerified={false}
         item={item}
         onOpen={onOpen}
         onToggleFavorite={vi.fn()}
@@ -96,6 +99,7 @@ describe('ActivityCard', () => {
     render(
       <ActivityCard
         isFavorite={false}
+        isVerified={false}
         item={item}
         onOpen={onOpen}
         onToggleFavorite={vi.fn()}
@@ -116,6 +120,7 @@ describe('ActivityCard', () => {
     render(
       <ActivityCard
         isFavorite
+        isVerified={false}
         item={item}
         onOpen={onOpen}
         onToggleFavorite={onToggleFavorite}
@@ -132,5 +137,23 @@ describe('ActivityCard', () => {
     expect(onToggleFavorite).toHaveBeenCalledWith(item.id);
     expect(onOpen).not.toHaveBeenCalled();
     expect(primaryAction).toHaveAttribute('rel', 'noopener');
+  });
+
+  it('marks an activity that has earned a firsthand recommendation', () => {
+    const { container } = render(
+      <ActivityCard
+        isFavorite={false}
+        isVerified
+        item={item}
+        onOpen={vi.fn()}
+        onToggleFavorite={vi.fn()}
+        treatment="top"
+      />,
+    );
+
+    const stamp = screen.getByRole('img', { name: 'Tried and liked' });
+    expect(stamp).toHaveClass('verified-stamp');
+    // Keeping the stamp inside the treatment prevents it from consuming card-grid space.
+    expect(container.querySelector('.card--top')).toContainElement(stamp);
   });
 });

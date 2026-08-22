@@ -24,7 +24,9 @@ function props(overrides: Partial<ChapterNavigationProps> = {}): ChapterNavigati
     onSelectChapter: vi.fn(),
     onToggleAhead: vi.fn(),
     onToggleMobile: vi.fn(),
+    onToggleVerified: vi.fn(),
     openChapterKeys: new Set(['loud']),
+    verifiedOnly: false,
     ...overrides,
   };
 }
@@ -61,22 +63,39 @@ describe('ChapterNavigation', () => {
     const onOpenAll = vi.fn();
     const onSelectChapter = vi.fn();
     const onToggleAhead = vi.fn();
+    const onToggleVerified = vi.fn();
     render(
       <ChapterNavigation
-        {...props({ onCloseAll, onOpenAll, onSelectChapter, onToggleAhead })}
+        {...props({
+          onCloseAll,
+          onOpenAll,
+          onSelectChapter,
+          onToggleAhead,
+          onToggleVerified,
+        })}
         mobileOpen
       />,
     );
 
     fireEvent.click(screen.getByRole('button', { name: 'Show only activities to book ahead' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Show only tried and liked activities' }));
     fireEvent.click(screen.getByRole('link', { name: chapters[1]?.name }));
     fireEvent.click(screen.getByRole('button', { name: 'Open everything' }));
     fireEvent.click(screen.getByRole('button', { name: 'Fold all' }));
 
     expect(onToggleAhead).toHaveBeenCalledOnce();
+    expect(onToggleVerified).toHaveBeenCalledOnce();
     expect(onSelectChapter).toHaveBeenCalledWith('quiet');
     expect(onOpenAll).toHaveBeenCalledOnce();
     expect(onCloseAll).toHaveBeenCalledOnce();
+  });
+
+  it('announces the active firsthand filter as a reversible mode', () => {
+    render(<ChapterNavigation {...props({ verifiedOnly: true })} />);
+
+    const filter = screen.getByRole('button', { name: 'Show all activities' });
+    expect(filter).toHaveAttribute('aria-pressed', 'true');
+    expect(filter).toHaveTextContent('✕ Tried & liked');
   });
 
   it('renders the desktop navigation with section relationships', () => {

@@ -2,6 +2,29 @@
   cursor: pointer;
 }
 
+.verified-stamp {
+  position: absolute;
+  z-index: 4;
+  top: 12px;
+  left: 12px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  transform: rotate(-7deg);
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  background: rgba(22, 17, 14, .78);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .24);
+  color: var(--gold-light);
+  pointer-events: none;
+}
+
+.verified-stamp svg {
+  width: 23px;
+  height: 23px;
+}
+
 .activity-card [data-activity-link],
 .activity-card [data-activity-link]:hover {
   color: inherit;
@@ -641,9 +664,15 @@
   text-wrap: pretty;
 }
 
-.site-footer__credits {
-  display: inline-block;
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
   margin-top: 13px;
+}
+
+.site-footer__link {
   color: rgba(244, 239, 230, .58);
   font: 500 9px var(--font-mono);
   letter-spacing: .13em;
@@ -652,6 +681,6 @@
   text-transform: uppercase;
 }
 
-.site-footer__credits:hover {
+.site-footer__link:hover {
   color: var(--gold);
 }

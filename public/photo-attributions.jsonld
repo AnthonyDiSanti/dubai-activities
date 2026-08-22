@@ -1852,26 +1852,6 @@
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/thewall-01.jpg",
-      "contentUrl": "./photos/thewall-01.jpg",
-      "name": "The Wall — photo 1",
-      "creditText": "The Wall — photo 1, via The Wall Climbing Gym. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.thewallclimbinggym.ae/history/",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/thewall-02.jpg",
-      "contentUrl": "./photos/thewall-02.jpg",
-      "name": "The Wall — photo 2",
-      "creditText": "The Wall — photo 2, via The Wall Climbing Gym. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.thewallclimbinggym.ae/history/",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
       "@id": "./photos/kitesurf-01.jpg",
       "contentUrl": "./photos/kitesurf-01.jpg",
       "name": "Kitesurf course — photo 1",

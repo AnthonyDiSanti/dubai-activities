@@ -16,6 +16,8 @@ export type ChapterNavigationProps = SharedChapterNavigationProps & {
   readonly onCloseAll: () => void;
   readonly onToggleAhead: () => void;
   readonly onToggleMobile: () => void;
+  readonly onToggleVerified: () => void;
+  readonly verifiedOnly: boolean;
 };
 
 export type ChapterSidebarProps = SharedChapterNavigationProps;
@@ -54,7 +56,9 @@ export const ChapterNavigation = memo(function ChapterNavigation({
   onSelectChapter,
   onToggleAhead,
   onToggleMobile,
+  onToggleVerified,
   openChapterKeys,
+  verifiedOnly,
 }: ChapterNavigationProps) {
   const currentChapter = chapters.find(({ key }) => key === currentChapterKey) ?? chapters[0];
 
@@ -71,6 +75,15 @@ export const ChapterNavigation = memo(function ChapterNavigation({
           type="button"
         >
           {aheadOnly ? '\u2715 Book ahead' : 'Book ahead'}
+        </button>
+        <button
+          aria-label={verifiedOnly ? 'Show all activities' : 'Show only tried and liked activities'}
+          aria-pressed={verifiedOnly}
+          className="chapter-bar__filter chapter-bar__filter--verified"
+          onClick={onToggleVerified}
+          type="button"
+        >
+          {verifiedOnly ? '\u2715 Tried & liked' : '✓ Tried & liked'}
         </button>
         <button
           aria-controls={MOBILE_MENU_ID}

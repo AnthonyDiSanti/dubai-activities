@@ -25,7 +25,8 @@ npm run preview
 - `src/components/` — semantic activity, navigation, gallery, favorites, and dialog UI.
 - `src/hooks/` — browser-backed state and lifecycle behavior.
 - `src/domain/` — typed ordering, treatment, sharing, and URL rules.
-- `src/data/activities.ts` — canonical activity content, chapter order, hero selection, and gallery counts.
+- `src/data/activities.ts` — canonical active content, chapter order, hero selection, and gallery counts.
+- `src/data/archive.ts` — firsthand tried-and-liked and rejected outcomes that must survive editorial refreshes.
 - `src/styles/` — design tokens, card treatments, dialogs, layout, and responsive rules.
 - `public/photos/` — local JPEG galleries and brand icons, copied to `dist/photos/` unchanged.
 - `docs/image-manifest.csv` — canonical photo selection and provenance manifest.

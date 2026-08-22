@@ -3109,40 +3109,6 @@
       "creditText": "GoClimb — photo 3, via GoClimb. Converted to JPEG and resized for web display; shown with responsive cropping."
     },
     {
-      "filename": "thewall-01.jpg",
-      "activityId": "thewall",
-      "activityName": "The Wall",
-      "chapterName": "Something to get good at",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "The Wall Climbing Gym",
-        "url": "https://www.thewallclimbinggym.ae/history/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "The Wall — photo 1, via The Wall Climbing Gym. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "thewall-02.jpg",
-      "activityId": "thewall",
-      "activityName": "The Wall",
-      "chapterName": "Something to get good at",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "The Wall Climbing Gym",
-        "url": "https://www.thewallclimbinggym.ae/history/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "The Wall — photo 2, via The Wall Climbing Gym. Resized for web display and shown with responsive cropping."
-    },
-    {
       "filename": "kitesurf-01.jpg",
       "activityId": "kitesurf",
       "activityName": "Kitesurf course",

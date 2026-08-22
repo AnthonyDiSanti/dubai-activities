@@ -195,6 +195,10 @@
   color: var(--ink);
 }
 
+.chapter-bar__filter--verified[aria-pressed="true"] {
+  background: var(--gold);
+}
+
 .chapter-bar__menu-button {
   padding: 7px 12px;
   background: rgba(244, 239, 230, .11);

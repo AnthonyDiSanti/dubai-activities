@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, type MouseEvent } from 'react';
 
 import { ActivityDialog } from './components/ActivityDialog';
+import { ArchiveDialog } from './components/ArchiveDialog';
 import { ArrivalBar } from './components/ArrivalBar';
 import {
   ChapterNavigation,
@@ -12,6 +13,7 @@ import { FavoritesDialog } from './components/FavoritesDialog';
 import { HeroCarousel } from './components/HeroCarousel';
 import { ARRIVAL_DATE_KEY, TRIP_TIME_ZONE } from './config/site';
 import { CHAPTERS, HERO, ITEMS } from './data/activities';
+import { ARCHIVE_ENTRIES } from './data/archive';
 import type { Activity, ChapterKey } from './domain/activity';
 import { parseDeepLink, type DeepLink } from './domain/deepLinks';
 import { useCountdown } from './hooks/useCountdown';
@@ -31,6 +33,13 @@ function LiveArrivalBar() {
   return <ArrivalBar countdown={countdown} />;
 }
 
+function openFooterSheet(event: MouseEvent<HTMLAnchorElement>, navigate: () => void) {
+  // Leave modified clicks and copied links native while ordinary activation stays history-aware.
+  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  navigate();
+}
+
 export function App() {
   const activitiesById = useMemo(
     () => new Map<string, Activity>(ACTIVITIES.map((item) => [item.id, item])),
@@ -44,6 +53,12 @@ export function App() {
   );
   const { favorites, toggleFavorite } = useFavorites(knownActivityIds);
   const favoriteIds = useMemo(() => new Set(favorites), [favorites]);
+  const verifiedActivityIds = useMemo(
+    () => new Set<string>(
+      ARCHIVE_ENTRIES.filter(({ status }) => status === 'verified').map(({ id }) => id),
+    ),
+    [],
+  );
   const [openChapterKeys, setOpenChapterKeys] = useState<ReadonlySet<ChapterKey>>(
     () => {
       // Resolve the initial fragment synchronously so routed content never starts folded.
@@ -61,6 +76,7 @@ export function App() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [chapterMenuOpen, setChapterMenuOpen] = useState(false);
   const [aheadOnly, setAheadOnly] = useState(false);
+  const [verifiedOnly, setVerifiedOnly] = useState(false);
   const [favoritesOpen, setFavoritesOpen] = useState(false);
   const reducedMotion = useReducedMotion();
 
@@ -68,6 +84,7 @@ export function App() {
     if (!next) return;
 
     setAheadOnly(false);
+    setVerifiedOnly(false);
     setChapterMenuOpen(false);
     setFavoritesOpen(false);
     if (next.type === 'activity') {
@@ -80,31 +97,42 @@ export function App() {
       return;
     }
 
-    if (next.type === 'credits') return;
+    if (next.type === 'everything') {
+      setOpenChapterKeys(new Set(ALL_CHAPTER_KEYS));
+      return;
+    }
+
+    if (next.type === 'archive' || next.type === 'credits') return;
 
     const chapter = CHAPTERS.find(({ key }) => key === next.chapterKey);
     if (chapter) setOpenChapterKeys(new Set([chapter.key]));
   }, [activitiesById]);
   const {
     closeActivity,
+    closeArchive,
     closeCredits,
     deepLink,
     navigateToActivity,
+    navigateToArchive,
     navigateToChapter,
     navigateToCredits,
+    navigateToEverything,
   } = useDeepLink(knownChapterKeys, knownActivityIds, synchronizeDeepLinkState);
 
   const chapterModels = useMemo(
     () =>
       CHAPTERS.flatMap((chapter) => {
         const filtered = ACTIVITIES.filter(
-          (item) => item.ch === chapter.key && (!aheadOnly || Boolean(item.ahead)),
+          (item) =>
+            item.ch === chapter.key
+            && (!aheadOnly || Boolean(item.ahead))
+            && (!verifiedOnly || verifiedActivityIds.has(item.id)),
         );
         return filtered.length > 0
           ? [{ chapter, items: filtered }]
           : [];
       }),
-    [aheadOnly],
+    [aheadOnly, verifiedActivityIds, verifiedOnly],
   );
   const visibleChapters = useMemo(
     () => chapterModels.map(({ chapter }) => chapter),
@@ -132,6 +160,7 @@ export function App() {
   const activeActivity = deepLink?.type === 'activity'
     ? activitiesById.get(deepLink.activityId) ?? null
     : null;
+  const archiveOpen = deepLink?.type === 'archive';
   const creditsOpen = deepLink?.type === 'credits';
   const photoAttributions = usePhotoAttributions(creditsOpen);
 
@@ -193,9 +222,24 @@ export function App() {
     setOpenChapterKeys(open ? new Set(ALL_CHAPTER_KEYS) : new Set());
     setChapterMenuOpen(false);
   }, []);
-  const openAllChapters = useCallback(() => setAllChapters(true), [setAllChapters]);
+  const revealAllChapters = useCallback(() => setAllChapters(true), [setAllChapters]);
+  const openAllChapters = useCallback(() => {
+    // #everything makes the all-open state restorable through load and history traversal.
+    revealAllChapters();
+    navigateToEverything();
+  }, [navigateToEverything, revealAllChapters]);
   const closeAllChapters = useCallback(() => setAllChapters(false), [setAllChapters]);
-  const toggleAheadOnly = useCallback(() => setAheadOnly((current) => !current), []);
+  const toggleAheadOnly = useCallback(() => {
+    // A new planning view must reveal its results instead of inheriting collapsed sections.
+    revealAllChapters();
+    setVerifiedOnly(false);
+    setAheadOnly((current) => !current);
+  }, [revealAllChapters]);
+  const toggleVerifiedOnly = useCallback(() => {
+    revealAllChapters();
+    setAheadOnly(false);
+    setVerifiedOnly((current) => !current);
+  }, [revealAllChapters]);
   const toggleChapterMenu = useCallback(
     () => setChapterMenuOpen((current) => !current),
     [],
@@ -211,7 +255,9 @@ export function App() {
     onSelectChapter: selectChapter,
     onToggleAhead: toggleAheadOnly,
     onToggleMobile: toggleChapterMenu,
+    onToggleVerified: toggleVerifiedOnly,
     openChapterKeys,
+    verifiedOnly,
   } as const;
 
   return (
@@ -220,7 +266,7 @@ export function App() {
       <LiveArrivalBar />
       <HeroCarousel
         activeIndex={heroIndex}
-        autoRotate={!favoritesOpen && activeActivity === null && !creditsOpen}
+        autoRotate={!favoritesOpen && activeActivity === null && !archiveOpen && !creditsOpen}
         chapters={CHAPTERS}
         isFavorite={(activityId) => favoriteIds.has(activityId)}
         items={heroItems}
@@ -244,6 +290,7 @@ export function App() {
               onToggle={toggleChapter}
               onToggleFavorite={toggleFavorite}
               open={openChapterKeys.has(chapter.key)}
+              verifiedIds={verifiedActivityIds}
             />
           ))}
           <footer className="site-footer">
@@ -251,21 +298,24 @@ export function App() {
               Everything here was worth writing down. Nothing here is a plan.
               <br />— A.
             </p>
-            <a
-              className="site-footer__credits"
-              href="#credits"
-              id="photo-credits-link"
-              onClick={(event) => {
-                // Preserve copy-link, new-tab, and modified-click browser behavior.
-                if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-                  return;
-                }
-                event.preventDefault();
-                navigateToCredits();
-              }}
-            >
-              Photo credits
-            </a>
+            <nav aria-label="Guide records" className="site-footer__links">
+              <a
+                className="site-footer__link"
+                href="#archive"
+                id="archive-link"
+                onClick={(event) => openFooterSheet(event, navigateToArchive)}
+              >
+                Tried &amp; decided
+              </a>
+              <a
+                className="site-footer__link"
+                href="#credits"
+                id="photo-credits-link"
+                onClick={(event) => openFooterSheet(event, navigateToCredits)}
+              >
+                Photo credits
+              </a>
+            </nav>
           </footer>
         </main>
       </div>
@@ -293,9 +343,13 @@ export function App() {
           activity={activeActivity}
           fallbackFocusId={`${activeActivity.ch}-toggle`}
           isFavorite={favoriteIds.has(activeActivity.id)}
+          isVerified={verifiedActivityIds.has(activeActivity.id)}
           onClose={() => closeActivity(activeActivity.id, activeActivity.ch)}
           onToggleFavorite={toggleFavorite}
         />
+      )}
+      {archiveOpen && (
+        <ArchiveDialog entries={ARCHIVE_ENTRIES} onClose={closeArchive} />
       )}
       {creditsOpen && (
         <CreditsDialog

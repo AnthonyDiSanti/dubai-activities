@@ -2,7 +2,7 @@
 
 ## Entry point and state ownership
 
-The root `index.html` loads `src/main.tsx`, which mounts `src/App.tsx` inside `AppErrorBoundary` and React Strict Mode and imports `src/styles/index.css`. `App` composes the hero, chapter navigation, activity sections, favorites, details, and photo credits. It owns chapter/filter/dialog selection; focused hooks own countdown, favorites persistence, reduced-motion preference, current-chapter tracking, and lazy attribution loading. The root error boundary keeps a reload path visible if an unexpected render failure escapes component tests.
+The root `index.html` loads `src/main.tsx`, which mounts `src/App.tsx` inside `AppErrorBoundary` and React Strict Mode and imports `src/styles/index.css`. `App` composes the hero, chapter navigation, activity sections, favorites, details, firsthand outcomes, and photo credits. It owns chapter/filter/dialog selection; focused hooks own countdown, favorites persistence, reduced-motion preference, current-chapter tracking, and lazy attribution loading. The root error boundary keeps a reload path visible if an unexpected render failure escapes component tests.
 
 Activity data is compiled from `src/data/activities.ts`. Pure transformations and URL rules live under `src/domain/`; UI must not recreate those rules in component-local view models. See [architecture.md](architecture.md) for build and S3 boundaries.
 
@@ -35,13 +35,13 @@ The arrival bar counts Dubai calendar dates, not completed 24-hour periods. `ARR
 
 ## Chapter navigation
 
-The sticky chapter bar and desktop sidebar are two presentations of the same state. Chapter destinations are real links whose `href` matches the native section fragment, such as `#animals`; ordinary activation focuses that chapter while modified clicks, long-press, copy-link, and open-in-new-tab remain browser-native. Links identify the current section, report expansion state, and target the corresponding section. The mobile menu reports `aria-expanded`, closes on Escape or selection, and contains Open everything/Fold all actions.
+The sticky chapter bar and desktop sidebar are two presentations of the same state. Chapter destinations are real links whose `href` matches the native section fragment, such as `#animals`; ordinary activation focuses that chapter while modified clicks, long-press, copy-link, and open-in-new-tab remain browser-native. Links identify the current section, report expansion state, and target the corresponding section. The mobile menu reports `aria-expanded`, closes on Escape or selection, and contains Open everything/Fold all actions. Open everything pushes `#everything`, making the all-chapters state explicit and copyable while allowing Back to restore the prior chapter and Forward to reopen everything. Repeating it at `#everything` does not add another history entry.
 
 Each in-page chapter heading is one full-width native button. Clicking anywhere across its header, or activating it from the keyboard, folds or opens that chapter; the arrow is only a visual state indicator.
 
-“Book ahead” filters activities before chapter ordering. Chapters with no matching activities disappear from the guide and both navigation surfaces. Choosing one chapter folds the others and scrolls to that section; reduced-motion users receive an immediate rather than smooth scroll.
+“Book ahead” and “Tried & liked” are mutually exclusive planning modes that filter activities before chapter ordering. Any filter change—turning a mode on, switching modes, or returning to all activities—opens every chapter again so filtered results cannot inherit an unrelated collapsed state. Filters do not create history entries. Selecting one clears the other, which avoids a surprising empty intersection. The firsthand mode is derived from verified entries in `src/data/archive.ts`; chapters with no matching activities disappear from the guide and both navigation surfaces. Choosing one chapter folds the others and scrolls to that section; reduced-motion users receive an immediate rather than smooth scroll.
 
-Explicit chapter navigation updates the fragment and creates one history entry. Loading, Back, or Forward to a chapter fragment expands it before aligning the section under the sticky bar. Accordion toggles and passive scrolling never rewrite the URL or pollute history.
+Explicit chapter navigation updates the fragment and creates one history entry. Open everything follows the same rule by pushing `#everything`. Loading, Back, or Forward between either route restores its matching expansion before alignment. The fragment-free document still defaults to all chapters for ordinary entry, but explicit all-open navigation uses `#everything` so traversal has unambiguous state. Accordion toggles, filters, and passive scrolling never rewrite the URL or pollute history.
 
 Current-chapter tracking initializes on mount, updates at most once per animation frame during scroll/resize, and uses the last section crossing the 120 px sticky-header line.
 
@@ -53,9 +53,11 @@ Every card has the stable native target `activity-<activity-id>`, and each label
 
 Do not turn the wrapper into a button or add `role="button"`: cards contain nested links and buttons. The labeled detail buttons remain the keyboard-accessible opening path. Favorite buttons stop propagation, expose the activity name, and report their pressed state.
 
+An activity recorded as `verified` in the firsthand ledger remains in the main guide and receives a compact, date-stamp-style thumbs-up overlay at the top-left of its card image plus a textual `Tried & liked` callout in its detail sheet. This is deliberately separate from favorites: it records an actual positive visit, not current interest.
+
 ## Modal behavior
 
-Favorites, activity details, and photo credits use the shared native-dialog wrapper in `src/components/Modal.tsx`. Only one dialog can be selected at a time.
+Favorites, activity details, the firsthand archive, and photo credits use the shared native-dialog wrapper in `src/components/Modal.tsx`. Only one dialog can be selected at a time.
 
 - `showModal()` supplies modal semantics and makes the rest of the document inert.
 - Opening focuses the sheet panel and locks document scrolling.
@@ -66,6 +68,12 @@ Favorites, activity details, and photo credits use the shared native-dialog wrap
 - Each dialog is named by its visible heading and, where useful, described by visible copy.
 
 Keep new modal interactions inside this shared boundary instead of adding document-level key or focus handlers to individual sheets.
+
+## Tried and decided
+
+The footer's `Tried & decided` link opens `#archive`. It is a lightweight durable record of firsthand outcomes, grouped into `Tried & liked` and `Rejected`. Verified entries remain active and power the guide marker/filter; rejected entries must be absent from `src/data/activities.ts` but remain in `src/data/archive.ts` so later editorial research cannot accidentally restore them.
+
+The archive follows the same global-sheet history contract as credits: ordinary activation pushes a fragment, Back/Forward tracks it, direct-link dismissal removes only the fragment, and close restores the footer trigger. It records the original chapter, decision date, and concise rationale without retaining rejected galleries in the production payload.
 
 ## Photo credits
 
@@ -111,15 +119,16 @@ Check at 390×844, 999×800, 1000×800, and 1440×900:
 2. Click the hero image, shade, title, and blurb; confirm each opens the active sheet once. Confirm Save, CTA, More, and pagination do not trigger the passive slide action and that closing a passive-opened sheet restores the More link.
 3. Click passive surfaces in all standard, dated, and ahead card treatments; confirm the correct sheet opens at photo 1.
 4. Click Save and every external-action shape; confirm they do not open a sheet.
-5. Exercise chapter selection, fold/open all, Escape menu dismissal, and the book-ahead filter.
+5. Exercise chapter selection, fold/open all, Escape menu dismissal, and both planning filters. From a single expanded chapter, click Open everything and confirm the URL becomes `#everything` without losing the path/query; paste that URL into a fresh tab and confirm all chapters start open. Confirm Back restores the chapter fragment and Forward restores `#everything` with every chapter open. Turn each filter on and off and confirm every visible chapter reopens without adding navigation history. Confirm Book ahead and Tried & liked are mutually exclusive, the verified mode shows Boulder Zone alone, its thumbs-up stamp stays inside the image without overlapping the preceding card, and its sheet carries the matching text callout.
 6. Confirm the 999/1000 px boundary changes from rounded bottom sheet to full-viewport details without horizontal overflow.
 7. Click the left, center, and right of the gallery image; each click should advance exactly once.
 8. Advance the six-image gallery through its last photo, confirm wrap, then jump backward and forward with pills.
 9. Confirm gallery Save does not advance; test desktop X, Escape, backdrop, mobile Close, initial focus, scroll lock, and trigger-focus restoration.
 10. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify dated/book-ahead/everything-else grouping, chronological date order, native row links, independent removal, honest Copy success/failure, and capability-gated Share at every width.
 11. Check keyboard navigation, visible focus, console output, final image loads, and centered crops.
-12. Paste `#animals`, `#activity-rasalkhor`, and `#credits` into a fresh tab. Verify the owning chapter, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
-13. Open Photo credits from the footer. Confirm the full 407-asset catalog is readable, external creator/source/license links are present, the loading/error states do not affect the guide, the sticky X and mobile bottom Close work, and focus returns to the footer link.
+12. Paste `#animals`, `#everything`, `#activity-rasalkhor`, `#archive`, and `#credits` into a fresh tab. Verify the owning chapter or all-open state, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
+13. Open Tried & decided from the footer. Confirm Boulder Zone appears only under Tried & liked, The Wall appears only under Rejected, neither outcome leaks into the wrong active state, both responsive close controls work, and focus returns to the footer link.
+14. Open Photo credits from the footer. Confirm the full 405-asset catalog is readable, external creator/source/license links are present, the loading/error states do not affect the guide, the sticky X and mobile bottom Close work, and focus returns to the footer link.
 
 Finish with:
 
