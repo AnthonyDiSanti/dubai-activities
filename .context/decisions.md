@@ -4,6 +4,13 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-23 — Verify the Soho Garden complex with a scoped visit note
+- Decider: Anthony
+- Decision: Mark the combined Soho Garden, HIVE and CODE activity as Tried & liked, while recording that only SOHO Garden was open and personally experienced during the visit.
+- Rationale: SOHO Garden delivered solid warehouse-party energy and earned the combined destination a place among proven choices, but the archive must not imply that HIVE or CODE has been tested.
+- Alternatives considered: Verify only a newly split SOHO Garden card; leave the combined activity unverified; claim the whole complex was experienced.
+- Consequences / follow-ups: The active combined card gains the same verified marker, filter presence, and sheet callout as Boulder Zone. HIVE and CODE remain explicitly untested until a future visit provides firsthand evidence.
+
 ## 2026-08-23 — Separate the visited Brunch & Cake branch from the chain verdict
 - Decider: Anthony
 - Decision: Record Jumeirah Islands Pavilion as the Brunch & Cake location actually visited, while retaining Rejected as a chain-wide outcome because the experience was bad enough to rule out every branch.

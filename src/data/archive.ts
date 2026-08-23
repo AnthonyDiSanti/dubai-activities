@@ -13,6 +13,15 @@ export const ARCHIVE_ENTRIES = [
     status: 'verified',
   },
   {
+    id: 'sohogarden',
+    name: 'Soho Garden, HIVE and CODE',
+    note: 'Only SOHO Garden was open during the visit, and it delivered solid warehouse-party energy. The full three-venue complex stays among the proven choices, with HIVE and CODE still untested.',
+    originalChapterKey: 'loud',
+    originalChapterName: 'Nights that go loud',
+    recordedOn: '2026-08-23',
+    status: 'verified',
+  },
+  {
     id: 'meowtropolis',
     name: 'Meowtropolis Cat Café',
     note: 'Tried in person. It was okay, but not strong enough to keep as an active recommendation.',

@@ -218,6 +218,8 @@ describe('App', () => {
     const dialog = screen.getByRole('dialog', { name: 'Tried & decided' });
     expect(window.location.hash).toBe('#archive');
     expect(within(dialog).getByRole('heading', { name: 'Boulder Zone' })).toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Soho Garden, HIVE and CODE' }))
+      .toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'Meowtropolis Cat Café' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: "Roberto's" })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'Salmon Guru' })).toBeInTheDocument();
@@ -377,20 +379,27 @@ describe('App', () => {
       .toBeInTheDocument();
   });
 
-  it('filters to firsthand recommendations and marks Boulder Zone in both views', () => {
+  it('filters to firsthand recommendations and marks every verified activity', () => {
     const { container } = render(<App />);
     const boulderCard = screen.getByRole('heading', { name: 'Boulder Zone' })
       .closest('.activity-card');
+    const sohoCard = screen.getByRole('heading', { name: 'Soho Garden, HIVE and CODE' })
+      .closest('.activity-card');
     expect(boulderCard).not.toBeNull();
+    expect(sohoCard).not.toBeNull();
     expect(within(boulderCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
+      .toHaveClass('verified-stamp');
+    expect(within(sohoCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
       .toHaveClass('verified-stamp');
 
     fireEvent.click(screen.getByRole('button', {
       name: 'Show only tried and liked activities',
     }));
 
-    expect(container.querySelectorAll('section.chapter')).toHaveLength(1);
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(1);
+    expect(container.querySelectorAll('section.chapter')).toHaveLength(2);
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(2);
+    expect(screen.getByRole('heading', { name: 'Soho Garden, HIVE and CODE' }))
+      .toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Show all activities' }))
       .toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('button', { name: 'Show only activities to book ahead' }))

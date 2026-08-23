@@ -13,8 +13,10 @@ afterEach(() => {
 
 describe('ArchiveDialog', () => {
   const boulderZone = ITEMS.find(({ id }) => id === 'boulderzone');
+  const sohoGarden = ITEMS.find(({ id }) => id === 'sohogarden');
   if (!boulderZone) throw new Error('Expected active Boulder Zone data');
-  const activities = [boulderZone, ...ARCHIVE_ACTIVITY_DETAILS];
+  if (!sohoGarden) throw new Error('Expected active Soho Garden data');
+  const activities = [boulderZone, sohoGarden, ...ARCHIVE_ACTIVITY_DETAILS];
 
   it('separates liked, merely tried, and rejected firsthand outcomes', () => {
     render(
@@ -35,6 +37,7 @@ describe('ArchiveDialog', () => {
       .closest('section');
     if (!verified || !tried || !rejected) throw new Error('Expected all archive sections');
     expect(verified).toHaveTextContent('Boulder Zone');
+    expect(verified).toHaveTextContent('Soho Garden, HIVE and CODE');
     expect(verified).not.toHaveTextContent('The Wall');
     expect(tried).toHaveTextContent('Meowtropolis Cat Café');
     expect(tried).toHaveTextContent("Roberto's");
@@ -44,9 +47,10 @@ describe('ArchiveDialog', () => {
     expect(rejected).toHaveTextContent('Brunch & Cake');
     expect(rejected).toHaveTextContent('Dubai Butterfly Garden');
     expect(rejected).not.toHaveTextContent('Boulder Zone');
-    expect(within(dialog).getAllByRole('article')).toHaveLength(7);
-    expect(within(verified).getByRole('img', { name: 'Tried and liked' }))
-      .toBeInTheDocument();
+    expect(within(dialog).getAllByRole('article')).toHaveLength(8);
+    expect(within(verified).getAllByRole('img', { name: 'Tried and liked' }))
+      .toHaveLength(2);
+    expect(within(dialog).getByText('2', { selector: 'dd' })).toBeInTheDocument();
     expect(within(tried).queryByRole('img', { name: 'Tried and liked' }))
       .not.toBeInTheDocument();
     expect(dialog).not.toHaveTextContent('It was okay');
@@ -100,7 +104,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    expect(document.querySelectorAll('.activity-card')).toHaveLength(7);
+    expect(document.querySelectorAll('.activity-card')).toHaveLength(8);
     expect(document.querySelector('#archive-activity-robertos .media-fill')).toHaveAttribute(
       'src',
       'photos/robertos-01.jpg',

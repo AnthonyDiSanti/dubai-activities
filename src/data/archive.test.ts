@@ -18,7 +18,7 @@ describe('firsthand activity outcomes', () => {
 
     expect(rejectedIds).toEqual(['thewall', 'brunchandcake', 'butterflygarden']);
     expect(triedIds).toEqual(['meowtropolis', 'robertos', 'salmonguru']);
-    expect(verifiedIds).toEqual(['boulderzone']);
+    expect(verifiedIds).toEqual(['boulderzone', 'sohogarden']);
     expect(activeIds.has('thewall')).toBe(false);
     expect(activeIds.has('brunchandcake')).toBe(false);
     expect(activeIds.has('butterflygarden')).toBe(false);
@@ -26,6 +26,19 @@ describe('firsthand activity outcomes', () => {
     expect(activeIds.has('robertos')).toBe(false);
     expect(activeIds.has('salmonguru')).toBe(false);
     expect(activeIds.has('boulderzone')).toBe(true);
+    expect(activeIds.has('sohogarden')).toBe(true);
+  });
+
+  it('records the scope of the Soho Garden visit without claiming the other rooms were open', () => {
+    const entry = ARCHIVE_ENTRIES.find(({ id }) => id === 'sohogarden');
+
+    expect(entry).toMatchObject({
+      name: 'Soho Garden, HIVE and CODE',
+      originalChapterKey: 'loud',
+      status: 'verified',
+    });
+    expect(entry?.note).toContain('Only SOHO Garden was open');
+    expect(entry?.note).toContain('HIVE and CODE still untested');
   });
 
   it('keeps every inactive outcome sheet-ready without duplicating the verified activity', () => {
