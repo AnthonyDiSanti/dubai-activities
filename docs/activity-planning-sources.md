@@ -4,7 +4,7 @@ This ledger records the primary sources behind structured `facts`, `advisory`, s
 
 The final animal chapter was researched as a separate addendum and retains its source URLs in `src/data/activities.ts`, `docs/image-manifest.csv`, and `activities/Dubai Activities Addendum 3 - Wildlife.md`.
 
-## Retired activities
+## Retired and archive-only activities
 
 | Activity ID | Decision | Primary evidence |
 | --- | --- | --- |
@@ -12,6 +12,19 @@ The final animal chapter was researched as a separate addendum and retains its s
 | `cyanotype` | Remove; the only published session was 15 Aug 2026, before arrival. | [Tashkeel workshop](https://tashkeel.org/workshops/cyanotype-printing-zine-making) |
 | `rawbarista` | Remove; sold out with no future session published. | [RAW training catalogue](https://rawcoffeecompany.com/pages/training-courses), [course page](https://rawcoffeecompany.com/products/home-barista) |
 | `thewall` | Reject after an in-person visit; retain the outcome in the firsthand ledger rather than the active guide. | Anthony's firsthand decision, 22 Aug 2026 |
+| `meowtropolis` | Tried in person and found merely okay; remove from active recommendations and retain under Tried. | Anthony's firsthand decision, 23 Aug 2026 |
+| `robertos` | Tried in person and found merely okay; keep as an archive-only Tried entry. | Anthony's firsthand decision, 23 Aug 2026 |
+| `salmonguru` | Tried in person and found merely okay; keep as an archive-only Tried entry. | Anthony's firsthand decision, 23 Aug 2026 |
+| `brunchandcake` | Reject the full chain after a bad in-person visit to the Jumeirah Islands location; keep as an archive-only exclusion. | Anthony's firsthand decision, 23 Aug 2026 |
+| `butterflygarden` | Reject after an in-person visit; remove from active recommendations and retain under Rejected. | Anthony's firsthand decision, 23 Aug 2026 |
+
+The archive outcome is user-supplied; its neutral venue preview and practical sheet fields remain source-backed:
+
+| Activity ID | Planning evidence | Primary evidence |
+| --- | --- | --- |
+| `robertos` | Verified 23 Aug 2026: current Gate Village 1 location, Mon–Sat hours, and the Ristorante, Scala lounge, and Giardino terrace format. | [Roberto’s Dubai](https://robertosrestaurants.com/dubai/home) |
+| `salmonguru` | Verified 23 Aug 2026: current Opus address, daily hours, central-bar format, and the three contrasting design environments. | [Salmon Guru Dubai](https://salmon-guru.ae/), [venue profile with operator-supplied context](https://www.luxhabitat.ae/the-journal/the-space-salmon-guru/) |
+| `brunchandcake` | Verified 23 Aug 2026: Jumeirah Islands Pavilion address, daily hours, indoor/outdoor lakeside seating, and in-house bakery. The firsthand outcome applies to the chain, but the planning record and gallery identify the branch actually visited. | [Jumeirah Islands](https://brunchandcake.com/jumeirah-islands/), [Dubai locations](https://brunchandcake.com/locations/) |
 
 ## Nights, unusual experiences, and dinners
 
@@ -73,6 +86,12 @@ The final animal chapter was researched as a separate addendum and retains its s
 | `jebeljais` | Drive, viewing-deck fee/hours, 1484 booking/closure, stale season page, and mountain weather. | [destination](https://visitjebeljais.com/), [viewing deck](https://visitjebeljais.com/jais-viewing-deck-park), [1484 guidance](https://visitjebeljais.com/blog/1484-by-puro-one-of-the-best-restaurants-in-the-uae) |
 | `abudhabiday` | Separate timed entries, teamLab duration/conditions, island transfer, and CLYMB check-in/eligibility/upgrade status. | [teamLab hours](https://www.teamlababudhabi.com/en/plan-your-visit/opening-hours), [teamLab location](https://www.teamlababudhabi.com/en/plan-your-visit/getting-here), [CLYMB FAQ](https://www.clymbabudhabi.com/en/faq), [CLYMB status](https://www.clymbabudhabi.com/en/overview/opening-hours) |
 
+## Animals and wildlife
+
+| Activity ID | Planning evidence | Primary evidence |
+| --- | --- | --- |
+| `boomah` | Verified 23 Aug 2026: the live owl café is in Abu Dhabi rather than Dubai; current mall hours and contact details, 10+ species, separate paid owl-room interaction, operator-described supervision/rest practices, and the unresolved captive-owl welfare objection. No current official entry price is published. | [Al Seef Village Mall](https://alseefmall.com/alseef/boomah-owl-cafe/), [Visit Abu Dhabi](https://visitabudhabi.ae/en/where-to-go/dining-and-restaurants/boomah-cafe), [operator interview](https://www.arabnews.com/node/2623600/lifestyle), [welfare criticism](https://www.independent.co.uk/news/world/middle-east/abu-dhabi-owl-cafe-animal-cruelty-b2581744.html) |
+
 ## Maintenance rule
 
-When a fact changes, update the card and this ledger together. A dated activity must not precede `ARRIVAL_DATE_KEY`; a closed, sold-out-without-a-future-date, pre-arrival one-off, or firsthand rejection should leave active data and have its selected gallery rows/files removed in lockstep. Preserve user decisions in `src/data/archive.ts`, and do not turn an expired one-off into a recurring activity without a new source.
+When a fact changes, update the card and this ledger together. A dated activity must not precede `ARRIVAL_DATE_KEY`; a closed, sold-out-without-a-future-date, or pre-arrival one-off should leave active data and have its selected gallery rows/files removed in lockstep. A merely tried place or firsthand rejection leaves active data but keeps its archive detail record, sourced gallery, canonical manifest rows, and attribution rows. Preserve user decisions in `src/data/archive.ts`, and do not turn an expired one-off into a recurring activity without a new source.

@@ -26,7 +26,7 @@ npm run preview
 - `src/hooks/` — browser-backed state and lifecycle behavior.
 - `src/domain/` — typed ordering, treatment, sharing, and URL rules.
 - `src/data/activities.ts` — canonical active content, chapter order, hero selection, and gallery counts.
-- `src/data/archive.ts` — firsthand tried-and-liked and rejected outcomes that must survive editorial refreshes.
+- `src/data/archive.ts` — firsthand liked, merely tried, and rejected outcomes plus inactive sheet records that must survive editorial refreshes.
 - `src/styles/` — design tokens, card treatments, dialogs, layout, and responsive rules.
 - `public/photos/` — local JPEG galleries and brand icons, copied to `dist/photos/` unchanged.
 - `docs/image-manifest.csv` — canonical photo selection and provenance manifest.

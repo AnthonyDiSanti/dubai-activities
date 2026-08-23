@@ -14,14 +14,14 @@ describe('generated photo attribution catalog', () => {
       return counts;
     }, {});
 
-    expect(catalog.assets).toHaveLength(405);
-    expect(filenames.size).toBe(405);
+    expect(catalog.assets).toHaveLength(423);
+    expect(filenames.size).toBe(423);
     expect(basisCounts.creative_commons).toBe(54);
     expect(basisCounts.stock_license).toBe(8);
     expect(basisCounts.public_domain).toBe(2);
     expect(basisCounts.trademark).toBe(2);
     expect(basisCounts.creator_credit).toBe(15);
-    expect(basisCounts.source_credit).toBe(324);
+    expect(basisCounts.source_credit).toBe(342);
 
     const hero = catalog.assets.find(({ filename }) => filename === 'rasalkhor-01.jpg');
     expect(hero?.creator?.name).toBe('Florian Kriechbaumer');

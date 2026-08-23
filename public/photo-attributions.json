@@ -6698,74 +6698,6 @@
       "creditText": "Cat Café Vibrissae · Creek Harbour — photo 4, via Magicpin. Cropped and resized for web display."
     },
     {
-      "filename": "meowtropolis-01.jpg",
-      "activityId": "meowtropolis",
-      "activityName": "Meowtropolis Cat Café",
-      "chapterName": "Fur, feathers and scales",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Meowtropolis Cat Café",
-        "url": "https://www.meowtropoliscatcafe.online/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Cropped and resized for web display.",
-      "creditText": "Meowtropolis Cat Café — photo 1, via Meowtropolis Cat Café. Cropped and resized for web display."
-    },
-    {
-      "filename": "meowtropolis-02.jpg",
-      "activityId": "meowtropolis",
-      "activityName": "Meowtropolis Cat Café",
-      "chapterName": "Fur, feathers and scales",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Meowtropolis Cat Café",
-        "url": "https://www.meowtropoliscatcafe.online/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Cropped and resized for web display.",
-      "creditText": "Meowtropolis Cat Café — photo 2, via Meowtropolis Cat Café. Cropped and resized for web display."
-    },
-    {
-      "filename": "meowtropolis-03.jpg",
-      "activityId": "meowtropolis",
-      "activityName": "Meowtropolis Cat Café",
-      "chapterName": "Fur, feathers and scales",
-      "slot": 3,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Meowtropolis Cat Café",
-        "url": "https://www.meowtropoliscatcafe.online/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Cropped and resized for web display.",
-      "creditText": "Meowtropolis Cat Café — photo 3, via Meowtropolis Cat Café. Cropped and resized for web display."
-    },
-    {
-      "filename": "meowtropolis-04.jpg",
-      "activityId": "meowtropolis",
-      "activityName": "Meowtropolis Cat Café",
-      "chapterName": "Fur, feathers and scales",
-      "slot": 4,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Meowtropolis Cat Café",
-        "url": "https://www.meowtropoliscatcafe.online/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Cropped and resized for web display.",
-      "creditText": "Meowtropolis Cat Café — photo 4, via Meowtropolis Cat Café. Cropped and resized for web display."
-    },
-    {
       "filename": "fluffin-01.jpg",
       "activityId": "fluffin",
       "activityName": "Fluffin Dog Café",
@@ -7214,6 +7146,248 @@
       "creditText": "Dubai Turtle Rehabilitation Project — photo 4, via Jumeirah. Converted to JPEG and resized for web display; shown with responsive cropping."
     },
     {
+      "filename": "opa-01.jpg",
+      "activityId": "opa",
+      "activityName": "OPA Dubai",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": "OPA plate smashing",
+      "creator": {
+        "name": "Jure Ursic",
+        "type": "person",
+        "url": null
+      },
+      "source": {
+        "name": "What’s On Dubai",
+        "url": "https://whatson.ae/2023/08/dont-miss-the-next-legendary-summer-brunch-at-opa/"
+      },
+      "license": null,
+      "creditBasis": "creator_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "OPA plate smashing by Jure Ursic, via What’s On Dubai. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "opa-02.jpg",
+      "activityId": "opa",
+      "activityName": "OPA Dubai",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "OPA",
+        "url": "https://opaworld.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP and resized for responsive web display.",
+      "creditText": "OPA Dubai — photo 2, via OPA. Converted from WebP and resized for responsive web display."
+    },
+    {
+      "filename": "opa-03.jpg",
+      "activityId": "opa",
+      "activityName": "OPA Dubai",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "OPA",
+        "url": "https://opaworld.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP and resized for responsive web display.",
+      "creditText": "OPA Dubai — photo 3, via OPA. Converted from WebP and resized for responsive web display."
+    },
+    {
+      "filename": "opa-04.jpg",
+      "activityId": "opa",
+      "activityName": "OPA Dubai",
+      "chapterName": "Long dinners",
+      "slot": 4,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "OPA",
+        "url": "https://opaworld.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP and resized for responsive web display.",
+      "creditText": "OPA Dubai — photo 4, via OPA. Converted from WebP and resized for responsive web display."
+    },
+    {
+      "filename": "boomah-01.jpg",
+      "activityId": "boomah",
+      "activityName": "Boomah Owl Café",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 1,
+      "workTitle": "Owl opening its wings on a handler's glove",
+      "creator": null,
+      "source": {
+        "name": "Arab News",
+        "url": "https://www.arabnews.com/node/2623600/lifestyle"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Owl opening its wings on a handler's glove, via Arab News. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "boomah-02.jpg",
+      "activityId": "boomah",
+      "activityName": "Boomah Owl Café",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 2,
+      "workTitle": "Boomah café and glass-walled owl room",
+      "creator": null,
+      "source": {
+        "name": "Yango Maps",
+        "url": "https://maps.yango.com/en-ae/org/61921806716/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and re-encoded for web display; shown with responsive cropping.",
+      "creditText": "Boomah café and glass-walled owl room, via Yango Maps. Resized and re-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "boomah-03.jpg",
+      "activityId": "boomah",
+      "activityName": "Boomah Owl Café",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 3,
+      "workTitle": "Visitor touching a snowy owl",
+      "creator": null,
+      "source": {
+        "name": "Arab News",
+        "url": "https://www.arabnews.com/node/2623600/lifestyle"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Visitor touching a snowy owl, via Arab News. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "boomah-04.jpg",
+      "activityId": "boomah",
+      "activityName": "Boomah Owl Café",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 4,
+      "workTitle": "Owl-themed drinks at Boomah",
+      "creator": null,
+      "source": {
+        "name": "Yango Maps",
+        "url": "https://maps.yango.com/en-ae/org/61921806716/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and re-encoded for web display; shown with responsive cropping.",
+      "creditText": "Owl-themed drinks at Boomah, via Yango Maps. Resized and re-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "thewall-01.jpg",
+      "activityId": "thewall",
+      "activityName": "The Wall",
+      "chapterName": "Something to get good at",
+      "slot": 1,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "The Wall Climbing Gym",
+        "url": "https://www.thewallclimbinggym.ae/history/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "The Wall — photo 1, via The Wall Climbing Gym. Resized for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "thewall-02.jpg",
+      "activityId": "thewall",
+      "activityName": "The Wall",
+      "chapterName": "Something to get good at",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "The Wall Climbing Gym",
+        "url": "https://www.thewallclimbinggym.ae/history/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "The Wall — photo 2, via The Wall Climbing Gym. Resized for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "meowtropolis-01.jpg",
+      "activityId": "meowtropolis",
+      "activityName": "Meowtropolis Cat Café",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 1,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Meowtropolis Cat Café",
+        "url": "https://www.meowtropoliscatcafe.online/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Meowtropolis Cat Café — photo 1, via Meowtropolis Cat Café. Cropped and resized for web display."
+    },
+    {
+      "filename": "meowtropolis-02.jpg",
+      "activityId": "meowtropolis",
+      "activityName": "Meowtropolis Cat Café",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Meowtropolis Cat Café",
+        "url": "https://www.meowtropoliscatcafe.online/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Meowtropolis Cat Café — photo 2, via Meowtropolis Cat Café. Cropped and resized for web display."
+    },
+    {
+      "filename": "meowtropolis-03.jpg",
+      "activityId": "meowtropolis",
+      "activityName": "Meowtropolis Cat Café",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 3,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Meowtropolis Cat Café",
+        "url": "https://www.meowtropoliscatcafe.online/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Meowtropolis Cat Café — photo 3, via Meowtropolis Cat Café. Cropped and resized for web display."
+    },
+    {
+      "filename": "meowtropolis-04.jpg",
+      "activityId": "meowtropolis",
+      "activityName": "Meowtropolis Cat Café",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 4,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Meowtropolis Cat Café",
+        "url": "https://www.meowtropoliscatcafe.online/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Meowtropolis Cat Café — photo 4, via Meowtropolis Cat Café. Cropped and resized for web display."
+    },
+    {
       "filename": "butterflygarden-01.jpg",
       "activityId": "butterflygarden",
       "activityName": "Dubai Butterfly Garden",
@@ -7289,76 +7463,208 @@
       "creditText": "Dubai Butterfly Garden — photo 4, via Dubai Miracle Garden. Resized for web display and shown with responsive cropping."
     },
     {
-      "filename": "opa-01.jpg",
-      "activityId": "opa",
-      "activityName": "OPA Dubai",
+      "filename": "robertos-01.jpg",
+      "activityId": "robertos",
+      "activityName": "Roberto's",
       "chapterName": "Long dinners",
       "slot": 1,
-      "workTitle": "OPA plate smashing",
-      "creator": {
-        "name": "Jure Ursic",
-        "type": "person",
-        "url": null
-      },
+      "workTitle": null,
+      "creator": null,
       "source": {
-        "name": "What’s On Dubai",
-        "url": "https://whatson.ae/2023/08/dont-miss-the-next-legendary-summer-brunch-at-opa/"
+        "name": "Roberto’s",
+        "url": "https://robertosrestaurants.com/dubai/home"
       },
       "license": null,
-      "creditBasis": "creator_credit",
-      "modifications": "Re-encoded for web display and shown with responsive cropping.",
-      "creditText": "OPA plate smashing by Jure Ursic, via What’s On Dubai. Re-encoded for web display and shown with responsive cropping."
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Roberto's — photo 1, via Roberto’s. Cropped and resized for web display."
     },
     {
-      "filename": "opa-02.jpg",
-      "activityId": "opa",
-      "activityName": "OPA Dubai",
+      "filename": "robertos-02.jpg",
+      "activityId": "robertos",
+      "activityName": "Roberto's",
       "chapterName": "Long dinners",
       "slot": 2,
       "workTitle": null,
       "creator": null,
       "source": {
-        "name": "OPA",
-        "url": "https://opaworld.com/dubai/"
+        "name": "Roberto’s",
+        "url": "https://robertosrestaurants.com/dubai/home"
       },
       "license": null,
       "creditBasis": "source_credit",
-      "modifications": "Converted from WebP and resized for responsive web display.",
-      "creditText": "OPA Dubai — photo 2, via OPA. Converted from WebP and resized for responsive web display."
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Roberto's — photo 2, via Roberto’s. Resized for web display and shown with responsive cropping."
     },
     {
-      "filename": "opa-03.jpg",
-      "activityId": "opa",
-      "activityName": "OPA Dubai",
+      "filename": "robertos-03.jpg",
+      "activityId": "robertos",
+      "activityName": "Roberto's",
       "chapterName": "Long dinners",
       "slot": 3,
       "workTitle": null,
       "creator": null,
       "source": {
-        "name": "OPA",
-        "url": "https://opaworld.com/dubai/"
+        "name": "Roberto’s",
+        "url": "https://robertosrestaurants.com/dubai/home"
       },
       "license": null,
       "creditBasis": "source_credit",
-      "modifications": "Converted from WebP and resized for responsive web display.",
-      "creditText": "OPA Dubai — photo 3, via OPA. Converted from WebP and resized for responsive web display."
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Roberto's — photo 3, via Roberto’s. Resized for web display and shown with responsive cropping."
     },
     {
-      "filename": "opa-04.jpg",
-      "activityId": "opa",
-      "activityName": "OPA Dubai",
+      "filename": "robertos-04.jpg",
+      "activityId": "robertos",
+      "activityName": "Roberto's",
       "chapterName": "Long dinners",
       "slot": 4,
       "workTitle": null,
       "creator": null,
       "source": {
-        "name": "OPA",
-        "url": "https://opaworld.com/dubai/"
+        "name": "Roberto’s",
+        "url": "https://robertosrestaurants.com/dubai/home"
       },
       "license": null,
       "creditBasis": "source_credit",
-      "modifications": "Converted from WebP and resized for responsive web display.",
-      "creditText": "OPA Dubai — photo 4, via OPA. Converted from WebP and resized for responsive web display."
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Roberto's — photo 4, via Roberto’s. Resized for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "salmonguru-01.jpg",
+      "activityId": "salmonguru",
+      "activityName": "Salmon Guru",
+      "chapterName": "Genuinely strange",
+      "slot": 1,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Luxhabitat",
+        "url": "https://www.luxhabitat.ae/the-journal/the-space-salmon-guru/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Salmon Guru — photo 1, via Luxhabitat. Resized for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "salmonguru-02.jpg",
+      "activityId": "salmonguru",
+      "activityName": "Salmon Guru",
+      "chapterName": "Genuinely strange",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Luxhabitat",
+        "url": "https://www.luxhabitat.ae/the-journal/the-space-salmon-guru/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Salmon Guru — photo 2, via Luxhabitat. Resized for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "salmonguru-03.jpg",
+      "activityId": "salmonguru",
+      "activityName": "Salmon Guru",
+      "chapterName": "Genuinely strange",
+      "slot": 3,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Salmon Guru Dubai",
+        "url": "https://salmon-guru.ae/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
+      "creditText": "Salmon Guru — photo 3, via Salmon Guru Dubai. Converted to JPEG and resized for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "salmonguru-04.jpg",
+      "activityId": "salmonguru",
+      "activityName": "Salmon Guru",
+      "chapterName": "Genuinely strange",
+      "slot": 4,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Salmon Guru Dubai",
+        "url": "https://salmon-guru.ae/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
+      "creditText": "Salmon Guru — photo 4, via Salmon Guru Dubai. Converted to JPEG and resized for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "brunchandcake-01.jpg",
+      "activityId": "brunchandcake",
+      "activityName": "Brunch & Cake",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Brunch & Cake",
+        "url": "https://brunchandcake.com/jumeirah-islands/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Shown with responsive cropping.",
+      "creditText": "Brunch & Cake — photo 1, via Brunch & Cake. Shown with responsive cropping."
+    },
+    {
+      "filename": "brunchandcake-02.jpg",
+      "activityId": "brunchandcake",
+      "activityName": "Brunch & Cake",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Brunch & Cake",
+        "url": "https://brunchandcake.com/jumeirah-islands/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Shown with responsive cropping.",
+      "creditText": "Brunch & Cake — photo 2, via Brunch & Cake. Shown with responsive cropping."
+    },
+    {
+      "filename": "brunchandcake-03.jpg",
+      "activityId": "brunchandcake",
+      "activityName": "Brunch & Cake",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Brunch & Cake",
+        "url": "https://brunchandcake.com/jumeirah-islands/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Shown with responsive cropping.",
+      "creditText": "Brunch & Cake — photo 3, via Brunch & Cake. Shown with responsive cropping."
+    },
+    {
+      "filename": "brunchandcake-04.jpg",
+      "activityId": "brunchandcake",
+      "activityName": "Brunch & Cake",
+      "chapterName": "Long dinners",
+      "slot": 4,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Brunch & Cake",
+        "url": "https://brunchandcake.com/jumeirah-islands/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Shown with responsive cropping.",
+      "creditText": "Brunch & Cake — photo 4, via Brunch & Cake. Shown with responsive cropping."
     },
     {
       "filename": "icon-google-maps.svg",

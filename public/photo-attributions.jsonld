@@ -4033,46 +4033,6 @@
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/meowtropolis-01.jpg",
-      "contentUrl": "./photos/meowtropolis-01.jpg",
-      "name": "Meowtropolis Cat Café — photo 1",
-      "creditText": "Meowtropolis Cat Café — photo 1, via Meowtropolis Cat Café. Cropped and resized for web display.",
-      "isBasedOn": "https://www.meowtropoliscatcafe.online/",
-      "encodingFormat": "image/jpeg",
-      "description": "Cropped and resized for web display."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/meowtropolis-02.jpg",
-      "contentUrl": "./photos/meowtropolis-02.jpg",
-      "name": "Meowtropolis Cat Café — photo 2",
-      "creditText": "Meowtropolis Cat Café — photo 2, via Meowtropolis Cat Café. Cropped and resized for web display.",
-      "isBasedOn": "https://www.meowtropoliscatcafe.online/",
-      "encodingFormat": "image/jpeg",
-      "description": "Cropped and resized for web display."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/meowtropolis-03.jpg",
-      "contentUrl": "./photos/meowtropolis-03.jpg",
-      "name": "Meowtropolis Cat Café — photo 3",
-      "creditText": "Meowtropolis Cat Café — photo 3, via Meowtropolis Cat Café. Cropped and resized for web display.",
-      "isBasedOn": "https://www.meowtropoliscatcafe.online/",
-      "encodingFormat": "image/jpeg",
-      "description": "Cropped and resized for web display."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/meowtropolis-04.jpg",
-      "contentUrl": "./photos/meowtropolis-04.jpg",
-      "name": "Meowtropolis Cat Café — photo 4",
-      "creditText": "Meowtropolis Cat Café — photo 4, via Meowtropolis Cat Café. Cropped and resized for web display.",
-      "isBasedOn": "https://www.meowtropoliscatcafe.online/",
-      "encodingFormat": "image/jpeg",
-      "description": "Cropped and resized for web display."
-    },
-    {
-      "@type": "ImageObject",
       "@id": "./photos/fluffin-01.jpg",
       "contentUrl": "./photos/fluffin-01.jpg",
       "name": "Fluffin Dog Café — photo 1",
@@ -4345,6 +4305,150 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/opa-01.jpg",
+      "contentUrl": "./photos/opa-01.jpg",
+      "name": "OPA plate smashing",
+      "creditText": "OPA plate smashing by Jure Ursic, via What’s On Dubai. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://whatson.ae/2023/08/dont-miss-the-next-legendary-summer-brunch-at-opa/",
+      "encodingFormat": "image/jpeg",
+      "creator": {
+        "@type": "Person",
+        "name": "Jure Ursic"
+      },
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/opa-02.jpg",
+      "contentUrl": "./photos/opa-02.jpg",
+      "name": "OPA Dubai — photo 2",
+      "creditText": "OPA Dubai — photo 2, via OPA. Converted from WebP and resized for responsive web display.",
+      "isBasedOn": "https://opaworld.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP and resized for responsive web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/opa-03.jpg",
+      "contentUrl": "./photos/opa-03.jpg",
+      "name": "OPA Dubai — photo 3",
+      "creditText": "OPA Dubai — photo 3, via OPA. Converted from WebP and resized for responsive web display.",
+      "isBasedOn": "https://opaworld.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP and resized for responsive web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/opa-04.jpg",
+      "contentUrl": "./photos/opa-04.jpg",
+      "name": "OPA Dubai — photo 4",
+      "creditText": "OPA Dubai — photo 4, via OPA. Converted from WebP and resized for responsive web display.",
+      "isBasedOn": "https://opaworld.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP and resized for responsive web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/boomah-01.jpg",
+      "contentUrl": "./photos/boomah-01.jpg",
+      "name": "Owl opening its wings on a handler's glove",
+      "creditText": "Owl opening its wings on a handler's glove, via Arab News. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.arabnews.com/node/2623600/lifestyle",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/boomah-02.jpg",
+      "contentUrl": "./photos/boomah-02.jpg",
+      "name": "Boomah café and glass-walled owl room",
+      "creditText": "Boomah café and glass-walled owl room, via Yango Maps. Resized and re-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://maps.yango.com/en-ae/org/61921806716/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and re-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/boomah-03.jpg",
+      "contentUrl": "./photos/boomah-03.jpg",
+      "name": "Visitor touching a snowy owl",
+      "creditText": "Visitor touching a snowy owl, via Arab News. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.arabnews.com/node/2623600/lifestyle",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/boomah-04.jpg",
+      "contentUrl": "./photos/boomah-04.jpg",
+      "name": "Owl-themed drinks at Boomah",
+      "creditText": "Owl-themed drinks at Boomah, via Yango Maps. Resized and re-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://maps.yango.com/en-ae/org/61921806716/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and re-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/thewall-01.jpg",
+      "contentUrl": "./photos/thewall-01.jpg",
+      "name": "The Wall — photo 1",
+      "creditText": "The Wall — photo 1, via The Wall Climbing Gym. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.thewallclimbinggym.ae/history/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/thewall-02.jpg",
+      "contentUrl": "./photos/thewall-02.jpg",
+      "name": "The Wall — photo 2",
+      "creditText": "The Wall — photo 2, via The Wall Climbing Gym. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.thewallclimbinggym.ae/history/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/meowtropolis-01.jpg",
+      "contentUrl": "./photos/meowtropolis-01.jpg",
+      "name": "Meowtropolis Cat Café — photo 1",
+      "creditText": "Meowtropolis Cat Café — photo 1, via Meowtropolis Cat Café. Cropped and resized for web display.",
+      "isBasedOn": "https://www.meowtropoliscatcafe.online/",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/meowtropolis-02.jpg",
+      "contentUrl": "./photos/meowtropolis-02.jpg",
+      "name": "Meowtropolis Cat Café — photo 2",
+      "creditText": "Meowtropolis Cat Café — photo 2, via Meowtropolis Cat Café. Cropped and resized for web display.",
+      "isBasedOn": "https://www.meowtropoliscatcafe.online/",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/meowtropolis-03.jpg",
+      "contentUrl": "./photos/meowtropolis-03.jpg",
+      "name": "Meowtropolis Cat Café — photo 3",
+      "creditText": "Meowtropolis Cat Café — photo 3, via Meowtropolis Cat Café. Cropped and resized for web display.",
+      "isBasedOn": "https://www.meowtropoliscatcafe.online/",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/meowtropolis-04.jpg",
+      "contentUrl": "./photos/meowtropolis-04.jpg",
+      "name": "Meowtropolis Cat Café — photo 4",
+      "creditText": "Meowtropolis Cat Café — photo 4, via Meowtropolis Cat Café. Cropped and resized for web display.",
+      "isBasedOn": "https://www.meowtropoliscatcafe.online/",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/butterflygarden-01.jpg",
       "contentUrl": "./photos/butterflygarden-01.jpg",
       "name": "Dubai Butterfly Garden — photo 1",
@@ -4391,47 +4495,123 @@
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/opa-01.jpg",
-      "contentUrl": "./photos/opa-01.jpg",
-      "name": "OPA plate smashing",
-      "creditText": "OPA plate smashing by Jure Ursic, via What’s On Dubai. Re-encoded for web display and shown with responsive cropping.",
-      "isBasedOn": "https://whatson.ae/2023/08/dont-miss-the-next-legendary-summer-brunch-at-opa/",
+      "@id": "./photos/robertos-01.jpg",
+      "contentUrl": "./photos/robertos-01.jpg",
+      "name": "Roberto's — photo 1",
+      "creditText": "Roberto's — photo 1, via Roberto’s. Cropped and resized for web display.",
+      "isBasedOn": "https://robertosrestaurants.com/dubai/home",
       "encodingFormat": "image/jpeg",
-      "creator": {
-        "@type": "Person",
-        "name": "Jure Ursic"
-      },
-      "description": "Re-encoded for web display and shown with responsive cropping."
+      "description": "Cropped and resized for web display."
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/opa-02.jpg",
-      "contentUrl": "./photos/opa-02.jpg",
-      "name": "OPA Dubai — photo 2",
-      "creditText": "OPA Dubai — photo 2, via OPA. Converted from WebP and resized for responsive web display.",
-      "isBasedOn": "https://opaworld.com/dubai/",
+      "@id": "./photos/robertos-02.jpg",
+      "contentUrl": "./photos/robertos-02.jpg",
+      "name": "Roberto's — photo 2",
+      "creditText": "Roberto's — photo 2, via Roberto’s. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://robertosrestaurants.com/dubai/home",
       "encodingFormat": "image/jpeg",
-      "description": "Converted from WebP and resized for responsive web display."
+      "description": "Resized for web display and shown with responsive cropping."
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/opa-03.jpg",
-      "contentUrl": "./photos/opa-03.jpg",
-      "name": "OPA Dubai — photo 3",
-      "creditText": "OPA Dubai — photo 3, via OPA. Converted from WebP and resized for responsive web display.",
-      "isBasedOn": "https://opaworld.com/dubai/",
+      "@id": "./photos/robertos-03.jpg",
+      "contentUrl": "./photos/robertos-03.jpg",
+      "name": "Roberto's — photo 3",
+      "creditText": "Roberto's — photo 3, via Roberto’s. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://robertosrestaurants.com/dubai/home",
       "encodingFormat": "image/jpeg",
-      "description": "Converted from WebP and resized for responsive web display."
+      "description": "Resized for web display and shown with responsive cropping."
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/opa-04.jpg",
-      "contentUrl": "./photos/opa-04.jpg",
-      "name": "OPA Dubai — photo 4",
-      "creditText": "OPA Dubai — photo 4, via OPA. Converted from WebP and resized for responsive web display.",
-      "isBasedOn": "https://opaworld.com/dubai/",
+      "@id": "./photos/robertos-04.jpg",
+      "contentUrl": "./photos/robertos-04.jpg",
+      "name": "Roberto's — photo 4",
+      "creditText": "Roberto's — photo 4, via Roberto’s. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://robertosrestaurants.com/dubai/home",
       "encodingFormat": "image/jpeg",
-      "description": "Converted from WebP and resized for responsive web display."
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/salmonguru-01.jpg",
+      "contentUrl": "./photos/salmonguru-01.jpg",
+      "name": "Salmon Guru — photo 1",
+      "creditText": "Salmon Guru — photo 1, via Luxhabitat. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.luxhabitat.ae/the-journal/the-space-salmon-guru/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/salmonguru-02.jpg",
+      "contentUrl": "./photos/salmonguru-02.jpg",
+      "name": "Salmon Guru — photo 2",
+      "creditText": "Salmon Guru — photo 2, via Luxhabitat. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.luxhabitat.ae/the-journal/the-space-salmon-guru/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/salmonguru-03.jpg",
+      "contentUrl": "./photos/salmonguru-03.jpg",
+      "name": "Salmon Guru — photo 3",
+      "creditText": "Salmon Guru — photo 3, via Salmon Guru Dubai. Converted to JPEG and resized for web display; shown with responsive cropping.",
+      "isBasedOn": "https://salmon-guru.ae/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/salmonguru-04.jpg",
+      "contentUrl": "./photos/salmonguru-04.jpg",
+      "name": "Salmon Guru — photo 4",
+      "creditText": "Salmon Guru — photo 4, via Salmon Guru Dubai. Converted to JPEG and resized for web display; shown with responsive cropping.",
+      "isBasedOn": "https://salmon-guru.ae/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/brunchandcake-01.jpg",
+      "contentUrl": "./photos/brunchandcake-01.jpg",
+      "name": "Brunch & Cake — photo 1",
+      "creditText": "Brunch & Cake — photo 1, via Brunch & Cake. Shown with responsive cropping.",
+      "isBasedOn": "https://brunchandcake.com/jumeirah-islands/",
+      "encodingFormat": "image/jpeg",
+      "description": "Shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/brunchandcake-02.jpg",
+      "contentUrl": "./photos/brunchandcake-02.jpg",
+      "name": "Brunch & Cake — photo 2",
+      "creditText": "Brunch & Cake — photo 2, via Brunch & Cake. Shown with responsive cropping.",
+      "isBasedOn": "https://brunchandcake.com/jumeirah-islands/",
+      "encodingFormat": "image/jpeg",
+      "description": "Shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/brunchandcake-03.jpg",
+      "contentUrl": "./photos/brunchandcake-03.jpg",
+      "name": "Brunch & Cake — photo 3",
+      "creditText": "Brunch & Cake — photo 3, via Brunch & Cake. Shown with responsive cropping.",
+      "isBasedOn": "https://brunchandcake.com/jumeirah-islands/",
+      "encodingFormat": "image/jpeg",
+      "description": "Shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/brunchandcake-04.jpg",
+      "contentUrl": "./photos/brunchandcake-04.jpg",
+      "name": "Brunch & Cake — photo 4",
+      "creditText": "Brunch & Cake — photo 4, via Brunch & Cake. Shown with responsive cropping.",
+      "isBasedOn": "https://brunchandcake.com/jumeirah-islands/",
+      "encodingFormat": "image/jpeg",
+      "description": "Shown with responsive cropping."
     },
     {
       "@type": "ImageObject",

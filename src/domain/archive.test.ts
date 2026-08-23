@@ -8,22 +8,34 @@ const entries: readonly ArchiveEntry[] = [
     id: 'rejected-one',
     name: 'Rejected one',
     note: 'Not worth returning to.',
+    originalChapterKey: 'loud',
     originalChapterName: 'Original chapter',
     recordedOn: '2026-08-22',
     status: 'rejected',
   },
   {
+    id: 'tried-one',
+    name: 'Tried one',
+    note: 'Fine, but not a recommendation.',
+    originalChapterKey: 'loud',
+    originalChapterName: 'Original chapter',
+    recordedOn: '2026-08-21',
+    status: 'tried',
+  },
+  {
     id: 'verified-one',
     name: 'Verified one',
     note: 'Earned a return visit.',
+    originalChapterKey: 'loud',
     originalChapterName: 'Original chapter',
-    recordedOn: '2026-08-21',
+    recordedOn: '2026-08-19',
     status: 'verified',
   },
   {
     id: 'rejected-two',
     name: 'Rejected two',
     note: 'Ruled out deliberately.',
+    originalChapterKey: 'loud',
     originalChapterName: 'Original chapter',
     recordedOn: '2026-08-20',
     status: 'rejected',
@@ -35,6 +47,7 @@ describe('archive domain', () => {
     const groups = groupArchiveEntries(entries);
 
     expect(groups.rejected.map(({ id }) => id)).toEqual(['rejected-one', 'rejected-two']);
+    expect(groups.tried.map(({ id }) => id)).toEqual(['tried-one']);
     expect(groups.verified.map(({ id }) => id)).toEqual(['verified-one']);
   });
 

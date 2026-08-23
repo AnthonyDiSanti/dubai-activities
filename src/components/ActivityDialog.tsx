@@ -6,15 +6,17 @@ import {
   activityPrimaryUrl,
   type Activity,
 } from '../domain/activity';
+import { formatArchiveDate, type ArchiveEntry } from '../domain/archive';
 import { Modal } from './Modal';
 
 export type ActivityDialogProps = {
   readonly activity: Activity;
+  readonly archiveEntry?: ArchiveEntry;
   readonly fallbackFocusId?: string;
-  readonly isFavorite: boolean;
-  readonly isVerified: boolean;
+  readonly isFavorite?: boolean;
+  readonly isVerified?: boolean;
   readonly onClose: () => void;
-  readonly onToggleFavorite: (activityId: Activity['id']) => void;
+  readonly onToggleFavorite?: (activityId: Activity['id']) => void;
 };
 
 type GalleryState = {
@@ -24,18 +26,21 @@ type GalleryState = {
 
 export function ActivityDialog({
   activity,
+  archiveEntry,
   fallbackFocusId,
-  isFavorite,
-  isVerified,
+  isFavorite = false,
+  isVerified = false,
   onClose,
   onToggleFavorite,
 }: ActivityDialogProps) {
   const titleId = useId();
   const descriptionId = useId();
   const [gallery, setGallery] = useState<GalleryState>({ activityId: activity.id, index: 0 });
-  const photoCount = Math.max(1, Math.trunc(activity.photos));
+  const photoCount = Math.max(0, Math.trunc(activity.photos));
   // Keying local state by activity prevents a stale frame when an open dialog changes item.
-  const photoIndex = gallery.activityId === activity.id ? gallery.index % photoCount : 0;
+  const photoIndex = photoCount > 0 && gallery.activityId === activity.id
+    ? gallery.index % photoCount
+    : 0;
   const displayedPhotoNumber = photoIndex + 1;
   const nextPhotoNumber = ((photoIndex + 1) % photoCount) + 1;
   const primaryUrl = activityPrimaryUrl(activity);
@@ -47,8 +52,15 @@ export function ActivityDialog({
   const datedDisplay = calendarValue && datedYear && !calendarValue.includes(datedYear)
     ? `${calendarValue} · ${datedYear}`
     : calendarValue;
+  const verified = isVerified || archiveEntry?.status === 'verified';
+  const outcomeLabel = archiveEntry?.status === 'rejected'
+    ? 'Rejected'
+    : archiveEntry?.status === 'tried'
+      ? 'Tried'
+      : 'Tried & liked';
 
   const goToPhoto = (index: number) => {
+    if (photoCount === 0) return;
     setGallery({ activityId: activity.id, index: index % photoCount });
   };
 
@@ -69,7 +81,9 @@ export function ActivityDialog({
       <div className="detail-sheet__panel" data-dialog-panel tabIndex={-1}>
         <div className="detail-sheet__inner">
           <div className="detail-sheet__toolbar">
-            <span className="detail-sheet__toolbar-label">Activity details</span>
+            <span className="detail-sheet__toolbar-label">
+              {archiveEntry && !verified ? 'Archived activity' : 'Activity details'}
+            </span>
             <button
               aria-label="Close activity details"
               className="detail-sheet__close-x"
@@ -80,54 +94,74 @@ export function ActivityDialog({
             </button>
           </div>
           <div className="detail-sheet__handle" />
-          <div className="detail-sheet__media">
-            <div className="media-placeholder media-placeholder--detail" />
-            <button
-              aria-label={`Advance to photo ${String(nextPhotoNumber)} of ${String(photoCount)}`}
-              className="detail-sheet__advance"
-              onClick={nextPhoto}
-              type="button"
-            >
-              <img
-                alt={`${activity.name}, photo ${String(displayedPhotoNumber)} of ${String(photoCount)}`}
-                className="media-fill"
-                decoding="async"
-                src={activityPhotoUrl(activity, photoIndex + 1)}
-              />
-            </button>
-            <button
-              aria-label={`${isFavorite ? 'Remove' : 'Save'} ${activity.name} ${isFavorite ? 'from' : 'to'} favorites`}
-              aria-pressed={isFavorite}
-              className="favorite-button favorite-button--detail"
-              onClick={(event: MouseEvent<HTMLButtonElement>) => {
-                // This control overlays the gallery but must never advance it.
-                event.stopPropagation();
-                onToggleFavorite(activity.id);
-              }}
-              type="button"
-            >
-              <span aria-hidden="true">{isFavorite ? '♥' : '♡'}</span>
-            </button>
-          </div>
+          {photoCount > 0 ? (
+            <>
+              <div className="detail-sheet__media">
+                <div className="media-placeholder media-placeholder--detail" />
+                <button
+                  aria-label={`Advance to photo ${String(nextPhotoNumber)} of ${String(photoCount)}`}
+                  className="detail-sheet__advance"
+                  onClick={nextPhoto}
+                  type="button"
+                >
+                  <img
+                    alt={`${activity.name}, photo ${String(displayedPhotoNumber)} of ${String(photoCount)}`}
+                    className="media-fill"
+                    decoding="async"
+                    src={activityPhotoUrl(activity, photoIndex + 1)}
+                  />
+                </button>
+                {onToggleFavorite && (
+                  <button
+                    aria-label={`${isFavorite ? 'Remove' : 'Save'} ${activity.name} ${isFavorite ? 'from' : 'to'} favorites`}
+                    aria-pressed={isFavorite}
+                    className="favorite-button favorite-button--detail"
+                    onClick={(event: MouseEvent<HTMLButtonElement>) => {
+                      // This control overlays the gallery but must never advance it.
+                      event.stopPropagation();
+                      onToggleFavorite(activity.id);
+                    }}
+                    type="button"
+                  >
+                    <span aria-hidden="true">{isFavorite ? '♥' : '♡'}</span>
+                  </button>
+                )}
+              </div>
 
-          <div className="detail-sheet__dots" role="group" aria-label="Activity photos">
-            {Array.from({ length: photoCount }, (_, index) => (
-              <button
-                aria-current={index === photoIndex}
-                aria-label={`Show photo ${String(index + 1)} of ${String(photoCount)}`}
-                className="detail-sheet__dot"
-                key={index}
-                onClick={() => { goToPhoto(index); }}
-                type="button"
-              >
-                <span />
-              </button>
-            ))}
-          </div>
-          <p className="detail-sheet__hint">Tap or click the photo for the next picture</p>
+              <div className="detail-sheet__dots" role="group" aria-label="Activity photos">
+                {Array.from({ length: photoCount }, (_, index) => (
+                  <button
+                    aria-current={index === photoIndex}
+                    aria-label={`Show photo ${String(index + 1)} of ${String(photoCount)}`}
+                    className="detail-sheet__dot"
+                    key={index}
+                    onClick={() => { goToPhoto(index); }}
+                    type="button"
+                  >
+                    <span />
+                  </button>
+                ))}
+              </div>
+              <p className="detail-sheet__hint">Tap or click the photo for the next picture</p>
+            </>
+          ) : (
+            <div className="detail-sheet__media detail-sheet__media--archive-empty">
+              <span aria-hidden="true" className="detail-sheet__archive-mark">·</span>
+              <p>Firsthand record</p>
+            </div>
+          )}
 
           <div className="detail-sheet__copy">
-            {isVerified && (
+            {archiveEntry && (
+              <aside className={`detail-sheet__outcome detail-sheet__outcome--${archiveEntry.status}`}>
+                <p className="detail-sheet__outcome-label">{outcomeLabel}</p>
+                <p className="detail-sheet__outcome-note">{archiveEntry.note}</p>
+                <p className="detail-sheet__outcome-date">
+                  Recorded {formatArchiveDate(archiveEntry.recordedOn)}
+                </p>
+              </aside>
+            )}
+            {verified && !archiveEntry && (
               <p className="detail-sheet__verified">
                 <span aria-hidden="true">✓</span> Tried &amp; liked
               </p>

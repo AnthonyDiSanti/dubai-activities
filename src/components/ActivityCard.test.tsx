@@ -69,6 +69,28 @@ describe('ActivityCard', () => {
     );
   });
 
+  it('supports an archive anchor and omits favorite controls when disabled', () => {
+    const { container } = render(
+      <ActivityCard
+        anchorId="archive-activity-sample"
+        favoriteEnabled={false}
+        isFavorite={false}
+        isVerified
+        item={item}
+        onOpen={vi.fn()}
+        onToggleFavorite={vi.fn()}
+        treatment="letter"
+      />,
+    );
+
+    expect(container.querySelector('.activity-card')).toHaveAttribute(
+      'id',
+      'archive-activity-sample',
+    );
+    expect(screen.queryByRole('button', { name: /favorites/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('img', { name: 'Tried and liked' })).toBeInTheDocument();
+  });
+
   it('opens from the passive card surface and from an explicit keyboard-accessible control', () => {
     const onOpen = vi.fn();
     const { container } = render(

@@ -45,8 +45,7 @@ describe('App', () => {
       'platinumcamel',
       'vibrissae',
       'camelfarm',
-      'butterflygarden',
-      'meowtropolis',
+      'boomah',
       'fluffin',
     ]);
     expect(animalItems.flatMap((item, index) => item.ahead ? [index] : [])).toEqual([1, 3, 5]);
@@ -93,7 +92,7 @@ describe('App', () => {
       .toHaveAttribute('aria-expanded', 'true');
     expect(screen.getByRole('button', { name: 'Nights that go loud' }))
       .toHaveAttribute('aria-expanded', 'false');
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(9);
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(8);
     expect(screen.getByRole('heading', { name: 'Ras Al Khor Wildlife Sanctuary' }))
       .toBeInTheDocument();
   });
@@ -219,6 +218,11 @@ describe('App', () => {
     const dialog = screen.getByRole('dialog', { name: 'Tried & decided' });
     expect(window.location.hash).toBe('#archive');
     expect(within(dialog).getByRole('heading', { name: 'Boulder Zone' })).toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Meowtropolis Cat Café' })).toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: "Roberto's" })).toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Salmon Guru' })).toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Brunch & Cake' })).toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Dubai Butterfly Garden' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'The Wall' })).toBeInTheDocument();
 
     fireEvent.click(within(dialog).getByRole('button', { name: 'Close tried and decided' }));
@@ -243,6 +247,42 @@ describe('App', () => {
     expect(window.location.search).toBe('?from=message');
     expect(window.location.hash).toBe('');
     expect(screen.getByRole('link', { name: 'Tried & decided' })).toHaveFocus();
+  });
+
+  it('opens an archived card as a full sheet and restores the archive through history', async () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole('link', { name: 'Tried & decided' }));
+    const archive = screen.getByRole('dialog', { name: 'Tried & decided' });
+
+    fireEvent.click(within(archive).getByRole('link', {
+      name: "Open details for Roberto's",
+    }));
+
+    const details = screen.getByRole('dialog', { name: "Roberto's" });
+    expect(window.location.hash).toBe('#activity-robertos');
+    expect(within(details).getByText('Tried', { selector: '.detail-sheet__outcome-label' }))
+      .toBeInTheDocument();
+    expect(within(details).queryByRole('button', { name: /favorites/i })).not.toBeInTheDocument();
+
+    actHistory('/#archive');
+    await waitFor(() => {
+      expect(screen.getByRole('dialog', { name: 'Tried & decided' })).toBeInTheDocument();
+    });
+  });
+
+  it('closes a direct archived activity link onto the archive', async () => {
+    window.history.replaceState(null, '', '/guide/?from=message#activity-robertos');
+    render(<App />);
+
+    expect(screen.getByRole('dialog', { name: "Roberto's" })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Close activity details' }));
+
+    await waitFor(() => {
+      expect(screen.getByRole('dialog', { name: 'Tried & decided' })).toBeInTheDocument();
+    });
+    expect(window.location.hash).toBe('#archive');
+    expect(screen.getByRole('dialog', { name: 'Tried & decided' })
+      .querySelector('[data-dialog-panel]')).toHaveFocus();
   });
 
   it('synchronizes an activity sheet with Back and Forward history traversal', async () => {
@@ -277,7 +317,7 @@ describe('App', () => {
         .toHaveAttribute('aria-pressed', 'false');
     });
     expect(window.location.hash).toBe('#animals');
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(9);
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(8);
   });
 
   it('ignores invalid activity anchors and preserves favorites-list links', () => {
@@ -358,7 +398,7 @@ describe('App', () => {
 
     fireEvent.click(screen.getByRole('heading', { name: 'Boulder Zone' }));
     const dialog = screen.getByRole('dialog', { name: 'Boulder Zone' });
-    expect(within(dialog).getByText('Tried & liked', { selector: '.detail-sheet__verified' }))
+    expect(within(dialog).getByText('Tried & liked', { selector: '.detail-sheet__outcome-label' }))
       .toBeInTheDocument();
   });
 

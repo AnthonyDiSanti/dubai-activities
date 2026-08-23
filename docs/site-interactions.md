@@ -71,9 +71,11 @@ Keep new modal interactions inside this shared boundary instead of adding docume
 
 ## Tried and decided
 
-The footer's `Tried & decided` link opens `#archive`. It is a lightweight durable record of firsthand outcomes, grouped into `Tried & liked` and `Rejected`. Verified entries remain active and power the guide marker/filter; rejected entries must be absent from `src/data/activities.ts` but remain in `src/data/archive.ts` so later editorial research cannot accidentally restore them.
+The footer's `Tried & decided` link opens `#archive`. It is a visual, card-based record of firsthand outcomes, grouped into independently collapsible `Tried & liked`, `Tried`, and `Rejected` sections. All three begin open and reuse the same full-width chapter header and `ActivityCard` treatment cycle as the main guide. Verified entries remain active and power the guide marker/filter. Merely tried and rejected entries remain browsable in `src/data/archive.ts` but must be absent from `src/data/activities.ts`, preventing an editorial refresh from quietly restoring them as recommendations.
 
-The archive follows the same global-sheet history contract as credits: ordinary activation pushes a fragment, Back/Forward tracks it, direct-link dismissal removes only the fragment, and close restores the footer trigger. It records the original chapter, decision date, and concise rationale without retaining rejected galleries in the production payload.
+Archive-card preview copy describes the place and experience rather than repeating its outcome; the firsthand verdict and decision date remain in the full sheet. Every current archive record has a contiguous local gallery. Verified cards receive the same image-contained thumbs-up stamp as the main guide, while archive cards omit favorite controls. Every labeled action is a real `#activity-<id>` link, and passive card surfaces open the same full sheet. Inactive sheets expose the firsthand verdict, omit favorites, and retain the zero-photo fallback for a future record whose honest gallery has not yet been sourced. Opening a sheet from the archive pushes on top of `#archive`, so Back restores the card collection; a directly loaded inactive activity closes to `#archive` rather than to a live chapter.
+
+The archive itself follows the same global-sheet history contract as credits: ordinary activation pushes a fragment, Back/Forward tracks it, direct-link dismissal removes only the fragment, and close restores the footer trigger. Inactive IDs remain valid detail routes but are excluded from favorites, active chapter filtering, and hero selection.
 
 ## Photo credits
 
@@ -91,6 +93,7 @@ Credits are deliberately complete and flat rather than searchable or collapsed. 
 - The complete image is the forward control. Clicking or pressing it advances one photo and wraps to the first.
 - The pills below the image are buttons that jump directly to any photo. Exactly one reports the active state.
 - The Save control is layered above the image control and must not advance the gallery.
+- Inactive archive records never expose a favorite action. A zero-photo record would use the typographic firsthand-record panel, although every current archive entry now has a gallery.
 - Opening a different activity cannot inherit the previous activity's photo index.
 - Opening a sheet pushes its activity fragment. Back closes it, Forward reopens it, and X, Escape, backdrop, and mobile Close share the same URL-aware dismissal path.
 - A dated activity starts the fact grid with its full Date and trip year. Every sheet then shows When and Where, followed by one to four source-backed `facts` supplied by the activity. A `Worth knowing` advisory appears only when a caveat materially changes planning or expectations.
@@ -126,9 +129,9 @@ Check at 390×844, 999×800, 1000×800, and 1440×900:
 9. Confirm gallery Save does not advance; test desktop X, Escape, backdrop, mobile Close, initial focus, scroll lock, and trigger-focus restoration.
 10. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify dated/book-ahead/everything-else grouping, chronological date order, native row links, independent removal, honest Copy success/failure, and capability-gated Share at every width.
 11. Check keyboard navigation, visible focus, console output, final image loads, and centered crops.
-12. Paste `#animals`, `#everything`, `#activity-rasalkhor`, `#archive`, and `#credits` into a fresh tab. Verify the owning chapter or all-open state, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
-13. Open Tried & decided from the footer. Confirm Boulder Zone appears only under Tried & liked, The Wall appears only under Rejected, neither outcome leaks into the wrong active state, both responsive close controls work, and focus returns to the footer link.
-14. Open Photo credits from the footer. Confirm the full 405-asset catalog is readable, external creator/source/license links are present, the loading/error states do not affect the guide, the sticky X and mobile bottom Close work, and focus returns to the footer link.
+12. Paste `#animals`, `#everything`, `#activity-rasalkhor`, `#activity-robertos`, `#archive`, and `#credits` into a fresh tab. Verify the owning chapter/archive or all-open state, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.
+13. Open Tried & decided from the footer. Confirm all three sections begin open and each full-width header folds and reopens its cards. Confirm Boulder Zone appears only under Tried & liked with the same image-contained thumbs-up stamp as the guide; Meowtropolis, Roberto's, and Salmon Guru appear only under Tried; and The Wall, Brunch & Cake, and Butterfly Garden appear only under Rejected. Verify all seven cards reuse the main treatment styles, show activity-focused previews, omit favorite controls, and open full verdict sheets with galleries. Confirm Back restores `#archive`, both responsive close controls work, and no inactive outcome appears in the guide.
+14. Open Photo credits from the footer. Confirm the full 423-asset catalog is readable, external creator/source/license links are present, the loading/error states do not affect the guide, the sticky X and mobile bottom Close work, and focus returns to the footer link.
 
 Finish with:
 

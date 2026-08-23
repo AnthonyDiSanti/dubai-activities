@@ -1,9 +1,12 @@
-export type ArchiveStatus = 'rejected' | 'verified';
+import type { ChapterKey } from './activity';
+
+export type ArchiveStatus = 'rejected' | 'tried' | 'verified';
 
 export type ArchiveEntry = Readonly<{
   id: string;
   name: string;
   note: string;
+  originalChapterKey: ChapterKey;
   originalChapterName: string;
   recordedOn: string;
   status: ArchiveStatus;
@@ -11,18 +14,21 @@ export type ArchiveEntry = Readonly<{
 
 export type ArchiveGroups = Readonly<{
   rejected: readonly ArchiveEntry[];
+  tried: readonly ArchiveEntry[];
   verified: readonly ArchiveEntry[];
 }>;
 
-/** Keep archive ordering editorial while separating the two durable outcomes. */
+/** Keep archive ordering editorial while separating every durable firsthand outcome. */
 export function groupArchiveEntries(entries: readonly ArchiveEntry[]): ArchiveGroups {
   const rejected: ArchiveEntry[] = [];
+  const tried: ArchiveEntry[] = [];
   const verified: ArchiveEntry[] = [];
   for (const entry of entries) {
     if (entry.status === 'rejected') rejected.push(entry);
+    else if (entry.status === 'tried') tried.push(entry);
     else verified.push(entry);
   }
-  return { rejected, verified };
+  return { rejected, tried, verified };
 }
 
 /** Render a date-only archive key without allowing the viewer timezone to shift its day. */

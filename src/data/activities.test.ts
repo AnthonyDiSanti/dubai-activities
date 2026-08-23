@@ -97,4 +97,20 @@ describe('activity planning content', () => {
     });
     expect(opa?.advisory).toMatch(/does not publish how many smashing plates/i);
   });
+
+  it('keeps Boomah candid about its location, price, and owl-welfare trade-off', () => {
+    const boomah = activitiesById.get('boomah');
+
+    // The live venue is in Abu Dhabi, and the operator does not publish a current owl-room price.
+    expect(boomah).toMatchObject({
+      ch: 'animals',
+      name: 'Boomah Owl Café',
+      where: 'Al Seef Village Mall, Abu Dhabi',
+      photos: 4,
+    });
+    const owlRoomFact = boomah?.facts?.find(({ label }) => label === 'Owl room');
+    expect(owlRoomFact?.value).toMatch(/confirm the live price/i);
+    expect(boomah?.advisory).toMatch(/captive owls is controversial/i);
+    expect(boomah?.advisory).toMatch(/operator claims/i);
+  });
 });

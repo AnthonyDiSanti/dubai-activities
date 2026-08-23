@@ -46,6 +46,7 @@ TODAY = date.today().isoformat()
 SOURCE_LABELS = {
     "arte.ae": "ARTE",
     "boulderzone.ae": "Boulder Zone",
+    "brunchandcake.com": "Brunch & Cake",
     "chaoskarts.ae": "Chaos Karts",
     "comptoir102.com": "Comptoir 102",
     "dinnerinthesky.ae": "Dinner in the Sky Dubai",
@@ -59,6 +60,7 @@ SOURCE_LABELS = {
     "inthepark.ae": "The Park",
     "kitesurf.ae": "Kitesurf School Dubai",
     "limbaceramics.com": "Limba Ceramics",
+    "luxhabitat.ae": "Luxhabitat",
     "magicpin.com": "Magicpin",
     "maisonfleuret.fr": "Maison Fleuret",
     "maps.yango.com": "Yango Maps",
@@ -71,6 +73,7 @@ SOURCE_LABELS = {
     "pauloakenfold.com": "Paul Oakenfold",
     "rameehotels.com": "Ramee Hotels",
     "ruyarestaurants.com": "Rüya",
+    "salmon-guru.ae": "Salmon Guru Dubai",
     "seawake.ae": "SeaWake",
     "sharjah24.ae": "Sharjah24",
     "smgtdj.com": "Smart Gate Institute",
@@ -92,6 +95,7 @@ SOURCE_LABELS = {
     "www.agenda.com": "The Agenda",
     "www.alhabtoorcity.com": "Al Habtoor City",
     "www.anantara.com": "Anantara",
+    "www.arabnews.com": "Arab News",
     "www.aquafun.ae": "AquaFun",
     "www.aya-universe.com": "AYA Universe",
     "www.banyantree.com": "Banyan Tree",
@@ -119,6 +123,7 @@ SOURCE_LABELS = {
     "www.laperle.com": "La Perle",
     "www.lecolevancleefarpels.com": "L’ÉCOLE, School of Jewelry Arts",
     "www.lepetitchef.com": "Le Petit Chef",
+    "www.luxhabitat.ae": "Luxhabitat",
     "www.markusschulz.com": "Markus Schulz",
     "www.meowtropoliscatcafe.online": "Meowtropolis Cat Café",
     "www.mtnextreme.com": "Mountain Extreme",
@@ -128,6 +133,7 @@ SOURCE_LABELS = {
     "www.palaisdedanse.com": "Palais de Danse",
     "www.pexels.com": "Pexels",
     "www.rockrepublicdubai.com": "Rock Republic Dubai",
+    "robertosrestaurants.com": "Roberto’s",
     "www.salonduchocolatdubai.com": "Salon du Chocolat Dubai",
     "www.salsavida.com": "Salsa Vida",
     "www.seaworldabudhabi.com": "SeaWorld Abu Dhabi",
@@ -450,6 +456,15 @@ def commons_metadata(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
     return results
 
 
+def apply_reviewed_metadata(row: dict[str, str], updates: dict[str, str]) -> None:
+    """Keep verification dates stable unless reviewed attribution fields actually change."""
+    reviewed_updates = {key: value for key, value in updates.items() if key != "verified_on"}
+    changed = any(row.get(key, "") != value for key, value in reviewed_updates.items())
+    row.update(reviewed_updates)
+    if changed or not row.get("verified_on"):
+        row["verified_on"] = TODAY
+
+
 def sync(manifest: Path, ledger: Path, refresh_open: bool) -> None:
     """Add new deployed assets and optionally refresh open-license metadata."""
     manifest_rows = selected_manifest_rows(manifest)
@@ -462,7 +477,7 @@ def sync(manifest: Path, ledger: Path, refresh_open: bool) -> None:
     for row in merged:
         manifest_row = manifest_by_filename[row["filename"]]
         if row["filename"] in {"icon-google-maps.svg", "icon-instagram.svg"}:
-            row.update(default_attribution(manifest_row))
+            apply_reviewed_metadata(row, default_attribution(manifest_row))
             continue
         metadata = commons.get(row["filename"])
         if metadata:
@@ -492,7 +507,7 @@ def sync(manifest: Path, ledger: Path, refresh_open: bool) -> None:
         stock = STOCK_CREATORS.get(row["filename"])
         if stock:
             creator, source, license_name, license_url = stock
-            row.update({
+            apply_reviewed_metadata(row, {
                 "creator_name": creator,
                 "creator_type": "person",
                 "creator_url": "",
@@ -500,14 +515,12 @@ def sync(manifest: Path, ledger: Path, refresh_open: bool) -> None:
                 "license_name": license_name,
                 "license_url": license_url,
                 "credit_basis": "stock_license",
-                "verified_on": TODAY,
                 "notes": f"Creator and current {source} license recorded for voluntary attribution.",
             })
 
         manual = MANUAL_ATTRIBUTIONS.get(row["filename"])
         if manual:
-            row.update(manual)
-            row["verified_on"] = TODAY
+            apply_reviewed_metadata(row, manual)
 
     write_ledger(ledger, merged)
     print(f"Wrote {ledger} with {len(merged)} selected-asset credits")

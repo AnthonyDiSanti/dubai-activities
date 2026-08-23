@@ -9,13 +9,13 @@ The root `index.html` contains metadata, `#root`, and the Vite module entry. `sr
 ## Source layers
 
 - `src/data/activities.ts` owns active editorial content: chapters, activities, hero IDs, dates, links, and gallery counts.
-- `src/data/archive.ts` owns firsthand outcomes. Rejected IDs must not appear in active content; verified IDs must remain active so badges and filtering cannot point at stale records.
+- `src/data/archive.ts` owns firsthand outcomes plus sheet-ready detail for inactive records. Merely tried and rejected IDs must not appear in active content; verified IDs must remain active so badges and filtering cannot point at stale records.
 - `src/domain/` owns pure, browser-independent rules such as dated-card ordering, treatment selection, photo/map URLs, favorite validation, and share-message formatting.
 - `src/hooks/` owns lifecycle behavior such as local favorites, current-chapter tracking, and media preferences.
 - `src/browser/` contains small capability adapters whose failures must be represented honestly in UI state.
 - `src/components/` owns semantic React markup and interaction composition. Activity IDs and chapter keys are the stable React keys.
 - `src/styles/` owns bundled font declarations, global tokens, the deliberately varied visual treatments, and responsive rules. The 1000 px boundary remains CSS-driven.
-- `public/photos/` owns the 403 activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
+- `public/photos/` owns 421 active-and-archive activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
 - `docs/photo-attributions.csv` owns reviewed photo credits. Build-time generation emits `public/photo-attributions.json` for the UI and `public/photo-attributions.jsonld` for machine readers.
 
 Do not reintroduce a global application namespace, runtime template compiler, `new Function`, inline executable script, or a parallel entry point under `src/`. Add behavior through typed modules and cover pure rules with Vitest.
@@ -32,7 +32,7 @@ URL fragments are the client-only navigation boundary:
 - `#credits` opens the complete photo-credit sheet.
 - `#list=<comma-separated-activity-ids>` retains the existing shared-favorites contract.
 
-`src/domain/deepLinks.ts` validates and builds chapter/activity/global-sheet fragments plus the explicit `#everything` route; `src/hooks/useDeepLink.ts` owns session-history synchronization. The hash is the source of truth for chapter expansion and open sheets, so Back/Forward restores a selected chapter, the all-open state, or an in-page sheet. App-created sheet entries carry a namespaced history-state marker; closing a directly loaded activity replaces it with its owning chapter, while closing direct `#archive` or `#credits` strips only the fragment. Unknown, retired, malformed, and favorites fragments do not open a sheet.
+`src/domain/deepLinks.ts` validates and builds chapter/activity/global-sheet fragments plus the explicit `#everything` route; `src/hooks/useDeepLink.ts` owns session-history synchronization. The hash is the source of truth for chapter expansion and open sheets, so Back/Forward restores a selected chapter, the all-open state, or an in-page sheet. App-created sheet entries carry a namespaced history-state marker. A directly loaded active activity closes to its owning chapter; an inactive archive activity closes to `#archive`; direct `#archive` or `#credits` dismissal strips only the fragment. Unknown, retired-without-a-record, malformed, and favorites fragments do not open a sheet.
 
 Favorites use the existing `naima.favs.v1` local-storage key. A validated `#list=<comma-separated-activity-ids>` hash can initialize a shared list; invalid, unknown, and duplicate IDs must not enter state. Chapter and activity fragments leave stored favorites authoritative. Hash navigation is intentionally client-side and is not sent to S3 or CloudFront as part of the HTTP request.
 
@@ -81,7 +81,7 @@ minisite deploy --dry-run --profile personal dubai.anthonydisanti.com ./dist
 minisite deploy --profile personal dubai.anthonydisanti.com ./dist
 ```
 
-The bucket is not versioned and Minisite releases are not atomic. Before a material release, copy the current bucket into a temporary local rollback directory with `aws s3 sync ... --profile personal`; keep `dist/` unchanged while the deployment runs. Record the returned invalidation ID, wait for it with `aws cloudfront wait invalidation-completed`, then compare the live root document with `dist/index.html` and smoke-test representative chapter and activity fragments.
+The bucket is not versioned and Minisite releases are not atomic, but this is an intentionally low-stakes vacation site. Do not create pre-release bucket snapshots. Keep `dist/` unchanged while the deployment runs, record the returned invalidation ID, wait for it with `aws cloudfront wait invalidation-completed`, then compare the live root document with `dist/index.html` and smoke-test representative chapter and activity fragments. If verification exposes a regression, fix it locally and deploy again.
 
 Preserve the generated MIME types when uploading: HTML as `text/html`, CSS as `text/css`, JavaScript as `text/javascript`, SVG as `image/svg+xml`, and JPEGs as `image/jpeg`.
 

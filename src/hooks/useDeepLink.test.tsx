@@ -97,7 +97,9 @@ describe('useDeepLink', () => {
     const { result } = renderDeepLink();
 
     act(() => { result.current.navigateToActivity('rasalkhor'); });
-    act(() => { result.current.closeActivity('rasalkhor', 'animals'); });
+    act(() => {
+      result.current.closeActivity('rasalkhor', { type: 'chapter', chapterKey: 'animals' });
+    });
 
     expect(back).toHaveBeenCalledOnce();
     expect(result.current.deepLink).toBeNull();
@@ -108,11 +110,25 @@ describe('useDeepLink', () => {
     const back = vi.spyOn(window.history, 'back');
     const { result } = renderDeepLink();
 
-    act(() => { result.current.closeActivity('rasalkhor', 'animals'); });
+    act(() => {
+      result.current.closeActivity('rasalkhor', { type: 'chapter', chapterKey: 'animals' });
+    });
 
     expect(back).not.toHaveBeenCalled();
     expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#animals');
     expect(result.current.deepLink).toEqual({ type: 'chapter', chapterKey: 'animals' });
+  });
+
+  it('closes a direct archived activity link onto the archive', () => {
+    window.history.replaceState(null, '', '/guide/?ref=naima#activity-rasalkhor');
+    const back = vi.spyOn(window.history, 'back');
+    const { result } = renderDeepLink();
+
+    act(() => { result.current.closeActivity('rasalkhor', { type: 'archive' }); });
+
+    expect(back).not.toHaveBeenCalled();
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#archive');
+    expect(result.current.deepLink).toEqual({ type: 'archive' });
   });
 
   it('tracks browser history traversal without treating a favorites list as navigation', () => {

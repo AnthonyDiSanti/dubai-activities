@@ -14,4 +14,5 @@ Use this directory for things like:
 - If a note becomes stable repo truth, move it into `/docs/` and leave only a short breadcrumb here.
 
 ## Topics
-- [`minisite-deployment.md`](minisite-deployment.md) — Exact production target, release/rollback sequence, and current Minisite cache/atomicity caveats.
+- [`minisite-deployment.md`](minisite-deployment.md) — Exact production target, direct release/verification sequence, and current Minisite cache/atomicity caveats.
+- [`browser-qa.md`](browser-qa.md) — Diagnose the empty Browser-backend registry and recover the required rendered-QA surface.

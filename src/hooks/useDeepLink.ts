@@ -19,7 +19,10 @@ type DeepLinkHistoryMarker =
   | { readonly type: GlobalSheetType };
 
 type UseDeepLinkResult = {
-  readonly closeActivity: (activityId: string, chapterKey: ChapterKey) => void;
+  readonly closeActivity: (
+    activityId: string,
+    destination: { readonly type: 'archive' } | { readonly chapterKey: ChapterKey; readonly type: 'chapter' },
+  ) => void;
   readonly closeArchive: () => void;
   readonly closeCredits: () => void;
   readonly deepLink: DeepLink | null;
@@ -192,7 +195,10 @@ export function useDeepLink(
     [navigateToGlobalSheet],
   );
 
-  const closeActivity = useCallback((activityId: string, chapterKey: ChapterKey) => {
+  const closeActivity = useCallback((
+    activityId: string,
+    destination: { readonly type: 'archive' } | { readonly chapterKey: ChapterKey; readonly type: 'chapter' },
+  ) => {
     const marker = deepLinkHistoryMarker();
     if (
       marker?.type === 'activity'
@@ -205,11 +211,16 @@ export function useDeepLink(
       return;
     }
 
-    const next: DeepLink = { type: 'chapter', chapterKey };
+    const next: DeepLink = destination.type === 'archive'
+      ? { type: 'archive' }
+      : { type: 'chapter', chapterKey: destination.chapterKey };
+    const fallbackHash = destination.type === 'archive'
+      ? archiveHash()
+      : chapterHash(destination.chapterKey);
     window.history.replaceState(
       historyStateWithoutMarker(),
       '',
-      currentDocumentUrl(chapterHash(chapterKey)),
+      currentDocumentUrl(fallbackHash),
     );
     commitDeepLink(next, true);
   }, [commitDeepLink]);

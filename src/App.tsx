@@ -13,7 +13,7 @@ import { FavoritesDialog } from './components/FavoritesDialog';
 import { HeroCarousel } from './components/HeroCarousel';
 import { ARRIVAL_DATE_KEY, TRIP_TIME_ZONE } from './config/site';
 import { CHAPTERS, HERO, ITEMS } from './data/activities';
-import { ARCHIVE_ENTRIES } from './data/archive';
+import { ARCHIVE_ACTIVITY_DETAILS, ARCHIVE_ENTRIES } from './data/archive';
 import type { Activity, ChapterKey } from './domain/activity';
 import { parseDeepLink, type DeepLink } from './domain/deepLinks';
 import { useCountdown } from './hooks/useCountdown';
@@ -41,15 +41,29 @@ function openFooterSheet(event: MouseEvent<HTMLAnchorElement>, navigate: () => v
 }
 
 export function App() {
-  const activitiesById = useMemo(
+  const activeActivitiesById = useMemo(
     () => new Map<string, Activity>(ACTIVITIES.map((item) => [item.id, item])),
     [],
   );
+  const detailActivities = useMemo(() => {
+    // Active records win so verified activities retain their live planning data.
+    const merged = new Map<string, Activity>(ARCHIVE_ACTIVITY_DETAILS.map((item) => [item.id, item]));
+    ACTIVITIES.forEach((item) => merged.set(item.id, item));
+    return [...merged.values()];
+  }, []);
+  const detailActivitiesById = useMemo(
+    () => new Map<string, Activity>(detailActivities.map((item) => [item.id, item])),
+    [detailActivities],
+  );
   const knownActivityIds = useMemo(() => new Set(ACTIVITIES.map(({ id }) => id)), []);
+  const knownDetailActivityIds = useMemo(
+    () => new Set(detailActivities.map(({ id }) => id)),
+    [detailActivities],
+  );
   const knownChapterKeys = useMemo(() => new Set(CHAPTERS.map(({ key }) => key)), []);
   const initialDeepLink = useMemo(
-    () => parseDeepLink(window.location.hash, knownChapterKeys, knownActivityIds),
-    [knownActivityIds, knownChapterKeys],
+    () => parseDeepLink(window.location.hash, knownChapterKeys, knownDetailActivityIds),
+    [knownChapterKeys, knownDetailActivityIds],
   );
   const { favorites, toggleFavorite } = useFavorites(knownActivityIds);
   const favoriteIds = useMemo(() => new Set(favorites), [favorites]);
@@ -63,7 +77,7 @@ export function App() {
     () => {
       // Resolve the initial fragment synchronously so routed content never starts folded.
       if (initialDeepLink?.type === 'activity') {
-        const activity = activitiesById.get(initialDeepLink.activityId);
+        const activity = activeActivitiesById.get(initialDeepLink.activityId);
         return activity ? new Set([activity.ch]) : new Set(ALL_CHAPTER_KEYS);
       }
       if (initialDeepLink?.type === 'chapter') {
@@ -88,7 +102,7 @@ export function App() {
     setChapterMenuOpen(false);
     setFavoritesOpen(false);
     if (next.type === 'activity') {
-      const activity = activitiesById.get(next.activityId);
+      const activity = activeActivitiesById.get(next.activityId);
       if (!activity) return;
       setOpenChapterKeys((current) => {
         if (current.has(activity.ch)) return current;
@@ -106,7 +120,7 @@ export function App() {
 
     const chapter = CHAPTERS.find(({ key }) => key === next.chapterKey);
     if (chapter) setOpenChapterKeys(new Set([chapter.key]));
-  }, [activitiesById]);
+  }, [activeActivitiesById]);
   const {
     closeActivity,
     closeArchive,
@@ -117,7 +131,7 @@ export function App() {
     navigateToChapter,
     navigateToCredits,
     navigateToEverything,
-  } = useDeepLink(knownChapterKeys, knownActivityIds, synchronizeDeepLinkState);
+  } = useDeepLink(knownChapterKeys, knownDetailActivityIds, synchronizeDeepLinkState);
 
   const chapterModels = useMemo(
     () =>
@@ -145,21 +159,24 @@ export function App() {
     DEFAULT_CHAPTER_KEY;
   const heroItems = useMemo(
     () => HERO.flatMap((id) => {
-      const activity = activitiesById.get(id);
+      const activity = activeActivitiesById.get(id);
       return activity ? [activity] : [];
     }),
-    [activitiesById],
+    [activeActivitiesById],
   );
   const favoriteActivities = useMemo(
     () => favorites.flatMap((id) => {
-      const activity = activitiesById.get(id);
+      const activity = activeActivitiesById.get(id);
       return activity ? [activity] : [];
     }),
-    [activitiesById, favorites],
+    [activeActivitiesById, favorites],
   );
   const activeActivity = deepLink?.type === 'activity'
-    ? activitiesById.get(deepLink.activityId) ?? null
+    ? detailActivitiesById.get(deepLink.activityId) ?? null
     : null;
+  const activeArchiveEntry = activeActivity
+    ? ARCHIVE_ENTRIES.find(({ id }) => id === activeActivity.id)
+    : undefined;
   const archiveOpen = deepLink?.type === 'archive';
   const creditsOpen = deepLink?.type === 'credits';
   const photoAttributions = usePhotoAttributions(creditsOpen);
@@ -178,7 +195,7 @@ export function App() {
       });
     });
     return () => window.cancelAnimationFrame(frameId);
-  }, [activitiesById, deepLink, reducedMotion]);
+  }, [deepLink, reducedMotion]);
 
   useEffect(() => {
     if (!chapterMenuOpen) return;
@@ -341,15 +358,28 @@ export function App() {
       {activeActivity && (
         <ActivityDialog
           activity={activeActivity}
-          fallbackFocusId={`${activeActivity.ch}-toggle`}
+          archiveEntry={activeArchiveEntry}
+          fallbackFocusId={activeArchiveEntry && !knownActivityIds.has(activeActivity.id)
+            ? `archive-activity-${activeActivity.id}`
+            : `${activeActivity.ch}-toggle`}
           isFavorite={favoriteIds.has(activeActivity.id)}
           isVerified={verifiedActivityIds.has(activeActivity.id)}
-          onClose={() => closeActivity(activeActivity.id, activeActivity.ch)}
-          onToggleFavorite={toggleFavorite}
+          onClose={() => closeActivity(
+            activeActivity.id,
+            activeArchiveEntry && !knownActivityIds.has(activeActivity.id)
+              ? { type: 'archive' }
+              : { type: 'chapter', chapterKey: activeActivity.ch },
+          )}
+          onToggleFavorite={knownActivityIds.has(activeActivity.id) ? toggleFavorite : undefined}
         />
       )}
       {archiveOpen && (
-        <ArchiveDialog entries={ARCHIVE_ENTRIES} onClose={closeArchive} />
+        <ArchiveDialog
+          activities={detailActivities}
+          entries={ARCHIVE_ENTRIES}
+          onClose={closeArchive}
+          onOpenActivity={openActivity}
+        />
       )}
       {creditsOpen && (
         <CreditsDialog

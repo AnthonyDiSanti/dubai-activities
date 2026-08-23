@@ -4,6 +4,49 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-23 — Separate the visited Brunch & Cake branch from the chain verdict
+- Decider: Anthony
+- Decision: Record Jumeirah Islands Pavilion as the Brunch & Cake location actually visited, while retaining Rejected as a chain-wide outcome because the experience was bad enough to rule out every branch.
+- Rationale: Firsthand provenance should identify the exact experience, while the archive should also preserve the full scope of Anthony's decision so another branch is not accidentally proposed later.
+- Alternatives considered: Keep the incorrect Wasl 51 record; reject only Jumeirah Islands; create separate records for every branch.
+- Consequences / follow-ups: The neutral preview, operating details, link, and four-photo gallery are exact to Jumeirah Islands. The firsthand sheet note explicitly applies the verdict to the entire chain, and future research must treat every Brunch & Cake location as rejected.
+
+## 2026-08-23 — Favor repair-and-redeploy over rollback snapshots
+- Decider: Anthony
+- Decision: Treat `dubai.anthonydisanti.com` as an intentionally low-stakes vacation toy. Keep the build, audit, dry-run, invalidation wait, and live-verification gates, but do not create S3 rollback snapshots before releases; fix and redeploy if a regression reaches the site.
+- Rationale: Snapshot ceremony costs more than the downtime risk warrants for a private, backend-free guide with a fast deterministic build and deploy loop.
+- Alternatives considered: Snapshot the unversioned bucket before every release; enable S3 versioning; add atomic release infrastructure before further content work.
+- Consequences / follow-ups: Review dry-run deletions carefully and never deploy a hand-edited `dist/`. The bucket remains unversioned and Minisite remains non-atomic by accepted design; verification failures trigger a new tested release rather than rollback.
+
+## 2026-08-23 — Reuse the live guide's card grammar in the archive
+- Decider: Anthony and Codex (model: gpt-5.6-sol)
+- Decision: Render all firsthand outcomes with the shared `ActivityCard` system inside independently collapsible, initially open archive groups. Keep previews activity-focused, reserve the firsthand verdict for the sheet, use the same image-contained thumbs-up stamp for verified records, and maintain complete galleries for every current inactive record.
+- Rationale: A parallel archive-card language made the archive feel like a ledger and repeated nearly identical outcome text. Shared cards preserve visual hierarchy and useful venue context while the group and sheet still communicate the decision.
+- Alternatives considered: Refine the custom archive cards; show verdict copy in every preview; return inactive records to the guide; keep zero-photo typographic records indefinitely.
+- Consequences / follow-ups: Archive cards use unique DOM anchors and omit favorite controls, while sheet deep links and history behavior remain unchanged. New archive records should carry neutral planning copy plus a sourced gallery in the same change whenever venue-specific media exists.
+
+## 2026-08-23 — Keep inactive outcomes as full archive records
+- Status: Expanded by “Reuse the live guide's card grammar in the archive” on 23 Aug 2026.
+- Decider: Anthony and Codex (model: gpt-5.2-codex)
+- Decision: Present Tried & decided as a visual card collection and let every outcome open a durable `#activity-<id>` detail sheet. Keep inactive activities out of recommendations and favorites, but retain useful existing galleries with full attribution; use an intentional typographic card and sheet when no honest local gallery exists.
+- Rationale: A name-and-note ledger preserves the verdict but loses the visual and factual context that makes the main guide useful. The archive should be genuinely browsable without blurring the distinction between a historical record and an active recommendation.
+- Alternatives considered: Keep the text-only ledger; return inactive items to the main guide with negative badges; require new photography for every archived venue; create a second incompatible sheet component and URL grammar.
+- Consequences / follow-ups: `ARCHIVE_ACTIVITY_DETAILS` carries inactive sheet data, while active verified records reuse live activity data. Archived sheets expose the firsthand verdict and date, omit favorite controls, and close direct links to `#archive`; opening from the archive uses normal history so Back restores the collection. Existing The Wall, Meowtropolis, and Butterfly Garden galleries return to the production payload and credit catalog. Roberto's, Salmon Guru, and Brunch & Cake remain honest zero-photo records until suitable photography is deliberately sourced.
+
+## 2026-08-23 — Preserve merely tried places as a third firsthand outcome
+- Decider: Anthony
+- Decision: Expand the firsthand archive to three outcomes: `verified` for places tried and liked, `tried` for places that were acceptable but did not earn a recommendation, and `rejected` for places deliberately ruled out. Only verified activities stay in the main guide; Tried and Rejected remain browsable in `#archive` without appearing as recommendations.
+- Rationale: A neutral firsthand visit is useful evidence but should not be forced into either a recommendation or a harsh rejection. Keeping all three outcomes in one ledger makes the guide honest and prevents later research from restoring places that already proved merely average.
+- Alternatives considered: Keep merely okay places active without a marker; classify every neutral visit as rejected; add a second archive route; show inactive Tried cards in the main guide.
+- Consequences / follow-ups: Meowtropolis, Roberto's, and Salmon Guru appear under Tried. The Wall, Brunch & Cake, and Butterfly Garden appear under Rejected. Content audits require both inactive statuses to stay out of `ITEMS`, while the existing Tried & liked filter remains verified-only. The later full-record decision restores useful historical galleries without restoring the activities to recommendations.
+
+## 2026-08-23 — Add Boomah as a candid Abu Dhabi animal experience
+- Decider: Anthony and Codex (model: gpt-5.2-codex)
+- Decision: Add Boomah Owl Café to the final animal chapter after Camel Farm, while naming its Abu Dhabi location plainly and exposing the captive-owl welfare trade-off. Keep it a standard card rather than book-ahead because the venue does not require reservations; direct visitors to confirm the unpublished live owl-room price before driving.
+- Rationale: Boomah is current, visually distinctive, and the only live-owl café substantiated by official UAE sources. The similarly named Dubai listings are ordinary cafés without live owls. The experience remains contentious, so a useful guide must distinguish the operator's claims about supervision, controlled rooms, limited interaction, and rest from independent criticism of handling captive owls.
+- Alternatives considered: Mislabel Boomah as a Dubai venue; omit it entirely because of the welfare objection; add the unrelated OWL Café in Al Garhoud; present the former AED 70 price as current; classify it as a scarce reservation.
+- Consequences / follow-ups: Keep Boomah below the conservation-led activities and after Camel Farm, with observation through the glass presented as a legitimate lower-contact option. Recheck hours and price before the Abu Dhabi drive. Maintain four exact-venue images with visible and machine-readable source credit; replace or enrich the credits if named photographers become available.
+
 ## 2026-08-22 — Represent the all-open guide with `#everything`
 - Decider: Anthony
 - Decision: Clicking Open everything pushes `#everything`. Parsing that route explicitly opens all chapters on direct load, Back, or Forward. Repeating the action at `#everything` does not create another entry; filters continue changing view state without creating navigation history. A fragment-free first load still defaults to every chapter open.
@@ -12,6 +55,7 @@ Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` fo
 - Consequences / follow-ups: `src/domain/deepLinks.ts` recognizes `#everything`, and `src/hooks/useDeepLink.ts` preserves the current path, query, and unrelated history state while navigating to it. The App route synchronizer owns reopening all chapters. Browser QA should confirm the production traversal when a controllable browser is connected.
 
 ## 2026-08-22 — Preserve firsthand outcomes separately from candidate research
+- Status: Expanded by “Preserve merely tried places as a third firsthand outcome” on 23 Aug 2026.
 - Decider: Anthony
 - Decision: Keep one durable firsthand ledger with `verified` and `rejected` outcomes. Verified activities remain in the active guide with a date-stamp-style thumbs-up over the card image, a textual `Tried & liked` sheet callout, and an exclusive filter; rejected activities leave active content and production galleries but remain visible in the footer's `Tried & decided` archive.
 - Rationale: A positive visit is stronger evidence than editorial research and should make a recommendation easier to find, while an explicit rejection must survive later content refreshes so a weak activity cannot quietly return.
@@ -61,6 +105,7 @@ Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` fo
 - Consequences / follow-ups: Keep Save and detail anchors independently operable and retain a real link as the keyboard path. The fill animation is the rotation clock, pauses and resumes at the same position with interaction/dialog state, remounts at zero when the active slide changes, and is omitted with reduced motion. The later pagination-stop decision governs manual selection.
 
 ## 2026-08-11 — Publish through the existing Minisite stack
+- Status: The snapshot requirement was superseded by “Favor repair-and-redeploy over rollback snapshots” on 23 Aug 2026.
 - Decider: Anthony
 - Decision: Deploy the complete current `dist/` build to `https://dubai.anthonydisanti.com/` through the owned S3/CloudFront Minisite stack, while retaining a pre-release object snapshot and explicitly carrying the unresolved photo-rights issue as post-release risk.
 - Rationale: The user explicitly requested deployment of the finished guide and the application, content, photo, and live-browser gates were green. The private-origin CloudFront stack already serves the site and is the narrowest established production path.

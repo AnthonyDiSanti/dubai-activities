@@ -21,7 +21,7 @@ The content audit scans every displayed copy field, including structured fact la
 
 ## Firsthand outcomes
 
-`src/data/archive.ts` is the durable ledger for places Anthony has personally tried or deliberately ruled out. Use `verified` only after a positive firsthand visit: the activity stays in `ITEMS` and gains a visible marker plus access through the Tried & liked filter. Use `rejected` after a negative visit or explicit rejection: remove the activity from `ITEMS`, its selected public gallery, canonical manifest/attribution rows, and active image-work fragments, but retain a concise dated archive record.
+`src/data/archive.ts` is the durable ledger for places Anthony has personally tried or deliberately ruled out. Use `verified` only after a positive firsthand visit: the activity stays in `ITEMS` and gains a visible marker plus access through the Tried & liked filter. Use `tried` when a place was acceptable but did not earn a recommendation, and `rejected` after a negative visit or explicit rejection. Both inactive outcomes leave `ITEMS` but retain an `ARCHIVE_ACTIVITY_DETAILS` record for their full sheet. Archive blurbs, eyebrows, schedules, and facts describe the activity itself in the same expert-guide voice as active content; the separate archive note and sheet callout own the firsthand verdict. Preserve or source a contiguous gallery with canonical manifest and attribution rows whenever honest venue-specific imagery is available. Use `photos: 0` and the typographic fallback only when no such gallery exists.
 
 Do not infer an outcome from generated editorial copy, ratings, source research, or a favorite. The ledger records user-supplied experience, while the main guide continues to use the warm expert-friend voice without pretending generated opinions are firsthand.
 
@@ -35,7 +35,7 @@ Array position is the recommendation rank for undated activities within a chapte
 
 This keeps date-stamped cards chronological and prevents them from forming a repetitive block. Moving a dated declaration around the source array does not choose its rendered slot; changing the undated rank or the set of dated entries does. Keep dated declarations themselves in chronological source order for readability.
 
-Card treatment precedence is dated, book-ahead, intentional no-photo fallback, then the repeating standard sequence `bleed`, `letter`, `top`, `slab`, `columns`, `bite`. A dated activity keeps the shared calendar treatment even when it also carries `ahead`; the sheet still exposes the booking warning. The standard counter resets for each chapter and does not advance for a special treatment. All current activities have local photography, so the no-photo fallback is not active.
+Card treatment precedence is dated, book-ahead, intentional no-photo fallback, then the repeating standard sequence `bleed`, `letter`, `top`, `slab`, `columns`, `bite`. A dated activity keeps the shared calendar treatment even when it also carries `ahead`; the sheet still exposes the booking warning. The standard counter resets for each chapter and for each archive outcome group, and it does not advance for a special treatment. All current active and archive activities have local photography, so the no-photo fallback is not active.
 
 Use `ahead` for genuinely high-friction planning such as mandatory advance contact, scarce inventory, or a seasonal closure—not merely because a reservation is available. An ongoing seasonal reopening belongs in `when`, `ahead`, or `advisory`; reserve `dated` for a specific event date or bounded event range.
 
@@ -45,9 +45,9 @@ Every `dated.on` value must be on or after the local `ARRIVAL_DATE_KEY` in `src/
 
 `Fur, feathers and scales` is intentionally the twelfth and final chapter so it remains visibly new to readers of the earlier guide. Its curated order is:
 
-`rasalkhor` → `falconhospital` → `turtlerehab` → `platinumcamel` → `vibrissae` → `camelfarm` → `butterflygarden` → `meowtropolis` → `fluffin`
+`rasalkhor` → `falconhospital` → `turtlerehab` → `platinumcamel` → `vibrissae` → `camelfarm` → `boomah` → `fluffin`
 
-The order leads with the most distinctive conservation experiences and strongest photography, keeps the three real book-ahead treatments at positions 2, 4, and 6, and places the venues with thinner public operating detail later. None is a true dated event. Crocodile Park, Dubai Safari Park, The Cat Café Arjan, rescue meetups, and redundant or low-confidence venues remain outside the published roster.
+The order leads with the most distinctive conservation experiences and strongest photography, keeps the three real book-ahead treatments at positions 2, 4, and 6, and places the venues with thinner public operating detail later. None is a true dated event. Butterfly Garden and Meowtropolis moved to the firsthand archive after real visits; Crocodile Park, Dubai Safari Park, The Cat Café Arjan, rescue meetups, and redundant or low-confidence venues remain outside the published roster.
 
 ## Hero carousel
 
@@ -66,4 +66,4 @@ npm run audit:content
 python3 scripts/audit-photo-manifest.py
 ```
 
-The TypeScript audit checks chapter and activity IDs, required copy, first-person language, links, structured-fact/advisory limits, real and post-arrival ISO dates, chronological rendered order, optimal dated-card separation, hero references, gallery depth, archive invariants, retired IDs, and the one-to-one relationship between activity counts and JPEGs in `public/photos/`.
+The TypeScript audit checks chapter and activity IDs, required copy, first-person language, links, structured-fact/advisory limits, real and post-arrival ISO dates, chronological rendered order, optimal dated-card separation, hero references, active gallery depth, archive/detail invariants, retired IDs, and the one-to-one relationship between active-plus-archive photo counts and JPEGs in `public/photos/`.

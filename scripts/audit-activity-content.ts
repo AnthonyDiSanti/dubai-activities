@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { CHAPTERS, HERO, ITEMS } from '../src/data/activities';
-import { ARCHIVE_ENTRIES } from '../src/data/archive';
+import { ARCHIVE_ACTIVITY_DETAILS, ARCHIVE_ENTRIES } from '../src/data/archive';
 import { ARRIVAL_DATE_KEY } from '../src/config/site';
 import { orderChapterItems, type Activity } from '../src/domain/activity';
 
@@ -26,7 +26,7 @@ const RESERVED_FACT_LABELS = new Set(['date', 'when', 'where', 'book ahead']);
 const RETIRED_ACTIVITY_IDS = new Set(['terrasolis', 'cyanotype', 'rawbarista']);
 const FIRST_PERSON = /\b(?:i|i['’](?:m|ve|d|ll)|me|my|mine|myself|we|we['’](?:re|ve|d|ll)|us|our|ours|ourselves|let['’]s)\b/i;
 const EXPECTED_CHAPTERS = 12;
-const EXPECTED_ACTIVITIES = 123;
+const EXPECTED_ACTIVITIES = 122;
 const EXPECTED_HEROES = 6;
 
 const errors: string[] = [];
@@ -51,7 +51,7 @@ for (const chapter of CHAPTERS) {
 }
 
 const archiveIds = new Set<string>();
-const rejectedActivityIds = new Set<string>();
+const inactiveArchiveIds = new Set<string>();
 const verifiedActivityIds = new Set<string>();
 for (const entry of ARCHIVE_ENTRIES) {
   // Archive entries are release data: reject ambiguous records before they reach the footer sheet.
@@ -63,7 +63,7 @@ for (const entry of ARCHIVE_ENTRIES) {
   if (!isRealIsoDate(entry.recordedOn)) {
     fail(`Archive entry ${entry.id} has an invalid recordedOn date: ${entry.recordedOn}`);
   }
-  if (entry.status === 'rejected') rejectedActivityIds.add(entry.id);
+  if (entry.status !== 'verified') inactiveArchiveIds.add(entry.id);
   if (entry.status === 'verified') verifiedActivityIds.add(entry.id);
 }
 
@@ -76,7 +76,7 @@ for (const item of ITEMS) {
   if (!item.id) fail(`Activity is missing an id: ${JSON.stringify(item)}`);
   if (itemIds.has(item.id)) fail(`Duplicate activity id: ${item.id}`);
   if (RETIRED_ACTIVITY_IDS.has(item.id)) fail(`Retired activity returned to the guide: ${item.id}`);
-  if (rejectedActivityIds.has(item.id)) fail(`Rejected activity returned to the guide: ${item.id}`);
+  if (inactiveArchiveIds.has(item.id)) fail(`Inactive archive activity returned to the guide: ${item.id}`);
   itemIds.add(item.id);
   if (!chapterKeys.has(item.ch)) fail(`${item.id} references unknown chapter ${item.ch}.`);
   if (!item.blurb || !item.cta || !item.when || !item.where) {
@@ -142,6 +142,33 @@ for (const verifiedActivityId of verifiedActivityIds) {
   // A firsthand recommendation remains useful only while its activity is still live.
   if (!itemIds.has(verifiedActivityId)) {
     fail(`Verified activity is missing from the active guide: ${verifiedActivityId}`);
+  }
+}
+
+const archiveDetailIds = new Set<string>();
+for (const activity of ARCHIVE_ACTIVITY_DETAILS) {
+  // Archived details may be typographic, but photographed records still require full galleries.
+  if (archiveDetailIds.has(activity.id)) fail(`Duplicate archive detail id: ${activity.id}`);
+  archiveDetailIds.add(activity.id);
+  if (!inactiveArchiveIds.has(activity.id)) {
+    fail(`Archive detail ${activity.id} does not belong to an inactive archive entry.`);
+  }
+  if (itemIds.has(activity.id)) fail(`Archive detail ${activity.id} duplicates an active activity.`);
+  if (!chapterKeys.has(activity.ch)) fail(`Archive detail ${activity.id} references unknown chapter ${activity.ch}.`);
+  if (!activity.blurb || !activity.cta || !activity.when || !activity.where) {
+    fail(`Archive detail ${activity.id} is missing one of blurb, cta, when, or where.`);
+  }
+  if (!Number.isInteger(activity.photos) || activity.photos < 0 || activity.photos === 1) {
+    fail(`${activity.id} archive detail must have zero or at least two photos; found ${activity.photos}.`);
+    continue;
+  }
+  for (let slot = 1; slot <= activity.photos; slot += 1) {
+    expectedPhotos.add(`${activity.id}-${String(slot).padStart(2, '0')}.jpg`);
+  }
+}
+for (const inactiveArchiveId of inactiveArchiveIds) {
+  if (!archiveDetailIds.has(inactiveArchiveId)) {
+    fail(`Inactive archive activity is missing sheet data: ${inactiveArchiveId}`);
   }
 }
 

@@ -2,6 +2,7 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import type { Activity } from '../domain/activity';
+import type { ArchiveEntry } from '../domain/archive';
 import { ActivityDialog } from './ActivityDialog';
 
 const activity: Activity = {
@@ -42,6 +43,28 @@ const datedActivity: Activity = {
   id: 'atb',
   name: 'ATB, Solarstone & Steve Allen',
   dated: { d: '05', m: 'SEP', w: 'SAT', on: '2026-09-05' },
+};
+
+const archivedActivity: Activity = {
+  id: 'robertos',
+  ch: 'dinners',
+  name: "Roberto's",
+  blurb: 'A restaurant preserved as a firsthand record.',
+  when: 'Tried in person',
+  where: 'DIFC',
+  cta: 'Archived after visiting',
+  noPhoto: true,
+  photos: 0,
+};
+
+const archiveEntry: ArchiveEntry = {
+  id: 'robertos',
+  name: "Roberto's",
+  note: 'Fine, but not memorable enough to recommend.',
+  originalChapterKey: 'dinners',
+  originalChapterName: 'Long dinners',
+  recordedOn: '2026-08-23',
+  status: 'tried',
 };
 
 afterEach(() => {
@@ -210,5 +233,24 @@ describe('ActivityDialog', () => {
 
     expect(screen.getByText('Tried & liked', { selector: '.detail-sheet__verified' }))
       .toBeInTheDocument();
+  });
+
+  it('renders an inactive archive record without inventing a gallery or favorite action', () => {
+    render(
+      <ActivityDialog
+        activity={archivedActivity}
+        archiveEntry={archiveEntry}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByRole('dialog', { name: "Roberto's" })).toBeInTheDocument();
+    expect(screen.getByText('Firsthand record')).toBeInTheDocument();
+    expect(screen.getByText('Tried', { selector: '.detail-sheet__outcome-label' }))
+      .toBeInTheDocument();
+    expect(screen.getByText(archiveEntry.note)).toBeInTheDocument();
+    expect(screen.getByText('Recorded 23 Aug 2026')).toBeInTheDocument();
+    expect(screen.queryByRole('group', { name: 'Activity photos' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /favorites/i })).not.toBeInTheDocument();
   });
 });

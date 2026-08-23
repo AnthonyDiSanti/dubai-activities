@@ -10,6 +10,8 @@ import {
 import { activityHash } from '../domain/deepLinks';
 
 export type ActivityCardProps = {
+  readonly anchorId?: string;
+  readonly favoriteEnabled?: boolean;
   readonly item: Activity;
   readonly treatment: ActivityTreatment;
   readonly isFavorite: boolean;
@@ -22,6 +24,7 @@ type PresentationProps = Omit<ActivityCardProps, 'treatment'>;
 
 type FavoriteButtonProps = Pick<PresentationProps, 'item' | 'isFavorite' | 'onToggleFavorite'> & {
   readonly className: string;
+  readonly favoriteEnabled?: boolean;
 };
 
 type CardActionsProps = {
@@ -75,7 +78,15 @@ function Photo({ isVerified, item, placeholderModifier }: PhotoProps) {
   );
 }
 
-function FavoriteButton({ className, isFavorite, item, onToggleFavorite }: FavoriteButtonProps) {
+function FavoriteButton({
+  className,
+  favoriteEnabled = true,
+  isFavorite,
+  item,
+  onToggleFavorite,
+}: FavoriteButtonProps) {
+  if (!favoriteEnabled) return null;
+
   return (
     <button
       aria-label={`${isFavorite ? 'Remove' : 'Save'} ${item.name} ${isFavorite ? 'from' : 'to'} favorites`}
@@ -470,12 +481,12 @@ function renderTreatment(props: ActivityCardProps) {
 }
 
 export const ActivityCard = memo(function ActivityCard(props: ActivityCardProps) {
-  const { item, onOpen } = props;
+  const { anchorId = `activity-${props.item.id}`, item, onOpen } = props;
 
   return (
     <div
       className="activity-card"
-      id={`activity-${item.id}`}
+      id={anchorId}
       onClick={(event) => {
         // The wrapper expands the hit target without turning nested controls into card triggers.
         const target = event.target as HTMLElement | null;
