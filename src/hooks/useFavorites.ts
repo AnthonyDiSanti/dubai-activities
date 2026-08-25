@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { parseSharedFavoriteIds, sanitizeFavoriteIds } from '../domain/favorites';
 
-const STORAGE_KEY = 'naima.favs.v1';
+const STORAGE_KEY = 'dubai-activities.favs.v1';
 
 function parseStoredFavorites(value: string | null, knownIds: ReadonlySet<string>): string[] {
   try {

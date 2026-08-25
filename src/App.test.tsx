@@ -24,7 +24,9 @@ describe('App', () => {
   it('renders the complete guide through the React component tree', () => {
     const { container } = render(<App />);
 
-    expect(screen.getByRole('heading', { level: 1, name: 'For Naima' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Dubai activities' }))
+      .toBeInTheDocument();
+    expect(container.querySelector('.arrival-bar')).not.toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'The Nest by Nara' })).toBeInTheDocument();
     expect(container.querySelectorAll('section.chapter')).toHaveLength(CHAPTERS.length);
     expect(container.querySelectorAll('.activity-card')).toHaveLength(activities.length);
@@ -345,7 +347,8 @@ describe('App', () => {
     expect(within(hero).getByRole('button', { name: 'Remove The Nest by Nara from favorites' }))
       .toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('button', { name: 'Open favorites, 1 saved' })).toBeInTheDocument();
-    expect(JSON.parse(window.localStorage.getItem('naima.favs.v1') ?? '[]')).toEqual(['nest']);
+    expect(JSON.parse(window.localStorage.getItem('dubai-activities.favs.v1') ?? '[]'))
+      .toEqual(['nest']);
     expect(screen.queryByRole('dialog', { name: 'The Nest by Nara' })).not.toBeInTheDocument();
     expect(window.location.hash).toBe('');
 

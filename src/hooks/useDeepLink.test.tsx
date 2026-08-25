@@ -11,7 +11,7 @@ function renderDeepLink(onDeepLinkChange = vi.fn()) {
 }
 
 beforeEach(() => {
-  window.history.replaceState(null, '', '/guide/?ref=naima');
+  window.history.replaceState(null, '', '/guide/?ref=message');
 });
 
 afterEach(() => {
@@ -21,7 +21,7 @@ afterEach(() => {
 
 describe('useDeepLink', () => {
   it('reads a direct chapter or activity fragment synchronously', () => {
-    window.history.replaceState(null, '', '/guide/?ref=naima#activity-rasalkhor');
+    window.history.replaceState(null, '', '/guide/?ref=message#activity-rasalkhor');
     const { result } = renderDeepLink();
 
     expect(result.current.deepLink).toEqual({
@@ -35,7 +35,7 @@ describe('useDeepLink', () => {
     const { result } = renderDeepLink();
 
     act(() => { result.current.navigateToCredits(); });
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#credits');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message#credits');
     expect(result.current.deepLink).toEqual({ type: 'credits' });
 
     act(() => { result.current.closeCredits(); });
@@ -44,14 +44,14 @@ describe('useDeepLink', () => {
   });
 
   it('closes a direct credits link without navigating away from the document', () => {
-    window.history.replaceState(null, '', '/guide/?ref=naima#credits');
+    window.history.replaceState(null, '', '/guide/?ref=message#credits');
     const back = vi.spyOn(window.history, 'back');
     const { result } = renderDeepLink();
 
     act(() => { result.current.closeCredits(); });
 
     expect(back).not.toHaveBeenCalled();
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message');
     expect(result.current.deepLink).toBeNull();
   });
 
@@ -60,7 +60,7 @@ describe('useDeepLink', () => {
     const { result } = renderDeepLink();
 
     act(() => { result.current.navigateToArchive(); });
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#archive');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message#archive');
     expect(result.current.deepLink).toEqual({ type: 'archive' });
 
     act(() => { result.current.closeArchive(); });
@@ -69,14 +69,14 @@ describe('useDeepLink', () => {
   });
 
   it('closes a direct archive link without navigating away from the document', () => {
-    window.history.replaceState(null, '', '/guide/?ref=naima#archive');
+    window.history.replaceState(null, '', '/guide/?ref=message#archive');
     const back = vi.spyOn(window.history, 'back');
     const { result } = renderDeepLink();
 
     act(() => { result.current.closeArchive(); });
 
     expect(back).not.toHaveBeenCalled();
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message');
     expect(result.current.deepLink).toBeNull();
   });
 
@@ -85,7 +85,7 @@ describe('useDeepLink', () => {
 
     act(() => { result.current.navigateToActivity('rasalkhor'); });
 
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#activity-rasalkhor');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message#activity-rasalkhor');
     expect(result.current.deepLink).toEqual({
       type: 'activity',
       activityId: 'rasalkhor',
@@ -106,7 +106,7 @@ describe('useDeepLink', () => {
   });
 
   it('closes a direct activity link onto its owning chapter instead of leaving the site', () => {
-    window.history.replaceState(null, '', '/guide/?ref=naima#activity-rasalkhor');
+    window.history.replaceState(null, '', '/guide/?ref=message#activity-rasalkhor');
     const back = vi.spyOn(window.history, 'back');
     const { result } = renderDeepLink();
 
@@ -115,19 +115,19 @@ describe('useDeepLink', () => {
     });
 
     expect(back).not.toHaveBeenCalled();
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#animals');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message#animals');
     expect(result.current.deepLink).toEqual({ type: 'chapter', chapterKey: 'animals' });
   });
 
   it('closes a direct archived activity link onto the archive', () => {
-    window.history.replaceState(null, '', '/guide/?ref=naima#activity-rasalkhor');
+    window.history.replaceState(null, '', '/guide/?ref=message#activity-rasalkhor');
     const back = vi.spyOn(window.history, 'back');
     const { result } = renderDeepLink();
 
     act(() => { result.current.closeActivity('rasalkhor', { type: 'archive' }); });
 
     expect(back).not.toHaveBeenCalled();
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#archive');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message#archive');
     expect(result.current.deepLink).toEqual({ type: 'archive' });
   });
 
@@ -168,9 +168,9 @@ describe('useDeepLink', () => {
 
   it('pushes the explicit everything view while preserving foreign history state', () => {
     window.history.replaceState(
-      { __naimaDeepLink: { type: 'activity', activityId: 'rasalkhor' }, foreign: 'kept' },
+      { __dubaiGuideDeepLink: { type: 'activity', activityId: 'rasalkhor' }, foreign: 'kept' },
       '',
-      '/guide/?ref=naima#animals',
+      '/guide/?ref=message#animals',
     );
     const pushState = vi.spyOn(window.history, 'pushState');
     const replaceState = vi.spyOn(window.history, 'replaceState');
@@ -182,23 +182,23 @@ describe('useDeepLink', () => {
     expect(pushState).toHaveBeenCalledWith(
       { foreign: 'kept' },
       '',
-      '/guide/?ref=naima#everything',
+      '/guide/?ref=message#everything',
     );
     expect(replaceState).not.toHaveBeenCalled();
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#everything');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message#everything');
     expect(result.current.deepLink).toEqual({ type: 'everything' });
     expect(onDeepLinkChange).toHaveBeenCalledWith({ type: 'everything' });
   });
 
   it('does not push another entry when the everything view is already current', () => {
-    window.history.replaceState(null, '', '/guide/?ref=naima#everything');
+    window.history.replaceState(null, '', '/guide/?ref=message#everything');
     const pushState = vi.spyOn(window.history, 'pushState');
     const { result } = renderDeepLink();
 
     act(() => { result.current.navigateToEverything(); });
 
     expect(pushState).not.toHaveBeenCalled();
-    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=naima#everything');
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message#everything');
     expect(result.current.deepLink).toEqual({ type: 'everything' });
   });
 });

@@ -39,7 +39,7 @@ Card treatment precedence is dated, book-ahead, intentional no-photo fallback, t
 
 Use `ahead` for genuinely high-friction planning such as mandatory advance contact, scarce inventory, or a seasonal closure—not merely because a reservation is available. An ongoing seasonal reopening belongs in `when`, `ahead`, or `advisory`; reserve `dated` for a specific event date or bounded event range.
 
-Every `dated.on` value must be on or after the local `ARRIVAL_DATE_KEY` in `src/config/site.ts`. Advance a recurring event to its next verified occurrence, remove an expired one-off, and leave a seasonal opening undated until the operator publishes an exact day. Retiring an activity also means removing its selected gallery files, canonical manifest rows, and active image-work fragment rows; history remains available in Git and the source ledger.
+Every `dated.on` value must be on or after the local `TRIP_START_DATE_KEY` in `src/config/site.ts`. Advance a recurring event to its next verified occurrence, remove an expired one-off, and leave a seasonal opening undated until the operator publishes an exact day. Retiring an activity also means removing its selected gallery files, canonical manifest rows, and active image-work fragment rows; history remains available in Git and the source ledger.
 
 ## Final animal chapter
 

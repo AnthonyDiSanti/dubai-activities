@@ -11,7 +11,7 @@ import {
   type DeepLink,
 } from '../domain/deepLinks';
 
-const HISTORY_MARKER_KEY = '__naimaDeepLink';
+const HISTORY_MARKER_KEY = '__dubaiGuideDeepLink';
 type GlobalSheetType = 'archive' | 'credits';
 
 type DeepLinkHistoryMarker =

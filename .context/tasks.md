@@ -9,6 +9,11 @@ Task IDs are ULIDs; keep titles short and human-readable.
 - None
 
 ## Completed (recent; keep last ~10)
+- id: 01K3M8R5V2N7T9H4C1X0ZPQABD — title: Remove personalized trip framing — owner: Codex (GPT-5) — status: done — last update: 2026-08-25
+  - Goal: Remove the trip-day counter and person-specific naming while preserving the guide's activity, archive, routing, and sharing functionality.
+  - Result: Removed the entire arrival banner plus its hook/domain/styles/tests, changed the document and page title to `Dubai activities`, renamed favorites and history namespaces, neutralized the attribution user agent, and added static-output regression checks. The full gate passes 193 tests with clean content/photo/attribution audits. Deployed 452 objects, deleted only two superseded bundles, completed invalidation `IDUDYLBLPP4X5W9KYBK9DYY9QN`, and verified byte-identical live HTML/JS/CSS with the retired strings absent.
+  - Follow-up: Existing favorites under the retired browser-local key intentionally do not migrate; shared `#list=` URLs remain compatible. Run the rendered top-of-page check once a Browser backend reconnects.
+  - Links: `src/App.tsx`, `src/hooks/useFavorites.ts`, `scripts/audit-site-structure.ts`, `docs/site-interactions.md`
 - id: 01K3DGW5R8M2V7N4H9C1X0ZPQA — title: Verify the Soho Garden complex — owner: Codex (GPT-5) — status: done — last update: 2026-08-23
   - Goal: Preserve the positive Soho Garden visit while accurately distinguishing the full three-venue activity from what was open that night.
   - Result: Marked Soho Garden, HIVE and CODE as Tried & liked, kept the combined activity active, and recorded that only SOHO Garden was experienced and delivered solid warehouse-party energy while HIVE and CODE remain untested. Updated archive, filter, sheet, and browser-check expectations; the 213-test full gate and content/photo/attribution audits pass. Deployed 452 objects, deleted only the superseded JavaScript bundle, completed invalidation `I6PVQ29YU8QJH1D7WB5ONBI4XX`, and verified byte-identical live HTML and JavaScript containing the scoped visit note.

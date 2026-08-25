@@ -34,7 +34,7 @@ URL fragments are the client-only navigation boundary:
 
 `src/domain/deepLinks.ts` validates and builds chapter/activity/global-sheet fragments plus the explicit `#everything` route; `src/hooks/useDeepLink.ts` owns session-history synchronization. The hash is the source of truth for chapter expansion and open sheets, so Back/Forward restores a selected chapter, the all-open state, or an in-page sheet. App-created sheet entries carry a namespaced history-state marker. A directly loaded active activity closes to its owning chapter; an inactive archive activity closes to `#archive`; direct `#archive` or `#credits` dismissal strips only the fragment. Unknown, retired-without-a-record, malformed, and favorites fragments do not open a sheet.
 
-Favorites use the existing `naima.favs.v1` local-storage key. A validated `#list=<comma-separated-activity-ids>` hash can initialize a shared list; invalid, unknown, and duplicate IDs must not enter state. Chapter and activity fragments leave stored favorites authoritative. Hash navigation is intentionally client-side and is not sent to S3 or CloudFront as part of the HTTP request.
+Favorites use the neutral `dubai-activities.favs.v1` local-storage key. A validated `#list=<comma-separated-activity-ids>` hash can initialize a shared list; invalid, unknown, and duplicate IDs must not enter state. Chapter and activity fragments leave stored favorites authoritative. Hash navigation is intentionally client-side and is not sent to S3 or CloudFront as part of the HTTP request.
 
 Clipboard and Web Share are progressive enhancements. The native Share control appears only when the browser accepts the exact payload, and copy/share failures must not be reported as successes.
 

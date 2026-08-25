@@ -75,13 +75,13 @@ describe('favorite planning groups', () => {
 describe('favorite sharing', () => {
   it('replaces unrelated hash state with a deterministic validated list payload', () => {
     const payload = createFavoriteSharePayload(
-      new URL('https://example.com/guide/?ref=naima#activity-teamlab'),
+      new URL('https://example.com/guide/?ref=message#activity-teamlab'),
       ['teamlab', 'nest'],
     );
 
     expect(payload).toEqual({
       title: 'Things I want to do',
-      url: 'https://example.com/guide/?ref=naima#list=teamlab%2Cnest',
+      url: 'https://example.com/guide/?ref=message#list=teamlab%2Cnest',
     });
   });
 

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 import { CHAPTERS, HERO, ITEMS } from '../src/data/activities';
 import { ARCHIVE_ACTIVITY_DETAILS, ARCHIVE_ENTRIES } from '../src/data/archive';
-import { ARRIVAL_DATE_KEY } from '../src/config/site';
+import { TRIP_START_DATE_KEY } from '../src/config/site';
 import { orderChapterItems, type Activity } from '../src/domain/activity';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -125,8 +125,8 @@ for (const item of ITEMS) {
     }
     if (!isRealIsoDate(item.dated.on)) {
       fail(`${item.id} has an invalid dated.on value: ${item.dated.on || '(missing)'}`);
-    } else if (item.dated.on < ARRIVAL_DATE_KEY) {
-      fail(`${item.id} occurs before the ${ARRIVAL_DATE_KEY} arrival date: ${item.dated.on}`);
+    } else if (item.dated.on < TRIP_START_DATE_KEY) {
+      fail(`${item.id} occurs before the ${TRIP_START_DATE_KEY} trip start: ${item.dated.on}`);
     }
   }
   if (!Number.isInteger(item.photos) || item.photos < 2) {

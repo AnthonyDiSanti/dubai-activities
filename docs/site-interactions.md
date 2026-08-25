@@ -2,7 +2,7 @@
 
 ## Entry point and state ownership
 
-The root `index.html` loads `src/main.tsx`, which mounts `src/App.tsx` inside `AppErrorBoundary` and React Strict Mode and imports `src/styles/index.css`. `App` composes the hero, chapter navigation, activity sections, favorites, details, firsthand outcomes, and photo credits. It owns chapter/filter/dialog selection; focused hooks own countdown, favorites persistence, reduced-motion preference, current-chapter tracking, and lazy attribution loading. The root error boundary keeps a reload path visible if an unexpected render failure escapes component tests.
+The root `index.html` loads `src/main.tsx`, which mounts `src/App.tsx` inside `AppErrorBoundary` and React Strict Mode and imports `src/styles/index.css`. `App` composes the hero, chapter navigation, activity sections, favorites, details, firsthand outcomes, and photo credits. It owns chapter/filter/dialog selection; focused hooks own favorites persistence, reduced-motion preference, current-chapter tracking, and lazy attribution loading. The document and hidden page heading use the neutral `Dubai activities` title; the former personalized arrival banner and its clock are intentionally absent. The root error boundary keeps a reload path visible if an unexpected render failure escapes component tests.
 
 Activity data is compiled from `src/data/activities.ts`. Pure transformations and URL rules live under `src/domain/`; UI must not recreate those rules in component-local view models. See [architecture.md](architecture.md) for build and S3 boundaries.
 
@@ -13,12 +13,6 @@ npm run dev
 ```
 
 Use `npm run build && npm run preview` for a production-output check. A plain file server pointed at `src/` is not a valid development path.
-
-## Arrival countdown
-
-The arrival bar counts Dubai calendar dates, not completed 24-hour periods. `ARRIVAL_DATE_KEY` and `TRIP_TIME_ZONE` in `src/config/site.ts` are therefore passed separately into the countdown domain rule: Thursday through Sunday reads `3 days until I land` throughout Thursday in Dubai, Saturday reads `1 day until I land`, and Sunday reads `I land today` regardless of the viewer's browser timezone. The trip only records a landing date, not a scheduled time, so do not reintroduce hour-level claims or imply that arrival has happened partway through Sunday. The next Dubai date shows `Tonight, it's you + me` and counts as trip day 1; the following date begins the visible numbered sequence at day 2.
-
-`src/hooks/useCountdown.ts` refreshes the label every 30 seconds so a Dubai midnight transition appears without a reload. Tests must include a non-midnight Thursday instant and a UTC instant on either side of Dubai midnight; exact-midnight-only cases will not catch elapsed-duration regressions.
 
 ## Hero carousel
 
@@ -100,7 +94,7 @@ Credits are deliberately complete and flat rather than searchable or collapsed. 
 
 ## Favorites and sharing
 
-Favorites use the existing `naima.favs.v1` storage key. Both stored and shared IDs are validated against current activity IDs, deduplicated, and kept in insertion order. A present `#list=` hash takes precedence over local state and the validated result becomes the local list; malformed storage falls back to an empty list instead of breaking render.
+Favorites use the `dubai-activities.favs.v1` storage key. Both stored and shared IDs are validated against current activity IDs, deduplicated, and kept in insertion order. A present `#list=` hash takes precedence over local state and the validated result becomes the local list; malformed storage falls back to an empty list instead of breaking render. The retired personalized namespace is not migrated, so this cleanup intentionally starts a fresh browser-local list while shared URLs remain compatible.
 
 The favorites sheet turns the saved list into three mutually exclusive planning groups. Dated events come first and sort globally by their ISO date key, including a visible semantic date tile. Undated activities with `ahead` guidance follow in save order, then every remaining favorite in save order. A dated activity appears only in Dated events even when it also needs advance booking. Empty groups are omitted, and the remaining group's visible heading is also omitted when every favorite falls into that one category; its semantic region label remains available to assistive technology.
 
@@ -118,7 +112,7 @@ Interactive controls use a shared high-contrast `:focus-visible` ring. Do not su
 
 Check at 390×844, 999×800, 1000×800, and 1440×900:
 
-1. Confirm six hero slides and one complete seven-second progress/rotation cycle. Verify hover/focus/dialog freeze-and-resume, permanent stop after choosing both the active and a different pagination item, no separate Pause/Resume control, and no autoplay/progress under reduced motion.
+1. Confirm the document title reads `Dubai activities` and the hero is the first visible content with no personalized or day-count banner above it. Confirm six hero slides and one complete seven-second progress/rotation cycle. Verify hover/focus/dialog freeze-and-resume, permanent stop after choosing both the active and a different pagination item, no separate Pause/Resume control, and no autoplay/progress under reduced motion.
 2. Click the hero image, shade, title, and blurb; confirm each opens the active sheet once. Confirm Save, CTA, More, and pagination do not trigger the passive slide action and that closing a passive-opened sheet restores the More link.
 3. Click passive surfaces in all standard, dated, and ahead card treatments; confirm the correct sheet opens at photo 1.
 4. Click Save and every external-action shape; confirm they do not open a sheet.

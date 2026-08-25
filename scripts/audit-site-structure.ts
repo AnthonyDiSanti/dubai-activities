@@ -75,9 +75,22 @@ if (/<(?:x-dc|sc-if|sc-for)\b|data-dc-script|dc-runtime/i.test(sourceIndex)) {
 if (!/<link\b[^>]*href=["']\.\/photo-attributions\.jsonld["'][^>]*type=["']application\/ld\+json["']/i.test(sourceIndex)) {
   fail('index.html must expose the generated JSON-LD photo attribution catalog.');
 }
+if (!/<title>Dubai activities<\/title>/i.test(sourceIndex)) {
+  fail('index.html must use the neutral Dubai activities title.');
+}
+if (/\bnaima\b/i.test(sourceIndex)) {
+  fail('index.html contains the retired personalized name.');
+}
 
 for (const legacyPath of ['src/index.html', 'src/js', 'src/css']) {
   if (fs.existsSync(absolute(legacyPath))) fail(`Legacy source path still exists: ${legacyPath}`);
+}
+for (const retiredPath of [
+  'src/components/ArrivalBar.tsx',
+  'src/domain/countdown.ts',
+  'src/hooks/useCountdown.ts',
+]) {
+  if (fs.existsSync(absolute(retiredPath))) fail(`Retired countdown path still exists: ${retiredPath}`);
 }
 
 const packageJsonText = read('package.json');
@@ -150,6 +163,9 @@ if (!SOURCE_ONLY) {
     if (/\/src\/|\.tsx?\b|data-dc-script|dc-runtime|<x-dc\b/i.test(distIndex)) {
       fail('Built index contains a source-only or legacy-runtime reference.');
     }
+    if (/\bnaima\b/i.test(distIndex)) {
+      fail('Built index contains the retired personalized name.');
+    }
     for (const attributionFile of ['photo-attributions.json', 'photo-attributions.jsonld']) {
       if (!fs.existsSync(absolute(`dist/${attributionFile}`))) {
         fail(`Built site is missing generated attribution data: ${attributionFile}`);
@@ -190,6 +206,9 @@ if (!SOURCE_ONLY) {
         .join('\n');
       if (/data-dc-script|dc-runtime|unpkg\.com\/react@/i.test(bundledText)) {
         fail('Production bundles still contain the custom runtime or CDN React loader.');
+      }
+      if (/\bnaima\b|arrival-bar|formatArrivalCountdown/i.test(bundledText)) {
+        fail('Production bundles still contain retired personalization or countdown code.');
       }
     }
   }

@@ -4,6 +4,13 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-25 — Remove the personalized trip framing
+- Decider: Anthony
+- Decision: Remove the arrival/day banner and every active-site reference to the former personalized name. Use `Dubai activities` as the neutral document/page title, rename internal browser-state identifiers, and start favorites under `dubai-activities.favs.v1` without migrating the retired namespace.
+- Rationale: The guide should remain useful without carrying trip-day framing or person-specific branding in its visible interface or production bundle.
+- Alternatives considered: Hide only the banner; retain personalized internal identifiers; keep a one-release favorites migration shim.
+- Consequences / follow-ups: The hero becomes the first visible content, existing browser-local favorites under the retired key reset, and shared `#list=` URLs remain compatible. `TRIP_START_DATE_KEY` survives only as the neutral freshness boundary for dated recommendations. The static-output audit rejects a regression of the retired name or countdown code.
+
 ## 2026-08-23 — Verify the Soho Garden complex with a scoped visit note
 - Decider: Anthony
 - Decision: Mark the combined Soho Garden, HIVE and CODE activity as Tried & liked, while recording that only SOHO Garden was open and personally experienced during the visit.
@@ -86,7 +93,7 @@ Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` fo
 ## 2026-08-13 — Credit every deployed photo without making permission a release gate
 - Decider: Anthony
 - Decision: Keep the private personal guide's existing photo set, publish a lightweight footer credits sheet, and expose matching compact JSON plus Schema.org JSON-LD. Record the exact creator and license where available; otherwise credit the identified creator or recorded source without implying permission or endorsement.
-- Rationale: The site is a private toy for Anthony and Naima with no profit or promotion, so rights clearance is not proportionate as a deployment gate. Creators still deserve visible, durable credit, especially where Creative Commons terms specify it.
+- Rationale: The site is a private personal toy with no profit or promotion, so rights clearance is not proportionate as a deployment gate. Creators still deserve visible, durable credit, especially where Creative Commons terms specify it.
 - Alternatives considered: Block releases until every reuse right is documented; hide credits in source metadata only; add a credit link to every activity sheet; build a searchable or collapsed credits directory.
 - Consequences / follow-ups: `docs/photo-attributions.csv` is the reviewed one-row-per-asset ledger. Generated JSON powers the flat footer sheet, generated JSON-LD provides machine-readable attribution, and `#credits` is a durable route. Structural coverage is audited, but unknown creators fall back to source-level credit and do not block deployment. New selected photos must be synchronized into the ledger in the same content change.
 

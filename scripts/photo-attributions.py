@@ -431,7 +431,7 @@ def commons_metadata(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
         })
         request = urllib.request.Request(
             f"https://commons.wikimedia.org/w/api.php?{query}",
-            headers={"User-Agent": "NaimaPhotoCredits/1.0 (private personal guide)"},
+            headers={"User-Agent": "DubaiActivitiesPhotoCredits/1.0 (private personal guide)"},
         )
         with urllib.request.urlopen(request, timeout=30) as response:
             payload = json.load(response)

@@ -129,28 +129,6 @@ img {
   padding: 12px 18px;
 }
 
-.arrival-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 9px 18px;
-  background: linear-gradient(90deg, var(--gold), var(--rose));
-}
-
-.arrival-bar__brand {
-  color: var(--ink);
-  font: 700 9px var(--font-mono);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
-.arrival-bar__countdown {
-  color: var(--ink);
-  font: 700 11px var(--font-body);
-  letter-spacing: .03em;
-}
-
 .media-placeholder {
   position: absolute;
   inset: 0;

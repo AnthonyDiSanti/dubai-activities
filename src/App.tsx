@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useState, type MouseEvent } from 'reac
 
 import { ActivityDialog } from './components/ActivityDialog';
 import { ArchiveDialog } from './components/ArchiveDialog';
-import { ArrivalBar } from './components/ArrivalBar';
 import {
   ChapterNavigation,
   ChapterSidebar,
@@ -11,12 +10,10 @@ import { ChapterSection } from './components/ChapterSection';
 import { CreditsDialog } from './components/CreditsDialog';
 import { FavoritesDialog } from './components/FavoritesDialog';
 import { HeroCarousel } from './components/HeroCarousel';
-import { ARRIVAL_DATE_KEY, TRIP_TIME_ZONE } from './config/site';
 import { CHAPTERS, HERO, ITEMS } from './data/activities';
 import { ARCHIVE_ACTIVITY_DETAILS, ARCHIVE_ENTRIES } from './data/archive';
 import type { Activity, ChapterKey } from './domain/activity';
 import { parseDeepLink, type DeepLink } from './domain/deepLinks';
-import { useCountdown } from './hooks/useCountdown';
 import { useCurrentChapter } from './hooks/useCurrentChapter';
 import { useDeepLink } from './hooks/useDeepLink';
 import { useFavorites } from './hooks/useFavorites';
@@ -26,12 +23,6 @@ import { useReducedMotion } from './hooks/useReducedMotion';
 const ALL_CHAPTER_KEYS = CHAPTERS.map(({ key }) => key);
 const ACTIVITIES: readonly Activity[] = ITEMS;
 const DEFAULT_CHAPTER_KEY: ChapterKey = 'loud';
-
-function LiveArrivalBar() {
-  // Keep the clock's 30-second updates outside the full activity-card application tree.
-  const countdown = useCountdown(ARRIVAL_DATE_KEY, TRIP_TIME_ZONE);
-  return <ArrivalBar countdown={countdown} />;
-}
 
 function openFooterSheet(event: MouseEvent<HTMLAnchorElement>, navigate: () => void) {
   // Leave modified clicks and copied links native while ordinary activation stays history-aware.
@@ -279,8 +270,7 @@ export function App() {
 
   return (
     <div className="page">
-      <h1 className="visually-hidden">For Naima</h1>
-      <LiveArrivalBar />
+      <h1 className="visually-hidden">Dubai activities</h1>
       <HeroCarousel
         activeIndex={heroIndex}
         autoRotate={!favoritesOpen && activeActivity === null && !archiveOpen && !creditsOpen}

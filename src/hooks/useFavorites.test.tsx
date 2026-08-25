@@ -16,7 +16,7 @@ describe('useFavorites', () => {
     const { result } = renderHook(() => useFavorites(knownIds));
 
     expect(result.current.favorites).toEqual(['teamlab', 'nest']);
-    expect(JSON.parse(window.localStorage.getItem('naima.favs.v1') ?? '[]')).toEqual([
+    expect(JSON.parse(window.localStorage.getItem('dubai-activities.favs.v1') ?? '[]')).toEqual([
       'teamlab',
       'nest',
     ]);
@@ -26,7 +26,7 @@ describe('useFavorites', () => {
   });
 
   it('recovers from malformed storage and ignores unknown toggle requests', () => {
-    window.localStorage.setItem('naima.favs.v1', '{not json');
+    window.localStorage.setItem('dubai-activities.favs.v1', '{not json');
     const { result } = renderHook(() => useFavorites(knownIds));
 
     expect(result.current.favorites).toEqual([]);
@@ -35,7 +35,7 @@ describe('useFavorites', () => {
   });
 
   it('keeps local favorites authoritative for a chapter or activity deep link', () => {
-    window.localStorage.setItem('naima.favs.v1', JSON.stringify(['teamlab']));
+    window.localStorage.setItem('dubai-activities.favs.v1', JSON.stringify(['teamlab']));
     window.history.replaceState(null, '', '/#activity-nest');
 
     const { result } = renderHook(() => useFavorites(knownIds));
@@ -49,7 +49,7 @@ describe('useFavorites', () => {
     act(() => {
       window.dispatchEvent(
         new StorageEvent('storage', {
-          key: 'naima.favs.v1',
+          key: 'dubai-activities.favs.v1',
           newValue: JSON.stringify(['balloon', 'unknown', 'balloon', 'nest']),
         }),
       );
