@@ -7667,6 +7667,142 @@
       "creditText": "Brunch & Cake — photo 4, via Brunch & Cake. Shown with responsive cropping."
     },
     {
+      "filename": "brassmonkey-01.jpg",
+      "activityId": "brassmonkey",
+      "activityName": "Brass Monkey · City Walk",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "Brass Monkey City Walk arcade floor",
+      "creator": null,
+      "source": {
+        "name": "Brass Monkey via City Walk",
+        "url": "https://www.citywalk.ae/en/outlets/brass-monkey"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Brass Monkey City Walk arcade floor, via Brass Monkey via City Walk. Converted from WebP to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "brassmonkey-02.jpg",
+      "activityId": "brassmonkey",
+      "activityName": "Brass Monkey · City Walk",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "Brass Monkey City Walk bowling lanes",
+      "creator": null,
+      "source": {
+        "name": "Brass Monkey via City Walk",
+        "url": "https://www.citywalk.ae/en/outlets/brass-monkey"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Brass Monkey City Walk bowling lanes, via Brass Monkey via City Walk. Converted from WebP to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "brassmonkey-03.jpg",
+      "activityId": "brassmonkey",
+      "activityName": "Brass Monkey · City Walk",
+      "chapterName": "Nights that go loud",
+      "slot": 3,
+      "workTitle": "Brass Monkey City Walk bar",
+      "creator": null,
+      "source": {
+        "name": "Brass Monkey via City Walk",
+        "url": "https://www.citywalk.ae/en/outlets/brass-monkey"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Brass Monkey City Walk bar, via Brass Monkey via City Walk. Converted from WebP to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "brassmonkey-04.jpg",
+      "activityId": "brassmonkey",
+      "activityName": "Brass Monkey · City Walk",
+      "chapterName": "Nights that go loud",
+      "slot": 4,
+      "workTitle": "Brass Monkey City Walk billiards room",
+      "creator": null,
+      "source": {
+        "name": "Brass Monkey via City Walk",
+        "url": "https://www.citywalk.ae/en/outlets/brass-monkey"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Brass Monkey City Walk billiards room, via Brass Monkey via City Walk. Converted from WebP to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "triple777-01.jpg",
+      "activityId": "triple777",
+      "activityName": "Triple 777 · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "Triple 777 guests on the bowling lane",
+      "creator": null,
+      "source": {
+        "name": "Triple 777 Dubai",
+        "url": "https://www.triple777dubai.ae/gallery"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded as JPEG for web display and shown with responsive cropping.",
+      "creditText": "Triple 777 guests on the bowling lane, via Triple 777 Dubai. Re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "triple777-02.jpg",
+      "activityId": "triple777",
+      "activityName": "Triple 777 · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "Triple 777 bowling lanes",
+      "creator": null,
+      "source": {
+        "name": "Triple 777 Dubai",
+        "url": "https://www.triple777dubai.ae/gallery"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and re-encoded as JPEG for web display and shown with responsive cropping.",
+      "creditText": "Triple 777 bowling lanes, via Triple 777 Dubai. Resized and re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "triple777-03.jpg",
+      "activityId": "triple777",
+      "activityName": "Triple 777 · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 3,
+      "workTitle": "Triple 777 arcade floor",
+      "creator": null,
+      "source": {
+        "name": "Triple 777 Dubai",
+        "url": "https://www.triple777dubai.ae/gallery"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded as JPEG for web display and shown with responsive cropping.",
+      "creditText": "Triple 777 arcade floor, via Triple 777 Dubai. Re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "triple777-04.jpg",
+      "activityId": "triple777",
+      "activityName": "Triple 777 · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 4,
+      "workTitle": "Triple 777 garden lounge",
+      "creator": null,
+      "source": {
+        "name": "Triple 777 Dubai",
+        "url": "https://www.triple777dubai.ae/gallery"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from PNG to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Triple 777 garden lounge, via Triple 777 Dubai. Converted from PNG to JPEG for web display and shown with responsive cropping."
+    },
+    {
       "filename": "icon-google-maps.svg",
       "activityId": null,
       "activityName": "Interface marks",

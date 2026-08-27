@@ -41,6 +41,12 @@ Use `ahead` for genuinely high-friction planning such as mandatory advance conta
 
 Every `dated.on` value must be on or after the local `TRIP_START_DATE_KEY` in `src/config/site.ts`. Advance a recurring event to its next verified occurrence, remove an expired one-off, and leave a seasonal opening undated until the operator publishes an exact day. Retiring an activity also means removing its selected gallery files, canonical manifest rows, and active image-work fragment rows; history remains available in Git and the source ledger.
 
+## Adult arcade nights
+
+Keep both selected adult arcades in `Nights that go loud`. Brass Monkey City Walk ranks ahead of Triple 777 because it is the stronger arcade-first recommendation; Triple 777 follows later as the neon, later-running 21+ alternative. Each card should remain candid about live package details the venue does not publish.
+
+Wavehouse is intentionally excluded because its Atlantis setting and programming skew too family-focused, while BOOM Battle Bar is an activity bar rather than a meaningful arcade. HUSHH at Social Distrikt remains a screened but unpublished option: consider it only if a future refresh needs a polished Downtown barcade with fewer cabinets than Brass Monkey.
+
 ## Final animal chapter
 
 `Fur, feathers and scales` is intentionally the twelfth and final chapter so it remains visibly new to readers of the earlier guide. Its curated order is:

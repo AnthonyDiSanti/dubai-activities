@@ -4615,6 +4615,86 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/brassmonkey-01.jpg",
+      "contentUrl": "./photos/brassmonkey-01.jpg",
+      "name": "Brass Monkey City Walk arcade floor",
+      "creditText": "Brass Monkey City Walk arcade floor, via Brass Monkey via City Walk. Converted from WebP to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.citywalk.ae/en/outlets/brass-monkey",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/brassmonkey-02.jpg",
+      "contentUrl": "./photos/brassmonkey-02.jpg",
+      "name": "Brass Monkey City Walk bowling lanes",
+      "creditText": "Brass Monkey City Walk bowling lanes, via Brass Monkey via City Walk. Converted from WebP to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.citywalk.ae/en/outlets/brass-monkey",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/brassmonkey-03.jpg",
+      "contentUrl": "./photos/brassmonkey-03.jpg",
+      "name": "Brass Monkey City Walk bar",
+      "creditText": "Brass Monkey City Walk bar, via Brass Monkey via City Walk. Converted from WebP to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.citywalk.ae/en/outlets/brass-monkey",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/brassmonkey-04.jpg",
+      "contentUrl": "./photos/brassmonkey-04.jpg",
+      "name": "Brass Monkey City Walk billiards room",
+      "creditText": "Brass Monkey City Walk billiards room, via Brass Monkey via City Walk. Converted from WebP to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.citywalk.ae/en/outlets/brass-monkey",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/triple777-01.jpg",
+      "contentUrl": "./photos/triple777-01.jpg",
+      "name": "Triple 777 guests on the bowling lane",
+      "creditText": "Triple 777 guests on the bowling lane, via Triple 777 Dubai. Re-encoded as JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.triple777dubai.ae/gallery",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/triple777-02.jpg",
+      "contentUrl": "./photos/triple777-02.jpg",
+      "name": "Triple 777 bowling lanes",
+      "creditText": "Triple 777 bowling lanes, via Triple 777 Dubai. Resized and re-encoded as JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.triple777dubai.ae/gallery",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/triple777-03.jpg",
+      "contentUrl": "./photos/triple777-03.jpg",
+      "name": "Triple 777 arcade floor",
+      "creditText": "Triple 777 arcade floor, via Triple 777 Dubai. Re-encoded as JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.triple777dubai.ae/gallery",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/triple777-04.jpg",
+      "contentUrl": "./photos/triple777-04.jpg",
+      "name": "Triple 777 garden lounge",
+      "creditText": "Triple 777 garden lounge, via Triple 777 Dubai. Converted from PNG to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.triple777dubai.ae/gallery",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from PNG to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",

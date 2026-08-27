@@ -7,6 +7,8 @@ const activities: readonly Activity[] = ITEMS;
 const activitiesById = new Map(activities.map((activity) => [activity.id, activity]));
 const FACT_ENRICHED_IDS = [
   'stardom',
+  'brassmonkey',
+  'triple777',
   'untold',
   'teamlab',
   'laperle',
@@ -49,9 +51,13 @@ const FACT_ENRICHED_IDS = [
 ] as const;
 
 describe('activity planning content', () => {
-  it.each(['terrasolis', 'cyanotype', 'rawbarista'])('keeps retired activity %s out', (id) => {
-    expect(activitiesById.has(id)).toBe(false);
-  });
+  it.each(['terrasolis', 'cyanotype', 'rawbarista', 'wavehouse', 'boombattlebar'])(
+    'keeps retired or screened-out activity %s out',
+    (id) => {
+      // Explicit exclusions are product decisions, not temporary research omissions.
+      expect(activitiesById.has(id)).toBe(false);
+    },
+  );
 
   it.each(FACT_ENRICHED_IDS)('gives %s a focused practical fact set', (id) => {
     const activity = activitiesById.get(id);
@@ -96,6 +102,19 @@ describe('activity planning content', () => {
       book: 'https://www.sevenrooms.com/reservations/opadubai/website-opa-dubai',
     });
     expect(opa?.advisory).toMatch(/does not publish how many smashing plates/i);
+  });
+
+  it('keeps both arcade additions adult, licensed, and candid about planning gaps', () => {
+    const brassMonkey = activitiesById.get('brassmonkey');
+    const triple777 = activitiesById.get('triple777');
+
+    // Both recommendations answer the adult-arcade brief without inventing unpublished prices.
+    expect(brassMonkey).toMatchObject({ ch: 'loud', when: 'Daily · 21+', photos: 4 });
+    expect(brassMonkey?.facts?.find(({ label }) => label === 'Games')?.value).toMatch(/12 bowling lanes/i);
+    expect(brassMonkey?.advisory).toMatch(/conflicting opening times/i);
+    expect(triple777).toMatchObject({ ch: 'loud', when: 'Daily · 18:00–03:00 · 21+', photos: 4 });
+    expect(triple777?.facts?.find(({ label }) => label === 'Fun Pass')?.value).toMatch(/unlimited drinks/i);
+    expect(triple777?.advisory).toMatch(/does not publish the arcade machine count/i);
   });
 
   it('keeps Boomah candid about its location, price, and owl-welfare trade-off', () => {

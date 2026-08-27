@@ -4,6 +4,20 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-27 — Add two complementary adult arcade nights
+- Decider: Anthony and Codex (model: gpt-5.6-sol)
+- Decision: Add Brass Monkey City Walk and Triple 777 Business Bay to `Nights that go loud`, ranking Brass Monkey as the stronger arcade-first recommendation and Triple 777 later as the neon 21+ option that runs until 03:00. Give each a complete four-photo gallery and a candid sheet covering current planning gaps.
+- Rationale: Both satisfy the requested combination of real arcade play and alcohol while serving distinct nights. Brass Monkey has the deeper destination-arcade identity; Triple 777 makes more sense for drinks, live sport, and late rematches.
+- Alternatives considered: Add only Brass Monkey; promote HUSHH instead of Triple 777; restore Wavehouse for machine count; broaden the brief to BOOM Battle Bar.
+- Consequences / follow-ups: Keep both cards in the nightlife chapter and preserve the alternating dated-event rhythm. Do not restore Wavehouse or BOOM Battle Bar without an explicit reversal. HUSHH remains a screened but unpublished Downtown alternative. Recheck Brass Monkey's conflicting official hours and Triple 777's unpublished package price before visiting.
+
+## 2026-08-27 — Narrow the adult-arcade shortlist
+- Decider: Anthony and Codex (model: gpt-5.6-sol)
+- Decision: Exclude Wavehouse because its Atlantis setting and programming are too family-focused, and exclude BOOM Battle Bar because competitive pub games do not satisfy the arcade brief. Keep HUSHH at Social Distrikt under consideration as a licensed late-night social-gaming bar; Brass Monkey remains the stronger choice when arcade depth is the priority.
+- Rationale: The target experience is an adult night out with alcohol and a worthwhile arcade, not merely a venue that happens to combine children, bowling, or bar games. HUSHH clears the atmosphere and drinks requirements with 15-plus arcade machines, four duckpin lanes, AR darts, and digital shuffleboard, but its cabinet selection is smaller than a destination arcade.
+- Alternatives considered: Keep Wavehouse for its 70-plus machines; keep BOOM as a broader activity bar; treat HUSHH as a full arcade without qualification; publish every plausible option.
+- Consequences / follow-ups: Do not add Wavehouse or BOOM during a later arcade refresh unless Anthony reverses this decision. If HUSHH is promoted, present it honestly as a polished Downtown barcade/date-night option rather than Dubai's deepest arcade, verify live individual-game pricing, and source an exact-venue gallery and credits in the same change.
+
 ## 2026-08-25 — Remove the personalized trip framing
 - Decider: Anthony
 - Decision: Remove the arrival/day banner and every active-site reference to the former personalized name. Use `Dubai activities` as the neutral document/page title, rename internal browser-state identifiers, and start favorites under `dubai-activities.favs.v1` without migrating the retired namespace.

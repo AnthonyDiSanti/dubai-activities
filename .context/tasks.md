@@ -1,5 +1,11 @@
 # Tasks
 
+- id: 01K3V6N8R2M5T9C4H7Q1X0ZPFD — title: Add adult arcade nights — owner: Codex (GPT-5) — status: done — last update: 2026-08-27
+  - Goal: Add the strongest Dubai arcade nights that combine worthwhile games with a licensed adult atmosphere.
+  - Result: Added Brass Monkey City Walk and Triple 777 Business Bay to Nights that go loud with distinct positioning, source-backed facts, candid planning gaps, and four exact-venue photographs each. Preserved the chapter's chronological date order and ideal alternating date-card spacing, generated visible and machine-readable credits for all eight assets, and enforced Wavehouse and BOOM Battle Bar as screened-out choices. Passed 198 tests, 459 manifest rows, 429 JPEGs, 431 strict credit rows, zero similarity candidates, and responsive browser QA. Deployed 460 objects, deleted only superseded bundle `assets/index-B0f5ZSJP.js`, completed invalidation `IE40M3IB98955FJTVG15JEWZGN`, and verified byte-identical live build/catalog/gallery assets plus both production sheets.
+  - Follow-up: Recheck Brass Monkey's live closing time and Triple 777's Fun Pass price before visiting.
+  - Links: `src/data/activities.ts`, `docs/activity-planning-sources.md`, `docs/image-manifest.csv`, `docs/photo-attributions.csv`
+
 Task IDs are ULIDs; keep titles short and human-readable.
 
 ## Active

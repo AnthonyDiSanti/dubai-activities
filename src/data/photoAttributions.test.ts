@@ -14,14 +14,22 @@ describe('generated photo attribution catalog', () => {
       return counts;
     }, {});
 
-    expect(catalog.assets).toHaveLength(423);
-    expect(filenames.size).toBe(423);
+    expect(catalog.assets).toHaveLength(431);
+    expect(filenames.size).toBe(431);
     expect(basisCounts.creative_commons).toBe(54);
     expect(basisCounts.stock_license).toBe(8);
     expect(basisCounts.public_domain).toBe(2);
     expect(basisCounts.trademark).toBe(2);
     expect(basisCounts.creator_credit).toBe(15);
-    expect(basisCounts.source_credit).toBe(342);
+    expect(basisCounts.source_credit).toBe(350);
+
+    // New venue galleries must retain their named source instead of a generic host fallback.
+    expect(catalog.assets.find(({ filename }) => filename === 'brassmonkey-01.jpg')?.source.name).toBe(
+      'Brass Monkey via City Walk',
+    );
+    expect(catalog.assets.find(({ filename }) => filename === 'triple777-01.jpg')?.source.name).toBe(
+      'Triple 777 Dubai',
+    );
 
     const hero = catalog.assets.find(({ filename }) => filename === 'rasalkhor-01.jpg');
     expect(hero?.creator?.name).toBe('Florian Kriechbaumer');
