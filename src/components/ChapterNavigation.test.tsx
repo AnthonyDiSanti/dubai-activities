@@ -15,17 +15,17 @@ const chapters: readonly Chapter[] = [
 
 function props(overrides: Partial<ChapterNavigationProps> = {}): ChapterNavigationProps {
   return {
-    aheadOnly: false,
     chapters,
     currentChapterKey: 'loud',
     mobileOpen: false,
     onCloseAll: vi.fn(),
     onOpenAll: vi.fn(),
     onSelectChapter: vi.fn(),
-    onToggleAhead: vi.fn(),
     onToggleMobile: vi.fn(),
+    onTogglePlanAhead: vi.fn(),
     onToggleVerified: vi.fn(),
     openChapterKeys: new Set(['loud']),
+    planAheadOnly: false,
     verifiedOnly: false,
     ...overrides,
   };
@@ -62,7 +62,7 @@ describe('ChapterNavigation', () => {
     const onCloseAll = vi.fn();
     const onOpenAll = vi.fn();
     const onSelectChapter = vi.fn();
-    const onToggleAhead = vi.fn();
+    const onTogglePlanAhead = vi.fn();
     const onToggleVerified = vi.fn();
     render(
       <ChapterNavigation
@@ -70,20 +70,20 @@ describe('ChapterNavigation', () => {
           onCloseAll,
           onOpenAll,
           onSelectChapter,
-          onToggleAhead,
+          onTogglePlanAhead,
           onToggleVerified,
         })}
         mobileOpen
       />,
     );
 
-    fireEvent.click(screen.getByRole('button', { name: 'Show only activities to book ahead' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Show only dated and book-ahead activities' }));
     fireEvent.click(screen.getByRole('button', { name: 'Show only tried and liked activities' }));
     fireEvent.click(screen.getByRole('link', { name: chapters[1]?.name }));
     fireEvent.click(screen.getByRole('button', { name: 'Open everything' }));
     fireEvent.click(screen.getByRole('button', { name: 'Fold all' }));
 
-    expect(onToggleAhead).toHaveBeenCalledOnce();
+    expect(onTogglePlanAhead).toHaveBeenCalledOnce();
     expect(onToggleVerified).toHaveBeenCalledOnce();
     expect(onSelectChapter).toHaveBeenCalledWith('quiet');
     expect(onOpenAll).toHaveBeenCalledOnce();

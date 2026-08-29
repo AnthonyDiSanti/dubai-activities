@@ -245,7 +245,7 @@ describe('ActivityDialog', () => {
     );
 
     expect(screen.getByRole('dialog', { name: "Roberto's" })).toBeInTheDocument();
-    expect(screen.getByText('Firsthand record')).toBeInTheDocument();
+    expect(screen.getByText('Decision record')).toBeInTheDocument();
     expect(screen.getByText('Tried', { selector: '.detail-sheet__outcome-label' }))
       .toBeInTheDocument();
     expect(screen.getByText(archiveEntry.note)).toBeInTheDocument();

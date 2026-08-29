@@ -7,6 +7,7 @@ const activities: readonly Activity[] = ITEMS;
 const activitiesById = new Map(activities.map((activity) => [activity.id, activity]));
 const FACT_ENRICHED_IDS = [
   'stardom',
+  'bludubai',
   'brassmonkey',
   'triple777',
   'untold',
@@ -16,11 +17,13 @@ const FACT_ENRICHED_IDS = [
   'chaoskarts',
   'motf',
   'moonrise',
+  'amazonico',
+  'tingirie',
+  'amritsr',
   'ossiano',
   'dits',
   'opa',
   'sevenpaintings',
-  'thepods',
   'oolalab',
   'lecole',
   'limba',
@@ -51,7 +54,15 @@ const FACT_ENRICHED_IDS = [
 ] as const;
 
 describe('activity planning content', () => {
-  it.each(['terrasolis', 'cyanotype', 'rawbarista', 'wavehouse', 'boombattlebar'])(
+  it.each([
+    'terrasolis',
+    'cyanotype',
+    'rawbarista',
+    'wavehouse',
+    'boombattlebar',
+    'fashionavenue',
+    'thepods',
+  ])(
     'keeps retired or screened-out activity %s out',
     (id) => {
       // Explicit exclusions are product decisions, not temporary research omissions.
@@ -104,17 +115,64 @@ describe('activity planning content', () => {
     expect(opa?.advisory).toMatch(/does not publish how many smashing plates/i);
   });
 
-  it('keeps both arcade additions adult, licensed, and candid about planning gaps', () => {
+  it('keeps both game-bar additions adult, licensed, and candid about their format', () => {
     const brassMonkey = activitiesById.get('brassmonkey');
     const triple777 = activitiesById.get('triple777');
 
-    // Both recommendations answer the adult-arcade brief without inventing unpublished prices.
+    // Brass reflects the firsthand game mix; Triple 777 retains its researched late-night role.
     expect(brassMonkey).toMatchObject({ ch: 'loud', when: 'Daily · 21+', photos: 4 });
-    expect(brassMonkey?.facts?.find(({ label }) => label === 'Games')?.value).toMatch(/12 bowling lanes/i);
-    expect(brassMonkey?.advisory).toMatch(/conflicting opening times/i);
+    expect(brassMonkey?.facts?.find(({ label }) => label === 'Games')?.value).toMatch(/mini basketball/i);
+    expect(brassMonkey?.blurb).toMatch(/fun date/i);
+    expect(brassMonkey?.advisory).toMatch(/rather than a deep Barcade-style cabinet lineup/i);
     expect(triple777).toMatchObject({ ch: 'loud', when: 'Daily · 18:00–03:00 · 21+', photos: 4 });
     expect(triple777?.facts?.find(({ label }) => label === 'Fun Pass')?.value).toMatch(/unlimited drinks/i);
     expect(triple777?.advisory).toMatch(/does not publish the arcade machine count/i);
+  });
+
+  it('keeps BLU practical about its Thursday crowd and compact dance area', () => {
+    const blu = activitiesById.get('bludubai');
+
+    // Firsthand strengths stay in the card, while event-dependent perks remain qualified.
+    expect(blu).toMatchObject({
+      ch: 'loud',
+      name: 'BLU Dubai',
+      where: '32nd floor, V Hotel, Al Habtoor City',
+      photos: 4,
+    });
+    expect(blu?.blurb).toMatch(/ladies-first table policy/i);
+    expect(blu?.facts?.find(({ label }) => label === 'Thursday sound')?.value)
+      .toMatch(/hip-hop/i);
+    expect(blu?.advisory).toMatch(/dance area is compact/i);
+    expect(blu?.advisory).toMatch(/vary by event and guest list/i);
+  });
+
+  it('keeps both newly verified dinners practical and fully photographed', () => {
+    const amazonico = activitiesById.get('amazonico');
+    const tingIrie = activitiesById.get('tingirie');
+
+    // Firsthand verdicts live in the archive; active copy remains useful planning guidance.
+    expect(amazonico).toMatchObject({ ch: 'dinners', where: 'DIFC Pavilion', photos: 4 });
+    expect(amazonico?.facts?.find(({ label }) => label === 'Cuisine')?.value)
+      .toMatch(/Latin American/i);
+    expect(tingIrie).toMatchObject({ ch: 'dinners', where: 'Souk Al Manzil, Downtown', photos: 4 });
+    expect(tingIrie?.facts?.find(({ label }) => label === 'Cuisine')?.value)
+      .toMatch(/Jamaican/i);
+  });
+
+  it('keeps Amritsr in Karama without treating the Dubai branch as verified', () => {
+    const amritsr = activitiesById.get('amritsr');
+
+    // The Bangkok preference motivates the candidate, but this exact kitchen still needs a visit.
+    expect(amritsr).toMatchObject({
+      ch: 'dinners',
+      name: 'Amritsr · Al Karama',
+      where: 'Al Attar Center, Al Karama',
+      photos: 4,
+    });
+    expect(amritsr?.blurb).toMatch(/Bangkok meals/i);
+    expect(amritsr?.advisory).toMatch(/Dubai branch is still untested/i);
+    expect(amritsr?.facts?.find(({ label }) => label === 'Start with')?.value)
+      .toMatch(/Amritsari kulcha/i);
   });
 
   it('keeps Boomah candid about its location, price, and owl-welfare trade-off', () => {

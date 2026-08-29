@@ -44,7 +44,10 @@ VALID_CREATOR_TYPES = {"", "person", "organization"}
 TODAY = date.today().isoformat()
 
 SOURCE_LABELS = {
+    "amritsr.com": "Amritsr",
+    "amritsruae.com": "Amritsr UAE",
     "arte.ae": "ARTE",
+    "bludubai.ae": "BLU Dubai",
     "boulderzone.ae": "Boulder Zone",
     "brunchandcake.com": "Brunch & Cake",
     "chaoskarts.ae": "Chaos Karts",
@@ -83,6 +86,7 @@ SOURCE_LABELS = {
     "thecamelfarm.ae": "The Camel Farm",
     "theeditdubai.com": "The Edit Dubai",
     "thedubaimall.com": "The Dubai Mall",
+    "tingirie.com": "Ting Irie",
     "thepods.ae": "The Pods",
     "toda.ae": "Theatre of Digital Art",
     "travel.globalvillage.ae": "Global Village",
@@ -94,6 +98,7 @@ SOURCE_LABELS = {
     "visitrasalkhaimah.com": "Visit Ras Al Khaimah",
     "www.agenda.com": "The Agenda",
     "www.alhabtoorcity.com": "Al Habtoor City",
+    "www.amazonicorestaurant.com": "Amazónico Dubai",
     "www.anantara.com": "Anantara",
     "www.arabnews.com": "Arab News",
     "www.aquafun.ae": "AquaFun",

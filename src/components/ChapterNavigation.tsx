@@ -11,12 +11,12 @@ type SharedChapterNavigationProps = {
 };
 
 export type ChapterNavigationProps = SharedChapterNavigationProps & {
-  readonly aheadOnly: boolean;
   readonly mobileOpen: boolean;
   readonly onCloseAll: () => void;
-  readonly onToggleAhead: () => void;
   readonly onToggleMobile: () => void;
+  readonly onTogglePlanAhead: () => void;
   readonly onToggleVerified: () => void;
+  readonly planAheadOnly: boolean;
   readonly verifiedOnly: boolean;
 };
 
@@ -47,17 +47,17 @@ function handleChapterLinkClick(
 }
 
 export const ChapterNavigation = memo(function ChapterNavigation({
-  aheadOnly,
   chapters,
   currentChapterKey,
   mobileOpen,
   onCloseAll,
   onOpenAll,
   onSelectChapter,
-  onToggleAhead,
   onToggleMobile,
+  onTogglePlanAhead,
   onToggleVerified,
   openChapterKeys,
+  planAheadOnly,
   verifiedOnly,
 }: ChapterNavigationProps) {
   const currentChapter = chapters.find(({ key }) => key === currentChapterKey) ?? chapters[0];
@@ -68,13 +68,13 @@ export const ChapterNavigation = memo(function ChapterNavigation({
         <span className="chapter-bar__label">You&apos;re in</span>
         <span aria-live="polite" className="chapter-bar__current">{currentChapter?.name ?? ''}</span>
         <button
-          aria-label={aheadOnly ? 'Show all activities' : 'Show only activities to book ahead'}
-          aria-pressed={aheadOnly}
+          aria-label={planAheadOnly ? 'Show all activities' : 'Show only dated and book-ahead activities'}
+          aria-pressed={planAheadOnly}
           className="chapter-bar__filter"
-          onClick={onToggleAhead}
+          onClick={onTogglePlanAhead}
           type="button"
         >
-          {aheadOnly ? '\u2715 Book ahead' : 'Book ahead'}
+          {planAheadOnly ? '\u2715 Plan ahead' : 'Plan ahead'}
         </button>
         <button
           aria-label={verifiedOnly ? 'Show all activities' : 'Show only tried and liked activities'}

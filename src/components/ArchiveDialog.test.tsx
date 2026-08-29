@@ -12,13 +12,18 @@ afterEach(() => {
 });
 
 describe('ArchiveDialog', () => {
-  const boulderZone = ITEMS.find(({ id }) => id === 'boulderzone');
-  const sohoGarden = ITEMS.find(({ id }) => id === 'sohogarden');
-  if (!boulderZone) throw new Error('Expected active Boulder Zone data');
-  if (!sohoGarden) throw new Error('Expected active Soho Garden data');
-  const activities = [boulderZone, sohoGarden, ...ARCHIVE_ACTIVITY_DETAILS];
+  const verifiedActivities = ARCHIVE_ENTRIES
+    .filter(({ status }) => status === 'verified')
+    .map(({ id }) => ITEMS.find((item) => item.id === id));
+  if (verifiedActivities.some((activity) => !activity)) {
+    throw new Error('Expected every verified archive record to remain active');
+  }
+  // Mirror App's archive data join so future verified records cannot silently disappear in this fixture.
+  const activities = [...verifiedActivities, ...ARCHIVE_ACTIVITY_DETAILS].filter(
+    (activity) => activity !== undefined,
+  );
 
-  it('separates liked, merely tried, and rejected firsthand outcomes', () => {
+  it('separates liked, merely tried, and deliberately rejected outcomes', () => {
     render(
       <ArchiveDialog
         activities={activities}
@@ -38,6 +43,10 @@ describe('ArchiveDialog', () => {
     if (!verified || !tried || !rejected) throw new Error('Expected all archive sections');
     expect(verified).toHaveTextContent('Boulder Zone');
     expect(verified).toHaveTextContent('Soho Garden, HIVE and CODE');
+    expect(verified).toHaveTextContent('BLU Dubai');
+    expect(verified).toHaveTextContent('Brass Monkey · City Walk');
+    expect(verified).toHaveTextContent('Amazónico Dubai');
+    expect(verified).toHaveTextContent('Ting Irie');
     expect(verified).not.toHaveTextContent('The Wall');
     expect(tried).toHaveTextContent('Meowtropolis Cat Café');
     expect(tried).toHaveTextContent("Roberto's");
@@ -46,11 +55,13 @@ describe('ArchiveDialog', () => {
     expect(rejected).toHaveTextContent('The Wall');
     expect(rejected).toHaveTextContent('Brunch & Cake');
     expect(rejected).toHaveTextContent('Dubai Butterfly Garden');
+    expect(rejected).toHaveTextContent('Fashion Avenue at Dubai Mall');
+    expect(rejected).toHaveTextContent('The Pods');
     expect(rejected).not.toHaveTextContent('Boulder Zone');
-    expect(within(dialog).getAllByRole('article')).toHaveLength(8);
+    expect(within(dialog).getAllByRole('article')).toHaveLength(14);
     expect(within(verified).getAllByRole('img', { name: 'Tried and liked' }))
-      .toHaveLength(2);
-    expect(within(dialog).getByText('2', { selector: 'dd' })).toBeInTheDocument();
+      .toHaveLength(6);
+    expect(within(dialog).getByText('6', { selector: 'dd' })).toBeInTheDocument();
     expect(within(tried).queryByRole('img', { name: 'Tried and liked' }))
       .not.toBeInTheDocument();
     expect(dialog).not.toHaveTextContent('It was okay');
@@ -104,7 +115,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    expect(document.querySelectorAll('.activity-card')).toHaveLength(8);
+    expect(document.querySelectorAll('.activity-card')).toHaveLength(14);
     expect(document.querySelector('#archive-activity-robertos .media-fill')).toHaveAttribute(
       'src',
       'photos/robertos-01.jpg',

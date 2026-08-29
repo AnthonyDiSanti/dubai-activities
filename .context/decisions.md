@@ -4,6 +4,41 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-29 — Reject The Pods before a visit
+- Decider: Anthony
+- Decision: Remove The Pods from active `Long dinners` recommendations and retain it under Rejected with its complete planning sheet, three-photo gallery, and credits. Record the decision as pre-visit screening rather than firsthand experience.
+- Rationale: The private glass-pod concept did not look compelling enough to clear the guide's recommendation bar, and another reviewer independently rejected it. Keeping a durable record prevents a future refresh from restoring a weak candidate while preserving enough context to understand what was considered.
+- Alternatives considered: Keep it active because the venue is current; delete it and its assets entirely; describe it as a negative visit; retain only a name in the archive without a full sheet.
+- Consequences / follow-ups: `thepods` is an explicit content-audit exclusion and remains a valid `#activity-thepods` archive route. Rejected records may represent either a visit or a deliberate pre-visit decision, so their note and shared UI copy must not imply firsthand experience when none occurred.
+
+## 2026-08-29 — Add Amritsr Al Karama as an unverified cross-market favorite
+- Decider: Anthony and Codex (model: GPT-5)
+- Decision: Add Amritsr to `Long dinners` using its established Al Karama branch, not JLT. Preserve Anthony's strong preference for the brand's Bangkok restaurants as the reason to try it, but do not mark the unvisited Dubai branch Tried & liked.
+- Rationale: Amritsr's main site still foregrounds Al Karama as its Dubai address, and Karama's neighborhood-food identity makes the branch a stronger guide fit than a tower location. A chain-level favorite is meaningful curation evidence, but it is not proof that a different kitchen executes at the same level.
+- Alternatives considered: Choose the JLT branch; call Al Karama a flagship without explicit operator wording; mark the activity verified from Bangkok experience; omit the cross-market preference; wait until after a Dubai visit to add it.
+- Consequences / follow-ups: The card states that the Dubai kitchen is untested, includes the official 06:00-versus-09:00 start-time conflict, and uses four source-credited official images. Confirm early-breakfast hours before going, then record the local outcome separately after a visit.
+
+## 2026-08-29 — Preserve BLU Dubai as a proven Thursday club
+- Decider: Anthony
+- Decision: Add BLU Dubai to `Nights that go loud` and Tried & liked after a strong 40th-birthday visit on Thursday, 27 August 2026. Preserve the great crowd balance, solid vibe, complimentary ladies' tables and bottles, and compact dance area around the bar as candid firsthand guidance.
+- Rationale: The visit was a memorable success for the full group, and BLU cleared the guide's bar as a repeatable club recommendation. The compact dance area is a real limitation, while the ladies-first table policy materially shaped the unusually good ratio and should not be erased from the planning advice.
+- Alternatives considered: Record the birthday only in the archive; omit the ladies' arrangement; present the table perk as guaranteed every Thursday; publish BLU without the dance-floor caveat.
+- Consequences / follow-ups: BLU stays active with a verified stamp, a four-photo official gallery, and a direct reservation route. Tried & liked now spans six activities across three chapters. Treat complimentary tables and bottles as event- and guest-list-dependent, and confirm the current Thursday offer before relying on it.
+
+## 2026-08-29 — Promote three firsthand favorites and reject Dubai Mall shopping
+- Decider: Anthony
+- Decision: Mark Brass Monkey, Amazónico Dubai, and Ting Irie as Tried & liked. Describe Brass Monkey as a fun date built around interactive games rather than a deep American-style Barcade. Add Amazónico and Ting Irie as robust active dinner recommendations with sourced four-photo galleries. Remove Fashion Avenue from active content and preserve it as a rejected Dubai Mall shopping record; do not generalize that rejection to unrelated activities inside the mall.
+- Rationale: All three positive decisions come from firsthand visits: Brass Monkey was fun despite the format mismatch, Amazónico served the best food of the Dubai trip so far, and Ting Irie served the best Jamaican food Anthony has ever had with strong atmosphere. Dubai Mall itself proved too crowded to recommend for shopping, while the guide still has credible broad shopping options elsewhere.
+- Alternatives considered: Keep Brass Monkey unverified because it is not a true Barcade; leave the restaurants as favorites without active cards; delete Fashion Avenue without an archive record; reject every activity located in Dubai Mall; research a replacement mall despite existing Ibn Battuta, Fashion Dome, and Outlet Village coverage.
+- Consequences / follow-ups: The verified filter now spans five active activities across three chapters. Fashion Avenue remains sheet-ready under Rejected with its existing gallery and credits. Keep Ibn Battuta Mall, Fashion Dome, and The Outlet Village active, and assess every Dubai Mall activity separately from the shopping verdict.
+
+## 2026-08-29 — Treat dated events as plan-ahead activities
+- Decider: Anthony
+- Decision: Rename the guide's top-level Book ahead filter to Plan ahead and include the union of fixed-date events and activities with explicit `ahead` guidance. Keep Tried & liked mutually exclusive and leave the Favorites sheet's Dated events and Book ahead groups separate.
+- Rationale: A dated event requires planning even when its ticketing or reservation friction is not separately encoded. Filtering those events out hid the most time-sensitive activities from the planning view.
+- Alternatives considered: Add `ahead` copy to every dated event; keep the narrower Book ahead label; merge dated and book-ahead Favorites into one group.
+- Consequences / follow-ups: `isPlanAheadActivity` is the shared predicate for the guide filter. Dated cards retain their calendar treatment and chronological ordering, every filter change still reopens all visible chapters, and Favorites keeps its more detailed three-way organization.
+
 ## 2026-08-27 — Add two complementary adult arcade nights
 - Decider: Anthony and Codex (model: gpt-5.6-sol)
 - Decision: Add Brass Monkey City Walk and Triple 777 Business Bay to `Nights that go loud`, ranking Brass Monkey as the stronger arcade-first recommendation and Triple 777 later as the neon 21+ option that runs until 03:00. Give each a complete four-photo gallery and a candid sheet covering current planning gaps.

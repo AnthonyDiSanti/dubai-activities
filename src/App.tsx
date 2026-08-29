@@ -12,7 +12,7 @@ import { FavoritesDialog } from './components/FavoritesDialog';
 import { HeroCarousel } from './components/HeroCarousel';
 import { CHAPTERS, HERO, ITEMS } from './data/activities';
 import { ARCHIVE_ACTIVITY_DETAILS, ARCHIVE_ENTRIES } from './data/archive';
-import type { Activity, ChapterKey } from './domain/activity';
+import { isPlanAheadActivity, type Activity, type ChapterKey } from './domain/activity';
 import { parseDeepLink, type DeepLink } from './domain/deepLinks';
 import { useCurrentChapter } from './hooks/useCurrentChapter';
 import { useDeepLink } from './hooks/useDeepLink';
@@ -80,7 +80,7 @@ export function App() {
   );
   const [heroIndex, setHeroIndex] = useState(0);
   const [chapterMenuOpen, setChapterMenuOpen] = useState(false);
-  const [aheadOnly, setAheadOnly] = useState(false);
+  const [planAheadOnly, setPlanAheadOnly] = useState(false);
   const [verifiedOnly, setVerifiedOnly] = useState(false);
   const [favoritesOpen, setFavoritesOpen] = useState(false);
   const reducedMotion = useReducedMotion();
@@ -88,7 +88,7 @@ export function App() {
   const synchronizeDeepLinkState = useCallback((next: DeepLink | null) => {
     if (!next) return;
 
-    setAheadOnly(false);
+    setPlanAheadOnly(false);
     setVerifiedOnly(false);
     setChapterMenuOpen(false);
     setFavoritesOpen(false);
@@ -127,17 +127,18 @@ export function App() {
   const chapterModels = useMemo(
     () =>
       CHAPTERS.flatMap((chapter) => {
+        // Plan Ahead combines fixed calendar commitments with explicit booking friction.
         const filtered = ACTIVITIES.filter(
           (item) =>
             item.ch === chapter.key
-            && (!aheadOnly || Boolean(item.ahead))
+            && (!planAheadOnly || isPlanAheadActivity(item))
             && (!verifiedOnly || verifiedActivityIds.has(item.id)),
         );
         return filtered.length > 0
           ? [{ chapter, items: filtered }]
           : [];
       }),
-    [aheadOnly, verifiedActivityIds, verifiedOnly],
+    [planAheadOnly, verifiedActivityIds, verifiedOnly],
   );
   const visibleChapters = useMemo(
     () => chapterModels.map(({ chapter }) => chapter),
@@ -237,15 +238,15 @@ export function App() {
     navigateToEverything();
   }, [navigateToEverything, revealAllChapters]);
   const closeAllChapters = useCallback(() => setAllChapters(false), [setAllChapters]);
-  const toggleAheadOnly = useCallback(() => {
+  const togglePlanAheadOnly = useCallback(() => {
     // A new planning view must reveal its results instead of inheriting collapsed sections.
     revealAllChapters();
     setVerifiedOnly(false);
-    setAheadOnly((current) => !current);
+    setPlanAheadOnly((current) => !current);
   }, [revealAllChapters]);
   const toggleVerifiedOnly = useCallback(() => {
     revealAllChapters();
-    setAheadOnly(false);
+    setPlanAheadOnly(false);
     setVerifiedOnly((current) => !current);
   }, [revealAllChapters]);
   const toggleChapterMenu = useCallback(
@@ -254,17 +255,17 @@ export function App() {
   );
 
   const navigationProps = {
-    aheadOnly,
     chapters: visibleChapters,
     currentChapterKey,
     mobileOpen: chapterMenuOpen,
     onCloseAll: closeAllChapters,
     onOpenAll: openAllChapters,
     onSelectChapter: selectChapter,
-    onToggleAhead: toggleAheadOnly,
+    onTogglePlanAhead: togglePlanAheadOnly,
     onToggleMobile: toggleChapterMenu,
     onToggleVerified: toggleVerifiedOnly,
     openChapterKeys,
+    planAheadOnly,
     verifiedOnly,
   } as const;
 

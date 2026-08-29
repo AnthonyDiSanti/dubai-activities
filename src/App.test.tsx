@@ -222,12 +222,19 @@ describe('App', () => {
     expect(within(dialog).getByRole('heading', { name: 'Boulder Zone' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'Soho Garden, HIVE and CODE' }))
       .toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Brass Monkey · City Walk' }))
+      .toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Amazónico Dubai' })).toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Ting Irie' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'Meowtropolis Cat Café' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: "Roberto's" })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'Salmon Guru' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'Brunch & Cake' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'Dubai Butterfly Garden' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'The Wall' })).toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'Fashion Avenue at Dubai Mall' }))
+      .toBeInTheDocument();
+    expect(within(dialog).getByRole('heading', { name: 'The Pods' })).toBeInTheDocument();
 
     fireEvent.click(within(dialog).getByRole('button', { name: 'Close tried and decided' }));
     await waitFor(() => {
@@ -307,7 +314,9 @@ describe('App', () => {
 
   it('navigates chapters through real anchors and clears an excluding filter', async () => {
     const { container } = render(<App />);
-    fireEvent.click(screen.getByRole('button', { name: 'Show only activities to book ahead' }));
+    fireEvent.click(screen.getByRole('button', {
+      name: 'Show only dated and book-ahead activities',
+    }));
 
     const desktopNavigation = screen.getByRole('navigation', {
       name: 'Activity chapters on this page',
@@ -317,7 +326,7 @@ describe('App', () => {
     }));
 
     await waitFor(() => {
-      expect(screen.getByRole('button', { name: 'Show only activities to book ahead' }))
+      expect(screen.getByRole('button', { name: 'Show only dated and book-ahead activities' }))
         .toHaveAttribute('aria-pressed', 'false');
     });
     expect(window.location.hash).toBe('#animals');
@@ -364,20 +373,22 @@ describe('App', () => {
     expect(window.location.hash).toBe('#activity-nest');
   });
 
-  it('filters the guide to book-ahead activities and removes empty chapters', () => {
+  it('filters the guide to dated and book-ahead activities and removes empty chapters', () => {
     const { container } = render(<App />);
-    const aheadCount = activities.filter(({ ahead }) => Boolean(ahead)).length;
-    const aheadChapterCount = new Set(
-      activities.filter(({ ahead }) => Boolean(ahead)).map(({ ch }) => ch),
+    const planAheadActivities = activities.filter(({ ahead, dated }) => Boolean(dated ?? ahead));
+    const planAheadChapterCount = new Set(
+      planAheadActivities.map(({ ch }) => ch),
     ).size;
 
     fireEvent.click(
-      screen.getByRole('button', { name: 'Show only activities to book ahead' }),
+      screen.getByRole('button', { name: 'Show only dated and book-ahead activities' }),
     );
 
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(aheadCount);
-    expect(container.querySelectorAll('section.chapter')).toHaveLength(aheadChapterCount);
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(planAheadActivities.length);
+    expect(container.querySelectorAll('section.chapter')).toHaveLength(planAheadChapterCount);
     expect(screen.queryByRole('heading', { name: 'Honeycomb Hi-Fi' })).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'ATB, Solarstone & Steve Allen' }))
+      .toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: 'The Nest by Nara' }))
       .toBeInTheDocument();
   });
@@ -388,24 +399,43 @@ describe('App', () => {
       .closest('.activity-card');
     const sohoCard = screen.getByRole('heading', { name: 'Soho Garden, HIVE and CODE' })
       .closest('.activity-card');
+    const bluCard = screen.getByRole('heading', { name: 'BLU Dubai' })
+      .closest('.activity-card');
+    const brassMonkeyCard = screen.getByRole('heading', { name: 'Brass Monkey · City Walk' })
+      .closest('.activity-card');
+    const amazonicoCard = screen.getByRole('heading', { name: 'Amazónico Dubai' })
+      .closest('.activity-card');
+    const tingIrieCard = screen.getByRole('heading', { name: 'Ting Irie' })
+      .closest('.activity-card');
     expect(boulderCard).not.toBeNull();
     expect(sohoCard).not.toBeNull();
+    expect(bluCard).not.toBeNull();
+    expect(brassMonkeyCard).not.toBeNull();
+    expect(amazonicoCard).not.toBeNull();
+    expect(tingIrieCard).not.toBeNull();
     expect(within(boulderCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
       .toHaveClass('verified-stamp');
     expect(within(sohoCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
       .toHaveClass('verified-stamp');
+    for (const verifiedCard of [bluCard, brassMonkeyCard, amazonicoCard, tingIrieCard]) {
+      expect(within(verifiedCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
+        .toHaveClass('verified-stamp');
+    }
 
     fireEvent.click(screen.getByRole('button', {
       name: 'Show only tried and liked activities',
     }));
 
-    expect(container.querySelectorAll('section.chapter')).toHaveLength(2);
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(2);
+    expect(container.querySelectorAll('section.chapter')).toHaveLength(3);
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(6);
     expect(screen.getByRole('heading', { name: 'Soho Garden, HIVE and CODE' }))
       .toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'BLU Dubai' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Amazónico Dubai' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Ting Irie' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Show all activities' }))
       .toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('button', { name: 'Show only activities to book ahead' }))
+    expect(screen.getByRole('button', { name: 'Show only dated and book-ahead activities' }))
       .toHaveAttribute('aria-pressed', 'false');
 
     fireEvent.click(screen.getByRole('heading', { name: 'Boulder Zone' }));
@@ -421,17 +451,17 @@ describe('App', () => {
       name: 'Show only tried and liked activities',
     }));
     fireEvent.click(screen.getByRole('button', {
-      name: 'Show only activities to book ahead',
+      name: 'Show only dated and book-ahead activities',
     }));
 
     expect(screen.getByRole('button', { name: 'Show only tried and liked activities' }))
       .toHaveAttribute('aria-pressed', 'false');
     expect(screen.getByRole('button', { name: 'Show all activities' }))
-      .toHaveTextContent('✕ Book ahead');
+      .toHaveTextContent('✕ Plan ahead');
   });
 
   it.each([
-    'Show only activities to book ahead',
+    'Show only dated and book-ahead activities',
     'Show only tried and liked activities',
   ])('expands every section when changing the %s filter', async (filterLabel) => {
     const { container } = render(<App />);

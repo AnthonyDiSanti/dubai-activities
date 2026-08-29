@@ -77,6 +77,13 @@ export const STANDARD_ACTIVITY_TREATMENTS = [
   'bite',
 ] as const satisfies readonly ActivityTreatment[];
 
+/** Group fixed calendar commitments with activities that carry explicit advance-booking guidance. */
+export function isPlanAheadActivity(
+  activity: Pick<Activity, 'ahead' | 'dated'>,
+): boolean {
+  return Boolean(activity.dated ?? activity.ahead);
+}
+
 /**
  * Keep dated cards chronological while distributing their repeated visual treatment
  * as evenly as possible through the editorially ranked undated cards.

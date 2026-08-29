@@ -18,7 +18,7 @@ export type ArchiveGroups = Readonly<{
   verified: readonly ArchiveEntry[];
 }>;
 
-/** Keep archive ordering editorial while separating every durable firsthand outcome. */
+/** Keep archive ordering editorial while separating every durable curation outcome. */
 export function groupArchiveEntries(entries: readonly ArchiveEntry[]): ArchiveGroups {
   const rejected: ArchiveEntry[] = [];
   const tried: ArchiveEntry[] = [];

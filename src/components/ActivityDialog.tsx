@@ -147,7 +147,7 @@ export function ActivityDialog({
           ) : (
             <div className="detail-sheet__media detail-sheet__media--archive-empty">
               <span aria-hidden="true" className="detail-sheet__archive-mark">·</span>
-              <p>Firsthand record</p>
+              <p>Decision record</p>
             </div>
           )}
 

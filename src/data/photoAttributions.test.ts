@@ -14,14 +14,14 @@ describe('generated photo attribution catalog', () => {
       return counts;
     }, {});
 
-    expect(catalog.assets).toHaveLength(431);
-    expect(filenames.size).toBe(431);
+    expect(catalog.assets).toHaveLength(447);
+    expect(filenames.size).toBe(447);
     expect(basisCounts.creative_commons).toBe(54);
     expect(basisCounts.stock_license).toBe(8);
     expect(basisCounts.public_domain).toBe(2);
     expect(basisCounts.trademark).toBe(2);
     expect(basisCounts.creator_credit).toBe(15);
-    expect(basisCounts.source_credit).toBe(350);
+    expect(basisCounts.source_credit).toBe(366);
 
     // New venue galleries must retain their named source instead of a generic host fallback.
     expect(catalog.assets.find(({ filename }) => filename === 'brassmonkey-01.jpg')?.source.name).toBe(
@@ -29,6 +29,21 @@ describe('generated photo attribution catalog', () => {
     );
     expect(catalog.assets.find(({ filename }) => filename === 'triple777-01.jpg')?.source.name).toBe(
       'Triple 777 Dubai',
+    );
+    expect(catalog.assets.find(({ filename }) => filename === 'amazonico-01.jpg')?.source.name).toBe(
+      'Amazónico Dubai',
+    );
+    expect(catalog.assets.find(({ filename }) => filename === 'tingirie-01.jpg')?.source.name).toBe(
+      'Ting Irie',
+    );
+    expect(catalog.assets.find(({ filename }) => filename === 'bludubai-01.jpg')?.source.name).toBe(
+      'BLU Dubai',
+    );
+    expect(catalog.assets.find(({ filename }) => filename === 'amritsr-01.jpg')?.source.name).toBe(
+      'Amritsr UAE',
+    );
+    expect(catalog.assets.find(({ filename }) => filename === 'amritsr-02.jpg')?.source.name).toBe(
+      'Amritsr',
     );
 
     const hero = catalog.assets.find(({ filename }) => filename === 'rasalkhor-01.jpg');

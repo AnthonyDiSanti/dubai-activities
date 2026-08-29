@@ -1,7 +1,7 @@
 import type { Activity } from '../domain/activity';
 import type { ArchiveEntry } from '../domain/archive';
 
-/** Preserve firsthand outcomes separately from current interest and editorial research. */
+/** Preserve tried places and deliberate pre-visit decisions outside current recommendations. */
 export const ARCHIVE_ENTRIES = [
   {
     id: 'boulderzone',
@@ -19,6 +19,42 @@ export const ARCHIVE_ENTRIES = [
     originalChapterKey: 'loud',
     originalChapterName: 'Nights that go loud',
     recordedOn: '2026-08-23',
+    status: 'verified',
+  },
+  {
+    id: 'bludubai',
+    name: 'BLU Dubai',
+    note: 'Tried and loved on a 40th birthday—Thursday, 27 August 2026. Complimentary tables and bottles for women produced a great crowd balance, the vibes were solid, and everyone had a great time. The dance area is mostly space around the bar, but it was a night to remember.',
+    originalChapterKey: 'loud',
+    originalChapterName: 'Nights that go loud',
+    recordedOn: '2026-08-27',
+    status: 'verified',
+  },
+  {
+    id: 'brassmonkey',
+    name: 'Brass Monkey · City Walk',
+    note: 'Tried in person and liked. It is more an interactive game bar than an American-style Barcade, but the mini basketball, easy competition, and drinks made it a genuinely fun date.',
+    originalChapterKey: 'loud',
+    originalChapterName: 'Nights that go loud',
+    recordedOn: '2026-08-29',
+    status: 'verified',
+  },
+  {
+    id: 'amazonico',
+    name: 'Amazónico Dubai',
+    note: 'Tried in person and loved. This was the best food of the Dubai trip so far and immediately earned a place among the proven choices.',
+    originalChapterKey: 'dinners',
+    originalChapterName: 'Long dinners',
+    recordedOn: '2026-08-29',
+    status: 'verified',
+  },
+  {
+    id: 'tingirie',
+    name: 'Ting Irie',
+    note: 'Tried in person and loved. This was the best Jamaican food ever tried, with exactly the lively room and great vibes this guide should preserve.',
+    originalChapterKey: 'dinners',
+    originalChapterName: 'Long dinners',
+    recordedOn: '2026-08-29',
     status: 'verified',
   },
   {
@@ -75,6 +111,24 @@ export const ARCHIVE_ENTRIES = [
     recordedOn: '2026-08-23',
     status: 'rejected',
   },
+  {
+    id: 'fashionavenue',
+    name: 'Fashion Avenue at Dubai Mall',
+    note: 'Dubai Mall shopping was tried in person and rejected. The tourist-madhouse crowds make it miserable as a shopping destination; this verdict does not apply to every activity inside the mall.',
+    originalChapterKey: 'wandering',
+    originalChapterName: 'Wandering and buying things',
+    recordedOn: '2026-08-29',
+    status: 'rejected',
+  },
+  {
+    id: 'thepods',
+    name: 'The Pods',
+    note: 'Rejected after review before a visit. The private glass-pod format did not look compelling enough to keep as an active recommendation.',
+    originalChapterKey: 'dinners',
+    originalChapterName: 'Long dinners',
+    recordedOn: '2026-08-29',
+    status: 'rejected',
+  },
 ] as const satisfies readonly ArchiveEntry[];
 
 /** Retain sheet-ready context for inactive records without returning them to recommendations. */
@@ -120,5 +174,20 @@ export const ARCHIVE_ACTIVITY_DETAILS = [
     eyebrow: 'Ten climate-controlled domes', when: 'Daily · 09:00–18:00', where: 'Al Barsha South 3',
     facts: [{ label: 'Collection', value: '15,000+ butterflies across 50+ species' }, { label: 'Format', value: 'Walk-through domes and life-cycle displays' }],
     cta: 'See the Butterfly Garden', site: 'https://www.dubaimiraclegarden.com/butterfly-garden', photos: 4,
+  },
+  {
+    id: 'fashionavenue', ch: 'wandering', name: 'Fashion Avenue at Dubai Mall',
+    blurb: 'Fashion Avenue concentrates Dubai Mall’s designer boutiques inside a bright, multi-level luxury wing. The sculptural white interiors and broad brand mix make it a substantial shopping destination, with the mall crowds as the unavoidable trade-off.',
+    eyebrow: 'Dubai Mall’s luxury wing', when: 'Weekday mornings', where: 'Dubai Mall',
+    facts: [{ label: 'Format', value: 'Luxury fashion wing inside Dubai Mall' }, { label: 'Best chance', value: 'Go early on a weekday for the lightest crowds' }],
+    cta: 'See Fashion Avenue', site: 'https://thedubaimall.com/en/fashion-avenue', photos: 2,
+  },
+  {
+    id: 'thepods', ch: 'dinners', name: 'The Pods',
+    blurb: 'Air-conditioned glass pods line the Bluewaters waterfront, each holding a private table away from a conventional dining room. The enclosed setup prioritizes privacy and uninterrupted conversation over atmosphere or a lively room.',
+    eyebrow: 'A private pod on Bluewaters', when: 'Daily · confirm the current closing time', where: 'Bluewaters Island',
+    facts: [{ label: 'Format', value: 'Private, air-conditioned dining pod' }, { label: 'Cuisine', value: 'Pan-Asian' }, { label: 'Finding it', value: 'Boardwalk near the JBR footbridge' }],
+    advisory: 'Official pages disagree on whether service ends at 00:30, 01:00 or 02:00. Confirm the live service window before relying on a posted closing time.',
+    cta: 'See The Pods', site: 'https://thepods.ae/', photos: 3,
   },
 ] as const satisfies readonly Activity[];

@@ -4695,6 +4695,166 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/amazonico-01.jpg",
+      "contentUrl": "./photos/amazonico-01.jpg",
+      "name": "Amazónico Dubai — photo 1",
+      "creditText": "Amazónico Dubai — photo 1, via Amazónico Dubai. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.amazonicorestaurant.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/amazonico-02.jpg",
+      "contentUrl": "./photos/amazonico-02.jpg",
+      "name": "Amazónico Dubai — photo 2",
+      "creditText": "Amazónico Dubai — photo 2, via Amazónico Dubai. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.amazonicorestaurant.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/amazonico-03.jpg",
+      "contentUrl": "./photos/amazonico-03.jpg",
+      "name": "Amazónico Dubai — photo 3",
+      "creditText": "Amazónico Dubai — photo 3, via Amazónico Dubai. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.amazonicorestaurant.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/amazonico-04.jpg",
+      "contentUrl": "./photos/amazonico-04.jpg",
+      "name": "Amazónico Dubai — photo 4",
+      "creditText": "Amazónico Dubai — photo 4, via Amazónico Dubai. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.amazonicorestaurant.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/tingirie-01.jpg",
+      "contentUrl": "./photos/tingirie-01.jpg",
+      "name": "Ting Irie — photo 1",
+      "creditText": "Ting Irie — photo 1, via Ting Irie. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://tingirie.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/tingirie-02.jpg",
+      "contentUrl": "./photos/tingirie-02.jpg",
+      "name": "Ting Irie — photo 2",
+      "creditText": "Ting Irie — photo 2, via Ting Irie. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://tingirie.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/tingirie-03.jpg",
+      "contentUrl": "./photos/tingirie-03.jpg",
+      "name": "Ting Irie — photo 3",
+      "creditText": "Ting Irie — photo 3, via Ting Irie. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://tingirie.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/tingirie-04.jpg",
+      "contentUrl": "./photos/tingirie-04.jpg",
+      "name": "Ting Irie — photo 4",
+      "creditText": "Ting Irie — photo 4, via Ting Irie. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://tingirie.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/bludubai-01.jpg",
+      "contentUrl": "./photos/bludubai-01.jpg",
+      "name": "BLU Dubai — photo 1",
+      "creditText": "BLU Dubai — photo 1, via BLU Dubai. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://bludubai.ae/gallery",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/bludubai-02.jpg",
+      "contentUrl": "./photos/bludubai-02.jpg",
+      "name": "BLU Dubai — photo 2",
+      "creditText": "BLU Dubai — photo 2, via BLU Dubai. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://bludubai.ae/gallery",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/bludubai-03.jpg",
+      "contentUrl": "./photos/bludubai-03.jpg",
+      "name": "BLU Dubai — photo 3",
+      "creditText": "BLU Dubai — photo 3, via BLU Dubai. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://bludubai.ae/gallery",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/bludubai-04.jpg",
+      "contentUrl": "./photos/bludubai-04.jpg",
+      "name": "BLU Dubai — photo 4",
+      "creditText": "BLU Dubai — photo 4, via BLU Dubai. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://bludubai.ae/gallery",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/amritsr-01.jpg",
+      "contentUrl": "./photos/amritsr-01.jpg",
+      "name": "Amritsr · Al Karama — photo 1",
+      "creditText": "Amritsr · Al Karama — photo 1, via Amritsr UAE. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://amritsruae.com/breakfast-menu/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/amritsr-02.jpg",
+      "contentUrl": "./photos/amritsr-02.jpg",
+      "name": "Amritsr · Al Karama — photo 2",
+      "creditText": "Amritsr · Al Karama — photo 2, via Amritsr. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://amritsr.com/gallery-2/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/amritsr-03.jpg",
+      "contentUrl": "./photos/amritsr-03.jpg",
+      "name": "Amritsr · Al Karama — photo 3",
+      "creditText": "Amritsr · Al Karama — photo 3, via Amritsr. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://amritsr.com/gallery-2/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/amritsr-04.jpg",
+      "contentUrl": "./photos/amritsr-04.jpg",
+      "name": "Amritsr · Al Karama — photo 4",
+      "creditText": "Amritsr · Al Karama — photo 4, via Amritsr UAE. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://amritsruae.com/breakfast-menu/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",

@@ -9,13 +9,13 @@ The root `index.html` contains metadata, `#root`, and the Vite module entry. `sr
 ## Source layers
 
 - `src/data/activities.ts` owns active editorial content: chapters, activities, hero IDs, dates, links, and gallery counts.
-- `src/data/archive.ts` owns firsthand outcomes plus sheet-ready detail for inactive records. Merely tried and rejected IDs must not appear in active content; verified IDs must remain active so badges and filtering cannot point at stale records.
+- `src/data/archive.ts` owns tried-and-decided outcomes plus sheet-ready detail for inactive records. Merely tried and rejected IDs must not appear in active content; verified IDs must remain active so badges and filtering cannot point at stale records. Rejections may come from a visit or an explicit pre-visit decision, which the archive note must distinguish.
 - `src/domain/` owns pure, browser-independent rules such as dated-card ordering, treatment selection, photo/map URLs, favorite validation, and share-message formatting.
 - `src/hooks/` owns lifecycle behavior such as local favorites, current-chapter tracking, and media preferences.
 - `src/browser/` contains small capability adapters whose failures must be represented honestly in UI state.
 - `src/components/` owns semantic React markup and interaction composition. Activity IDs and chapter keys are the stable React keys.
 - `src/styles/` owns bundled font declarations, global tokens, the deliberately varied visual treatments, and responsive rules. The 1000 px boundary remains CSS-driven.
-- `public/photos/` owns 429 active-and-archive activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
+- `public/photos/` owns 445 active-and-archive activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
 - `docs/photo-attributions.csv` owns reviewed photo credits. Build-time generation emits `public/photo-attributions.json` for the UI and `public/photo-attributions.jsonld` for machine readers.
 
 Do not reintroduce a global application namespace, runtime template compiler, `new Function`, inline executable script, or a parallel entry point under `src/`. Add behavior through typed modules and cover pure rules with Vitest.
@@ -28,7 +28,7 @@ URL fragments are the client-only navigation boundary:
 
 - `#<chapter-key>` targets a chapter, for example `#animals`.
 - `#activity-<activity-id>` opens one detail sheet, for example `#activity-rasalkhor`.
-- `#archive` opens the firsthand `Tried & decided` ledger.
+- `#archive` opens the `Tried & decided` decision ledger.
 - `#credits` opens the complete photo-credit sheet.
 - `#list=<comma-separated-activity-ids>` retains the existing shared-favorites contract.
 

@@ -19,11 +19,15 @@ The primary-source snapshot behind the expanded planning fields lives in [activi
 
 The content audit scans every displayed copy field, including structured fact labels and values. Link paths are intentionally excluded because URL strings can contain coincidental first-person tokens.
 
-## Firsthand outcomes
+## Tried and decided outcomes
 
-`src/data/archive.ts` is the durable ledger for places Anthony has personally tried or deliberately ruled out. Use `verified` only after a positive firsthand visit: the activity stays in `ITEMS` and gains a visible marker plus access through the Tried & liked filter. Use `tried` when a place was acceptable but did not earn a recommendation, and `rejected` after a negative visit or explicit rejection. Both inactive outcomes leave `ITEMS` but retain an `ARCHIVE_ACTIVITY_DETAILS` record for their full sheet. Archive blurbs, eyebrows, schedules, and facts describe the activity itself in the same expert-guide voice as active content; the separate archive note and sheet callout own the firsthand verdict. Preserve or source a contiguous gallery with canonical manifest and attribution rows whenever honest venue-specific imagery is available. Use `photos: 0` and the typographic fallback only when no such gallery exists.
+`src/data/archive.ts` is the durable ledger for places Anthony has personally tried or deliberately ruled out. Use `verified` only after a positive firsthand visit: the activity stays in `ITEMS` and gains a visible marker plus access through the Tried & liked filter. Use `tried` when a place was acceptable but did not earn a recommendation. Use `rejected` after either a negative visit or an explicit pre-visit decision; the archive note must state which basis applies so screening is never presented as firsthand experience. Both inactive outcomes leave `ITEMS` but retain an `ARCHIVE_ACTIVITY_DETAILS` record for their full sheet. Archive blurbs, eyebrows, schedules, and facts describe the activity itself in the same expert-guide voice as active content; the separate archive note and sheet callout own the decision. Preserve or source a contiguous gallery with canonical manifest and attribution rows whenever honest venue-specific imagery is available. Use `photos: 0` and the typographic fallback only when no such gallery exists.
 
-Do not infer an outcome from generated editorial copy, ratings, source research, or a favorite. The ledger records user-supplied experience, while the main guide continues to use the warm expert-friend voice without pretending generated opinions are firsthand.
+Do not infer an outcome from generated editorial copy, ratings, source research, or a favorite. The ledger records user-supplied experience or explicit curation decisions, while the main guide continues to use the warm expert-friend voice without pretending generated opinions are firsthand.
+
+The Pods is the canonical pre-visit example: it stays sheet-ready under Rejected with its existing gallery and source-backed planning context, while its note states that the decision came from review rather than a visit.
+
+A preference established at another branch or in another city may justify adding a local candidate, but it does not verify that local kitchen. Name the cross-market reason in the active card, keep the exact local branch out of `ARCHIVE_ENTRIES`, and state clearly that it still needs a visit. Amritsr Al Karama follows this rule: the Bangkok restaurants supply the benchmark, while the Dubai branch remains untested.
 
 ## Chapter ordering and treatments
 
@@ -43,9 +47,17 @@ Every `dated.on` value must be on or after the local `TRIP_START_DATE_KEY` in `s
 
 ## Adult arcade nights
 
-Keep both selected adult arcades in `Nights that go loud`. Brass Monkey City Walk ranks ahead of Triple 777 because it is the stronger arcade-first recommendation; Triple 777 follows later as the neon, later-running 21+ alternative. Each card should remain candid about live package details the venue does not publish.
+Keep both selected adult game bars in `Nights that go loud`. A firsthand visit established Brass Monkey City Walk as a fun date built around mini basketball, bowling, darts, and quick interactive games—not a deep American-style Barcade cabinet collection. It stays ahead of Triple 777 because the date worked in practice; Triple 777 follows later as the neon, later-running 21+ alternative. Each card should remain candid about format and live package details the venue does not publish.
 
 Wavehouse is intentionally excluded because its Atlantis setting and programming skew too family-focused, while BOOM Battle Bar is an activity bar rather than a meaningful arcade. HUSHH at Social Distrikt remains a screened but unpublished option: consider it only if a future refresh needs a polished Downtown barcade with fewer cabinets than Brass Monkey.
+
+## Firsthand club nights
+
+Keep BLU Dubai high among the evergreen options in `Nights that go loud`. The 27 August 2026 Shutdown visit proved the Thursday crowd, hip-hop programming, and table-led energy strong enough for a major celebration. Stay candid that dancing happens mainly in the open space around the central bar rather than on a large dedicated floor. Complimentary tables and bottles for women materially shaped the successful crowd balance that night, but present that as an event- and guest-list-dependent arrangement rather than a permanent entitlement.
+
+## Dubai Mall shopping boundary
+
+Fashion Avenue is rejected as an active shopping recommendation because a firsthand Dubai Mall visit found the tourist-crowd intensity miserable. Keep the former card under Rejected so it cannot drift back during a refresh. The decision applies to shopping at Dubai Mall, not to unrelated in-mall activities such as ARTE Museum or House of Hype. Preserve independent shopping coverage through Ibn Battuta Mall, Fashion Dome at Mall of the Emirates, and The Outlet Village unless each is evaluated on its own merits.
 
 ## Final animal chapter
 

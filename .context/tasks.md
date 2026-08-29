@@ -1,5 +1,35 @@
 # Tasks
 
+- id: 01K410P7M3V9R2T6C8H5QXZBFD — title: Reject The Pods — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
+  - Goal: Remove The Pods from current recommendations while preserving the decision and all useful planning, photographic, and attribution context.
+  - Result: Moved The Pods out of Long dinners and into the fifth Rejected record; stated explicitly that the decision preceded a visit; retained its complete three-photo archive sheet and source credits; generalized the archive framing from exclusively firsthand notes to tried-and-decided outcomes; and guarded the ID from later reintroduction. Passed 208 tests, 475 manifest rows, 445 JPEGs, 447 strict credits, zero similarity candidates, and 390/1440 px browser checks including all three live gallery frames. Deployed 476 objects, deleted only superseded bundle `assets/index-DsiTu_nl.js`, completed invalidation `IBER4ELPDGDIJCVB4YWR8NL0QW`, and verified byte-identical production HTML and JavaScript plus the 476-object inventory.
+  - Follow-up: None.
+  - Links: `src/data/archive.ts`, `src/data/activities.ts`, `docs/content-editorial.md`, `docs/activity-planning-sources.md`
+
+- id: 01K40Z8N6V2M9T5C3H7Q1XPRAX — title: Add Amritsr Al Karama — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
+  - Goal: Add the strongest Dubai branch of Anthony's favorite Indian restaurant while keeping cross-market confidence separate from a firsthand local verdict.
+  - Result: Chose the established Al Karama branch that Amritsr foregrounds on its main site; added a complete Long dinners card and sheet with branch contacts, menu guidance, explicit Dubai uncertainty, and the conflicting breakfast-start caveat; curated two exact-branch interiors plus two official UAE food images with full visible and machine-readable source credits. The full release passed 208 tests, 475 manifest rows, 445 JPEGs, 447 strict credits, zero similarity candidates, and 390/1440 px Browser QA. Deployed 476 objects, deleted only superseded bundle `assets/index-BLYAGV0B.js`, completed invalidation `I24GPFFAI1SVQ3Y6OWS1N21L7R`, and verified byte-identical production HTML plus the live sheet, lead image, and all four credits.
+  - Follow-up: Confirm the early-breakfast start before going; after a Dubai visit, add a firsthand outcome without assuming it from the Bangkok favorite.
+  - Links: `src/data/activities.ts`, `docs/activity-planning-sources.md`, `docs/image-manifest.csv`, `docs/photo-attributions.csv`
+
+- id: 01K40V7N3M8R2T6C9H5Q1XZPFA — title: Add verified BLU Dubai night — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
+  - Goal: Preserve the successful 40th-birthday club visit as an honest active recommendation with complete planning, archive, and photographic context.
+  - Result: Added BLU Dubai high in Nights that go loud and Tried & liked; recorded the Thursday 27 Aug birthday memory, strong crowd balance, complimentary ladies' tables and bottles, solid vibe, and compact bar-ring dance area; added source-backed 21+/hours/dress/reservation guidance and four differentiated official gallery images with complete visible and machine-readable credits. Passed 206 tests, 471 manifest rows, 441 JPEGs, 443 strict credits, zero similarity candidates, and 390/1440 px Browser QA across the sheet, all four photos, the six-card verified filter, and the 13-card archive with no overflow or site-origin console issue.
+  - Follow-up: Confirm the current Thursday ladies' arrangement when booking because BLU does not publish it as a permanent offer.
+  - Links: `src/data/activities.ts`, `src/data/archive.ts`, `docs/activity-planning-sources.md`, `docs/image-manifest.csv`, `docs/photo-attributions.csv`
+
+- id: 01K40Q8N6V2M9T5C3H7R1XZPFA — title: Record latest firsthand outcomes — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
+  - Goal: Promote the latest positive visits accurately, remove Dubai Mall shopping without overgeneralizing the rejection, and retain full planning and photographic context.
+  - Result: Marked Brass Monkey, Amazónico, and Ting Irie Tried & liked; reframed Brass Monkey as a fun interactive-game date rather than a deep American-style Barcade; added complete source-backed Amazónico and Ting Irie cards/sheets with eight official images and full credits; and moved Fashion Avenue to a shopping-only Rejected archive record while preserving three active broad-shopping alternatives. Passed 204 tests, 467 manifest rows, 437 JPEGs, 439 strict credits, zero similarity candidates, and 390/1440 px Browser QA with all new sheets/galleries loading and no overflow or site-origin console issues.
+  - Follow-up: None.
+  - Links: `src/data/activities.ts`, `src/data/archive.ts`, `docs/activity-planning-sources.md`, `docs/image-manifest.csv`, `docs/photo-attributions.csv`
+
+- id: 01K40H7M2R9V5T1C8Q6N3XZPFA — title: Expand the Plan ahead filter — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
+  - Goal: Surface dated events alongside explicit book-ahead activities in the guide's top planning filter.
+  - Result: Replaced the narrow Book ahead mode with Plan ahead, backed it with a shared dated-or-`ahead` predicate, retained mutual exclusion with Tried & liked, and left the Favorites sheet's separate Dated events and Book ahead groups intact. Passed 199 tests, the complete build/content/photo/attribution gates, and responsive 390/1440 px Browser QA with 36 qualifying activities across 11 chapters, chronological nightlife dates, no horizontal overflow, and no site-origin console issues.
+  - Follow-up: None.
+  - Links: `src/domain/activity.ts`, `src/App.tsx`, `src/components/ChapterNavigation.tsx`, `docs/site-interactions.md`
+
 - id: 01K3V6N8R2M5T9C4H7Q1X0ZPFD — title: Add adult arcade nights — owner: Codex (GPT-5) — status: done — last update: 2026-08-27
   - Goal: Add the strongest Dubai arcade nights that combine worthwhile games with a licensed adult atmosphere.
   - Result: Added Brass Monkey City Walk and Triple 777 Business Bay to Nights that go loud with distinct positioning, source-backed facts, candid planning gaps, and four exact-venue photographs each. Preserved the chapter's chronological date order and ideal alternating date-card spacing, generated visible and machine-readable credits for all eight assets, and enforced Wavehouse and BOOM Battle Bar as screened-out choices. Passed 198 tests, 459 manifest rows, 429 JPEGs, 431 strict credit rows, zero similarity candidates, and responsive browser QA. Deployed 460 objects, deleted only superseded bundle `assets/index-B0f5ZSJP.js`, completed invalidation `IE40M3IB98955FJTVG15JEWZGN`, and verified byte-identical live build/catalog/gallery assets plus both production sheets.

@@ -6,6 +6,7 @@ import {
   activityPhotoUrl,
   activityPrimaryUrl,
   getActivityTreatment,
+  isPlanAheadActivity,
   orderChapterItems,
   STANDARD_ACTIVITY_TREATMENTS,
 } from './activity';
@@ -78,6 +79,18 @@ describe('orderChapterItems', () => {
         activity('earlier', '2026-08-01'),
       ]).map(({ id }) => id),
     ).toEqual(['earlier', 'later']);
+  });
+});
+
+describe('isPlanAheadActivity', () => {
+  it('includes both dated events and activities with explicit booking friction', () => {
+    const dated = activity('dated', '2026-09-05');
+
+    // The planning filter is intentionally broader than the separate Favorites booking group.
+    expect(isPlanAheadActivity(dated)).toBe(true);
+    expect(isPlanAheadActivity({ ahead: 'Reserve early' })).toBe(true);
+    expect(isPlanAheadActivity({ ahead: 'Reserve early', dated: dated.dated })).toBe(true);
+    expect(isPlanAheadActivity({})).toBe(false);
   });
 });
 

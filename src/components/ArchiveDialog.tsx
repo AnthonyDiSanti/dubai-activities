@@ -72,7 +72,7 @@ export function ArchiveDialog({ activities, entries, onClose, onOpenActivity }: 
       <div className="reference-sheet archive-sheet" data-dialog-panel tabIndex={-1}>
         <div className="reference-sheet__inner">
           <div className="reference-sheet__toolbar">
-            <span className="reference-sheet__toolbar-label">Firsthand notes</span>
+            <span className="reference-sheet__toolbar-label">Decision notes</span>
             <button
               aria-label="Close tried and decided"
               className="reference-sheet__close-x"
@@ -84,11 +84,11 @@ export function ArchiveDialog({ activities, entries, onClose, onOpenActivity }: 
           </div>
           <div className="reference-sheet__handle" />
           <header className="reference-sheet__header">
-            <p className="reference-sheet__eyebrow">What survived real life</p>
+            <p className="reference-sheet__eyebrow">What made the cut</p>
             <h2 className="reference-sheet__title" id={titleId}>Tried &amp; decided</h2>
             <p className="reference-sheet__intro" id={descriptionId}>
-              Firsthand results belong here: what earned a verified place, what was merely okay,
-              and what was ruled out. Nothing quietly returns to the guide later.
+              Tried places and deliberate decisions belong here: what earned a verified place,
+              what was merely okay, and what was ruled out. Nothing quietly returns later.
             </p>
           </header>
 
