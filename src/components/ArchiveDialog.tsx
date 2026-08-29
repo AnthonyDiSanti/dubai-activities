@@ -1,4 +1,4 @@
-import { useId, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useState, type MouseEvent } from 'react';
 
 import { getActivityTreatment, type Activity } from '../domain/activity';
 import {
@@ -6,13 +6,16 @@ import {
   type ArchiveEntry,
   type ArchiveStatus,
 } from '../domain/archive';
+import { archiveHash } from '../domain/deepLinks';
 import { ActivityCard } from './ActivityCard';
 import { Modal } from './Modal';
 
 export type ArchiveDialogProps = {
+  readonly activeStatus?: ArchiveStatus;
   readonly entries: readonly ArchiveEntry[];
   readonly onClose: () => void;
   readonly onOpenActivity: (activityId: Activity['id']) => void;
+  readonly onSelectStatus: (status: ArchiveStatus) => void;
   readonly activities: readonly Activity[];
 };
 
@@ -37,7 +40,14 @@ const GROUP_COPY: Readonly<Record<ArchiveStatus, Readonly<{
 const GROUP_ORDER = ['verified', 'tried', 'rejected'] as const satisfies readonly ArchiveStatus[];
 
 /** Expose deliberate outcomes without mixing them back into active recommendations. */
-export function ArchiveDialog({ activities, entries, onClose, onOpenActivity }: ArchiveDialogProps) {
+export function ArchiveDialog({
+  activeStatus,
+  activities,
+  entries,
+  onClose,
+  onOpenActivity,
+  onSelectStatus,
+}: ArchiveDialogProps) {
   const titleId = useId();
   const descriptionId = useId();
   const groups = useMemo(() => groupArchiveEntries(entries), [entries]);
@@ -46,8 +56,18 @@ export function ArchiveDialog({ activities, entries, onClose, onOpenActivity }: 
     [activities],
   );
   const [openStatuses, setOpenStatuses] = useState<ReadonlySet<ArchiveStatus>>(
-    () => new Set(GROUP_ORDER),
+    () => new Set(activeStatus ? [activeStatus] : GROUP_ORDER),
   );
+
+  useEffect(() => {
+    // Align a routed group only after its selected card collection has rendered.
+    if (!activeStatus) return;
+
+    const frameId = window.requestAnimationFrame(() => {
+      document.getElementById(`archive-${activeStatus}`)?.scrollIntoView({ block: 'start' });
+    });
+    return () => window.cancelAnimationFrame(frameId);
+  }, [activeStatus]);
 
   const toggleStatus = (status: ArchiveStatus) => {
     // Keep outcome groups independent so the archive behaves like the main accordion.
@@ -56,6 +76,17 @@ export function ArchiveDialog({ activities, entries, onClose, onOpenActivity }: 
       if (next.has(status)) next.delete(status);
       else next.add(status);
       return next;
+    });
+  };
+
+  const selectStatus = (event: MouseEvent<HTMLAnchorElement>, status: ArchiveStatus) => {
+    // Preserve native modified-click behavior while ordinary activation updates the sheet route.
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    setOpenStatuses(new Set([status]));
+    onSelectStatus(status);
+    window.requestAnimationFrame(() => {
+      document.getElementById(`archive-${status}`)?.scrollIntoView({ block: 'start' });
     });
   };
 
@@ -92,20 +123,24 @@ export function ArchiveDialog({ activities, entries, onClose, onOpenActivity }: 
             </p>
           </header>
 
-          <dl className="archive-sheet__summary">
-            <div>
-              <dt>Tried &amp; liked</dt>
-              <dd>{groups.verified.length}</dd>
-            </div>
-            <div>
-              <dt>Tried</dt>
-              <dd>{groups.tried.length}</dd>
-            </div>
-            <div>
-              <dt>Rejected</dt>
-              <dd>{groups.rejected.length}</dd>
-            </div>
-          </dl>
+          <nav aria-label="Archive outcome summaries" className="archive-sheet__summary">
+            {GROUP_ORDER.map((status) => {
+              const copy = GROUP_COPY[status];
+              const count = groups[status].length;
+              return (
+                <a
+                  aria-current={activeStatus === status ? 'location' : undefined}
+                  aria-label={`Show ${String(count)} ${copy.title} archive entries`}
+                  href={archiveHash(status)}
+                  key={status}
+                  onClick={(event) => selectStatus(event, status)}
+                >
+                  <span className="archive-sheet__summary-label">{copy.title}</span>
+                  <span className="archive-sheet__summary-count">{count}</span>
+                </a>
+              );
+            })}
+          </nav>
 
           <div className="archive-sheet__groups">
             {GROUP_ORDER.flatMap((status) => {
@@ -120,6 +155,7 @@ export function ArchiveDialog({ activities, entries, onClose, onOpenActivity }: 
                 <section
                   aria-labelledby={headingId}
                   className={`chapter archive-sheet__group archive-sheet__group--${status}`}
+                  id={`archive-${status}`}
                   key={status}
                 >
                   <div className="chapter__header archive-sheet__group-header">

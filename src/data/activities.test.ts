@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest';
 
-import { getActivityTreatment, orderChapterItems, type Activity } from '../domain/activity';
+import {
+  getActivityTreatment,
+  isPlanAheadActivity,
+  orderChapterItems,
+  type Activity,
+} from '../domain/activity';
 import { ITEMS } from './activities';
 
 const activities: readonly Activity[] = ITEMS;
@@ -132,26 +137,34 @@ describe('activity planning content', () => {
   it('keeps BLU practical about its Thursday crowd and compact dance area', () => {
     const blu = activitiesById.get('bludubai');
 
-    // Firsthand strengths stay in the card, while event-dependent perks remain qualified.
+    // Firsthand strengths stay in the card without turning a normal walk-in into a reservation task.
     expect(blu).toMatchObject({
       ch: 'loud',
       name: 'BLU Dubai',
       where: '32nd floor, V Hotel, Al Habtoor City',
       photos: 4,
     });
+    expect(blu?.ahead).toBeUndefined();
+    expect(blu?.book).toBeUndefined();
+    expect(blu && isPlanAheadActivity(blu)).toBe(false);
     expect(blu?.blurb).toMatch(/ladies-first table policy/i);
     expect(blu?.facts?.find(({ label }) => label === 'Thursday sound')?.value)
       .toMatch(/hip-hop/i);
     expect(blu?.advisory).toMatch(/dance area is compact/i);
-    expect(blu?.advisory).toMatch(/vary by event and guest list/i);
+    expect(blu?.advisory).toMatch(/tables and bottles are aimed at women/i);
+    expect(blu?.advisory).toMatch(/normal walk-in was enough/i);
   });
 
   it('keeps both newly verified dinners practical and fully photographed', () => {
     const amazonico = activitiesById.get('amazonico');
     const tingIrie = activitiesById.get('tingirie');
 
-    // Firsthand verdicts live in the archive; active copy remains useful planning guidance.
+    // A same-day reservation stays actionable without overstating its planning burden.
     expect(amazonico).toMatchObject({ ch: 'dinners', where: 'DIFC Pavilion', photos: 4 });
+    expect(amazonico?.ahead).toBeUndefined();
+    expect(amazonico?.book).toMatch(/covermanager/i);
+    expect(amazonico && isPlanAheadActivity(amazonico)).toBe(false);
+    expect(amazonico?.advisory).toMatch(/same-day booking worked/i);
     expect(amazonico?.facts?.find(({ label }) => label === 'Cuisine')?.value)
       .toMatch(/Latin American/i);
     expect(tingIrie).toMatchObject({ ch: 'dinners', where: 'Souk Al Manzil, Downtown', photos: 4 });

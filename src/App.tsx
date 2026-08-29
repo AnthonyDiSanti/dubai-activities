@@ -119,6 +119,7 @@ export function App() {
     deepLink,
     navigateToActivity,
     navigateToArchive,
+    navigateToArchiveStatus,
     navigateToChapter,
     navigateToCredits,
     navigateToEverything,
@@ -366,10 +367,13 @@ export function App() {
       )}
       {archiveOpen && (
         <ArchiveDialog
+          activeStatus={deepLink.status}
           activities={detailActivities}
           entries={ARCHIVE_ENTRIES}
+          key={deepLink.status ?? 'all'}
           onClose={closeArchive}
           onOpenActivity={openActivity}
+          onSelectStatus={navigateToArchiveStatus}
         />
       )}
       {creditsOpen && (

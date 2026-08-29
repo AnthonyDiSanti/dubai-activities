@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import type { ChapterKey } from '../domain/activity';
+import type { ArchiveStatus } from '../domain/archive';
 import {
   activityHash,
   archiveHash,
@@ -28,6 +29,7 @@ type UseDeepLinkResult = {
   readonly deepLink: DeepLink | null;
   readonly navigateToActivity: (activityId: string) => void;
   readonly navigateToArchive: () => void;
+  readonly navigateToArchiveStatus: (status: ArchiveStatus) => void;
   readonly navigateToChapter: (chapterKey: ChapterKey) => void;
   readonly navigateToCredits: () => void;
   readonly navigateToEverything: () => void;
@@ -44,7 +46,9 @@ function sameDeepLink(left: DeepLink | null, right: DeepLink | null): boolean {
   if (left?.type === 'chapter' && right?.type === 'chapter') {
     return left.chapterKey === right.chapterKey;
   }
-  if (left?.type === 'archive' && right?.type === 'archive') return true;
+  if (left?.type === 'archive' && right?.type === 'archive') {
+    return left.status === right.status;
+  }
   if (left?.type === 'credits' && right?.type === 'credits') return true;
   if (left?.type === 'everything' && right?.type === 'everything') return true;
   return left === null && right === null;
@@ -190,6 +194,17 @@ export function useDeepLink(
     () => navigateToGlobalSheet('archive'),
     [navigateToGlobalSheet],
   );
+  const navigateToArchiveStatus = useCallback((status: ArchiveStatus) => {
+    if (deepLinkRef.current?.type !== 'archive') return;
+
+    const next: DeepLink = { type: 'archive', status };
+    const hash = archiveHash(status);
+    if (window.location.hash !== hash) {
+      // A group is an internal archive view, so replace its sheet entry instead of adding a close step.
+      window.history.replaceState(historyStateRecord(), '', currentDocumentUrl(hash));
+    }
+    commitDeepLink(next, true);
+  }, [commitDeepLink]);
   const navigateToCredits = useCallback(
     () => navigateToGlobalSheet('credits'),
     [navigateToGlobalSheet],
@@ -227,7 +242,10 @@ export function useDeepLink(
 
   const closeGlobalSheet = useCallback((type: GlobalSheetType) => {
     const marker = deepLinkHistoryMarker();
-    if (marker?.type === type && window.location.hash === globalSheetHash(type)) {
+    const onRequestedSheet = type === 'archive'
+      ? deepLinkRef.current?.type === 'archive'
+      : window.location.hash === globalSheetHash(type);
+    if (marker?.type === type && onRequestedSheet) {
       commitDeepLink(null);
       window.history.back();
       return;
@@ -252,6 +270,7 @@ export function useDeepLink(
     deepLink,
     navigateToActivity,
     navigateToArchive,
+    navigateToArchiveStatus,
     navigateToChapter,
     navigateToCredits,
     navigateToEverything,

@@ -260,6 +260,63 @@ describe('App', () => {
     expect(screen.getByRole('link', { name: 'Tried & decided' })).toHaveFocus();
   });
 
+  it('routes archive summaries to one open outcome group without adding a close step', async () => {
+    const back = vi.spyOn(window.history, 'back').mockImplementation(() => undefined);
+    const replaceState = vi.spyOn(window.history, 'replaceState');
+    render(<App />);
+    fireEvent.click(screen.getByRole('link', { name: 'Tried & decided' }));
+    const archive = screen.getByRole('dialog', { name: 'Tried & decided' });
+
+    fireEvent.click(within(archive).getByRole('link', {
+      name: 'Show 3 Tried archive entries',
+    }));
+
+    expect(window.location.hash).toBe('#archive-tried');
+    expect(replaceState).toHaveBeenLastCalledWith(
+      expect.any(Object),
+      '',
+      '/#archive-tried',
+    );
+    const selectedArchive = screen.getByRole('dialog', { name: 'Tried & decided' });
+    expect(within(selectedArchive).getByRole('button', { name: /^TriedTried in person/ }))
+      .toHaveAttribute('aria-expanded', 'true');
+    expect(within(selectedArchive).getByRole('button', { name: /Tried & liked/ }))
+      .toHaveAttribute('aria-expanded', 'false');
+    expect(within(selectedArchive).getByRole('button', { name: /Rejected/ }))
+      .toHaveAttribute('aria-expanded', 'false');
+    expect(within(selectedArchive).getByRole('heading', { name: "Roberto's" }))
+      .toBeInTheDocument();
+    expect(within(selectedArchive).queryByRole('heading', { name: 'Boulder Zone' }))
+      .not.toBeInTheDocument();
+
+    fireEvent.click(within(selectedArchive).getByRole('button', {
+      name: 'Close tried and decided',
+    }));
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog', { name: 'Tried & decided' })).not.toBeInTheDocument();
+    });
+    expect(back).toHaveBeenCalledOnce();
+  });
+
+  it('opens a direct archive group link with only that outcome expanded', () => {
+    window.history.replaceState(null, '', '/guide/?from=message#archive-rejected');
+    render(<App />);
+    const archive = screen.getByRole('dialog', { name: 'Tried & decided' });
+
+    expect(within(archive).getByRole('link', {
+      name: 'Show 5 Rejected archive entries',
+    })).toHaveAttribute('aria-current', 'location');
+    expect(within(archive).getByRole('button', { name: /Rejected/ }))
+      .toHaveAttribute('aria-expanded', 'true');
+    expect(within(archive).getByRole('button', { name: /Tried & liked/ }))
+      .toHaveAttribute('aria-expanded', 'false');
+    expect(within(archive).getByRole('button', { name: /^TriedTried in person/ }))
+      .toHaveAttribute('aria-expanded', 'false');
+    expect(within(archive).getByRole('heading', { name: 'The Pods' })).toBeInTheDocument();
+    expect(within(archive).queryByRole('heading', { name: "Roberto's" }))
+      .not.toBeInTheDocument();
+  });
+
   it('opens an archived card as a full sheet and restores the archive through history', async () => {
     render(<App />);
     fireEvent.click(screen.getByRole('link', { name: 'Tried & decided' }));

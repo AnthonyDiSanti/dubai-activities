@@ -1,5 +1,17 @@
 # Tasks
 
+- id: 01K416R8N3V7T2C9H5M1QXZPFA — title: Deep-link archive outcome summaries — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
+  - Goal: Turn each archive summary count into a durable shortcut that reveals only its matching outcome section.
+  - Result: Added exact `#archive-verified`, `#archive-tried`, and `#archive-rejected` routes; converted all three count tiles to keyboard-accessible native links with current-location styling; isolated and aligned the selected group on clicks, direct loads, Forward, and activity-sheet return; and retained one-step archive dismissal by replacing the current archive entry. Passed 219 tests, the complete build/content/photo/attribution gates, and 390/1440 px rendered QA with correct group/card counts, zero overflow, and no broken images. Deployed 476 objects, removed only the two superseded bundles, completed invalidation `IELRHRC6T3YW5BOEV0X1MZV1U4`, and verified byte-identical live HTML, CSS, and JavaScript plus both production routes.
+  - Follow-up: None.
+  - Links: `src/domain/deepLinks.ts`, `src/hooks/useDeepLink.ts`, `src/components/ArchiveDialog.tsx`, `docs/site-interactions.md`
+
+- id: 01K414V8N6R2T9C3H7M5QXZPFA — title: Correct verified venue planning friction — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
+  - Goal: Make BLU and Amazónico's planning treatment reflect firsthand reality rather than generic advance-booking assumptions.
+  - Result: Removed both venues from Plan ahead; made BLU explicitly walk-in friendly with no reservation action and clarified that complimentary tables and bottles target women; retained Amazónico's direct dinner reservation route while noting that a same-day booking worked. Added regression coverage and durable editorial guidance, passed 208 tests plus the 475-row/445-JPEG/447-credit gates, and verified the 36-result Plan ahead filter and both sheets without broken images or overflow at 390 and 1440 px. Deployed 476 objects, deleted only `assets/index-BoLW4PeZ.js`, completed invalidation `IEL97K4CS8PZN1OFM8QCTU9K5J`, and verified byte-identical live HTML/JavaScript plus the production interactions.
+  - Follow-up: None.
+  - Links: `src/data/activities.ts`, `src/data/activities.test.ts`, `docs/content-editorial.md`, `docs/activity-planning-sources.md`, `docs/site-interactions.md`
+
 - id: 01K410P7M3V9R2T6C8H5QXZBFD — title: Reject The Pods — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
   - Goal: Remove The Pods from current recommendations while preserving the decision and all useful planning, photographic, and attribution context.
   - Result: Moved The Pods out of Long dinners and into the fifth Rejected record; stated explicitly that the decision preceded a visit; retained its complete three-photo archive sheet and source credits; generalized the archive framing from exclusively firsthand notes to tried-and-decided outcomes; and guarded the ID from later reintroduction. Passed 208 tests, 475 manifest rows, 445 JPEGs, 447 strict credits, zero similarity candidates, and 390/1440 px browser checks including all three live gallery frames. Deployed 476 objects, deleted only superseded bundle `assets/index-DsiTu_nl.js`, completed invalidation `IBER4ELPDGDIJCVB4YWR8NL0QW`, and verified byte-identical production HTML and JavaScript plus the 476-object inventory.

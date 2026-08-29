@@ -1,12 +1,21 @@
+import type { ArchiveStatus } from './archive';
+
 const ACTIVITY_FRAGMENT_PREFIX = 'activity-';
 const ARCHIVE_FRAGMENT = 'archive';
+const ARCHIVE_FRAGMENT_PREFIX = `${ARCHIVE_FRAGMENT}-`;
+const ARCHIVE_STATUSES: readonly ArchiveStatus[] = ['verified', 'tried', 'rejected'];
 const CREDITS_FRAGMENT = 'credits';
 const EVERYTHING_FRAGMENT = 'everything';
+
+/** Reject invented archive suffixes while preserving a narrowed status type. */
+function isArchiveStatus(value: string): value is ArchiveStatus {
+  return ARCHIVE_STATUSES.some((status) => status === value);
+}
 
 export type DeepLink =
   | { readonly type: 'chapter'; readonly chapterKey: string }
   | { readonly type: 'activity'; readonly activityId: string }
-  | { readonly type: 'archive' }
+  | { readonly status?: ArchiveStatus; readonly type: 'archive' }
   | { readonly type: 'credits' }
   | { readonly type: 'everything' };
 
@@ -20,9 +29,11 @@ export function activityHash(activityId: string): string {
   return `#${ACTIVITY_FRAGMENT_PREFIX}${encodeURIComponent(activityId)}`;
 }
 
-/** Give the intentional-rejection and experience archive a stable fragment. */
-export function archiveHash(): string {
-  return `#${ARCHIVE_FRAGMENT}`;
+/** Give the archive and each outcome group stable, shareable fragments. */
+export function archiveHash(status?: ArchiveStatus): string {
+  return status
+    ? `#${ARCHIVE_FRAGMENT_PREFIX}${status}`
+    : `#${ARCHIVE_FRAGMENT}`;
 }
 
 /** Give the global credits sheet a stable, shareable fragment. */
@@ -52,6 +63,11 @@ export function parseDeepLink(
   }
 
   if (fragment === ARCHIVE_FRAGMENT) return { type: 'archive' };
+  if (fragment.startsWith(ARCHIVE_FRAGMENT_PREFIX)) {
+    const status = fragment.slice(ARCHIVE_FRAGMENT_PREFIX.length);
+    if (isArchiveStatus(status)) return { type: 'archive', status };
+    return null;
+  }
   if (fragment === CREDITS_FRAGMENT) return { type: 'credits' };
   if (fragment === EVERYTHING_FRAGMENT) return { type: 'everything' };
 

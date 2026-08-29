@@ -30,6 +30,7 @@ describe('ArchiveDialog', () => {
         entries={ARCHIVE_ENTRIES}
         onClose={vi.fn()}
         onOpenActivity={vi.fn()}
+        onSelectStatus={vi.fn()}
       />,
     );
 
@@ -61,7 +62,8 @@ describe('ArchiveDialog', () => {
     expect(within(dialog).getAllByRole('article')).toHaveLength(14);
     expect(within(verified).getAllByRole('img', { name: 'Tried and liked' }))
       .toHaveLength(6);
-    expect(within(dialog).getByText('6', { selector: 'dd' })).toBeInTheDocument();
+    expect(within(dialog).getByText('6', { selector: '.archive-sheet__summary-count' }))
+      .toBeInTheDocument();
     expect(within(tried).queryByRole('img', { name: 'Tried and liked' }))
       .not.toBeInTheDocument();
     expect(dialog).not.toHaveTextContent('It was okay');
@@ -74,6 +76,7 @@ describe('ArchiveDialog', () => {
         entries={ARCHIVE_ENTRIES}
         onClose={vi.fn()}
         onOpenActivity={vi.fn()}
+        onSelectStatus={vi.fn()}
       />,
     );
 
@@ -88,6 +91,58 @@ describe('ArchiveDialog', () => {
     expect(screen.getByText("Roberto's")).toBeInTheDocument();
   });
 
+  it('links summary counts to isolated archive group views', () => {
+    const onSelectStatus = vi.fn();
+    render(
+      <ArchiveDialog
+        activities={activities}
+        entries={ARCHIVE_ENTRIES}
+        onClose={vi.fn()}
+        onOpenActivity={vi.fn()}
+        onSelectStatus={onSelectStatus}
+      />,
+    );
+
+    const triedSummary = screen.getByRole('link', { name: 'Show 3 Tried archive entries' });
+    expect(triedSummary).toHaveAttribute('href', '#archive-tried');
+    fireEvent.click(triedSummary);
+
+    expect(onSelectStatus).toHaveBeenCalledWith('tried');
+    expect(screen.getByRole('button', { name: /^TriedTried in person/ }))
+      .toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('button', { name: /Tried & liked/ }))
+      .toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByRole('button', { name: /Rejected/ }))
+      .toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByText("Roberto's")).toBeInTheDocument();
+    expect(screen.queryByText('Boulder Zone')).not.toBeInTheDocument();
+    expect(screen.queryByText('The Wall')).not.toBeInTheDocument();
+  });
+
+  it('reconstructs a directly linked archive group as the only open section', () => {
+    render(
+      <ArchiveDialog
+        activeStatus="rejected"
+        activities={activities}
+        entries={ARCHIVE_ENTRIES}
+        onClose={vi.fn()}
+        onOpenActivity={vi.fn()}
+        onSelectStatus={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByRole('link', { name: 'Show 5 Rejected archive entries' }))
+      .toHaveAttribute('aria-current', 'location');
+    expect(screen.getByRole('button', { name: /Rejected/ }))
+      .toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('button', { name: /Tried & liked/ }))
+      .toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByRole('button', { name: /^TriedTried in person/ }))
+      .toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByText('The Wall')).toBeInTheDocument();
+    expect(screen.queryByText("Roberto's")).not.toBeInTheDocument();
+  });
+
   it('routes both close treatments through its owner', () => {
     const onClose = vi.fn();
     render(
@@ -96,6 +151,7 @@ describe('ArchiveDialog', () => {
         entries={ARCHIVE_ENTRIES}
         onClose={onClose}
         onOpenActivity={vi.fn()}
+        onSelectStatus={vi.fn()}
       />,
     );
 
@@ -112,6 +168,7 @@ describe('ArchiveDialog', () => {
         entries={ARCHIVE_ENTRIES}
         onClose={vi.fn()}
         onOpenActivity={onOpenActivity}
+        onSelectStatus={vi.fn()}
       />,
     );
 

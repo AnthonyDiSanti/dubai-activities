@@ -68,11 +68,45 @@ describe('useDeepLink', () => {
     expect(result.current.deepLink).toBeNull();
   });
 
+  it('replaces the archive route when selecting a summary group and still closes once', () => {
+    window.history.replaceState({ foreign: 'kept' }, '', '/guide/?ref=message');
+    const back = vi.spyOn(window.history, 'back').mockImplementation(() => undefined);
+    const replaceState = vi.spyOn(window.history, 'replaceState');
+    const { result } = renderDeepLink();
+
+    act(() => { result.current.navigateToArchive(); });
+    act(() => { result.current.navigateToArchiveStatus('tried'); });
+
+    expect(replaceState).toHaveBeenLastCalledWith(
+      expect.objectContaining({ foreign: 'kept' }),
+      '',
+      '/guide/?ref=message#archive-tried',
+    );
+    expect(result.current.deepLink).toEqual({ type: 'archive', status: 'tried' });
+
+    act(() => { result.current.closeArchive(); });
+    expect(back).toHaveBeenCalledOnce();
+    expect(result.current.deepLink).toBeNull();
+  });
+
   it('closes a direct archive link without navigating away from the document', () => {
     window.history.replaceState(null, '', '/guide/?ref=message#archive');
     const back = vi.spyOn(window.history, 'back');
     const { result } = renderDeepLink();
 
+    act(() => { result.current.closeArchive(); });
+
+    expect(back).not.toHaveBeenCalled();
+    expect(window.location.href).toBe('http://localhost:3000/guide/?ref=message');
+    expect(result.current.deepLink).toBeNull();
+  });
+
+  it('closes a direct archive group link without navigating away from the document', () => {
+    window.history.replaceState(null, '', '/guide/?ref=message#archive-rejected');
+    const back = vi.spyOn(window.history, 'back');
+    const { result } = renderDeepLink();
+
+    expect(result.current.deepLink).toEqual({ type: 'archive', status: 'rejected' });
     act(() => { result.current.closeArchive(); });
 
     expect(back).not.toHaveBeenCalled();

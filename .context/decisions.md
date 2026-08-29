@@ -4,6 +4,20 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-29 — Deep-link archive outcome summaries
+- Decider: Anthony and Codex (GPT-5)
+- Decision: Make the three archive summary counts native links to `#archive-verified`, `#archive-tried`, and `#archive-rejected`. Each outcome route keeps only its matching group open and scrolls it beneath the sticky toolbar. Replace the current archive history entry when selecting an outcome rather than pushing another sheet entry.
+- Rationale: Counts should provide useful navigation and copyable state, while the URL must reproduce the visible archive view. Replacing the archive entry preserves the established one-step close behavior; Forward still restores the selected outcome after closing an archive opened from the guide.
+- Alternatives considered: Use buttons without URLs; push one history entry per summary selection; leave every group open after jumping; encode the selection as component-only state.
+- Consequences / follow-ups: `#archive` remains the all-open route, the three status suffixes are validated exactly, and unknown archive suffixes are ignored. Direct loads and activity-sheet return paths reconstruct the isolated group. Ordinary summary clicks remain history-aware in place, while modified clicks and copied links stay native.
+
+## 2026-08-29 — Reserve Plan ahead for genuine advance friction
+- Decider: Anthony
+- Decision: Treat BLU Dubai as a normal walk-in and Amazónico as a same-day reservation rather than classifying either venue under Plan ahead. Keep Amazónico's direct reservation route, remove BLU's booking route, and state that BLU's complimentary tables and bottles are aimed at women rather than a prerequisite for the mixed group.
+- Rationale: Firsthand experience established the actual planning burden more accurately than generic venue scarcity language. Plan ahead is useful only when it distinguishes activities that need meaningful lead time; same-day logistics and optional perks should not dilute it.
+- Alternatives considered: Keep both venues under Plan ahead; keep BLU's booking link as an optional action; remove Amazónico's reservation route entirely; infer that the ladies' table arrangement should be booked for the full group.
+- Consequences / follow-ups: BLU and Amazónico no longer carry `ahead`, reducing the current Plan ahead result to 36 activities. BLU's sheet directs visitors to walk in on Thursday, while Amazónico still links to CoverManager and candidly says dinner requires a reservation that worked same-day. This supersedes BLU's earlier direct-reservation follow-up without changing either venue's Tried & liked status.
+
 ## 2026-08-29 — Reject The Pods before a visit
 - Decider: Anthony
 - Decision: Remove The Pods from active `Long dinners` recommendations and retain it under Rejected with its complete planning sheet, three-photo gallery, and credits. Record the decision as pre-visit screening rather than firsthand experience.

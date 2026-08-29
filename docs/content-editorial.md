@@ -53,7 +53,9 @@ Wavehouse is intentionally excluded because its Atlantis setting and programming
 
 ## Firsthand club nights
 
-Keep BLU Dubai high among the evergreen options in `Nights that go loud`. The 27 August 2026 Shutdown visit proved the Thursday crowd, hip-hop programming, and table-led energy strong enough for a major celebration. Stay candid that dancing happens mainly in the open space around the central bar rather than on a large dedicated floor. Complimentary tables and bottles for women materially shaped the successful crowd balance that night, but present that as an event- and guest-list-dependent arrangement rather than a permanent entitlement.
+Keep BLU Dubai high among the evergreen options in `Nights that go loud`. The 27 August 2026 Shutdown visit proved the Thursday crowd, hip-hop programming, and table-led energy strong enough for a major celebration. Stay candid that dancing happens mainly in the open space around the central bar rather than on a large dedicated floor. Complimentary tables and bottles for women materially shaped the successful crowd balance, but they are not part of the planning burden for a mixed group: a normal walk-in worked and BLU must not carry `ahead` guidance or a reservation CTA.
+
+Amazónico requires a dinner reservation, but the firsthand visit secured one on the same day. Keep the direct booking route and state that same-day evidence in the advisory, but do not use `ahead`: reservation availability alone is not enough to classify an activity as Plan ahead.
 
 ## Dubai Mall shopping boundary
 

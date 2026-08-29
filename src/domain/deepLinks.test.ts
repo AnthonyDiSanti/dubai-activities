@@ -20,6 +20,9 @@ describe('deep-link fragments', () => {
     expect(chapterHash('night markets')).toBe('#night%20markets');
     expect(activityHash('art & light')).toBe('#activity-art%20%26%20light');
     expect(archiveHash()).toBe('#archive');
+    expect(archiveHash('verified')).toBe('#archive-verified');
+    expect(archiveHash('tried')).toBe('#archive-tried');
+    expect(archiveHash('rejected')).toBe('#archive-rejected');
     expect(creditsHash()).toBe('#credits');
     expect(everythingHash()).toBe('#everything');
   });
@@ -29,6 +32,9 @@ describe('deep-link fragments', () => {
     ['#activity-rasalkhor', { type: 'activity', activityId: 'rasalkhor' }],
     ['#activity-ras%61lkhor', { type: 'activity', activityId: 'rasalkhor' }],
     ['#archive', { type: 'archive' }],
+    ['#archive-verified', { type: 'archive', status: 'verified' }],
+    ['#archive-tried', { type: 'archive', status: 'tried' }],
+    ['#archive-rejected', { type: 'archive', status: 'rejected' }],
     ['#credits', { type: 'credits' }],
     ['#everything', { type: 'everything' }],
   ])('parses the known fragment %s', (hash, expected) => {
@@ -45,6 +51,8 @@ describe('deep-link fragments', () => {
     '#list=rasalkhor%2Cnest',
     '#activity-rasalkhor&list=nest',
     '#activity-%E0%A4%A',
+    '#archive-unknown',
+    '#archive-',
   ])('ignores unsupported, unknown, or malformed fragment %s', (hash) => {
     expect(parseDeepLink(hash, chapterKeys, activityIds)).toBeNull();
   });
