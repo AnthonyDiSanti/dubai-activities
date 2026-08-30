@@ -4855,6 +4855,46 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/nammos-01.jpg",
+      "contentUrl": "./photos/nammos-01.jpg",
+      "name": "Nammos Dubai beach-facing restaurant terrace",
+      "creditText": "Nammos Dubai beach-facing restaurant terrace, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.fourseasons.com/dubaijb/dining/restaurants/nammos.html/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nammos-02.jpg",
+      "contentUrl": "./photos/nammos-02.jpg",
+      "name": "Nammos Dubai aubergine millefeuille",
+      "creditText": "Nammos Dubai aubergine millefeuille, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.fourseasons.com/dubaijb/dining/restaurants/nammos.html/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nammos-03.jpg",
+      "contentUrl": "./photos/nammos-03.jpg",
+      "name": "Nammos Dubai entrance",
+      "creditText": "Nammos Dubai entrance, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.fourseasons.com/dubaijb/dining/restaurants/nammos.html/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nammos-04.jpg",
+      "contentUrl": "./photos/nammos-04.jpg",
+      "name": "Nammos Dubai beach and sunbeds",
+      "creditText": "Nammos Dubai beach and sunbeds, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.fourseasons.com/dubaijb/dining/restaurants/nammos.html/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",

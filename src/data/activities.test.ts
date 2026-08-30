@@ -24,6 +24,7 @@ const FACT_ENRICHED_IDS = [
   'moonrise',
   'amazonico',
   'tingirie',
+  'nammos',
   'amritsr',
   'ossiano',
   'dits',
@@ -186,6 +187,25 @@ describe('activity planning content', () => {
     expect(amritsr?.advisory).toMatch(/Dubai branch is still untested/i);
     expect(amritsr?.facts?.find(({ label }) => label === 'Start with')?.value)
       .toMatch(/Amritsari kulcha/i);
+  });
+
+  it('adds Nammos as a complete beachside restaurant rather than a generic beach club', () => {
+    const nammos = activitiesById.get('nammos');
+
+    // Separate venue hours preserve the choice between a meal, the lounge, and a beach afternoon.
+    expect(nammos).toMatchObject({
+      ch: 'dinners',
+      name: 'Nammos Dubai',
+      when: 'Daily · restaurant 12:30–02:00',
+      where: 'Four Seasons Resort · Jumeirah 2',
+      photos: 4,
+    });
+    expect(nammos?.book).toMatch(/sevenrooms\.com\/explore\/nammosdubai/i);
+    expect(nammos?.facts?.find(({ label }) => label === 'Cuisine')?.value)
+      .toMatch(/Mediterranean/i);
+    expect(nammos?.facts?.find(({ label }) => label === 'Beach')?.value)
+      .toBe('Daily 11:00–19:00');
+    expect(nammos?.advisory).toMatch(/which area a booking covers/i);
   });
 
   it('keeps Boomah candid about its location, price, and owl-welfare trade-off', () => {

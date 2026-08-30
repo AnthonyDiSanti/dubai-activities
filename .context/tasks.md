@@ -1,5 +1,11 @@
 # Tasks
 
+- id: 01K41B7R9M2V6T8N4H3QXZPFAC — title: Add Nammos Dubai — owner: Codex (GPT-5) — status: done — last update: 2026-08-30
+  - Goal: Add Nammos to the restaurant recommendations with useful current planning context and a complete venue-specific gallery.
+  - Result: Added Nammos Dubai to Long dinners as a restaurant-first beach afternoon; recorded the official restaurant, lounge, and beach hours plus direct SevenRooms booking; curated four current exact-venue Four Seasons photographs with complete visible and machine-readable source credits; and passed 221 tests, 479 manifest rows, 449 JPEGs, 451 attribution records, and zero similarity candidates. Deployed 480 objects, deleted only superseded bundle `assets/index-XPKjBv6y.js`, completed invalidation `I9SURPEHQWHAQQPV0KBUZ1E64Z`, and verified byte-identical production HTML, CSS, JavaScript, attribution JSON, and all four Nammos images. The in-app Browser rejected its trusted service dependency before navigation, so fresh responsive rendering remains unverified.
+  - Follow-up: Run the 390/1440 px card and gallery pass when Browser reconnects.
+  - Links: `src/data/activities.ts`, `docs/activity-planning-sources.md`, `docs/image-manifest.csv`, `docs/photo-attributions.csv`
+
 - id: 01K416R8N3V7T2C9H5M1QXZPFA — title: Deep-link archive outcome summaries — owner: Codex (GPT-5) — status: done — last update: 2026-08-29
   - Goal: Turn each archive summary count into a durable shortcut that reveals only its matching outcome section.
   - Result: Added exact `#archive-verified`, `#archive-tried`, and `#archive-rejected` routes; converted all three count tiles to keyboard-accessible native links with current-location styling; isolated and aligned the selected group on clicks, direct loads, Forward, and activity-sheet return; and retained one-step archive dismissal by replacing the current archive entry. Passed 219 tests, the complete build/content/photo/attribution gates, and 390/1440 px rendered QA with correct group/card counts, zero overflow, and no broken images. Deployed 476 objects, removed only the two superseded bundles, completed invalidation `IELRHRC6T3YW5BOEV0X1MZV1U4`, and verified byte-identical live HTML, CSS, and JavaScript plus both production routes.

@@ -8075,6 +8075,74 @@
       "creditText": "Amritsr · Al Karama — photo 4, via Amritsr UAE. Resized for web display and shown with responsive cropping."
     },
     {
+      "filename": "nammos-01.jpg",
+      "activityId": "nammos",
+      "activityName": "Nammos Dubai",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": "Nammos Dubai beach-facing restaurant terrace",
+      "creator": null,
+      "source": {
+        "name": "Four Seasons Resort Dubai at Jumeirah Beach",
+        "url": "https://www.fourseasons.com/dubaijb/dining/restaurants/nammos.html/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Nammos Dubai beach-facing restaurant terrace, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "nammos-02.jpg",
+      "activityId": "nammos",
+      "activityName": "Nammos Dubai",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": "Nammos Dubai aubergine millefeuille",
+      "creator": null,
+      "source": {
+        "name": "Four Seasons Resort Dubai at Jumeirah Beach",
+        "url": "https://www.fourseasons.com/dubaijb/dining/restaurants/nammos.html/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Nammos Dubai aubergine millefeuille, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "nammos-03.jpg",
+      "activityId": "nammos",
+      "activityName": "Nammos Dubai",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": "Nammos Dubai entrance",
+      "creator": null,
+      "source": {
+        "name": "Four Seasons Resort Dubai at Jumeirah Beach",
+        "url": "https://www.fourseasons.com/dubaijb/dining/restaurants/nammos.html/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Nammos Dubai entrance, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "nammos-04.jpg",
+      "activityId": "nammos",
+      "activityName": "Nammos Dubai",
+      "chapterName": "Long dinners",
+      "slot": 4,
+      "workTitle": "Nammos Dubai beach and sunbeds",
+      "creator": null,
+      "source": {
+        "name": "Four Seasons Resort Dubai at Jumeirah Beach",
+        "url": "https://www.fourseasons.com/dubaijb/dining/restaurants/nammos.html/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized for web display and shown with responsive cropping.",
+      "creditText": "Nammos Dubai beach and sunbeds, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping."
+    },
+    {
       "filename": "icon-google-maps.svg",
       "activityId": null,
       "activityName": "Interface marks",

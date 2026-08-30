@@ -4,6 +4,13 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-08-30 — Add Nammos as a restaurant-first beach afternoon
+- Decider: Anthony and Codex (GPT-5)
+- Decision: Add Nammos Dubai to `Long dinners` with the restaurant as the primary experience and the beach and lounge as extensions of the same outing. Keep the three areas' official hours separate, link directly to SevenRooms, and use four current exact-venue Four Seasons images.
+- Rationale: Nammos is more useful here as a long Mediterranean lunch that can continue toward evening than as a generic beach-club card. The separate operating clocks materially affect whether a restaurant reservation delivers the beach experience a visitor expects.
+- Alternatives considered: Put Nammos under nightlife; describe only the beach club; treat a reservation as automatic access to every area; add the venue without local photography or planning context.
+- Consequences / follow-ups: The active guide now contains 127 activities and 449 JPEGs. Nammos is not marked Tried & liked and does not enter Plan ahead without evidence of genuine booking friction. The addition was deployed on 30 Aug 2026; confirm which area the reservation covers when the beach is part of the plan and run responsive gallery QA when Browser reconnects.
+
 ## 2026-08-29 — Deep-link archive outcome summaries
 - Decider: Anthony and Codex (GPT-5)
 - Decision: Make the three archive summary counts native links to `#archive-verified`, `#archive-tried`, and `#archive-rejected`. Each outcome route keeps only its matching group open and scrolls it beneath the sticky toolbar. Replace the current archive history entry when selecting an outcome rather than pushing another sheet entry.
