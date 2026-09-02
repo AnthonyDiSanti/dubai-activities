@@ -1,5 +1,11 @@
 # Tasks
 
+- id: 01K4C2S8N6V3T9M5H7QXZPRFBA — title: Add Sirali Dubai — owner: Codex (GPT-5) — status: done — last update: 2026-09-02
+  - Goal: Add the strongest current Turkish dinner recommendation after comparing Sirali with CZN Burak.
+  - Result: Chose Sirali as the food-first Turkish pick; added current Meera Tower hours, direct OpenTable booking, rolled Adana guidance, FACT's 2025 Best Turkish recognition, and a caveat to reconfirm changeable Friday entertainment; curated four differentiated exact-venue photographs with complete visible and machine-readable credits; and passed 221 tests, 483 manifest rows, 453 JPEGs, 455 attribution records, and zero similarity candidates. Deployed 484 objects, deleted only superseded bundle `assets/index-DLSL8ZhC.js`, completed invalidation `IEET7PO1OX3DNSECPRI9SSMCKW`, and verified byte-identical production HTML, CSS, JavaScript, attribution catalogs, and all four Sirali images with correct MIME types. The in-app Browser rejected its trusted plugin path before navigation, so fresh responsive rendering remains unverified.
+  - Follow-up: Reconfirm Friday entertainment when booking and run the 390/1440 px card and gallery pass when Browser reconnects.
+  - Links: `src/data/activities.ts`, `docs/activity-planning-sources.md`, `docs/image-manifest.csv`, `docs/photo-attributions.csv`
+
 - id: 01K41B7R9M2V6T8N4H3QXZPFAC — title: Add Nammos Dubai — owner: Codex (GPT-5) — status: done — last update: 2026-08-30
   - Goal: Add Nammos to the restaurant recommendations with useful current planning context and a complete venue-specific gallery.
   - Result: Added Nammos Dubai to Long dinners as a restaurant-first beach afternoon; recorded the official restaurant, lounge, and beach hours plus direct SevenRooms booking; curated four current exact-venue Four Seasons photographs with complete visible and machine-readable source credits; and passed 221 tests, 479 manifest rows, 449 JPEGs, 451 attribution records, and zero similarity candidates. Deployed 480 objects, deleted only superseded bundle `assets/index-XPKjBv6y.js`, completed invalidation `I9SURPEHQWHAQQPV0KBUZ1E64Z`, and verified byte-identical production HTML, CSS, JavaScript, attribution JSON, and all four Nammos images. The in-app Browser rejected its trusted service dependency before navigation, so fresh responsive rendering remains unverified.

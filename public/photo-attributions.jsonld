@@ -4895,6 +4895,54 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/sirali-01.jpg",
+      "contentUrl": "./photos/sirali-01.jpg",
+      "name": "Sirali Dubai dining room",
+      "creditText": "Sirali Dubai dining room by David Allen, via Sirali Dubai via Condé Nast Traveler. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.cntraveler.com/story/best-middle-eastern-restaurants-dubai",
+      "encodingFormat": "image/jpeg",
+      "creator": {
+        "@type": "Person",
+        "name": "David Allen"
+      },
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/sirali-02.jpg",
+      "contentUrl": "./photos/sirali-02.jpg",
+      "name": "Sirali Dubai rolled Adana",
+      "creditText": "Sirali Dubai rolled Adana, via Sirali Dubai live menu. Resized and re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://siralirestaurantdubai.qr.menulux.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/sirali-03.jpg",
+      "contentUrl": "./photos/sirali-03.jpg",
+      "name": "Sirali Dubai dining room in service",
+      "creditText": "Sirali Dubai dining room in service, via VenueWise. Converted from WebP to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://venuewise.com/venue/sirali-restaurant",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/sirali-04.jpg",
+      "contentUrl": "./photos/sirali-04.jpg",
+      "name": "Sirali Dubai shared Turkish feast",
+      "creditText": "Sirali Dubai shared Turkish feast by Vlad Ivanov, via Sirali Dubai via What's On. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://whatson.ae/2024/10/fall-in-love-with-sirali-this-season/",
+      "encodingFormat": "image/jpeg",
+      "creator": {
+        "@type": "Person",
+        "name": "Vlad Ivanov"
+      },
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",

@@ -8143,6 +8143,82 @@
       "creditText": "Nammos Dubai beach and sunbeds, via Four Seasons Resort Dubai at Jumeirah Beach. Resized for web display and shown with responsive cropping."
     },
     {
+      "filename": "sirali-01.jpg",
+      "activityId": "sirali",
+      "activityName": "Sirali Dubai",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": "Sirali Dubai dining room",
+      "creator": {
+        "name": "David Allen",
+        "type": "person",
+        "url": null
+      },
+      "source": {
+        "name": "Sirali Dubai via Condé Nast Traveler",
+        "url": "https://www.cntraveler.com/story/best-middle-eastern-restaurants-dubai"
+      },
+      "license": null,
+      "creditBasis": "creator_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Sirali Dubai dining room by David Allen, via Sirali Dubai via Condé Nast Traveler. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "sirali-02.jpg",
+      "activityId": "sirali",
+      "activityName": "Sirali Dubai",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": "Sirali Dubai rolled Adana",
+      "creator": null,
+      "source": {
+        "name": "Sirali Dubai live menu",
+        "url": "https://siralirestaurantdubai.qr.menulux.com/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Sirali Dubai rolled Adana, via Sirali Dubai live menu. Resized and re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "sirali-03.jpg",
+      "activityId": "sirali",
+      "activityName": "Sirali Dubai",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": "Sirali Dubai dining room in service",
+      "creator": null,
+      "source": {
+        "name": "VenueWise",
+        "url": "https://venuewise.com/venue/sirali-restaurant"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG and shown with responsive cropping.",
+      "creditText": "Sirali Dubai dining room in service, via VenueWise. Converted from WebP to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "sirali-04.jpg",
+      "activityId": "sirali",
+      "activityName": "Sirali Dubai",
+      "chapterName": "Long dinners",
+      "slot": 4,
+      "workTitle": "Sirali Dubai shared Turkish feast",
+      "creator": {
+        "name": "Vlad Ivanov",
+        "type": "person",
+        "url": null
+      },
+      "source": {
+        "name": "Sirali Dubai via What's On",
+        "url": "https://whatson.ae/2024/10/fall-in-love-with-sirali-this-season/"
+      },
+      "license": null,
+      "creditBasis": "creator_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Sirali Dubai shared Turkish feast by Vlad Ivanov, via Sirali Dubai via What's On. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
       "filename": "icon-google-maps.svg",
       "activityId": null,
       "activityName": "Interface marks",

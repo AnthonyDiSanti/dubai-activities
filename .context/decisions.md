@@ -4,6 +4,13 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-09-02 — Prefer Sirali for the Turkish dinner slot
+- Decider: Anthony and Codex (GPT-5)
+- Decision: Add Sirali Dubai to `Long dinners` as the guide's food-first Turkish restaurant instead of CZN Burak. Lead with shared mezze, stone-oven breads, charcoal grilling, and the rolled Adana; keep Friday live entertainment as a reconfirm-before-booking detail rather than a permanent promise.
+- Rationale: Sirali combines a current official menu and booking route with FACT's 2025 Best Turkish recognition, while CZN Burak's appeal is more strongly tied to theatrical presentation. The guide already has several show-led dinners, so Sirali adds the more differentiated meal-first option.
+- Alternatives considered: Add CZN Burak for spectacle; add both Turkish restaurants; omit a Turkish specialist; wait for a firsthand visit before publishing either.
+- Consequences / follow-ups: The active guide now contains 128 activities and 453 JPEGs. Sirali is not marked Tried & liked or Plan ahead without firsthand evidence of scarcity. Keep the four-image exact-venue gallery and credits synchronized, reconfirm Friday entertainment when reserving, and record a firsthand outcome after visiting.
+
 ## 2026-08-30 — Add Nammos as a restaurant-first beach afternoon
 - Decider: Anthony and Codex (GPT-5)
 - Decision: Add Nammos Dubai to `Long dinners` with the restaurant as the primary experience and the beach and lounge as extensions of the same outing. Keep the three areas' official hours separate, link directly to SevenRooms, and use four current exact-venue Four Seasons images.
