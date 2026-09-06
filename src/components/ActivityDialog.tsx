@@ -7,6 +7,7 @@ import {
   type Activity,
 } from '../domain/activity';
 import { formatArchiveDate, type ArchiveEntry } from '../domain/archive';
+import { CrossIcon } from './CrossIcon';
 import { Modal } from './Modal';
 
 export type ActivityDialogProps = {
@@ -90,7 +91,7 @@ export function ActivityDialog({
               onClick={onClose}
               type="button"
             >
-              <span aria-hidden="true">×</span>
+              <CrossIcon />
             </button>
           </div>
           <div className="detail-sheet__handle" />

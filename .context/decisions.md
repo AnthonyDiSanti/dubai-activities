@@ -4,6 +4,13 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-09-06 — Center circular cross controls with geometry, not typography
+- Decider: Anthony and Codex (GPT-5)
+- Decision: Replace every literal multiplication-sign glyph used by a circular close or remove control with one shared, symmetric `CrossIcon` SVG. Center its fixed view box through the existing grid layout and vary only the icon size through `--cross-icon-size`.
+- Rationale: The previous `×` was centered as a typographic box, but its visible strokes inherited font-specific baseline and side-bearing asymmetry. That made desktop sheet controls look off-center even when their CSS alignment was mathematically correct.
+- Alternatives considered: Nudge each glyph with transforms; assign a different font; adjust line-height separately for each sheet; change only the activity-sheet button.
+- Consequences / follow-ups: Activity, archive, credits, favorites, and favorite-row removal controls now share one glyph-independent shape. Keep accessible names on the parent buttons. Anthony approved the desktop rendering; local 1000/1440 px checks and the deployed 1440 px activity sheet confirm optical centering and zero center offset. Release invalidation `IB8PQMV4IRCX823TV63L57LOST` completed successfully.
+
 ## 2026-09-06 — Keep the Lock, Stock & Barrel outcome specific to Business Bay
 - Decider: Anthony and Codex (GPT-5)
 - Decision: Record the Business Bay Lock, Stock & Barrel under Tried, not Tried & liked or the active guide. Preserve the fun atmosphere, very small dance floor, and only moderately mingle-friendly crowd as the outcome of that branch visit, and do not extend the verdict to Barsha Heights or JBR.

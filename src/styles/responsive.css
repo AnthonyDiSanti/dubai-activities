@@ -96,6 +96,7 @@
   }
 
   .reference-sheet__close-x {
+    --cross-icon-size: 15px;
     display: grid;
     width: 36px;
     height: 36px;
@@ -206,6 +207,7 @@
   }
 
   .detail-sheet__close-x {
+    --cross-icon-size: 15px;
     display: grid;
     width: 38px;
     height: 38px;

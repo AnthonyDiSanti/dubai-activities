@@ -123,6 +123,7 @@
 }
 
 .reference-sheet__close-x {
+  --cross-icon-size: 14px;
   display: grid;
   width: 32px;
   height: 32px;
@@ -387,6 +388,7 @@
 }
 
 .favorites-sheet__close {
+  --cross-icon-size: 14px;
   position: absolute;
   top: 12px;
   right: 18px;
@@ -560,6 +562,7 @@
 }
 
 .favorite-row__remove {
+  --cross-icon-size: 11px;
   display: grid;
   width: 32px;
   height: 32px;

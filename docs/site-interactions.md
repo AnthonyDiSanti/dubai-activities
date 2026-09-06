@@ -57,6 +57,7 @@ Favorites, activity details, the decision archive, and photo credits use the sha
 - Opening focuses the sheet panel and locks document scrolling.
 - Backdrop click and native Escape cancellation flow through React state.
 - The backdrop is pointer-only and excluded from tab order; each sheet keeps a visible close control, including the favorites X.
+- Circular close and remove controls render the shared `CrossIcon` SVG rather than a font glyph. Its symmetric 16×16 view box is centered by the button grid, while `--cross-icon-size` adjusts only its visual scale; do not restore a literal `×`, whose baseline and side bearings vary by font and viewport.
 - Closing restores the previous scroll style and returns focus to the connected trigger.
 - A sheet loaded directly from a URL has no trigger, so closing replaces its fragment with the owning chapter and focuses that chapter's accordion control.
 - Each dialog is named by its visible heading and, where useful, described by visible copy.
@@ -83,7 +84,7 @@ Credits are deliberately complete and flat rather than searchable or collapsed. 
 
 - Mobile sheets begin 60 px below the viewport top. The gallery is 270 px tall, the drag handle and text Close control are visible, and the X is hidden.
 - At the 1000 px desktop breakpoint, the sheet becomes a full-viewport detail view. Its gallery grows to `clamp(460px, 58vh, 620px)`, the media container expands to the 1180 px page width, and copy stays capped at 760 px for readability.
-- Desktop provides a sticky in-sheet toolbar with an X. Mobile keeps backdrop and text Close dismissal.
+- Desktop provides a sticky in-sheet toolbar with a geometrically centered SVG X. Mobile keeps backdrop and text Close dismissal.
 - The complete image is the forward control. Clicking or pressing it advances one photo and wraps to the first.
 - The pills below the image are buttons that jump directly to any photo. Exactly one reports the active state.
 - The Save control is layered above the image control and must not advance the gallery.
@@ -120,7 +121,7 @@ Check at 390×844, 999×800, 1000×800, and 1440×900:
 6. Confirm the 999/1000 px boundary changes from rounded bottom sheet to full-viewport details without horizontal overflow.
 7. Click the left, center, and right of the gallery image; each click should advance exactly once.
 8. Advance the six-image gallery through its last photo, confirm wrap, then jump backward and forward with pills.
-9. Confirm gallery Save does not advance; test desktop X, Escape, backdrop, mobile Close, initial focus, scroll lock, and trigger-focus restoration.
+9. Confirm gallery Save does not advance; test desktop X, Escape, backdrop, mobile Close, initial focus, scroll lock, and trigger-focus restoration. At 1000 and 1440 px, visually check that the X is centered in activity, archive, credits, and favorites circles; favorite-row remove crosses use the same centered geometry.
 10. Test favorites with valid, unknown, duplicate, malformed-storage, and empty-list inputs. Verify dated/book-ahead/everything-else grouping, chronological date order, native row links, independent removal, honest Copy success/failure, and capability-gated Share at every width.
 11. Check keyboard navigation, visible focus, console output, final image loads, and centered crops.
 12. Paste `#animals`, `#everything`, `#activity-rasalkhor`, `#activity-robertos`, `#archive`, each `#archive-<status>` route, and `#credits` into a fresh tab. Verify the owning chapter/archive or all-open state, direct-link focus fallback, exact URL, Back/Forward reopening, invalid-ID no-op, and unchanged `#list=` restoration.

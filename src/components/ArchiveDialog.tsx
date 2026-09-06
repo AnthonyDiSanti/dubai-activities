@@ -8,6 +8,7 @@ import {
 } from '../domain/archive';
 import { archiveHash } from '../domain/deepLinks';
 import { ActivityCard } from './ActivityCard';
+import { CrossIcon } from './CrossIcon';
 import { Modal } from './Modal';
 
 export type ArchiveDialogProps = {
@@ -110,7 +111,7 @@ export function ArchiveDialog({
               onClick={onClose}
               type="button"
             >
-              <span aria-hidden="true">×</span>
+              <CrossIcon />
             </button>
           </div>
           <div className="reference-sheet__handle" />

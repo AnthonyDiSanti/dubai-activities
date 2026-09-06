@@ -8,6 +8,7 @@ import {
   formatFavoriteMessage,
   groupFavoriteActivities,
 } from '../domain/favorites';
+import { CrossIcon } from './CrossIcon';
 import { Modal } from './Modal';
 
 export type FavoritesDialogProps = {
@@ -106,7 +107,7 @@ function FavoriteRow({
         }}
         type="button"
       >
-        <span aria-hidden="true">×</span>
+        <CrossIcon />
       </button>
     </div>
   );
@@ -256,7 +257,7 @@ export function FavoritesDialog({
           onClick={onClose}
           type="button"
         >
-          <span aria-hidden="true">×</span>
+          <CrossIcon />
         </button>
         <h2 className="favorites-sheet__title" id={titleId}>The ones you want</h2>
         <p className="favorites-sheet__note" id={noteId}>

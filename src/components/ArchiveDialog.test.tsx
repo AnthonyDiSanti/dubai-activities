@@ -156,7 +156,10 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    fireEvent.click(screen.getByRole('button', { name: 'Close tried and decided' }));
+    const desktopClose = screen.getByRole('button', { name: 'Close tried and decided' });
+    expect(desktopClose.querySelector('.cross-icon')).toBeInTheDocument();
+    expect(desktopClose).not.toHaveTextContent('×');
+    fireEvent.click(desktopClose);
     fireEvent.click(screen.getByRole('button', { name: 'Close' }));
     expect(onClose).toHaveBeenCalledTimes(2);
   });

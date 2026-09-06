@@ -7,6 +7,7 @@ import {
   type PhotoAttributionCatalog,
 } from '../domain/photoAttribution';
 import type { PhotoAttributionState } from '../hooks/usePhotoAttributions';
+import { CrossIcon } from './CrossIcon';
 import { Modal } from './Modal';
 
 export type CreditsDialogProps = {
@@ -76,7 +77,7 @@ export function CreditsDialog({ catalog, onClose, onRetry, status }: CreditsDial
               onClick={onClose}
               type="button"
             >
-              <span aria-hidden="true">×</span>
+              <CrossIcon />
             </button>
           </div>
           <div className="reference-sheet__handle" />

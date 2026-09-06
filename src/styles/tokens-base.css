@@ -49,6 +49,19 @@ button {
   cursor: pointer;
 }
 
+.cross-icon {
+  /* SVG geometry avoids the baseline and side-bearing drift of a font-rendered multiplication sign. */
+  display: block;
+  width: var(--cross-icon-size, 14px);
+  height: var(--cross-icon-size, 14px);
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.75;
+  pointer-events: none;
+}
+
 :where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
   outline: 2px solid var(--gold-light);
   outline-offset: 3px;

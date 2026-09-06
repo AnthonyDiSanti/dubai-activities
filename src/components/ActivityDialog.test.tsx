@@ -163,7 +163,10 @@ describe('ActivityDialog', () => {
       />,
     );
 
-    fireEvent.click(screen.getByRole('button', { name: 'Close activity details' }));
+    const desktopClose = screen.getByRole('button', { name: 'Close activity details' });
+    expect(desktopClose.querySelector('.cross-icon')).toBeInTheDocument();
+    expect(desktopClose).not.toHaveTextContent('×');
+    fireEvent.click(desktopClose);
     fireEvent.click(screen.getByRole('button', { name: 'Close' }));
 
     expect(onClose).toHaveBeenCalledTimes(2);

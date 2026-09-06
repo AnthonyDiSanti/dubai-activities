@@ -89,11 +89,16 @@ describe('FavoritesDialog', () => {
     );
 
     expect(screen.getByRole('dialog', { name: 'The ones you want' })).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: 'Remove The Nest from favorites' }));
+    const removeButton = screen.getByRole('button', { name: 'Remove The Nest from favorites' });
+    expect(removeButton.querySelector('.cross-icon')).toBeInTheDocument();
+    fireEvent.click(removeButton);
 
     expect(onToggleFavorite).toHaveBeenCalledOnce();
     expect(onToggleFavorite).toHaveBeenCalledWith('nest');
-    fireEvent.click(screen.getByRole('button', { name: 'Close favorites' }));
+    const closeButton = screen.getByRole('button', { name: 'Close favorites' });
+    expect(closeButton.querySelector('.cross-icon')).toBeInTheDocument();
+    expect(closeButton).not.toHaveTextContent('×');
+    fireEvent.click(closeButton);
     expect(onClose).toHaveBeenCalledOnce();
   });
 

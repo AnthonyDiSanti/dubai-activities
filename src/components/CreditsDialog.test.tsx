@@ -57,7 +57,10 @@ describe('CreditsDialog', () => {
 
     rerender(<CreditsDialog catalog={null} onClose={onClose} onRetry={onRetry} status="error" />);
     fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Close photo credits' }));
+    const closeButton = screen.getByRole('button', { name: 'Close photo credits' });
+    expect(closeButton.querySelector('.cross-icon')).toBeInTheDocument();
+    expect(closeButton).not.toHaveTextContent('×');
+    fireEvent.click(closeButton);
 
     expect(onRetry).toHaveBeenCalledOnce();
     expect(onClose).toHaveBeenCalledOnce();
