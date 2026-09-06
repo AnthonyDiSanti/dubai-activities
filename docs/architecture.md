@@ -40,6 +40,23 @@ Clipboard and Web Share are progressive enhancements. The native Share control a
 
 ## Build contract
 
+### Favicons and home-screen icons
+
+`index.html` links `public/favicon.ico` (16/32/48 px fallback),
+`public/favicon.svg` (scalable primary icon), `public/apple-touch-icon.png`
+(180 px), and `public/site.webmanifest`. The manifest references the 192 px,
+512 px, and maskable 512 px PNGs beside it. All links are relative to preserve
+prefix portability. Vite copies these supplied assets unchanged into `dist/`.
+The manifest only provides site identity and icon metadata; it does not add
+offline support. Unused small PNG variants and source artwork are retained in
+`docs/branding/favicon-source/`, outside the deployed output. Preserve the
+supplied artwork and embedded provenance when updating the set.
+The current source set is v3 (board 14a-4): dark window backing/rim, 89% inner
+mark scale, and updated 80%/64% standard/maskable tile placement. Retain these
+geometry choices when regenerating; supplier notes live beside the source art.
+
+### Building
+
 The development toolchain requires Node 22.13 or newer; `package.json` records this boundary. `vite.config.ts` uses `base: './'` so the output remains portable when mounted at an S3 or CloudFront prefix. A prefixed public URL must retain its trailing slash (for example `/guide/`), because relative asset URLs at `/guide` would resolve from the parent path. Build with:
 
 ```sh

@@ -19,6 +19,7 @@ This directory is optimized for agents first and humans second.
 ## Topic map
 
 - [Architecture and deployment](architecture.md) — React/TypeScript boundaries, Vite output, public assets, and static S3 delivery.
+- [Favicon artwork](branding/favicon-source/README.md) — Supplied icon set, deployed subset, retained source artwork, and regeneration notes.
 - [Site interactions](site-interactions.md) — Entry point, card and detail-sheet behavior, responsive breakpoints, and browser QA.
 - [Activity content and editorial ordering](content-editorial.md) — Voice, recommendation rank, dated-card spacing, hero selection, and content verification.
 - [Activity planning source ledger](activity-planning-sources.md) — Primary-source snapshot for structured facts, caveats, schedule corrections, and retired cards.

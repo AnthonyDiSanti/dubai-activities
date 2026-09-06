@@ -88,7 +88,10 @@ describe('FavoritesDialog', () => {
       />,
     );
 
-    expect(screen.getByRole('dialog', { name: 'The ones you want' })).toBeInTheDocument();
+    // The accessible description must work on laptops as well as touch devices.
+    expect(screen.getByRole('dialog', { name: 'The ones you want' })).toHaveAccessibleDescription(
+      'Saved here, just for you — share them whenever you like.',
+    );
     const removeButton = screen.getByRole('button', { name: 'Remove The Nest from favorites' });
     expect(removeButton.querySelector('.cross-icon')).toBeInTheDocument();
     fireEvent.click(removeButton);
@@ -269,7 +272,13 @@ describe('FavoritesDialog', () => {
       />,
     );
 
-    expect(screen.getByText(/Nothing saved yet/)).toBeInTheDocument();
+    // Empty-state guidance must not assume a phone or touch input either.
+    expect(screen.getByRole('dialog', { name: 'The ones you want' })).toHaveAccessibleDescription(
+      'Saved here, just for you.',
+    );
+    expect(screen.getByText(/Nothing saved yet/)).toHaveTextContent(
+      'Nothing saved yet. Choose the heart on anything you like the look of — we’ll keep it here for you.',
+    );
     expect(screen.queryByRole('button', { name: 'Copy as a message' })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Share favorites' })).not.toBeInTheDocument();
   });

@@ -95,6 +95,8 @@ Credits are deliberately complete and flat rather than searchable or collapsed. 
 
 ## Favorites and sharing
 
+Favorites guidance is device-neutral: the note says “Saved here, just for you” and the empty state says “Choose the heart,” not “this phone” or “Tap.” The populated note invites sharing whenever the user likes. “Here” refers to the current browser; this copy does not change persistence or add account sync.
+
 Favorites use the `dubai-activities.favs.v1` storage key. Both stored and shared IDs are validated against current activity IDs, deduplicated, and kept in insertion order. A present `#list=` hash takes precedence over local state and the validated result becomes the local list; malformed storage falls back to an empty list instead of breaking render. The retired personalized namespace is not migrated, so this cleanup intentionally starts a fresh browser-local list while shared URLs remain compatible.
 
 The favorites sheet turns the saved list into three mutually exclusive planning groups. Dated events come first and sort globally by their ISO date key, including a visible semantic date tile. Undated activities with `ahead` guidance follow in save order, then every remaining favorite in save order. A dated activity appears only in Dated events even when it also needs advance booking. Empty groups are omitted, and the remaining group's visible heading is also omitted when every favorite falls into that one category; its semantic region label remains available to assistive technology.

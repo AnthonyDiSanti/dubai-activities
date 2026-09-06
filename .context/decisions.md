@@ -4,6 +4,24 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-09-06 — Include first-load feedback in the iconography proposal
+- Decider: Anthony (loader requirement); Codex (recommended presentation, pending design approval)
+- Decision: Include a loader in the Core inventory because initial loading can feel slow. Recommend one restrained first-view loading motif, transitioning to local media feedback while text/navigation remain usable; do not wait for the whole photo library.
+- Rationale: The source has an empty initial React mount, a high-priority hero image and lazy card images, but no measured cold-load diagnosis. Feedback should reflect real readiness and failure without adding delay or pretending to improve transfer speed.
+- Consequences: `.context/scratch/iconography.md` records route/cached/error/reduced-motion acceptance cases. This is a planning decision, not implemented loading behavior or approval for a site-wide neon rollout.
+
+## 2026-09-06 — Keep favorites guidance device-neutral
+- Decider: Anthony
+- Decision: Use “Saved here, just for you — share them whenever you like” for populated favorites, its shorter first sentence for the empty note, and “Choose the heart” guidance ending “we’ll keep it here for you.”
+- Rationale: The same sheet serves laptops and phones; its copy should not assume a phone or touch input. “Here” preserves a light reference to browser-local saving without suggesting account sync.
+- Consequences: Copy and accessible-description coverage change; persistence, sharing payloads, and input behavior remain unchanged.
+
+## 2026-09-06 — Publish the useful favicon subset and retain its sources
+- Decider: Anthony and Codex (GPT-6)
+- Decision: Use the supplied SVG and multi-size ICO, Apple touch icon, and three manifest PNGs. Retain the standalone small PNG exports and original source artwork under documentation instead of publishing redundant files.
+- Rationale: The ICO already includes 16/32/48 px variants; relative document and manifest paths preserve prefix deployment. The existing site theme color matches the supplied artwork.
+- Consequences: Seven public assets cover browser and home-screen identity; no additional runtime or offline behavior. Preserve supplied image bytes and provenance when maintaining the set.
+
 ## 2026-09-06 — Center circular cross controls with geometry, not typography
 - Decider: Anthony and Codex (GPT-5)
 - Decision: Replace every literal multiplication-sign glyph used by a circular close or remove control with one shared, symmetric `CrossIcon` SVG. Center its fixed view box through the existing grid layout and vary only the icon size through `--cross-icon-size`.

@@ -1,5 +1,32 @@
 # Tasks
 
+- id: 01K4KA7D2V6N9T3M5R8QXZPFAB — title: Integrate updated favicon v3 — owner: Codex — status: done — last update: 2026-09-06
+  - Result: Replaced six runtime images and five retained artwork/source exports with exact supplied v3 bytes; preserved supplier notes and refreshed regeneration guidance. Kept existing relative manifest/HTML links; promoted the scratch package without adding redundant small PNGs to public output.
+  - Verification: 11 artwork hash matches, manifest PNG dimensions, 16/32/48 ICO frames, seven exact public-to-build asset matches and four document links. Full 232-test/lint/TypeScript/build/content/static gate passes. Visually inspected supplied 32 px and 512 px exports; no fresh browser check claimed.
+  - Release: Uploaded 511 objects with no deletions and completed invalidation `IF3VPNJFCKUXDSB7FEG8X557B7`. Reran the full 232-test release gate and all asset audits. Live HTML/CSS/JavaScript plus seven identity assets match the build with correct MIME/cache headers; browser checks confirmed the dark-rim SVG and activity-to-chapter dismissal.
+  - Follow-up: None for release; prepared the full dirty tree for commit. User staging now contains the iconography brief only; Codex did not stage, unstage or commit anything.
+  - Links: `public/favicon.svg`, `docs/branding/favicon-source/README.md`, `docs/branding/favicon-source/supplied-v3-notes.md`
+
+- id: 01K4K9D3V6N8T2M5R7QXZPFABC — title: Reconcile iconography proposal and assess visual density — owner: Codex — status: review-ready — last update: 2026-09-06
+  - Result: Expanded the scratch inventory against current components: Share, filter/menu clear states, archive chevrons, Fold all, retry/error and credits coverage; corrected duplicate and nonexistent targets; mapped all 12 chapter keys and suggested distinct visual concepts. Recommended quiet utility icons, navigation-first chapter placement, 22 Core IDs including reuse, and optional rather than universal ornamentation.
+  - User direction: Include a loader for slow first loads. Added a Core brand-related loader with pre-mount/first-visible-media, route-aware readiness, cached/error/reduced-motion cases and no all-images blocking gate. Loading bottleneck has not been measured.
+  - Verification: Source reconciliation, chapter mapping/count checks and diff hygiene only; no runtime files changed or app tests/deployment needed for the proposal review. No index management performed; subsequent staging belongs to the user.
+  - Brief consolidation: At Anthony's request, v3 incorporates all recommendations in one document, including creative direction, visual hierarchy, exact source palette, state styling, placement limits, loader behavior, SVG delivery, pilot sequence and acceptance checks.
+  - Follow-up: Review the self-contained pilot brief, then explicitly commission/design and implement; no icon assets generated yet.
+  - Links: `.context/scratch/iconography.md`
+
+- id: 01K4K8C2V5N7T9M3R6QXZPFABD — title: Make favorites guidance device-neutral — owner: Codex — status: done — last update: 2026-09-06
+  - Result: Applied the approved populated note, shortened empty note, and “Choose the heart” empty guidance without changing persistence or sharing behavior. Eight focused favorites tests and the full 232-test/build/content/static/photo/attribution gates pass. Local screenshots and live checks cover both favorites states; test favorites were removed afterward.
+  - Release: Uploaded 511 objects, removed only `assets/index-DNssmplY.js`, and completed invalidation `I8SG1PS3PTHOTIHAXFVF0W21VN`. Live HTML, bundles, and seven favicon assets match the build with correct MIME types; favorites/activity/chapter routes pass without console errors.
+  - Follow-up: None; deployed and prepared for commit together with the existing favicon changes. Git index untouched.
+  - Links: `src/components/FavoritesDialog.tsx`, `src/components/FavoritesDialog.test.tsx`, `docs/site-interactions.md`
+
+- id: 01K4K7H9V2N6T8M3R5QXZPFBAC — title: Incorporate supplied favicon set — owner: Codex (GPT-6) — status: done — last update: 2026-09-06
+  - Result: Added SVG/ICO favicons, Apple touch icon, and a relative-path manifest with standard and maskable Android icons. Preserved unused PNG exports and source artwork under `docs/branding/favicon-source/`, completing scratch promotion without discarding supplied files. Passed 232 tests, build/content/static audits, exact comparison of all seven deployed assets, and local browser metadata/SVG checks.
+  - Release: Uploaded 511 objects with no deletions after one transient connection-reset retry; completed invalidation `IEQ86COWDSR2HBAPSQ6CI1R5OM`. All release gates pass; live HTML, seven identity assets, CSS, and JavaScript match the tested build with correct MIME types. Production browser metadata, SVG rendering, Ras Al Khor sheet, and animals chapter checks pass with no console errors.
+  - Follow-up: None; deployed and prepared for commit with the Git index untouched. No service worker or offline behavior was added.
+  - Links: `index.html`, `public/site.webmanifest`, `docs/architecture.md`, `docs/branding/favicon-source/README.md`
+
 - id: 01K4JC8R6V2N9T5M3H7QXZPFAB — title: Center sheet close icons — owner: Codex (GPT-5) — status: done — last update: 2026-09-06
   - Goal: Correct the visibly off-center desktop sheet X and eliminate the same font-metric risk from every circular cross control.
   - Result: Replaced the literal `×` in activity, archive, credits, favorites, and favorite-row removal buttons with one symmetric 16×16 SVG component; centered that fixed geometry through the existing grid containers; retained per-context sizing through one CSS custom property; and added regression assertions that the controls use the shared icon rather than text. The 26 focused dialog tests and complete 232-test/build/content/static-output gate pass. Anthony approved the 1440 px activity rendering; a fresh browser pass then confirmed activity, archive, credits, favorites, and row-removal crosses visually centered with measured 0 px center offsets at 1440 px, preserved exact centering at the 1000 px boundary, and correctly switched to the text Close treatment at 999 px without browser errors.

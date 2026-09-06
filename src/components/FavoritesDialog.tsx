@@ -260,10 +260,11 @@ export function FavoritesDialog({
           <CrossIcon />
         </button>
         <h2 className="favorites-sheet__title" id={titleId}>The ones you want</h2>
+        {/* Keep the browser-local saving guidance independent of device and input method. */}
         <p className="favorites-sheet__note" id={noteId}>
           {favorites.length > 0
-            ? 'Saved on this phone only — nobody sees them until you send them.'
-            : 'Saved on this phone only.'}
+            ? 'Saved here, just for you — share them whenever you like.'
+            : 'Saved here, just for you.'}
         </p>
 
         {favorites.length > 0 && (
@@ -303,8 +304,8 @@ export function FavoritesDialog({
 
         {favorites.length === 0 && (
           <p className="favorites-sheet__empty">
-            Nothing saved yet. Tap the heart on anything you like the look of — it stays on this
-            phone until you send it.
+            Nothing saved yet. Choose the heart on anything you like the look of — we’ll keep it
+            here for you.
           </p>
         )}
 
