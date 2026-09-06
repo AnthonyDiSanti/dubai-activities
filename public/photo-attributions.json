@@ -8219,6 +8219,346 @@
       "creditText": "Sirali Dubai shared Turkish feast by Vlad Ivanov, via Sirali Dubai via What's On. Re-encoded for web display and shown with responsive cropping."
     },
     {
+      "filename": "kartdrome-01.jpg",
+      "activityId": "kartdrome",
+      "activityName": "Dubai Kartdrome Outdoor",
+      "chapterName": "Adrenaline",
+      "slot": 1,
+      "workTitle": "Dubai Kartdrome Outdoor start-finish straight",
+      "creator": null,
+      "source": {
+        "name": "Dubai Autodrome",
+        "url": "https://dubaiautodrome.ae/kartdrome-main/arrive-drive-2/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Dubai Kartdrome Outdoor start-finish straight, via Dubai Autodrome. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "kartdrome-02.jpg",
+      "activityId": "kartdrome",
+      "activityName": "Dubai Kartdrome Outdoor",
+      "chapterName": "Adrenaline",
+      "slot": 2,
+      "workTitle": "Dubai Kartdrome Outdoor bridge",
+      "creator": null,
+      "source": {
+        "name": "Project Expedition",
+        "url": "https://www.projectexpedition.com/tour-activity/dubai/go-kart-experience-outdoor-kartdrome-in-dubai/92544/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Dubai Kartdrome Outdoor bridge, via Project Expedition. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "kartdrome-03.jpg",
+      "activityId": "kartdrome",
+      "activityName": "Dubai Kartdrome Outdoor",
+      "chapterName": "Adrenaline",
+      "slot": 3,
+      "workTitle": "Dubai Kartdrome Outdoor night racing",
+      "creator": null,
+      "source": {
+        "name": "Dubai Autodrome",
+        "url": "https://dubaiautodrome.ae/kartdrome-main/racing/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Dubai Kartdrome Outdoor night racing, via Dubai Autodrome. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "kartdrome-04.jpg",
+      "activityId": "kartdrome",
+      "activityName": "Dubai Kartdrome Outdoor",
+      "chapterName": "Adrenaline",
+      "slot": 4,
+      "workTitle": "Dubai Kartdrome Outdoor floodlit circuit",
+      "creator": null,
+      "source": {
+        "name": "Citysearch",
+        "url": "https://www.citysearch.ae/kartdrome-dubai"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Dubai Kartdrome Outdoor floodlit circuit, via Citysearch. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "nogrip-01.jpg",
+      "activityId": "nogrip",
+      "activityName": "No Grip DXB",
+      "chapterName": "Adrenaline",
+      "slot": 1,
+      "workTitle": "No Grip DXB drift karts",
+      "creator": null,
+      "source": {
+        "name": "No Grip DXB via Fever",
+        "url": "https://feverup.com/m/598014"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "No Grip DXB drift karts, via No Grip DXB via Fever. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "nogrip-02.jpg",
+      "activityId": "nogrip",
+      "activityName": "No Grip DXB",
+      "chapterName": "Adrenaline",
+      "slot": 2,
+      "workTitle": "No Grip DXB two-level track",
+      "creator": null,
+      "source": {
+        "name": "No Grip DXB",
+        "url": "https://nogripdxb.ae/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG and shown with responsive cropping.",
+      "creditText": "No Grip DXB two-level track, via No Grip DXB. Converted from WebP to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "nogrip-03.jpg",
+      "activityId": "nogrip",
+      "activityName": "No Grip DXB",
+      "chapterName": "Adrenaline",
+      "slot": 3,
+      "workTitle": "No Grip DXB control briefing",
+      "creator": null,
+      "source": {
+        "name": "No Grip DXB",
+        "url": "https://nogripdxb.ae/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG and shown with responsive cropping.",
+      "creditText": "No Grip DXB control briefing, via No Grip DXB. Converted from WebP to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "nogrip-04.jpg",
+      "activityId": "nogrip",
+      "activityName": "No Grip DXB",
+      "chapterName": "Adrenaline",
+      "slot": 4,
+      "workTitle": "No Grip DXB simulator zone",
+      "creator": null,
+      "source": {
+        "name": "No Grip DXB",
+        "url": "https://nogripdxb.ae/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG and shown with responsive cropping.",
+      "creditText": "No Grip DXB simulator zone, via No Grip DXB. Converted from WebP to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "jokehub-01.jpg",
+      "activityId": "jokehub",
+      "activityName": "Joke Hub by Mad Cat Comedy",
+      "chapterName": "Genuinely strange",
+      "slot": 1,
+      "workTitle": "Joke Hub room in performance",
+      "creator": null,
+      "source": {
+        "name": "Mad Cat Comedy",
+        "url": "https://www.madcatcomedy.com/events/september-19th-saturday-joke-hub-canopy-by-hilton-al-seef"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Joke Hub room in performance, via Mad Cat Comedy. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "jokehub-02.jpg",
+      "activityId": "jokehub",
+      "activityName": "Joke Hub by Mad Cat Comedy",
+      "chapterName": "Genuinely strange",
+      "slot": 2,
+      "workTitle": "Joke Hub rotating line-up",
+      "creator": null,
+      "source": {
+        "name": "Mad Cat Comedy",
+        "url": "https://www.madcatcomedy.com/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Joke Hub rotating line-up, via Mad Cat Comedy. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "speakeasy-01.jpg",
+      "activityId": "speakeasy",
+      "activityName": "Comedy at the Speakeasy",
+      "chapterName": "Genuinely strange",
+      "slot": 1,
+      "workTitle": "Moon Bar by SANA interior",
+      "creator": null,
+      "source": {
+        "name": "SANA",
+        "url": "https://sanarestaurants.com/sana-moon-bar"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Moon Bar by SANA interior, via SANA. Resized and re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "speakeasy-02.jpg",
+      "activityId": "speakeasy",
+      "activityName": "Comedy at the Speakeasy",
+      "chapterName": "Genuinely strange",
+      "slot": 2,
+      "workTitle": "Comedy at the Speakeasy artwork",
+      "creator": null,
+      "source": {
+        "name": "Mad Cat Comedy",
+        "url": "https://www.madcatcomedy.com/events/september-20th-sunday-comedy-at-the-speakeasy-moon-bar-by-sana"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Comedy at the Speakeasy artwork, via Mad Cat Comedy. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "laughterfactory-01.jpg",
+      "activityId": "laughterfactory",
+      "activityName": "The Laughter Factory",
+      "chapterName": "Genuinely strange",
+      "slot": 1,
+      "workTitle": "The Laughter Factory September 2026 bill",
+      "creator": null,
+      "source": {
+        "name": "The Laughter Factory",
+        "url": "https://thelaughterfactory.com/the-laughter-factory-30-years-of-bringing-people-together-through-laughter/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "The Laughter Factory September 2026 bill, via The Laughter Factory. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "laughterfactory-02.jpg",
+      "activityId": "laughterfactory",
+      "activityName": "The Laughter Factory",
+      "chapterName": "Genuinely strange",
+      "slot": 2,
+      "workTitle": "The Laughter Factory September 2026 schedule",
+      "creator": null,
+      "source": {
+        "name": "The Laughter Factory",
+        "url": "https://thelaughterfactory.com/the-laughter-factory-30-years-of-bringing-people-together-through-laughter/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Enlarged to a 900 px long edge and re-encoded for web display with responsive cropping.",
+      "creditText": "The Laughter Factory September 2026 schedule, via The Laughter Factory. Enlarged to a 900 px long edge and re-encoded for web display with responsive cropping."
+    },
+    {
+      "filename": "karakafterdark-01.jpg",
+      "activityId": "karakafterdark",
+      "activityName": "Karak After Dark Vol. 3",
+      "chapterName": "Genuinely strange",
+      "slot": 1,
+      "workTitle": "Karak After Dark Vol. 3 event artwork",
+      "creator": null,
+      "source": {
+        "name": "District UAE",
+        "url": "https://www.district.ae/events/karak-after-dark-vol-3-back-to-school-edition-buy-tickets"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from PNG to JPEG and shown with responsive cropping.",
+      "creditText": "Karak After Dark Vol. 3 event artwork, via District UAE. Converted from PNG to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "karakafterdark-02.jpg",
+      "activityId": "karakafterdark",
+      "activityName": "Karak After Dark Vol. 3",
+      "chapterName": "Genuinely strange",
+      "slot": 2,
+      "workTitle": "The Junction audience",
+      "creator": null,
+      "source": {
+        "name": "Alserkal Avenue",
+        "url": "https://alserkal.online/community/the-junction/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "The Junction audience, via Alserkal Avenue. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "lockstockbarrel-01.jpg",
+      "activityId": "lockstockbarrel",
+      "activityName": "Lock, Stock & Barrel · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "Lock, Stock & Barrel Business Bay stage and seating",
+      "creator": null,
+      "source": {
+        "name": "Renaissance Business Bay Hotel",
+        "url": "https://www.marriott.com/en-us/dining/restaurant-bar/dxbrb-renaissance-business-bay-hotel-dubai/7172498-lock-stock-barrel.mi"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Lock, Stock & Barrel Business Bay stage and seating, via Renaissance Business Bay Hotel. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "lockstockbarrel-02.jpg",
+      "activityId": "lockstockbarrel",
+      "activityName": "Lock, Stock & Barrel · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "Lock, Stock & Barrel Business Bay lounge",
+      "creator": null,
+      "source": {
+        "name": "Lock, Stock & Barrel",
+        "url": "https://lockstockandbarrelglobal.com/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from WebP to JPEG; resized and shown with responsive cropping.",
+      "creditText": "Lock, Stock & Barrel Business Bay lounge, via Lock, Stock & Barrel. Converted from WebP to JPEG; resized and shown with responsive cropping."
+    },
+    {
+      "filename": "lockstockbarrel-03.jpg",
+      "activityId": "lockstockbarrel",
+      "activityName": "Lock, Stock & Barrel · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 3,
+      "workTitle": "Lock, Stock & Barrel Business Bay bar",
+      "creator": null,
+      "source": {
+        "name": "Retail & Leisure International",
+        "url": "https://www.rli.uk.com/lock-stock-barrel-business-bay-opens-today/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Lock, Stock & Barrel Business Bay bar, via Retail & Leisure International. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "lockstockbarrel-04.jpg",
+      "activityId": "lockstockbarrel",
+      "activityName": "Lock, Stock & Barrel · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 4,
+      "workTitle": "Lock, Stock & Barrel Business Bay room in service",
+      "creator": null,
+      "source": {
+        "name": "Tripadvisor",
+        "url": "https://www.tripadvisor.com/Restaurant_Review-g295424-d23528319-Reviews-Lock_Stock_Barrel_Business_Bay-Dubai_Emirate_of_Dubai.html"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Lock, Stock & Barrel Business Bay room in service, via Tripadvisor. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
       "filename": "icon-google-maps.svg",
       "activityId": null,
       "activityName": "Interface marks",

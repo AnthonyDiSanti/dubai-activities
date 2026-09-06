@@ -4943,6 +4943,206 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/kartdrome-01.jpg",
+      "contentUrl": "./photos/kartdrome-01.jpg",
+      "name": "Dubai Kartdrome Outdoor start-finish straight",
+      "creditText": "Dubai Kartdrome Outdoor start-finish straight, via Dubai Autodrome. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://dubaiautodrome.ae/kartdrome-main/arrive-drive-2/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/kartdrome-02.jpg",
+      "contentUrl": "./photos/kartdrome-02.jpg",
+      "name": "Dubai Kartdrome Outdoor bridge",
+      "creditText": "Dubai Kartdrome Outdoor bridge, via Project Expedition. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.projectexpedition.com/tour-activity/dubai/go-kart-experience-outdoor-kartdrome-in-dubai/92544/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/kartdrome-03.jpg",
+      "contentUrl": "./photos/kartdrome-03.jpg",
+      "name": "Dubai Kartdrome Outdoor night racing",
+      "creditText": "Dubai Kartdrome Outdoor night racing, via Dubai Autodrome. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://dubaiautodrome.ae/kartdrome-main/racing/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/kartdrome-04.jpg",
+      "contentUrl": "./photos/kartdrome-04.jpg",
+      "name": "Dubai Kartdrome Outdoor floodlit circuit",
+      "creditText": "Dubai Kartdrome Outdoor floodlit circuit, via Citysearch. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.citysearch.ae/kartdrome-dubai",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nogrip-01.jpg",
+      "contentUrl": "./photos/nogrip-01.jpg",
+      "name": "No Grip DXB drift karts",
+      "creditText": "No Grip DXB drift karts, via No Grip DXB via Fever. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://feverup.com/m/598014",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nogrip-02.jpg",
+      "contentUrl": "./photos/nogrip-02.jpg",
+      "name": "No Grip DXB two-level track",
+      "creditText": "No Grip DXB two-level track, via No Grip DXB. Converted from WebP to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://nogripdxb.ae/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nogrip-03.jpg",
+      "contentUrl": "./photos/nogrip-03.jpg",
+      "name": "No Grip DXB control briefing",
+      "creditText": "No Grip DXB control briefing, via No Grip DXB. Converted from WebP to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://nogripdxb.ae/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nogrip-04.jpg",
+      "contentUrl": "./photos/nogrip-04.jpg",
+      "name": "No Grip DXB simulator zone",
+      "creditText": "No Grip DXB simulator zone, via No Grip DXB. Converted from WebP to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://nogripdxb.ae/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/jokehub-01.jpg",
+      "contentUrl": "./photos/jokehub-01.jpg",
+      "name": "Joke Hub room in performance",
+      "creditText": "Joke Hub room in performance, via Mad Cat Comedy. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.madcatcomedy.com/events/september-19th-saturday-joke-hub-canopy-by-hilton-al-seef",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/jokehub-02.jpg",
+      "contentUrl": "./photos/jokehub-02.jpg",
+      "name": "Joke Hub rotating line-up",
+      "creditText": "Joke Hub rotating line-up, via Mad Cat Comedy. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.madcatcomedy.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/speakeasy-01.jpg",
+      "contentUrl": "./photos/speakeasy-01.jpg",
+      "name": "Moon Bar by SANA interior",
+      "creditText": "Moon Bar by SANA interior, via SANA. Resized and re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://sanarestaurants.com/sana-moon-bar",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/speakeasy-02.jpg",
+      "contentUrl": "./photos/speakeasy-02.jpg",
+      "name": "Comedy at the Speakeasy artwork",
+      "creditText": "Comedy at the Speakeasy artwork, via Mad Cat Comedy. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.madcatcomedy.com/events/september-20th-sunday-comedy-at-the-speakeasy-moon-bar-by-sana",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/laughterfactory-01.jpg",
+      "contentUrl": "./photos/laughterfactory-01.jpg",
+      "name": "The Laughter Factory September 2026 bill",
+      "creditText": "The Laughter Factory September 2026 bill, via The Laughter Factory. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://thelaughterfactory.com/the-laughter-factory-30-years-of-bringing-people-together-through-laughter/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/laughterfactory-02.jpg",
+      "contentUrl": "./photos/laughterfactory-02.jpg",
+      "name": "The Laughter Factory September 2026 schedule",
+      "creditText": "The Laughter Factory September 2026 schedule, via The Laughter Factory. Enlarged to a 900 px long edge and re-encoded for web display with responsive cropping.",
+      "isBasedOn": "https://thelaughterfactory.com/the-laughter-factory-30-years-of-bringing-people-together-through-laughter/",
+      "encodingFormat": "image/jpeg",
+      "description": "Enlarged to a 900 px long edge and re-encoded for web display with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/karakafterdark-01.jpg",
+      "contentUrl": "./photos/karakafterdark-01.jpg",
+      "name": "Karak After Dark Vol. 3 event artwork",
+      "creditText": "Karak After Dark Vol. 3 event artwork, via District UAE. Converted from PNG to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://www.district.ae/events/karak-after-dark-vol-3-back-to-school-edition-buy-tickets",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from PNG to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/karakafterdark-02.jpg",
+      "contentUrl": "./photos/karakafterdark-02.jpg",
+      "name": "The Junction audience",
+      "creditText": "The Junction audience, via Alserkal Avenue. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://alserkal.online/community/the-junction/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/lockstockbarrel-01.jpg",
+      "contentUrl": "./photos/lockstockbarrel-01.jpg",
+      "name": "Lock, Stock & Barrel Business Bay stage and seating",
+      "creditText": "Lock, Stock & Barrel Business Bay stage and seating, via Renaissance Business Bay Hotel. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.marriott.com/en-us/dining/restaurant-bar/dxbrb-renaissance-business-bay-hotel-dubai/7172498-lock-stock-barrel.mi",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/lockstockbarrel-02.jpg",
+      "contentUrl": "./photos/lockstockbarrel-02.jpg",
+      "name": "Lock, Stock & Barrel Business Bay lounge",
+      "creditText": "Lock, Stock & Barrel Business Bay lounge, via Lock, Stock & Barrel. Converted from WebP to JPEG; resized and shown with responsive cropping.",
+      "isBasedOn": "https://lockstockandbarrelglobal.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from WebP to JPEG; resized and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/lockstockbarrel-03.jpg",
+      "contentUrl": "./photos/lockstockbarrel-03.jpg",
+      "name": "Lock, Stock & Barrel Business Bay bar",
+      "creditText": "Lock, Stock & Barrel Business Bay bar, via Retail & Leisure International. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.rli.uk.com/lock-stock-barrel-business-bay-opens-today/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/lockstockbarrel-04.jpg",
+      "contentUrl": "./photos/lockstockbarrel-04.jpg",
+      "name": "Lock, Stock & Barrel Business Bay room in service",
+      "creditText": "Lock, Stock & Barrel Business Bay room in service, via Tripadvisor. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.tripadvisor.com/Restaurant_Review-g295424-d23528319-Reviews-Lock_Stock_Barrel_Business_Bay-Dubai_Emirate_of_Dubai.html",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",

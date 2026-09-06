@@ -4,6 +4,34 @@ Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.
 
+## 2026-09-06 — Keep the Lock, Stock & Barrel outcome specific to Business Bay
+- Decider: Anthony and Codex (GPT-5)
+- Decision: Record the Business Bay Lock, Stock & Barrel under Tried, not Tried & liked or the active guide. Preserve the fun atmosphere, very small dance floor, and only moderately mingle-friendly crowd as the outcome of that branch visit, and do not extend the verdict to Barsha Heights or JBR.
+- Rationale: Anthony identified the visited branch after the initial archive entry. The night was fun but not great enough to recommend, and branch-specific room and crowd observations should remain attached to the room that produced them.
+- Alternatives considered: Keep the record brand-wide; generalize the Business Bay verdict across the chain; mark the venue Tried & liked; return it to active nightlife recommendations.
+- Consequences / follow-ups: Tried contains four entries and the complete archive contains 15 cards. The sheet now uses the current Renaissance Business Bay Hotel address and hours plus four Business Bay-only photographs. The 504-object production release completed invalidation `I7SXN3OG8S2TKHNHIOG8NCPLSD`; Barsha Heights and JBR remain unevaluated.
+
+## 2026-09-06 — Separate recurring and one-off improv
+- Decider: Anthony and Codex (GPT-5)
+- Decision: Enrich the existing Courtyard Playhouse recommendation as Dubai's dependable recurring improv room, and add Karak After Dark Vol. 3 as a separate dated mixed bill at The Junction. Make Courtyard's free guest-list uncertainty and Monday/Wednesday arrival rules explicit; keep Karak's paid 10 September slot, audience-suggestion format, and event-specific restrictions bounded to the current edition.
+- Rationale: Courtyard provides the closest repeatable small-room improv rhythm, while Karak supplies a scarce one-off with a different venue and a looser blend of improv, comedy, and music. Treating both as independent cards adds genuine choice without duplicating the same experience.
+- Alternatives considered: Add a second Courtyard card for Maestro; replace the existing Courtyard entry with one current date; treat Karak as evergreen; omit Karak because Courtyard already covers improv; add Dubomedy without a current public improv date.
+- Consequences / follow-ups: The active guide now contains 134 activities, 469 JPEGs, and 42 Plan ahead results. The complete karting, stand-up, and improv release was deployed on 6 September through invalidation `IEMMFCM54CUHQR2SUZZEJ02FN6`. Refresh Courtyard's current guest-list dates and advance or retire Karak after 10 September; preserve the two-image event/venue gallery and complete credits while the dated card remains active.
+
+## 2026-09-06 — Keep three scarce stand-up formats
+- Decider: Anthony and Codex (GPT-5)
+- Decision: Add Joke Hub by Mad Cat Comedy, Comedy at the Speakeasy, and The Laughter Factory to `Genuinely strange` as separate recommendations. Position Joke Hub as the recurring purpose-built room, the Speakeasy as the smallest atmospheric show, and The Laughter Factory as a short touring bill of established international comics.
+- Rationale: Dubai's public stand-up calendar is sparse enough that limited showings make choice valuable, while the three additions still serve meaningfully different nights rather than padding the catalog with interchangeable listings.
+- Alternatives considered: Add only Joke Hub; merge Mad Cat's rooms into one generic card; omit the touring bill; treat every comedy event as a single evergreen recommendation.
+- Consequences / follow-ups: The active guide contained 133 activities and 467 JPEGs at this decision point, and Plan ahead contained 40 activities. Keep the dated Speakeasy and Laughter Factory cards current, refresh Joke Hub's recurring Saturday calendar, and preserve the six-image exact-room or exact-event gallery and credits. The later same-day improv decision added Karak After Dark and enriched Courtyard Playhouse separately.
+
+## 2026-09-06 — Keep three karting formats distinct
+- Decider: Anthony and Codex (GPT-5)
+- Decision: Add Dubai Kartdrome Outdoor and No Grip DXB to `Adrenaline` while retaining Chaos Karts in `Genuinely strange`. Position Kartdrome as the proper lap-racing choice, No Grip as the drift-control choice, and Chaos Karts as the projected-game choice.
+- Rationale: Each venue rewards a different thing—clean racing lines, controlled slides, or interaction with a projected game world—so all three clear the guide's differentiation bar without becoming a list of interchangeable kart tracks.
+- Alternatives considered: Add only one conventional kart venue; replace Chaos Karts; group every kart experience in one chapter; add more family or seasonal tracks without a distinct format.
+- Consequences / follow-ups: The active guide now contains 130 activities and 461 JPEGs. Keep Kartdrome's live-calendar caveat and No Grip's walk-in scarcity treatment current, preserve both four-image exact-venue galleries and credits, and require any future kart venue to add a new format or clearly displace an existing pick.
+
 ## 2026-09-02 — Prefer Sirali for the Turkish dinner slot
 - Decider: Anthony and Codex (GPT-5)
 - Decision: Add Sirali Dubai to `Long dinners` as the guide's food-first Turkish restaurant instead of CZN Burak. Lead with shared mezze, stone-oven breads, charcoal grilling, and the rolled Adana; keep Friday live entertainment as a reconfirm-before-booking detail rather than a permanent promise.

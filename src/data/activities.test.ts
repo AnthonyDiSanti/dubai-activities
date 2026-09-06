@@ -19,6 +19,10 @@ const FACT_ENRICHED_IDS = [
   'teamlab',
   'laperle',
   'krasota',
+  'jokehub',
+  'laughterfactory',
+  'karakafterdark',
+  'speakeasy',
   'chaoskarts',
   'motf',
   'moonrise',
@@ -42,7 +46,9 @@ const FACT_ENRICHED_IDS = [
   'goclimb',
   'skydive',
   'xline',
+  'kartdrome',
   'jaisflight',
+  'nogrip',
   'viaferrata',
   'aquaventure',
   'skidubai',
@@ -51,6 +57,7 @@ const FACT_ENRICHED_IDS = [
   'olddubai',
   'artemarket',
   'globalvillage',
+  'playhouse',
   'nest',
   'balloon',
   'musandam',
@@ -133,6 +140,75 @@ describe('activity planning content', () => {
     expect(triple777).toMatchObject({ ch: 'loud', when: 'Daily · 18:00–03:00 · 21+', photos: 4 });
     expect(triple777?.facts?.find(({ label }) => label === 'Fun Pass')?.value).toMatch(/unlimited drinks/i);
     expect(triple777?.advisory).toMatch(/does not publish the arcade machine count/i);
+  });
+
+  it('keeps the three karting picks differentiated by projected play, lap time, and drift control', () => {
+    const chaosKarts = activitiesById.get('chaoskarts');
+    const kartdrome = activitiesById.get('kartdrome');
+    const noGrip = activitiesById.get('nogrip');
+    const adrenalineIds = activities
+      .filter(({ ch }) => ch === 'adrenaline')
+      .map(({ id }) => id);
+
+    // Each venue owns a distinct reason to exist, while Kartdrome keeps the stronger racing rank.
+    expect(chaosKarts).toMatchObject({ ch: 'strange', photos: 4 });
+    expect(chaosKarts?.blurb).toMatch(/projected/i);
+    expect(kartdrome).toMatchObject({ ch: 'adrenaline', photos: 4 });
+    expect(kartdrome?.blurb).toMatch(/lap time/i);
+    expect(kartdrome?.book).toMatch(/bookings\.dubaiautodrome\.com/i);
+    expect(noGrip).toMatchObject({ ch: 'adrenaline', photos: 4 });
+    expect(noGrip?.blurb).toMatch(/car control/i);
+    expect(noGrip && isPlanAheadActivity(noGrip)).toBe(true);
+    expect(adrenalineIds.indexOf('kartdrome')).toBeLessThan(adrenalineIds.indexOf('nogrip'));
+  });
+
+  it('keeps three scarce stand-up formats distinct and actionable', () => {
+    const jokeHub = activitiesById.get('jokehub');
+    const laughterFactory = activitiesById.get('laughterfactory');
+    const speakeasy = activitiesById.get('speakeasy');
+
+    // A weekly club room, a touring bill, and a selected-Sunday bar each solve a different night.
+    expect(jokeHub).toMatchObject({ ch: 'strange', when: 'Saturdays · confirm ticket time', photos: 2 });
+    expect(jokeHub?.blurb).toMatch(/Greenwich Village club rhythm/i);
+    expect(jokeHub?.facts?.find(({ label }) => label === 'Line-up')?.value).toMatch(/local comedians/i);
+    expect(jokeHub && isPlanAheadActivity(jokeHub)).toBe(true);
+    expect(laughterFactory).toMatchObject({
+      ch: 'strange',
+      dated: { on: '2026-09-10' },
+      photos: 2,
+    });
+    expect(laughterFactory?.facts?.find(({ label }) => label === 'Bill')?.value).toMatch(/Aideen McQueen/i);
+    expect(speakeasy).toMatchObject({
+      ch: 'strange',
+      dated: { on: '2026-09-20' },
+      where: 'Moon Bar by SANA, Mina Al Salam',
+      photos: 2,
+    });
+    expect(speakeasy?.advisory).toMatch(/Seating is first come/i);
+  });
+
+  it('separates recurring Courtyard improv from the dated Karak mixed bill', () => {
+    const playhouse = activitiesById.get('playhouse');
+    const karakAfterDark = activitiesById.get('karakafterdark');
+
+    // The weekly room and one-off mixed bill remain separately useful and honestly time-bound.
+    expect(playhouse).toMatchObject({
+      ch: 'strange',
+      when: 'Mon & Wed · 20:00–22:00',
+      photos: 2,
+    });
+    expect(playhouse?.facts?.find(({ label }) => label === 'Wednesday')?.value)
+      .toMatch(/audience-scored elimination/i);
+    expect(playhouse?.advisory).toMatch(/does not guarantee a seat/i);
+    expect(playhouse && isPlanAheadActivity(playhouse)).toBe(true);
+    expect(karakAfterDark).toMatchObject({
+      ch: 'strange',
+      when: 'Thu 10 Sep · 20:00–21:30',
+      dated: { on: '2026-09-10' },
+      photos: 2,
+    });
+    expect(karakAfterDark?.facts?.find(({ label }) => label === 'Entry')?.value).toMatch(/AED 89/i);
+    expect(karakAfterDark?.book).toMatch(/district\.ae\/events\/karak-after-dark/i);
   });
 
   it('keeps BLU practical about its Thursday crowd and compact dance area', () => {

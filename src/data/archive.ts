@@ -85,6 +85,15 @@ export const ARCHIVE_ENTRIES = [
     status: 'tried',
   },
   {
+    id: 'lockstockbarrel',
+    name: 'Lock, Stock & Barrel · Business Bay',
+    note: 'Tried in person at the Business Bay location. It had a fun atmosphere, but the dance floor was very small and the crowd was only moderately open to mingling. Fun, but not great enough to recommend.',
+    originalChapterKey: 'loud',
+    originalChapterName: 'Nights that go loud',
+    recordedOn: '2026-09-06',
+    status: 'tried',
+  },
+  {
     id: 'thewall',
     name: 'The Wall',
     note: 'Checked in person. The experience did not clear the bar, so it is out of the live guide.',
@@ -153,6 +162,14 @@ export const ARCHIVE_ACTIVITY_DETAILS = [
     eyebrow: 'Three theatrical rooms', when: 'Daily · 12:30–02:00', where: 'The Opus, Business Bay',
     facts: [{ label: 'Format', value: 'Cocktails and international small plates' }, { label: 'Setting', value: 'Tropical · night market · comic-book rooms' }],
     cta: 'See Salmon Guru', site: 'https://salmon-guru.ae/', ig: 'https://www.instagram.com/salmongurudubai/', photos: 4,
+  },
+  {
+    id: 'lockstockbarrel', ch: 'loud', name: 'Lock, Stock & Barrel · Business Bay',
+    blurb: 'The Business Bay room wraps communal tables, tiered booths, a full-size stage, and walls of speakers into one industrial party bar. Live bands, DJs, and big sports screens give it a casual alternative to Dubai’s velvet-rope clubs.',
+    eyebrow: 'The Business Bay LSB stage', when: 'Daily · closes 03:00', where: 'Renaissance Business Bay Hotel · Al Abraj Street',
+    facts: [{ label: 'Opening', value: 'Mon–Fri 16:00 · Sat 15:00 · Sun 14:00' }, { label: 'Format', value: 'Party bar · live music · DJs · sport' }, { label: 'Dress', value: 'Smart casual' }],
+    advisory: 'This sheet covers the Business Bay room only; the firsthand verdict does not apply to the separate Barsha Heights or JBR locations.',
+    cta: 'See the Business Bay location', site: 'https://www.marriott.com/en-us/dining/restaurant-bar/dxbrb-renaissance-business-bay-hotel-dubai/7172498-lock-stock-barrel.mi', photos: 4,
   },
   {
     id: 'thewall', ch: 'getgood', name: 'The Wall',

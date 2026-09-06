@@ -268,7 +268,7 @@ describe('App', () => {
     const archive = screen.getByRole('dialog', { name: 'Tried & decided' });
 
     fireEvent.click(within(archive).getByRole('link', {
-      name: 'Show 3 Tried archive entries',
+      name: 'Show 4 Tried archive entries',
     }));
 
     expect(window.location.hash).toBe('#archive-tried');
@@ -285,6 +285,8 @@ describe('App', () => {
     expect(within(selectedArchive).getByRole('button', { name: /Rejected/ }))
       .toHaveAttribute('aria-expanded', 'false');
     expect(within(selectedArchive).getByRole('heading', { name: "Roberto's" }))
+      .toBeInTheDocument();
+    expect(within(selectedArchive).getByRole('heading', { name: 'Lock, Stock & Barrel · Business Bay' }))
       .toBeInTheDocument();
     expect(within(selectedArchive).queryByRole('heading', { name: 'Boulder Zone' }))
       .not.toBeInTheDocument();

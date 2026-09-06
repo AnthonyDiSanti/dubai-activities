@@ -29,6 +29,8 @@ The Pods is the canonical pre-visit example: it stays sheet-ready under Rejected
 
 A preference established at another branch or in another city may justify adding a local candidate, but it does not verify that local kitchen. Name the cross-market reason in the active card, keep the exact local branch out of `ARCHIVE_ENTRIES`, and state clearly that it still needs a visit. Amritsr Al Karama follows this rule: the Bangkok restaurants supply the benchmark, while the Dubai branch remains untested.
 
+Lock, Stock & Barrel is the canonical branch-scoped nightlife outcome. Keep the record tied to Business Bay and preserve the sheet advisory that its dance-floor and crowd observations do not apply to the separate Barsha Heights or JBR locations. Its gallery must depict Business Bay only; never let chain-wide operator copy turn one branch visit into a verdict on every room.
+
 ## Chapter ordering and treatments
 
 Array position is the recommendation rank for undated activities within a chapter. `orderChapterItems` applies the shared dated-event rule:
@@ -51,9 +53,25 @@ Keep both selected adult game bars in `Nights that go loud`. A firsthand visit e
 
 Wavehouse is intentionally excluded because its Atlantis setting and programming skew too family-focused, while BOOM Battle Bar is an activity bar rather than a meaningful arcade. HUSHH at Social Distrikt remains a screened but unpublished option: consider it only if a future refresh needs a polished Downtown barcade with fewer cabinets than Brass Monkey.
 
+## Karting formats
+
+Keep the three published karting experiences distinct instead of treating them as interchangeable track options. Chaos Karts stays in `Genuinely strange` because the projected hazards and game world are the point. Dubai Kartdrome Outdoor ranks high in `Adrenaline` as the conventional racing choice, where a 1.2-kilometre floodlit circuit and lap time reward cleaner lines. No Grip DXB follows in `Adrenaline` as a control exercise built around holding a slide on a two-level indoor track rather than racing laps.
+
+Do not add another Dubai karting venue unless it contributes a materially different format or clearly beats one of these three at its existing job. Recheck Kartdrome's live track calendar before leaving and preserve No Grip's `ahead` treatment while its operator continues to warn that walk-in sessions can sell out.
+
+## Small-room comedy
+
+Keep the three stand-up entries in `Genuinely strange` because their sparse calendars make choice more useful than a single winner. Joke Hub ranks as the closest match for a permanent Greenwich Village-style room: a purpose-built, close-audience space with a rotating local bill every Saturday. Comedy at the Speakeasy is the selected-Sunday bar-room alternative, while The Laughter Factory is the short monthly tour for a more polished international bill.
+
+Do not flatten those formats into generic “stand-up in Dubai” cards. Preserve current dates in each sheet, use `dated` for the bounded Speakeasy and Laughter Factory runs, and advance or retire those dates once they pass. Keep Joke Hub evergreen but refresh its current-date fact and retain the start-time discrepancy until Mad Cat and Platinumlist agree.
+
+Keep Courtyard Playhouse and Karak After Dark separate for the same reason. Courtyard is the dependable recurring improv room: Monday `This Is Impro & Sing It` and Wednesday audience-scored `Maestro`, both free but guest-list-first with no guaranteed seat. Karak After Dark is a dated, paid mixed bill at The Junction that combines improv, comedy, and music around audience suggestions. Refresh Courtyard's current dates as a living schedule; retire or advance Karak after its bounded 10 September event rather than turning it into an unsupported evergreen card.
+
 ## Firsthand club nights
 
 Keep BLU Dubai high among the evergreen options in `Nights that go loud`. The 27 August 2026 Shutdown visit proved the Thursday crowd, hip-hop programming, and table-led energy strong enough for a major celebration. Stay candid that dancing happens mainly in the open space around the central bar rather than on a large dedicated floor. Complimentary tables and bottles for women materially shaped the successful crowd balance, but they are not part of the planning burden for a mixed group: a normal walk-in worked and BLU must not carry `ahead` guidance or a reservation CTA.
+
+Keep Lock, Stock & Barrel Business Bay in Tried rather than the active guide or Tried & liked. The visit found a fun atmosphere, but its very small dance floor and only moderately mingle-friendly crowd made the overall night fun rather than great. Treat Barsha Heights and JBR as unevaluated rather than inheriting the Business Bay outcome.
 
 Amazónico requires a dinner reservation, but the firsthand visit secured one on the same day. Keep the direct booking route and state that same-day evidence in the advisory, but do not use `ahead`: reservation availability alone is not enough to classify an activity as Plan ahead.
 

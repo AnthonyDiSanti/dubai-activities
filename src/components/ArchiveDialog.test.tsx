@@ -52,6 +52,7 @@ describe('ArchiveDialog', () => {
     expect(tried).toHaveTextContent('Meowtropolis Cat Café');
     expect(tried).toHaveTextContent("Roberto's");
     expect(tried).toHaveTextContent('Salmon Guru');
+    expect(tried).toHaveTextContent('Lock, Stock & Barrel · Business Bay');
     expect(tried).not.toHaveTextContent('Boulder Zone');
     expect(rejected).toHaveTextContent('The Wall');
     expect(rejected).toHaveTextContent('Brunch & Cake');
@@ -59,7 +60,7 @@ describe('ArchiveDialog', () => {
     expect(rejected).toHaveTextContent('Fashion Avenue at Dubai Mall');
     expect(rejected).toHaveTextContent('The Pods');
     expect(rejected).not.toHaveTextContent('Boulder Zone');
-    expect(within(dialog).getAllByRole('article')).toHaveLength(14);
+    expect(within(dialog).getAllByRole('article')).toHaveLength(15);
     expect(within(verified).getAllByRole('img', { name: 'Tried and liked' }))
       .toHaveLength(6);
     expect(within(dialog).getByText('6', { selector: '.archive-sheet__summary-count' }))
@@ -103,7 +104,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    const triedSummary = screen.getByRole('link', { name: 'Show 3 Tried archive entries' });
+    const triedSummary = screen.getByRole('link', { name: 'Show 4 Tried archive entries' });
     expect(triedSummary).toHaveAttribute('href', '#archive-tried');
     fireEvent.click(triedSummary);
 
@@ -172,7 +173,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    expect(document.querySelectorAll('.activity-card')).toHaveLength(14);
+    expect(document.querySelectorAll('.activity-card')).toHaveLength(15);
     expect(document.querySelector('#archive-activity-robertos .media-fill')).toHaveAttribute(
       'src',
       'photos/robertos-01.jpg',

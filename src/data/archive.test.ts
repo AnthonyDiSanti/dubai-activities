@@ -23,7 +23,7 @@ describe('firsthand activity outcomes', () => {
       'fashionavenue',
       'thepods',
     ]);
-    expect(triedIds).toEqual(['meowtropolis', 'robertos', 'salmonguru']);
+    expect(triedIds).toEqual(['meowtropolis', 'robertos', 'salmonguru', 'lockstockbarrel']);
     expect(verifiedIds).toEqual([
       'boulderzone',
       'sohogarden',
@@ -40,6 +40,7 @@ describe('firsthand activity outcomes', () => {
     expect(activeIds.has('meowtropolis')).toBe(false);
     expect(activeIds.has('robertos')).toBe(false);
     expect(activeIds.has('salmonguru')).toBe(false);
+    expect(activeIds.has('lockstockbarrel')).toBe(false);
     expect(activeIds.has('boulderzone')).toBe(true);
     expect(activeIds.has('sohogarden')).toBe(true);
     expect(activeIds.has('bludubai')).toBe(true);
@@ -53,6 +54,7 @@ describe('firsthand activity outcomes', () => {
     const brassMonkey = ARCHIVE_ENTRIES.find(({ id }) => id === 'brassmonkey');
     const amazonico = ARCHIVE_ENTRIES.find(({ id }) => id === 'amazonico');
     const tingIrie = ARCHIVE_ENTRIES.find(({ id }) => id === 'tingirie');
+    const lockStockBarrel = ARCHIVE_ENTRIES.find(({ id }) => id === 'lockstockbarrel');
     const fashionAvenue = ARCHIVE_ENTRIES.find(({ id }) => id === 'fashionavenue');
     const thePods = ARCHIVE_ENTRIES.find(({ id }) => id === 'thepods');
 
@@ -64,6 +66,11 @@ describe('firsthand activity outcomes', () => {
     expect(brassMonkey?.note).toMatch(/fun date/i);
     expect(amazonico?.note).toMatch(/best food of the Dubai trip so far/i);
     expect(tingIrie?.note).toMatch(/best Jamaican food ever tried/i);
+    // Preserve the user's mixed nightlife verdict without promoting it to Tried & liked.
+    expect(lockStockBarrel).toMatchObject({ status: 'tried', originalChapterKey: 'loud' });
+    expect(lockStockBarrel?.note).toMatch(/very small/i);
+    expect(lockStockBarrel?.note).toMatch(/moderately open to mingling/i);
+    expect(lockStockBarrel?.note).toMatch(/not great enough to recommend/i);
     expect(fashionAvenue).toMatchObject({ status: 'rejected', originalChapterKey: 'wandering' });
     expect(fashionAvenue?.note).toMatch(/does not apply to every activity inside the mall/i);
     // A rejected record can preserve an explicit screening decision without inventing a visit.
@@ -94,7 +101,19 @@ describe('firsthand activity outcomes', () => {
     expect(ARCHIVE_ACTIVITY_DETAILS.every(({ photos }) => photos >= 2)).toBe(true);
     expect(ARCHIVE_ACTIVITY_DETAILS.find(({ id }) => id === 'robertos')?.photos).toBe(4);
     expect(ARCHIVE_ACTIVITY_DETAILS.find(({ id }) => id === 'meowtropolis')?.photos).toBe(4);
+    expect(ARCHIVE_ACTIVITY_DETAILS.find(({ id }) => id === 'lockstockbarrel')?.photos).toBe(4);
     expect(ARCHIVE_ACTIVITY_DETAILS.find(({ id }) => id === 'thepods')?.photos).toBe(3);
+  });
+
+  it('pins the Lock, Stock & Barrel outcome to the visited Business Bay location', () => {
+    const entry = ARCHIVE_ENTRIES.find(({ id }) => id === 'lockstockbarrel');
+    const detail = ARCHIVE_ACTIVITY_DETAILS.find(({ id }) => id === 'lockstockbarrel');
+
+    expect(entry?.name).toBe('Lock, Stock & Barrel · Business Bay');
+    expect(entry?.note).toContain('Business Bay location');
+    expect(detail?.where).toBe('Renaissance Business Bay Hotel · Al Abraj Street');
+    if (!detail || !('advisory' in detail)) throw new Error('Expected a scoped archive advisory');
+    expect(detail.advisory).toMatch(/does not apply.*Barsha Heights or JBR/i);
   });
 
   it('records the visited Brunch & Cake branch and the chain-wide rejection separately', () => {
