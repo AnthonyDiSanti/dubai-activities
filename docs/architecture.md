@@ -4,7 +4,7 @@
 
 This repository is a client-only React application written in strict TypeScript. Vite performs the build and emits `dist/`; the production site consists only of static HTML, CSS, JavaScript, bundled fonts, and local images. There is no server process, API, database, authentication layer, or server-side secret.
 
-The root `index.html` contains metadata, `#root`, and the Vite module entry. `src/main.tsx` mounts `src/App.tsx` inside `AppErrorBoundary`. React, React DOM, and the `@fontsource` font files are bundled dependencies: production must not load a framework runtime or critical font from a CDN, evaluate generated application code, or retain the former custom-component markup.
+The root `index.html` contains metadata, `#root` with its inline first-paint loader, and the Vite module entry. `src/main.tsx` replaces that placeholder with `src/App.tsx` inside `AppErrorBoundary`. The loader's narrowly allowed critical styles and current-photo readiness contract are documented in [Site iconography](iconography.md). React, React DOM, and the `@fontsource` font files are bundled dependencies: production must not load a framework runtime or critical font from a CDN, evaluate generated application code, or retain the former custom-component markup.
 
 ## Source layers
 
@@ -15,7 +15,7 @@ The root `index.html` contains metadata, `#root`, and the Vite module entry. `sr
 - `src/browser/` contains small capability adapters whose failures must be represented honestly in UI state.
 - `src/components/` owns semantic React markup and interaction composition. Activity IDs and chapter keys are the stable React keys.
 - `src/styles/` owns bundled font declarations, global tokens, the deliberately varied visual treatments, and responsive rules. The 1000 px boundary remains CSS-driven.
-- `public/photos/` owns 445 active-and-archive activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
+- `public/photos/` owns 473 active-and-archive activity JPEGs and two brand SVGs. Vite copies this directory verbatim to `dist/photos/`.
 - `docs/photo-attributions.csv` owns reviewed photo credits. Build-time generation emits `public/photo-attributions.json` for the UI and `public/photo-attributions.jsonld` for machine readers.
 
 Do not reintroduce a global application namespace, runtime template compiler, `new Function`, inline executable script, or a parallel entry point under `src/`. Add behavior through typed modules and cover pure rules with Vitest.

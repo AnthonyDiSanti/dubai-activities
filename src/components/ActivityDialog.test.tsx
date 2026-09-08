@@ -30,7 +30,7 @@ const secondActivity: Activity = {
   id: 'nest',
   ch: 'quiet',
   name: 'The Nest by Nara',
-  blurb: 'A private glass-roofed pod in the desert.',
+  blurb: 'A private dune-shaped suite in the desert.',
   when: 'Overnight',
   where: 'Al Marmoom Reserve',
   cta: 'Book a pod',

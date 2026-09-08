@@ -1,5 +1,7 @@
 import { memo, useMemo } from 'react';
 
+import { ChapterIcon } from './ChapterIcon';
+import { UiIcon } from './UiIcon';
 import {
   getActivityTreatment,
   orderChapterItems,
@@ -65,9 +67,12 @@ export const ChapterSection = memo(function ChapterSection({
             onClick={() => onToggle(chapter.key)}
             type="button"
           >
-            <span className="chapter__toggle-label">{chapter.name}</span>
+            <span className="chapter__heading-content">
+              <ChapterIcon chapter={chapter.key} lit />
+              <span className="chapter__toggle-label">{chapter.name}</span>
+            </span>
             <span aria-hidden="true" className="chapter__toggle-icon">
-              {open ? '\u25BE' : '\u25B8'}
+              <UiIcon name="chevron" />
             </span>
           </button>
         </h2>

@@ -698,6 +698,7 @@
 }
 
 .favorite-button--detail {
+  --heart-icon-size: 18px;
   position: absolute;
   top: 12px;
   right: 12px;
@@ -706,10 +707,9 @@
   width: 36px;
   height: 36px;
   place-items: center;
-  border: 1px solid rgba(244, 239, 230, .26);
+  border: 1px solid rgba(244, 239, 230, .3);
   border-radius: 50%;
-  background: rgba(22, 17, 14, .6);
-  font-size: 16px;
+  background: rgba(22, 17, 14, .72);
 }
 
 .detail-sheet__dots {

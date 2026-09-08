@@ -516,7 +516,9 @@ describe('App', () => {
     expect(screen.getByRole('button', { name: 'Show only tried and liked activities' }))
       .toHaveAttribute('aria-pressed', 'false');
     expect(screen.getByRole('button', { name: 'Show all activities' }))
-      .toHaveTextContent('✕ Plan ahead');
+      .toHaveTextContent('Plan ahead');
+    expect(screen.getByRole('button', { name: 'Show all activities' }).querySelector('.cross-icon'))
+      .toHaveAttribute('aria-hidden', 'true');
   });
 
   it.each([

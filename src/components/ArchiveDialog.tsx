@@ -1,5 +1,6 @@
 import { useEffect, useId, useMemo, useState, type MouseEvent } from 'react';
 
+import { UiIcon } from './UiIcon';
 import { getActivityTreatment, type Activity } from '../domain/activity';
 import {
   groupArchiveEntries,
@@ -173,7 +174,7 @@ export function ArchiveDialog({
                           <span className="archive-sheet__group-description">{copy.description}</span>
                         </span>
                         <span aria-hidden="true" className="chapter__toggle-icon">
-                          {open ? '\u25BE' : '\u25B8'}
+                          <UiIcon name="chevron" />
                         </span>
                       </button>
                     </h3>

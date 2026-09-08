@@ -1,0 +1,102 @@
+/* Supplied geometry stays monochrome until a chapter is current or in a section heading. */
+.heart-icon, .ui-icon, .chapter-icon {
+  display: block;
+  flex: none;
+  pointer-events: none;
+}
+.heart-icon { width: var(--heart-icon-size, 18px); height: var(--heart-icon-size, 18px); }
+.ui-icon {
+  width: var(--ui-icon-size, 12px);
+  height: var(--ui-icon-size, 12px);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ui-icon--chevron { fill: currentColor; stroke: none; transform: rotate(90deg); transition: transform .2s ease; }
+[aria-expanded="true"] > .chapter__toggle-icon .ui-icon--chevron { transform: rotate(180deg); }
+.chapter__toggle-icon { --ui-icon-size: 13px; }
+.chapter-icon {
+  width: var(--chapter-icon-size, 20px);
+  height: var(--chapter-icon-size, 20px);
+  overflow: visible;
+  color: rgba(244, 239, 230, .62);
+}
+:is(.chapter-sidebar__item, .chapter-menu__row):is(:hover, :focus-visible) .chapter-icon,
+.chapter-icon[data-lit="true"] { color: var(--paper); }
+.chapter-icon[data-lit="true"] {
+  --ac: var(--chapter-accent);
+  --acg: drop-shadow(0 0 var(--chapter-glow, 2.5px) var(--chapter-accent));
+}
+.chapter-icon[data-chapter="loud"] { --chapter-accent: #35e0ff; }
+.chapter-icon[data-chapter="strange"] { --chapter-accent: #35e0ff; }
+.chapter-icon[data-chapter="dinners"] { --chapter-accent: #ff4fa3; }
+.chapter-icon[data-chapter="takehome"] { --chapter-accent: #35e0ff; }
+.chapter-icon[data-chapter="cooking"] { --chapter-accent: #35e0ff; }
+.chapter-icon[data-chapter="getgood"] { --chapter-accent: #ff4fa3; }
+.chapter-icon[data-chapter="adrenaline"] { --chapter-accent: #ff4fa3; }
+.chapter-icon[data-chapter="rides"] { --chapter-accent: #ff4fa3; }
+.chapter-icon[data-chapter="wandering"] { --chapter-accent: #e9a94b; }
+.chapter-icon[data-chapter="quiet"] { --chapter-accent: #35e0ff; }
+.chapter-icon[data-chapter="elsewhere"] { --chapter-accent: #35e0ff; }
+.chapter-icon[data-chapter="animals"] { --chapter-accent: #35e0ff; }
+.chapter-icon[data-chapter="cooking"][data-lit="true"] {
+  --ac2: #ff4fa3;
+  --acg2: drop-shadow(0 0 var(--chapter-glow, 2.5px) #ff4fa3);
+}
+.chapter-icon[data-chapter="getgood"][data-lit="true"] {
+  --ac2: #e9a94b;
+  --ac3: #35e0ff;
+  --acg2: drop-shadow(0 0 var(--chapter-glow, 2.5px) #e9a94b);
+  --acg3: drop-shadow(0 0 var(--chapter-glow, 2.5px) #35e0ff);
+}
+.chapter__heading-content {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  min-width: 0;
+}
+.chapter__header .chapter-icon {
+  --chapter-icon-size: 28px;
+  --chapter-glow: 3px;
+}
+.chapter-bar__filter, .chapter-bar__menu-button, .card--ahead__primary {
+  --ui-icon-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.chapter-bar__filter { --cross-icon-size: 10px; height: 26px; }
+.chapter-bar__menu-button { --cross-icon-size: 12px; height: 26px; gap: 6px; }
+/* Position the new icon in the row's inset without letting its box increase row height. */
+.chapter-sidebar .chapter-sidebar__item, .chapter-menu__row { position: relative; padding-left: 30px; }
+:is(.chapter-sidebar__item, .chapter-menu__row) > .chapter-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.chapter-menu__row { align-items: center; }
+.chapter-menu__name { flex: 1; font: 400 13px/19.55px var(--font-body); }
+.hero__photo-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--gold);
+  font: 400 9px var(--font-mono);
+  letter-spacing: .2em;
+}
+.hero__photo-loading .site-loader { --site-loader-size: 40px; }
+.hero__photo--pending { opacity: 0; }
+@media (max-width: 600px) {
+  /* Keep the existing compact pill height even with a 12px icon beside an 11px text line. */
+  .chapter-bar__filter, .chapter-bar__menu-button { height: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ui-icon--chevron { transition: none; }
+}

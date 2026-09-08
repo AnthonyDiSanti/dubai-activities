@@ -16,3 +16,7 @@ Reconnect or restart the Codex desktop Browser capability, then follow the insta
 ## Confirmed 6 Sep 2026 recovery
 
 Restarting Codex resolved the trusted-plugin-path initialization failure. The Browser runtime selected the connected Chrome extension through `getForUrl`, and screenshots plus DOM geometry checks worked for the local production preview. Reuse that browser binding within the session. If starting Vite fails with `listen EPERM`, request sandbox escalation for the preview command; that socket restriction is separate from browser availability.
+
+## 7 Sep 2026 icon QA
+
+The current CUA browser session successfully rendered the 390/1440px guide and both loaders. After creating additional tabs, viewport updates returned success without changing the target tab's measured `innerWidth`. Check actual dimensions rather than trusting the request. Rebinding and resetting did not fix that session; isolated same-origin frames with verified 999/1000px borderless boxes provided the remaining sheet-boundary screenshots. Remove temporary fixtures afterward and retain the normal site tab. This does not replace top-level interaction tests; it is a precise CSS breakpoint check when viewport control is unreliable.

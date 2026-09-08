@@ -1,0 +1,13 @@
+/* Shared by the inline pre-mount shell and the pending hero photo. */
+.site-loader {
+  --tube: .35;
+  --tr: #ff4fa3;
+  display: block;
+  width: var(--site-loader-size, 64px);
+  height: var(--site-loader-size, 64px);
+  flex: none;
+}
+@keyframes trace { to { stroke-dashoffset: -100; } }
+@media (prefers-reduced-motion: reduce) {
+  .site-loader { --ld-anim: none; --ld-off: -28.5; }
+}

@@ -21,6 +21,8 @@ export default tseslint.config(
       'dist/**',
       'node_modules/**',
       '.image-work/**',
+      // Supplied design-board runtime is reference material, not application code.
+      'docs/branding/site-icons/**',
     ],
   },
   js.configs.recommended,

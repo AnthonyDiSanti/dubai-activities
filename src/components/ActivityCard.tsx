@@ -1,5 +1,7 @@
 import { memo, type MouseEvent } from 'react';
 
+import { UiIcon } from './UiIcon';
+import { HeartIcon } from './HeartIcon';
 import {
   activityMapUrl,
   activityPhotoUrl,
@@ -99,7 +101,7 @@ function FavoriteButton({
       }}
       type="button"
     >
-      <span aria-hidden="true">{isFavorite ? '\u2665' : '\u2661'}</span>
+      <HeartIcon filled={isFavorite} />
     </button>
   );
 }
@@ -418,7 +420,7 @@ function AheadCard(props: PresentationProps) {
         <div className="card--ahead__actions">
           {primaryUrl && (
             <a className="card--ahead__primary" href={primaryUrl} rel="noopener" target="_blank">
-              {item.cta.toUpperCase()} &rarr;
+              {item.cta.toUpperCase()} <UiIcon name="arrow-right" />
             </a>
           )}
           <MapLink item={item} small />

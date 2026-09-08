@@ -1,5 +1,8 @@
 import { memo, type MouseEvent } from 'react';
 
+import { ChapterIcon } from './ChapterIcon';
+import { CrossIcon } from './CrossIcon';
+import { UiIcon } from './UiIcon';
 import type { Chapter, ChapterKey } from '../domain/activity';
 
 type SharedChapterNavigationProps = {
@@ -74,7 +77,7 @@ export const ChapterNavigation = memo(function ChapterNavigation({
           onClick={onTogglePlanAhead}
           type="button"
         >
-          {planAheadOnly ? '\u2715 Plan ahead' : 'Plan ahead'}
+          {planAheadOnly && <CrossIcon />} Plan ahead
         </button>
         <button
           aria-label={verifiedOnly ? 'Show all activities' : 'Show only tried and liked activities'}
@@ -83,7 +86,7 @@ export const ChapterNavigation = memo(function ChapterNavigation({
           onClick={onToggleVerified}
           type="button"
         >
-          {verifiedOnly ? '\u2715 Tried & liked' : '✓ Tried & liked'}
+          {verifiedOnly ? <CrossIcon /> : <UiIcon name="check" />} Tried &amp; liked
         </button>
         <button
           aria-controls={MOBILE_MENU_ID}
@@ -92,7 +95,7 @@ export const ChapterNavigation = memo(function ChapterNavigation({
           onClick={onToggleMobile}
           type="button"
         >
-          {mobileOpen ? '\u2715 Close' : '\u2630 Chapters'}
+          {mobileOpen ? <CrossIcon /> : <UiIcon name="menu" />} {mobileOpen ? 'Close' : 'Chapters'}
         </button>
       </div>
       {mobileOpen && (
@@ -112,6 +115,7 @@ export const ChapterNavigation = memo(function ChapterNavigation({
                   handleChapterLinkClick(event, chapter.key, onSelectChapter);
                 }}
               >
+                <ChapterIcon chapter={chapter.key} lit={chapter.key === currentChapterKey} />
                 <span className="chapter-menu__name">{chapter.name}</span>
                 <span className="chapter-menu__state">{open ? '' : 'Folded'}</span>
               </a>
@@ -162,7 +166,8 @@ export const ChapterSidebar = memo(function ChapterSidebar({
               handleChapterLinkClick(event, chapter.key, onSelectChapter);
             }}
           >
-            {chapter.name}
+            <ChapterIcon chapter={chapter.key} lit={chapter.key === currentChapterKey} />
+            <span>{chapter.name}</span>
           </a>
         ))}
         <button className="chapter-sidebar__open-all" onClick={onOpenAll} type="button">

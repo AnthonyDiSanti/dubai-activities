@@ -66,8 +66,14 @@ if (!/<script\b[^>]*type=["']module["'][^>]*src=["']\/src\/main\.tsx["'][^>]*><\
 if (/<script\b(?![^>]*\bsrc=)[^>]*>[\s\S]*?\S[\s\S]*?<\/script>/i.test(sourceIndex)) {
   fail('index.html must not contain executable inline scripts.');
 }
-if (/<style\b/i.test(sourceIndex) || /\sstyle\s*=/i.test(sourceIndex)) {
-  fail('index.html must not contain inline styles.');
+// First-paint feedback must work before CSS/JS arrives; only the named bootstrap is inline.
+const bootStyles = sourceIndex.match(/<style id="boot-loader-styles">[\s\S]*?<\/style>/g) ?? [];
+if (bootStyles.length !== 1) fail('index.html must contain exactly one critical boot-loader stylesheet.');
+const nonBootstrapMarkup = sourceIndex
+  .replace(bootStyles[0] ?? '', '')
+  .replace(/(<div id="root">\s*<div class="boot-loader" role="status">)\s*<svg\b[^>]*class="site-loader"[^>]*>[\s\S]*?<\/svg>/, '$1');
+if (/<style\b/i.test(nonBootstrapMarkup) || /\sstyle\s*=/i.test(nonBootstrapMarkup)) {
+  fail('index.html must not contain inline styles outside the critical boot loader.');
 }
 if (/<(?:x-dc|sc-if|sc-for)\b|data-dc-script|dc-runtime/i.test(sourceIndex)) {
   fail('index.html still contains custom-runtime markup.');
@@ -173,7 +179,12 @@ if (!SOURCE_ONLY) {
     }
 
     // Every local HTML reference must resolve inside dist; external fonts are intentionally ignored.
-    for (const match of distIndex.matchAll(/\b(?:src|href)=["']([^"'#]+)["']/gi)) {
+    const localReferences = [
+      ...distIndex.matchAll(/\b(?:src|href)=["']([^"'#]+)["']/gi),
+      // Include the critical font URL now that the shell has pre-bundle styling.
+      ...distIndex.matchAll(/url\(["']([^"'#]+)["']\)/gi),
+    ];
+    for (const match of localReferences) {
       const reference = match[1];
       if (/^(?:https?:)?\/\//i.test(reference) || reference.startsWith('data:')) continue;
       if (reference.startsWith('/')) {

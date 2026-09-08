@@ -1,5 +1,7 @@
 # Dubai activities — iconography design and delivery brief (v3)
 
+Historical proposal: the approved September 7 design handoff and implementation now live in `docs/branding/site-icons/` and `docs/iconography.md`. Their final artwork and placement rules supersede the recommendations below where they differ.
+
 Reviewed against the live source on 6 September 2026 and consolidated at Anthony's request to include the complete recommendations and style guidance. This document is self-contained: use its inventory, visual direction, loader contract and acceptance checks together. It is not approval to generate artwork or change the site.
 
 ## Recommendation

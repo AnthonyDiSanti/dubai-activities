@@ -1,5 +1,16 @@
 # Decisions
 
+## 2026-09-09 — Correct The Nest description instead of sourcing a nonexistent glass roof
+- Decider: Codex (source-backed correction prompted by Anthony’s photo mismatch report)
+- Decision: Keep the accurate existing sunset cover and five-photo gallery. Anthony authorized deployment on September 9; the correction is now published. Describe dune-shaped suites and outdoor stargazing; remove the glass-roof claims from runtime copy, fixtures, manifest and retained source fragments.
+- Evidence: Nara specifies front windows and a private deck; the architect specifies fabric over steel. The interior image is a bathroom with a small skylight. See `docs/activity-planning-sources.md` for the linked evidence.
+
+## 2026-09-07 — Implement the supplied site icon design system
+- Decider: Anthony (design scope), Codex (integration details)
+- Decision: Implement the approved chapter pictograms, SVG favorite/utility controls, darker photo discs and L3 pre-mount/hero loaders. Promote the complete supplied package to `docs/branding/site-icons/`; retain original provenance and ship only inline drawing geometry.
+- Rationale: The newer high-fidelity handoff is the final placement contract, including always-lit chapter headings. Follow its heavier 0.66 hollow heart rather than the stale thinner SVG export; add the specified loud-wave glow omitted by that export.
+- Consequences: Per-instance mask IDs prevent repeated chapter renderings from interfering. Loading feedback ends on current-image decode/load/failure, never an all-photo gate or timer. Existing CrossIcon/share/verified artwork and interactions stay intact. See `docs/iconography.md`. Anthony subsequently requested deployment on September 7; the complete implementation is now published through the existing Minisite stack.
+
 Record decisions with enough context that a future agent can understand "why".
 Keep newest decisions at the top (reverse chronological order).
 Decider format: `Anthony` for human decisions, `Codex (model: gpt-5.2-codex)` for agent decisions.

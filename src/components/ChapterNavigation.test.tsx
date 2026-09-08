@@ -34,6 +34,15 @@ function props(overrides: Partial<ChapterNavigationProps> = {}): ChapterNavigati
 afterEach(cleanup);
 
 describe('ChapterNavigation', () => {
+  it('lights only the current chapter on both navigation surfaces', () => {
+    const { container } = render(<><ChapterNavigation {...props()} mobileOpen /><ChapterSidebar {...props()} /></>);
+    expect(container.querySelectorAll('.chapter-icon')).toHaveLength(4);
+    expect(container.querySelectorAll('.chapter-icon[data-lit="true"]')).toHaveLength(2);
+    for (const icon of container.querySelectorAll('.chapter-icon[data-lit="true"]')) {
+      expect(icon).toHaveAttribute('data-chapter', 'loud');
+    }
+  });
+
   it('connects the sticky menu trigger to its expandable menu', () => {
     const onToggleMobile = vi.fn();
     const initialProps = props({ onToggleMobile });
@@ -95,7 +104,8 @@ describe('ChapterNavigation', () => {
 
     const filter = screen.getByRole('button', { name: 'Show all activities' });
     expect(filter).toHaveAttribute('aria-pressed', 'true');
-    expect(filter).toHaveTextContent('✕ Tried & liked');
+    expect(filter).toHaveTextContent('Tried & liked');
+    expect(filter.querySelector('.cross-icon')).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('renders the desktop navigation with section relationships', () => {

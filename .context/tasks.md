@@ -1,18 +1,31 @@
 # Tasks
 
+- id: 2026-09-09-nest-roof — title: Resolve Nara hero photo mismatch — owner: Codex — status: done — last update: 2026-09-09
+  - Result: Confirmed fabric roof construction and a bathroom skylight; retained the accurate cover and corrected blurb, eyebrow, CTA, photo notes, source fragments and fixtures. Recorded primary-source evidence in `docs/activity-planning-sources.md`.
+  - Verification: All 259 tests, lint, TypeScript, production build, content/static audits and photo/attribution audits pass. Desktop browser screenshot confirms updated hero copy and unchanged loaded cover. No interaction or image geometry changes; no new responsive gate needed.
+  - Release: Deployed 511 objects and removed only `assets/index-DLGbdRZR.js`; invalidation `IIFCVOKM8SX16TKMTOJ0X3CFV` completed. Live HTML, app bundles, Nest cover and attribution catalogs match the build; corrected detail copy and dismissal to `#quiet` pass without console errors. Commit prep includes the existing icon work; index untouched and no commit performed.
+
+- id: 2026-09-07-site-icons — title: Implement approved site icon system — owner: Codex — status: done — last update: 2026-09-07
+  - Result: Implemented all twelve chapter icons, current/header accent states, unique per-instance masks, SVG favorite/utility glyphs, darker photo discs and L3 pre-mount/hero loaders. Preserved CrossIcon, share arrow, VerifiedStamp, content, favicon assets and event semantics.
+  - Verification: 259 tests and full lint/TypeScript/build/content/static/photo/attribution gates pass. Source-geometry and loader-parity tests; load/error/cache/decode/stale-slide cases; current-only nav and always-lit empty headings. Visually checked supplied chapter preview, 390/1440px layouts, 999/1000px sheets in exact-width frames, and both loader sizes with a delayed real photo; no app console errors.
+  - Notes: Browser viewport updates stopped applying reliably after multiple tabs; used isolated same-origin 999/1000px frames for the remaining boundary checks. Temporary QA fixtures and delayed server removed. A concurrent full-guide test timeout passed in isolation and subsequent complete runs without increasing timeouts.
+  - Release: Deployed 511 objects; removed only the two superseded app bundles; completed invalidation `I9STWWDV0EXEFPH9EU8FQPVEPG`. Repeated the 259-test release gate and all audits; live HTML/bundles/font/identity/catalog checks match the build. Browser smoke tests cover chapter icons, settled hero loader, E-foil details, centered close control and return to the chapter with no errors.
+  - Follow-up: None for release. Commit prep covers the full implementation plus supplied source package and related documentation; no staging or commit performed.
+  - Links: `docs/iconography.md`, `docs/branding/site-icons/README.md`
+
 - id: 01K4KA7D2V6N9T3M5R8QXZPFAB — title: Integrate updated favicon v3 — owner: Codex — status: done — last update: 2026-09-06
   - Result: Replaced six runtime images and five retained artwork/source exports with exact supplied v3 bytes; preserved supplier notes and refreshed regeneration guidance. Kept existing relative manifest/HTML links; promoted the scratch package without adding redundant small PNGs to public output.
   - Verification: 11 artwork hash matches, manifest PNG dimensions, 16/32/48 ICO frames, seven exact public-to-build asset matches and four document links. Full 232-test/lint/TypeScript/build/content/static gate passes. Visually inspected supplied 32 px and 512 px exports; no fresh browser check claimed.
   - Release: Uploaded 511 objects with no deletions and completed invalidation `IF3VPNJFCKUXDSB7FEG8X557B7`. Reran the full 232-test release gate and all asset audits. Live HTML/CSS/JavaScript plus seven identity assets match the build with correct MIME/cache headers; browser checks confirmed the dark-rim SVG and activity-to-chapter dismissal.
-  - Follow-up: None for release; prepared the full dirty tree for commit. User staging now contains the iconography brief only; Codex did not stage, unstage or commit anything.
+  - Follow-up: Earlier favicon/proposal work was committed before the September 7 icon-system implementation. No pending work remains for this release.
   - Links: `public/favicon.svg`, `docs/branding/favicon-source/README.md`, `docs/branding/favicon-source/supplied-v3-notes.md`
 
-- id: 01K4K9D3V6N8T2M5R7QXZPFABC — title: Reconcile iconography proposal and assess visual density — owner: Codex — status: review-ready — last update: 2026-09-06
+- id: 01K4K9D3V6N8T2M5R7QXZPFABC — title: Reconcile iconography proposal and assess visual density — owner: Codex — status: superseded — last update: 2026-09-07
   - Result: Expanded the scratch inventory against current components: Share, filter/menu clear states, archive chevrons, Fold all, retry/error and credits coverage; corrected duplicate and nonexistent targets; mapped all 12 chapter keys and suggested distinct visual concepts. Recommended quiet utility icons, navigation-first chapter placement, 22 Core IDs including reuse, and optional rather than universal ornamentation.
   - User direction: Include a loader for slow first loads. Added a Core brand-related loader with pre-mount/first-visible-media, route-aware readiness, cached/error/reduced-motion cases and no all-images blocking gate. Loading bottleneck has not been measured.
   - Verification: Source reconciliation, chapter mapping/count checks and diff hygiene only; no runtime files changed or app tests/deployment needed for the proposal review. No index management performed; subsequent staging belongs to the user.
   - Brief consolidation: At Anthony's request, v3 incorporates all recommendations in one document, including creative direction, visual hierarchy, exact source palette, state styling, placement limits, loader behavior, SVG delivery, pilot sequence and acceptance checks.
-  - Follow-up: Review the self-contained pilot brief, then explicitly commission/design and implement; no icon assets generated yet.
+  - Follow-up: Superseded by the approved September 7 handoff and implemented site icon system; preserve this earlier proposal as design history.
   - Links: `.context/scratch/iconography.md`
 
 - id: 01K4K8C2V5N7T9M3R6QXZPFABD — title: Make favorites guidance device-neutral — owner: Codex — status: done — last update: 2026-09-06

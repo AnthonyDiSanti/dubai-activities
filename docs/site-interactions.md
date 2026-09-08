@@ -16,6 +16,7 @@ Use `npm run build && npm run preview` for a production-output check. A plain fi
 
 ## Hero carousel
 
+- The pre-mount document cue is replaced immediately by React. Only the current hero photo shows an in-place loader until load/decode or failure; see [Site iconography](iconography.md) for geometry, lifecycle, cached-image handling and reduced motion.
 - Exactly one of the six featured activities is rendered as the active slide.
 - The lead image is decorative because the activity name and description are adjacent.
 - Clicking or tapping any passive image, shade, or copy surface opens the active activity sheet. Save and the two detail links keep their independent native behavior; the wrapper itself is not a button because it contains interactive descendants.
@@ -32,6 +33,8 @@ Use `npm run build && npm run preview` for a production-output check. A plain fi
 The sticky chapter bar and desktop sidebar are two presentations of the same state. Chapter destinations are real links whose `href` matches the native section fragment, such as `#animals`; ordinary activation focuses that chapter while modified clicks, long-press, copy-link, and open-in-new-tab remain browser-native. Links identify the current section, report expansion state, and target the corresponding section. The mobile menu reports `aria-expanded`, closes on Escape or selection, and contains Open everything/Fold all actions. Open everything pushes `#everything`, making the all-chapters state explicit and copyable while allowing Back to restore the prior chapter and Forward to reopen everything. Repeating it at `#everything` does not add another history entry.
 
 Each in-page chapter heading is one full-width native button. Clicking anywhere across its header, or activating it from the keyboard, folds or opens that chapter; the arrow is only a visual state indicator.
+
+The twelve chapter pictograms are 20px in navigation and 28px in headings. Navigation accents light only for the current chapter; headings remain lit when collapsed or empty. Utility/favorite controls use decorative SVGs rather than font glyphs, with unchanged accessible labels and handlers. [Site iconography](iconography.md) owns exact sizes, colors, source provenance and mask-ID rules.
 
 “Plan ahead” and “Tried & liked” are mutually exclusive planning modes that filter activities before chapter ordering. Plan ahead includes every dated event plus activities carrying explicit `ahead` guidance; it is intentionally broader than the Favorites sheet's undated Book ahead group. Any filter change—turning a mode on, switching modes, or returning to all activities—opens every chapter again so filtered results cannot inherit an unrelated collapsed state. Filters do not create history entries. Selecting one clears the other, which avoids a surprising empty intersection. The firsthand mode is derived from verified entries in `src/data/archive.ts`; chapters with no matching activities disappear from the guide and both navigation surfaces. Choosing one chapter folds the others and scrolls to that section; reduced-motion users receive an immediate rather than smooth scroll.
 

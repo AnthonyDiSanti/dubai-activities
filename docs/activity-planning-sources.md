@@ -4,6 +4,10 @@ This ledger records the primary sources behind structured `facts`, `advisory`, s
 
 The final animal chapter was researched as a separate addendum and retains its source URLs in `src/data/activities.ts`, `docs/image-manifest.csv`, and `activities/Dubai Activities Addendum 3 - Wildlife.md`.
 
+## 9 September 2026 — The Nest roof correction
+
+The Nest has dune-shaped fabric roofs over steel frames, front glazing and private outdoor terraces, not glass-roofed sleeping pods. [The architect’s project record](https://worldarchitecture.org/architecture-projects/pzheh/the-nest-by-sonara-project-pages.html) specifies the fabric/steel construction; [Nara’s accommodation page](https://www.nara.ae/the-nest/) describes floor-to-ceiling windows and a stargazing deck. Visual inspection of `nest-01.jpg`, `nest-02.jpg` and `nest-04.jpg` confirms the exterior fabric roof, a small bathroom skylight, and glazed frontage. Retain the accurate sunset cover; corrected the runtime blurb, eyebrow, CTA and erroneous photo notes in the canonical manifest and retained sourcing fragments. Do not reintroduce a glass-roof claim from older copy or confuse the bathroom skylight with a transparent sleeping-room roof.
+
 ## Retired and archive-only activities
 
 | Activity ID | Decision | Primary evidence |

@@ -47,6 +47,12 @@ function props(overrides: Partial<ChapterSectionProps> = {}): ChapterSectionProp
 afterEach(cleanup);
 
 describe('ChapterSection', () => {
+  it('keeps the chapter icon lit in a collapsed empty section', () => {
+    const { container } = render(<ChapterSection {...props({ items: [], open: false })} />);
+    expect(container.querySelector('.chapter-icon')).toHaveAttribute('data-lit', 'true');
+    expect(container.querySelector('.ui-icon--chevron')).toHaveAttribute('aria-hidden', 'true');
+  });
+
   it('exposes stable section semantics and collapse controls', () => {
     const onToggle = vi.fn();
     const { container, rerender } = render(<ChapterSection {...props({ onToggle })} />);

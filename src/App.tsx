@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState, type MouseEvent } from 'react';
 
+import { HeartIcon } from './components/HeartIcon';
 import { ActivityDialog } from './components/ActivityDialog';
 import { ArchiveDialog } from './components/ArchiveDialog';
 import {
@@ -335,7 +336,7 @@ export function App() {
         onClick={() => setFavoritesOpen(true)}
         type="button"
       >
-        <span aria-hidden="true">♥</span> {favorites.length}
+        <HeartIcon filled /> {favorites.length}
       </button>
 
       {favoritesOpen && (

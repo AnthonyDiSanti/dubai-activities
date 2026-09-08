@@ -1,5 +1,7 @@
 import { useMemo, useState, type FocusEvent, type MouseEvent } from 'react';
 
+import { HeroPhoto } from './HeroPhoto';
+import { HeartIcon } from './HeartIcon';
 import { activityPhotoUrl, type Activity, type Chapter } from '../domain/activity';
 import { activityHash } from '../domain/deepLinks';
 
@@ -124,14 +126,7 @@ export function HeroCarousel({
           }}
           role="group"
         >
-          <div className="media-placeholder" />
-          <img
-            alt=""
-            className="media-fill"
-            decoding="async"
-            fetchPriority="high"
-            src={activityPhotoUrl(activeItem)}
-          />
+          <HeroPhoto key={activityPhotoUrl(activeItem)} src={activityPhotoUrl(activeItem)} />
           <div className="hero__shade" />
           <button
             aria-label={`${favorite ? 'Remove' : 'Save'} ${activeItem.name} ${favorite ? 'from' : 'to'} favorites`}
@@ -140,7 +135,7 @@ export function HeroCarousel({
             onClick={() => onToggleFavorite(activeItem.id)}
             type="button"
           >
-            <span aria-hidden="true">{favorite ? '\u2665' : '\u2661'}</span>
+            <HeartIcon filled={favorite} />
           </button>
           <div className="hero__copy">
             <p className="hero__kicker">{chapterNames.get(activeItem.ch) ?? ''}</p>

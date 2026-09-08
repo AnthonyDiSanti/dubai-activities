@@ -1,0 +1,6 @@
+/* Loader L3 — the favicon with its neon tube dimmed to 35% and a full-brightness dash tracing the arch. */
+@keyframes trace { to { stroke-dashoffset: -100; } }
+.site-loader { display: block; width: 64px; height: 64px; }
+@media (prefers-reduced-motion: reduce) {
+  .site-loader { --ld-anim: none; --ld-off: -28.5; } /* dash parked at the apex */
+}

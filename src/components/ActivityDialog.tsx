@@ -1,5 +1,7 @@
 import { useId, useState, type MouseEvent } from 'react';
 
+import { UiIcon } from './UiIcon';
+import { HeartIcon } from './HeartIcon';
 import {
   activityMapUrl,
   activityPhotoUrl,
@@ -124,7 +126,7 @@ export function ActivityDialog({
                     }}
                     type="button"
                   >
-                    <span aria-hidden="true">{isFavorite ? '♥' : '♡'}</span>
+                    <HeartIcon filled={isFavorite} />
                   </button>
                 )}
               </div>
@@ -164,7 +166,7 @@ export function ActivityDialog({
             )}
             {verified && !archiveEntry && (
               <p className="detail-sheet__verified">
-                <span aria-hidden="true">✓</span> Tried &amp; liked
+                <UiIcon name="check" /> Tried &amp; liked
               </p>
             )}
             {activity.eyebrow && <p className="detail-sheet__eyebrow">{activity.eyebrow}</p>}

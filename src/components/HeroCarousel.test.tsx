@@ -13,10 +13,10 @@ const firstItem: Activity = {
   id: 'nest',
   ch: 'quiet',
   name: 'The Nest by Nara with its complete name',
-  blurb: 'A private glass-roofed pod in the desert.',
+  blurb: 'A private dune-shaped suite in the desert.',
   when: 'Overnight',
   where: 'Al Marmoom Reserve',
-  cta: 'Book a glass-roofed pod',
+  cta: 'Book a desert nest',
   photos: 5,
 };
 

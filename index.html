@@ -22,9 +22,38 @@
       type="application/ld+json"
     />
     <title>Dubai activities</title>
+    <!-- Critical first-paint styles intentionally precede the application bundle. -->
+    <style id="boot-loader-styles">
+      @font-face { font-family: "Space Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url('./node_modules/@fontsource/space-mono/files/space-mono-latin-400-normal.woff2') format('woff2'); }
+html { background: #16110e; }
+      body { margin: 0; }
+      .boot-loader { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: #16110e radial-gradient(rgba(255,255,255,.032) 1px,transparent 1px) 0 0 / 3px 3px; color: #e9a94b; font: 400 9px "Space Mono", monospace; letter-spacing: .2em; }
+      .boot-loader p { margin: 0; }
+      /* Shared by the inline pre-mount shell and the pending hero photo. */
+.site-loader {
+  --tube: .35;
+  --tr: #ff4fa3;
+  display: block;
+  width: var(--site-loader-size, 64px);
+  height: var(--site-loader-size, 64px);
+  flex: none;
+}
+@keyframes trace { to { stroke-dashoffset: -100; } }
+@media (prefers-reduced-motion: reduce) {
+  .site-loader { --ld-anim: none; --ld-off: -28.5; }
+}
+
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-loader" role="status">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" class="site-loader" aria-hidden="true" focusable="false" style="--tube:.35;--tr:#ff4fa3">
+  <g transform="translate(32 32) scale(0.89) translate(-32 -32)"><path d="M4.5 59.5 V30 A9 9 0 0 1 8.12 22.79 L32 5 L55.88 22.79 A9 9 0 0 1 59.5 30 V59.5 Z" fill="#16110e" stroke="#16110e" style="stroke-width:17;stroke-linejoin:round"></path><path d="M4.5 59.5 V30 A9 9 0 0 1 8.12 22.79 L32 5 L55.88 22.79 A9 9 0 0 1 59.5 30 V59.5 Z" fill="none" stroke="#ff4fa3" style="stroke-width:5;stroke-linejoin:miter;opacity:var(--tube,1)"></path><path d="M7 57 V50 C12 46 16 44 20 44 C23 50 27 54 32 55 C40 56 50 56 57 56 V57 Z" fill="#b07f2f"></path><path d="M27 57 C34 50 40 38 46 38 C49 44 50 49 54 50.5 C55.5 51 56.5 51 57 51 V57 Z" fill="#d9a23a"></path><path d="M30 17 A12 12 0 0 0 30 41 A14 14 0 0 1 30 17 Z" fill="#35e0ff"></path><path d="M42 24 L43.5 27.5 L47 29 L43.5 30.5 L42 34 L40.5 30.5 L37 29 L40.5 27.5 Z" fill="#35e0ff"></path><path d="M4.5 59.5 V30 A9 9 0 0 1 8.12 22.79 L32 5 L55.88 22.79 A9 9 0 0 1 59.5 30 V59.5 Z" pathLength="100" fill="none" stroke="var(--tr,#ffd6ea)" style="stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:14 86;stroke-dashoffset:var(--ld-off,0);animation:var(--ld-anim,trace 2.2s linear infinite);filter:var(--ld-glow,drop-shadow(0 0 3px #ff4fa3))"></path></g>
+</svg>
+        <p>Getting the guide ready…</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
