@@ -103,6 +103,15 @@ export const ARCHIVE_ENTRIES = [
     status: 'rejected',
   },
   {
+    id: 'mtnextreme',
+    name: 'Mountain Extreme',
+    note: 'Tried in person and rejected despite very well-set routes. Powdered chalk was banned and liquid chalk was required; it felt too slippery for bouldering and could not practically be reapplied mid-route on top rope. Personal harnesses were refused for top roping unless they were Petzl. The chalk restriction made the gym unusable for this visit.',
+    originalChapterKey: 'getgood',
+    originalChapterName: 'Something to get good at',
+    recordedOn: '2026-09-12',
+    status: 'rejected',
+  },
+  {
     id: 'brunchandcake',
     name: 'Brunch & Cake',
     note: 'Tried the Jumeirah Islands location in person and rejected it. The experience was bad enough to rule out the entire Brunch & Cake chain.',
@@ -142,6 +151,14 @@ export const ARCHIVE_ENTRIES = [
 
 /** Retain sheet-ready context for inactive records without returning them to recommendations. */
 export const ARCHIVE_ACTIVITY_DETAILS = [
+  {
+    id: 'mtnextreme', ch: 'getgood', name: 'Mountain Extreme',
+    blurb: 'Bouldering, rope climbing, and auto-belays share one substantial Al Quoz gym. The mix of short boulder problems and longer rope routes brings several climbing disciplines under one roof.',
+    eyebrow: 'Boulders, ropes and auto-belays', when: 'Drop-in sessions', where: 'Al Quoz',
+    facts: [{ label: 'First visit', value: 'Safety orientation · beginners welcome' }, { label: 'Gear', value: 'Climbing shoes available to rent' }],
+    advisory: 'Rules encountered on 12 September 2026: liquid chalk only; personal top-rope harnesses accepted only if Petzl.',
+    cta: 'See Mountain Extreme', site: 'https://www.mtnextreme.com/book-now', photos: 4,
+  },
   {
     id: 'meowtropolis', ch: 'animals', name: 'Meowtropolis Cat Café',
     blurb: 'Wooden pods, wall runs, and a small café counter give this JLT cat lounge its identity. Timed visits work best when the room stays quiet and the cats are allowed to choose whether to come over.',

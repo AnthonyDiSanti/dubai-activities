@@ -32,10 +32,11 @@ const EXCLUDED_ACTIVITY_IDS = new Set([
   'boombattlebar',
   'fashionavenue',
   'thepods',
+  'mtnextreme',
 ]);
 const FIRST_PERSON = /\b(?:i|i['’](?:m|ve|d|ll)|me|my|mine|myself|we|we['’](?:re|ve|d|ll)|us|our|ours|ourselves|let['’]s)\b/i;
 const EXPECTED_CHAPTERS = 12;
-const EXPECTED_ACTIVITIES = 134;
+const EXPECTED_ACTIVITIES = 133;
 const EXPECTED_HEROES = 6;
 
 const errors: string[] = [];

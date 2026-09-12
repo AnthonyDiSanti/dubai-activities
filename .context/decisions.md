@@ -1,5 +1,15 @@
 # Decisions
 
+## 2026-09-12 — Keep both climbing search terms on bouldering cards
+- Decider: Anthony
+- Decision: Every bouldering gym must visibly include both “climbing” and “bouldering” on its card, including archived cards. Keep the words in the blurb, not only detail facts or metadata, so browser Find can locate either term.
+
+## 2026-09-12 — Reject Mountain Extreme and retain the existing DIP candidates
+- Decider: Anthony (firsthand rejection), Codex (source-backed refresh)
+- Decision: Keep Mountain Extreme inactive despite very well-set routes; preserve the liquid-chalk restriction, grip/reapplication problems and Petzl-only exception for personal top-rope harnesses as visit observations. Retain its gallery and detail route.
+- Release: Anthony authorized publication on 12 September; the climbing review and both card-search terms are deployed and live-verified through the existing Minisite stack. Commit prep covers all pending changes; no staging or commit.
+- Rationale: GoClimb and Rock Republic already exist and are in DIP 1, not DIFC. Refresh their exact locations and planning fields without duplicates or invented firsthand approval. Rock Republic prefers liquid chalk without publishing a powder ban; GoClimb retail stock is not proof of permission on its walls. Preserve contact-first caveats until current usage is confirmed.
+
 ## 2026-09-09 — Correct The Nest description instead of sourcing a nonexistent glass roof
 - Decider: Codex (source-backed correction prompted by Anthony’s photo mismatch report)
 - Decision: Keep the accurate existing sunset cover and five-photo gallery. Anthony authorized deployment on September 9; the correction is now published. Describe dune-shaped suites and outdoor stargazing; remove the glass-roof claims from runtime copy, fixtures, manifest and retained source fragments.

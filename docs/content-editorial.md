@@ -47,6 +47,14 @@ Use `ahead` for genuinely high-friction planning such as mandatory advance conta
 
 Every `dated.on` value must be on or after the local `TRIP_START_DATE_KEY` in `src/config/site.ts`. Advance a recurring event to its next verified occurrence, remove an expired one-off, and leave a seasonal opening undated until the operator publishes an exact day. Retiring an activity also means removing its selected gallery files, canonical manifest rows, and active image-work fragment rows; history remains available in Git and the source ledger.
 
+## Climbing gym choices
+
+Every bouldering gym must include the literal words **climbing** and **bouldering** in its visible card blurb so browser Find can locate it with either term. This applies to active and archived cards; detail-only facts, image alt text, links, and hidden keywords do not satisfy it.
+
+Mountain Extreme is rejected after the 12 September 2026 visit despite very well-set routes. Keep the liquid-chalk-only restriction, the firsthand grip/reapplication problems, and the Petzl-only exception for personal top-rope harnesses in its decision record. Preserve its four-photo archived sheet and describe the venue neutrally; do not restore it as the default all-round climbing recommendation.
+
+Boulder Zone remains the firsthand liked option. GoClimb and Rock Republic were already active candidates; both are in Dubai Investment Park 1 (DIP), not DIFC, and neither has a firsthand verdict. Keep their separate existing IDs and galleries. Rock Republic's published terms prefer liquid to powder and welcome personal chalk bags; GoClimb sells powdered chalk but does not explicitly publish permission to use it on its walls. Preserve the dated source evidence and contact-first chalk caveats rather than declaring either gym powder-approved.
+
 ## Adult arcade nights
 
 Keep both selected adult game bars in `Nights that go loud`. A firsthand visit established Brass Monkey City Walk as a fun date built around mini basketball, bowling, darts, and quick interactive games—not a deep American-style Barcade cabinet collection. It stays ahead of Triple 777 because the date worked in practice; Triple 777 follows later as the neon, later-running 21+ alternative. Each card should remain candid about format and live package details the venue does not publish.

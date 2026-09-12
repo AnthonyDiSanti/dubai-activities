@@ -18,6 +18,7 @@ describe('firsthand activity outcomes', () => {
 
     expect(rejectedIds).toEqual([
       'thewall',
+      'mtnextreme',
       'brunchandcake',
       'butterflygarden',
       'fashionavenue',
@@ -33,6 +34,7 @@ describe('firsthand activity outcomes', () => {
       'tingirie',
     ]);
     expect(activeIds.has('thewall')).toBe(false);
+    expect(activeIds.has('mtnextreme')).toBe(false);
     expect(activeIds.has('brunchandcake')).toBe(false);
     expect(activeIds.has('butterflygarden')).toBe(false);
     expect(activeIds.has('fashionavenue')).toBe(false);

@@ -41,7 +41,7 @@ const FACT_ENRICHED_IDS = [
   'ruya',
   'topchef',
   'spicespoons',
-  'mtnextreme',
+  'rockrepublic',
   'smartgate',
   'goclimb',
   'skydive',
@@ -75,6 +75,7 @@ describe('activity planning content', () => {
     'boombattlebar',
     'fashionavenue',
     'thepods',
+    'mtnextreme',
   ])(
     'keeps retired or screened-out activity %s out',
     (id) => {

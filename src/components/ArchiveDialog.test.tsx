@@ -55,16 +55,20 @@ describe('ArchiveDialog', () => {
     expect(tried).toHaveTextContent('Lock, Stock & Barrel · Business Bay');
     expect(tried).not.toHaveTextContent('Boulder Zone');
     expect(rejected).toHaveTextContent('The Wall');
+    expect(rejected).toHaveTextContent('Mountain Extreme');
     expect(rejected).toHaveTextContent('Brunch & Cake');
     expect(rejected).toHaveTextContent('Dubai Butterfly Garden');
     expect(rejected).toHaveTextContent('Fashion Avenue at Dubai Mall');
     expect(rejected).toHaveTextContent('The Pods');
     expect(rejected).not.toHaveTextContent('Boulder Zone');
-    expect(within(dialog).getAllByRole('article')).toHaveLength(15);
+    expect(within(dialog).getAllByRole('article')).toHaveLength(16);
     expect(within(verified).getAllByRole('img', { name: 'Tried and liked' }))
       .toHaveLength(6);
-    expect(within(dialog).getByText('6', { selector: '.archive-sheet__summary-count' }))
-      .toBeInTheDocument();
+    // Outcome totals can match; scope each count to its labeled destination.
+    expect(within(dialog).getByRole('link', { name: 'Show 6 Tried & liked archive entries' }))
+      .toHaveTextContent('6');
+    expect(within(dialog).getByRole('link', { name: 'Show 6 Rejected archive entries' }))
+      .toHaveTextContent('6');
     expect(within(tried).queryByRole('img', { name: 'Tried and liked' }))
       .not.toBeInTheDocument();
     expect(dialog).not.toHaveTextContent('It was okay');
@@ -132,7 +136,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    expect(screen.getByRole('link', { name: 'Show 5 Rejected archive entries' }))
+    expect(screen.getByRole('link', { name: 'Show 6 Rejected archive entries' }))
       .toHaveAttribute('aria-current', 'location');
     expect(screen.getByRole('button', { name: /Rejected/ }))
       .toHaveAttribute('aria-expanded', 'true');
@@ -176,7 +180,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    expect(document.querySelectorAll('.activity-card')).toHaveLength(15);
+    expect(document.querySelectorAll('.activity-card')).toHaveLength(16);
     expect(document.querySelector('#archive-activity-robertos .media-fill')).toHaveAttribute(
       'src',
       'photos/robertos-01.jpg',

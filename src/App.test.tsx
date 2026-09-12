@@ -306,7 +306,7 @@ describe('App', () => {
     const archive = screen.getByRole('dialog', { name: 'Tried & decided' });
 
     expect(within(archive).getByRole('link', {
-      name: 'Show 5 Rejected archive entries',
+      name: 'Show 6 Rejected archive entries',
     })).toHaveAttribute('aria-current', 'location');
     expect(within(archive).getByRole('button', { name: /Rejected/ }))
       .toHaveAttribute('aria-expanded', 'true');
