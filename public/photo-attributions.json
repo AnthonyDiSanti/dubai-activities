@@ -8605,6 +8605,125 @@
       "creditBasis": "trademark",
       "modifications": null,
       "creditText": "Instagram gradient glyph by Meta Platforms, Inc., via Wikimedia Commons. Public-domain copyright status; trademark rules apply."
+    },
+    {
+      "filename": "lolataberna-01.jpg",
+      "activityId": "lolataberna",
+      "activityName": "Lola Taberna Española",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Lola Taberna Española",
+        "url": "https://lolataberna.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Lola Taberna Española — photo 1, via Lola Taberna Española. Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "lolataberna-02.jpg",
+      "activityId": "lolataberna",
+      "activityName": "Lola Taberna Española",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Lola Taberna Española",
+        "url": "https://lolataberna.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Lola Taberna Española — photo 2, via Lola Taberna Española. Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "lolataberna-03.jpg",
+      "activityId": "lolataberna",
+      "activityName": "Lola Taberna Española",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Lola Taberna Española",
+        "url": "https://lolataberna.com/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Lola Taberna Española — photo 3, via Lola Taberna Española. Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "lolataberna-04.jpg",
+      "activityId": "lolataberna",
+      "activityName": "Lola Taberna Española",
+      "chapterName": "Long dinners",
+      "slot": 4,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "The First Group Restaurants",
+        "url": "https://restaurants.thefirstgroup.com/restaurant/lola/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Lola Taberna Española — photo 4, via The First Group Restaurants. Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "salero-01.jpg",
+      "activityId": "salero",
+      "activityName": "Salero Tapas & Bodega",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Kempinski Hotel Mall of the Emirates",
+        "url": "https://www.kempinski.com/en/mall-of-the-emirates/restaurants-bars/salero-tapas-bodega"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Salero Tapas & Bodega — photo 1, via Kempinski Hotel Mall of the Emirates. Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "salero-02.jpg",
+      "activityId": "salero",
+      "activityName": "Salero Tapas & Bodega",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Kempinski Hotel Mall of the Emirates",
+        "url": "https://www.kempinski.com/en/mall-of-the-emirates/restaurants-bars/salero-tapas-bodega"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Salero Tapas & Bodega — photo 2, via Kempinski Hotel Mall of the Emirates. Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "salero-03.jpg",
+      "activityId": "salero",
+      "activityName": "Salero Tapas & Bodega",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Kempinski Hotel Mall of the Emirates",
+        "url": "https://www.kempinski.com/en/mall-of-the-emirates/restaurants-bars/salero-tapas-bodega"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and converted to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Salero Tapas & Bodega — photo 3, via Kempinski Hotel Mall of the Emirates. Resized and converted to JPEG for web display and shown with responsive cropping."
     }
   ]
 }

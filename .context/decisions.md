@@ -1,5 +1,11 @@
 # Decisions
 
+## 2026-09-12 — Expand dinner choices around tapas
+- Decider: Anthony (preference), Codex (source-backed selection)
+- Decision: Add Lola Taberna Española and Salero as distinct, untested Spanish tapas candidates. Favor classic sharing plates and flamenco respectively; keep both cuisine/search terms in each blurb.
+- Evidence: Current operator pages support Lola and Salero. Anthony correctly flagged BOCA’s 31 March 2026 DIFC closure; remove its unshipped card and photos, retaining only a reopening watch note. No reopening or new address was confirmed. Exclude closed Jaleo too; their stale live pages and awards are not operating-status evidence. Sources and photo provenance are recorded in the canonical ledgers.
+- Maintenance: New photos exposed an existing malformed Sirali CSV note; fix the note and reject bad row widths before sync or generation. Serialize a complete ledger before opening its destination to preserve reviewed credits on invalid input.
+
 ## 2026-09-12 — Keep both climbing search terms on bouldering cards
 - Decider: Anthony
 - Decision: Every bouldering gym must visibly include both “climbing” and “bouldering” on its card, including archived cards. Keep the words in the blurb, not only detail facts or metadata, so browser Find can locate either term.

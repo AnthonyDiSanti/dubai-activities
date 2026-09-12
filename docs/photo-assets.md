@@ -35,6 +35,8 @@ npm run generate:attributions
 npm run audit:attributions
 ```
 
+The CSV reader rejects rows whose cell count differs from the header, including unquoted commas inside notes. Sync serializes all rows before opening the ledger so invalid input cannot truncate reviewed credits. `npm run test:photos` covers malformed input and preservation of the original ledger; it also runs in `npm run check`.
+
 The default audit enforces exact one-to-one coverage, schema validity, safe links, current generated output, and all known Creative Commons/stock fields. `python3 scripts/photo-attributions.py audit --strict` additionally fails on enrichment warnings. Neither audit is a reuse-permission gate; adding a visible source credit does not assert that the site has a republication license.
 
 ## Editorial state

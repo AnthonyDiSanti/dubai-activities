@@ -14,14 +14,14 @@ describe('generated photo attribution catalog', () => {
       return counts;
     }, {});
 
-    expect(catalog.assets).toHaveLength(475);
-    expect(filenames.size).toBe(475);
+    expect(catalog.assets).toHaveLength(482);
+    expect(filenames.size).toBe(482);
     expect(basisCounts.creative_commons).toBe(54);
     expect(basisCounts.stock_license).toBe(8);
     expect(basisCounts.public_domain).toBe(2);
     expect(basisCounts.trademark).toBe(2);
     expect(basisCounts.creator_credit).toBe(17);
-    expect(basisCounts.source_credit).toBe(392);
+    expect(basisCounts.source_credit).toBe(399);
 
     // New venue galleries must retain their named source instead of a generic host fallback.
     expect(catalog.assets.find(({ filename }) => filename === 'brassmonkey-01.jpg')?.source.name).toBe(
@@ -74,6 +74,13 @@ describe('generated photo attribution catalog', () => {
     );
     expect(catalog.assets.find(({ filename }) => filename === 'lockstockbarrel-01.jpg')?.source.name).toBe(
       'Renaissance Business Bay Hotel',
+    );
+
+    expect(catalog.assets.find(({ filename }) => filename === 'lolataberna-01.jpg')?.source.name).toBe(
+      'Lola Taberna Española',
+    );
+    expect(catalog.assets.find(({ filename }) => filename === 'salero-01.jpg')?.source.name).toBe(
+      'Kempinski Hotel Mall of the Emirates',
     );
 
     const hero = catalog.assets.find(({ filename }) => filename === 'rasalkhor-01.jpg');

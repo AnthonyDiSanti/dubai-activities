@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import html
+import io
 import json
 import re
 import sys
@@ -304,7 +305,14 @@ def read_csv(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
     with path.open(newline="", encoding="utf-8-sig") as handle:
-        return list(csv.DictReader(handle))
+        reader = csv.DictReader(handle)
+        rows = []
+        for row in reader:
+            # Unquoted commas or missing cells must fail before sync can rewrite reviewed credits.
+            if None in row or any(value is None for value in row.values()):
+                raise ValueError(f"{path}:{reader.line_num}: row width does not match CSV header")
+            rows.append(row)
+        return rows
 
 
 def selected_manifest_rows(path: Path) -> list[dict[str, str]]:
@@ -388,11 +396,14 @@ def default_attribution(row: dict[str, str]) -> dict[str, str]:
 
 def write_ledger(path: Path, rows: list[dict[str, str]]) -> None:
     """Write a deterministic ledger that remains straightforward to review in git."""
+    # Serialize completely before opening the destination so invalid rows cannot truncate it.
+    output = io.StringIO()
+    writer = csv.DictWriter(output, fieldnames=ATTRIBUTION_FIELDS, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=ATTRIBUTION_FIELDS, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
+        handle.write(output.getvalue())
 
 
 def html_field(value: str) -> tuple[str, str]:

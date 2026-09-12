@@ -55,6 +55,12 @@ Mountain Extreme is rejected after the 12 September 2026 visit despite very well
 
 Boulder Zone remains the firsthand liked option. GoClimb and Rock Republic were already active candidates; both are in Dubai Investment Park 1 (DIP), not DIFC, and neither has a firsthand verdict. Keep their separate existing IDs and galleries. Rock Republic's published terms prefer liquid to powder and welcome personal chalk bags; GoClimb sells powdered chalk but does not explicitly publish permission to use it on its walls. Preserve the dated source evidence and contact-first chalk caveats rather than declaring either gym powder-approved.
 
+## Spanish tapas dinners
+
+Anthony explicitly loves tapas. Keep Lola Taberna Española and Salero in Long dinners with literal “Spanish” and “tapas” in their visible blurbs. Lola leads for a relaxed classic-tapas evening; Salero adds a scheduled flamenco dinner at Kempinski Mall of the Emirates. These are researched candidates, not firsthand verified visits. Preserve Lola’s missing Monday schedule and Salero’s separation between restaurant and performance hours. BOCA closed its DIFC venue on 31 March 2026 and has no verified reopening; exclude it until a dated reopening and current address are confirmed. Current evidence and the closed Jaleo exclusion live in [activity-planning-sources.md](activity-planning-sources.md).
+
+For restaurant additions, check recent closure/relocation announcements explicitly as well as operator menus and hours. A live website, booking link or current-year award does not establish current operation; both BOCA and Jaleo retained misleading old pages after closure.
+
 ## Adult arcade nights
 
 Keep both selected adult game bars in `Nights that go loud`. A firsthand visit established Brass Monkey City Walk as a fun date built around mini basketball, bowling, darts, and quick interactive games—not a deep American-style Barcade cabinet collection. It stays ahead of Triple 777 because the date worked in practice; Triple 777 follows later as the neon, later-running 21+ alternative. Each card should remain candid about format and live package details the venue does not publish.

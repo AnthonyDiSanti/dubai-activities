@@ -1,11 +1,17 @@
 # Tasks
 
+- id: 2026-09-12-tapas — title: Add strong Spanish tapas dinners — owner: Codex — status: done — last update: 2026-09-12
+  - Result: Added Lola Taberna Española and Salero with official planning evidence, booking routes and seven credited photos. Keep these researched candidates unverified; exclude closed BOCA and Jaleo.
+  - Repair: Corrected Sirali’s pre-existing unquoted CSV comma; strict row-width checks and serialization before writes now prevent invalid attribution input from truncating reviewed credits. Four Python regressions are included in `npm run check`.
+  - Verification: All 264 app tests and four Python tests pass; full lint/TypeScript/build/content/static/photo/similarity/strict-attribution checks pass. Desktop/mobile sheet and gallery QA confirms loaded photos, both visible search terms, dismissal to dinners, no BOCA card, no overflow and no console errors.
+  - Release: Local changes only; the earlier climbing work is committed in `f160b85`.
+
 - id: 2026-09-12-climbing-review — title: Reject Mountain Extreme and refresh bouldering alternatives — owner: Codex — status: done — last update: 2026-09-12
   - Follow-up: Add literal climbing/bouldering wording to GoClimb and Rock Republic blurbs for browser Find. All five active/archive climbing records pass rendered-text checks across nine card treatments (45 renders); all 260 tests and full project/asset audits pass after the copy changes. Retain the requirement in the editorial guide.
   - Result: Archived Mountain Extreme with the firsthand setting/chalk/harness verdict and all four photos. GoClimb and Rock Republic already existed; refreshed their DIP 1 locations, practical details and carefully qualified powder-chalk caveats. Boulder Zone remains firsthand liked.
   - Verification: 110 targeted tests and all 260 full-suite tests pass, plus lint, TypeScript, production build, content/static/photo/attribution audits. Browser checks cover the full rejection note, archive return, mobile GoClimb details and Rock Republic sheet.
   - Environment: Preview and tsx audits needed approved execution outside the sandbox because local sockets returned EPERM. All gate stages passed; no verification bypass.
-  - Release: Anthony requested deployment and commit prep. Published the unchanged build that passed all 260 tests and full audits; uploaded 511 objects, removed only `assets/index-B0LURyx6.js`, and completed invalidation `I2W0BZ19W4F2DK05UVE56AWIJP`. Live HTML/bundles, three climbing covers and both credit catalogs match the build and expected headers. Browser checks confirm both search terms on all five active/archive cards, Mountain Extreme under Rejected, its full note and return to `#archive`, with no errors. Uncommitted; index untouched. Prior Nest/icon work is committed in `6c7991b`.
+  - Release: Anthony requested deployment and commit prep. Published the unchanged build that passed all 260 tests and full audits; uploaded 511 objects, removed only `assets/index-B0LURyx6.js`, and completed invalidation `I2W0BZ19W4F2DK05UVE56AWIJP`. Live HTML/bundles, three climbing covers and both credit catalogs match the build and expected headers. Browser checks confirm both search terms on all five active/archive cards, Mountain Extreme under Rejected, its full note and return to `#archive`, with no errors. Committed in `f160b85`. Prior Nest/icon work is committed in `6c7991b`.
   - Links: `docs/content-editorial.md`, `docs/activity-planning-sources.md`, `src/data/archive.ts`
 
 - id: 2026-09-09-nest-roof — title: Resolve Nara hero photo mismatch — owner: Codex — status: done — last update: 2026-09-09

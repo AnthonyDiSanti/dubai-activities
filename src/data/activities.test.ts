@@ -27,6 +27,8 @@ const FACT_ENRICHED_IDS = [
   'motf',
   'moonrise',
   'amazonico',
+  'lolataberna',
+  'salero',
   'tingirie',
   'nammos',
   'amritsr',
@@ -76,6 +78,8 @@ describe('activity planning content', () => {
     'fashionavenue',
     'thepods',
     'mtnextreme',
+    'boca',
+    'jaleo',
   ])(
     'keeps retired or screened-out activity %s out',
     (id) => {

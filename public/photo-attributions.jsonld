@@ -5170,6 +5170,76 @@
         "url": "https://about.meta.com/brand/resources/instagram/instagram-brand/"
       },
       "license": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/lolataberna-01.jpg",
+      "contentUrl": "./photos/lolataberna-01.jpg",
+      "name": "Lola Taberna Española — photo 1",
+      "creditText": "Lola Taberna Española — photo 1, via Lola Taberna Española. Converted to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://lolataberna.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/lolataberna-02.jpg",
+      "contentUrl": "./photos/lolataberna-02.jpg",
+      "name": "Lola Taberna Española — photo 2",
+      "creditText": "Lola Taberna Española — photo 2, via Lola Taberna Española. Converted to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://lolataberna.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/lolataberna-03.jpg",
+      "contentUrl": "./photos/lolataberna-03.jpg",
+      "name": "Lola Taberna Española — photo 3",
+      "creditText": "Lola Taberna Española — photo 3, via Lola Taberna Española. Converted to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://lolataberna.com/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/lolataberna-04.jpg",
+      "contentUrl": "./photos/lolataberna-04.jpg",
+      "name": "Lola Taberna Española — photo 4",
+      "creditText": "Lola Taberna Española — photo 4, via The First Group Restaurants. Converted to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://restaurants.thefirstgroup.com/restaurant/lola/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/salero-01.jpg",
+      "contentUrl": "./photos/salero-01.jpg",
+      "name": "Salero Tapas & Bodega — photo 1",
+      "creditText": "Salero Tapas & Bodega — photo 1, via Kempinski Hotel Mall of the Emirates. Converted to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.kempinski.com/en/mall-of-the-emirates/restaurants-bars/salero-tapas-bodega",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/salero-02.jpg",
+      "contentUrl": "./photos/salero-02.jpg",
+      "name": "Salero Tapas & Bodega — photo 2",
+      "creditText": "Salero Tapas & Bodega — photo 2, via Kempinski Hotel Mall of the Emirates. Converted to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.kempinski.com/en/mall-of-the-emirates/restaurants-bars/salero-tapas-bodega",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/salero-03.jpg",
+      "contentUrl": "./photos/salero-03.jpg",
+      "name": "Salero Tapas & Bodega — photo 3",
+      "creditText": "Salero Tapas & Bodega — photo 3, via Kempinski Hotel Mall of the Emirates. Resized and converted to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.kempinski.com/en/mall-of-the-emirates/restaurants-bars/salero-tapas-bodega",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and converted to JPEG for web display and shown with responsive cropping."
     }
   ]
 }

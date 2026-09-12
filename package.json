@@ -15,6 +15,7 @@
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:photos": "python3 -B scripts/test_photo_attributions.py",
     "typecheck": "tsc -b",
     "audit:content": "tsx scripts/audit-activity-content.ts",
     "audit:attributions": "python3 scripts/photo-attributions.py audit",
@@ -22,7 +23,7 @@
     "audit:photos": "python3 scripts/audit-photo-manifest.py && python3 scripts/check-photo-similarity.py",
     "generate:attributions": "python3 scripts/photo-attributions.py generate",
     "sync:attributions": "python3 scripts/photo-attributions.py sync",
-    "check": "npm run lint && npm run test && npm run build && npm run audit:content && npm run audit:site"
+    "check": "npm run lint && npm run test && npm run test:photos && npm run build && npm run audit:content && npm run audit:site"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.3.0",
