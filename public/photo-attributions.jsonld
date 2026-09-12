@@ -5240,6 +5240,46 @@
       "isBasedOn": "https://www.kempinski.com/en/mall-of-the-emirates/restaurants-bars/salero-tapas-bodega",
       "encodingFormat": "image/jpeg",
       "description": "Resized and converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mimikakushi-01.jpg",
+      "contentUrl": "./photos/mimikakushi-01.jpg",
+      "name": "Mimi Kakushi — photo 1",
+      "creditText": "Mimi Kakushi — photo 1, via Mimi Kakushi. Resized and converted from WebP to JPEG for web display; shown with responsive cropping.",
+      "isBasedOn": "https://mimikakushi.ae/experiences/private-dining-events/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and converted from WebP to JPEG for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mimikakushi-02.jpg",
+      "contentUrl": "./photos/mimikakushi-02.jpg",
+      "name": "Mimi Kakushi — photo 2",
+      "creditText": "Mimi Kakushi — photo 2, via Mimi Kakushi. Converted or re-encoded to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://mimikakushi.ae/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted or re-encoded to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mimikakushi-03.jpg",
+      "contentUrl": "./photos/mimikakushi-03.jpg",
+      "name": "Mimi Kakushi — photo 3",
+      "creditText": "Mimi Kakushi — photo 3, via Mimi Kakushi. Converted or re-encoded to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://mimikakushi.ae/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted or re-encoded to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mimikakushi-04.jpg",
+      "contentUrl": "./photos/mimikakushi-04.jpg",
+      "name": "Mimi Kakushi — photo 4",
+      "creditText": "Mimi Kakushi — photo 4, via Mimi Kakushi. Converted or re-encoded to JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://mimikakushi.ae/",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted or re-encoded to JPEG for web display and shown with responsive cropping."
     }
   ]
 }

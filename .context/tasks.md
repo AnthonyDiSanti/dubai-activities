@@ -1,10 +1,20 @@
 # Tasks
 
+- id: 2026-09-12-mimi-alacarte — title: Focus Mimi on à-la-carte dining — owner: Codex — status: done — last update: 2026-09-12
+  - Scope: Remove Yūshoku promotion, preserve the restaurant and general booking details, record the ordinary prix-fixe dislike with tasting-menu exception, then publish the correction.
+  - Result: All 265 app tests and four Python tests plus release/asset gates pass. Published 522 objects with only the old JavaScript bundle deleted; invalidation `I4GAQQYVNBKEYZLW340ZU0NOWS` completed. Live document/bundles match the build with correct headers; corrected sheet/CTA, no visible Yūshoku, dinner return and console checks pass. No staging or commit.
+
+- id: 2026-09-12-mimi — title: Add and deploy Mimi Kakushi — owner: Codex — status: done — last update: 2026-09-12
+  - Scope: Add the approved Japanese dinner candidate, source four venue photos, verify and publish Mimi plus the earlier tapas additions, then complete commit prep. No firsthand outcome inferred.
+  - Evidence: Official July à-la-carte and June Yūshoku menus plus the live 12 September SevenRooms option details.
+  - Verification: All 265 app tests and four Python tests; lint, TypeScript, build/content/static/photo/strict-attribution audits pass. Desktop/mobile sheet and gallery checks pass.
+  - Release: Uploaded 522 objects, removed only the superseded JavaScript bundle, and completed invalidation `I1Q0PUPUV74LFT795QRBD9NW7C`. Sixteen live files match the build with expected headers; live cards, Mimi route/dismissal and console checks pass. Full dirty-tree commit prep complete; no index changes or commit.
+
 - id: 2026-09-12-tapas — title: Add strong Spanish tapas dinners — owner: Codex — status: done — last update: 2026-09-12
   - Result: Added Lola Taberna Española and Salero with official planning evidence, booking routes and seven credited photos. Keep these researched candidates unverified; exclude closed BOCA and Jaleo.
   - Repair: Corrected Sirali’s pre-existing unquoted CSV comma; strict row-width checks and serialization before writes now prevent invalid attribution input from truncating reviewed credits. Four Python regressions are included in `npm run check`.
   - Verification: All 264 app tests and four Python tests pass; full lint/TypeScript/build/content/static/photo/similarity/strict-attribution checks pass. Desktop/mobile sheet and gallery QA confirms loaded photos, both visible search terms, dismissal to dinners, no BOCA card, no overflow and no console errors.
-  - Release: Local changes only; the earlier climbing work is committed in `f160b85`.
+  - Release: Committed in `61e2a79`; published with the completed Mimi release. The earlier climbing work is committed in `f160b85`.
 
 - id: 2026-09-12-climbing-review — title: Reject Mountain Extreme and refresh bouldering alternatives — owner: Codex — status: done — last update: 2026-09-12
   - Follow-up: Add literal climbing/bouldering wording to GoClimb and Rock Republic blurbs for browser Find. All five active/archive climbing records pass rendered-text checks across nine card treatments (45 renders); all 260 tests and full project/asset audits pass after the copy changes. Retain the requirement in the editorial guide.

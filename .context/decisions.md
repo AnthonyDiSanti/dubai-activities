@@ -1,5 +1,15 @@
 # Decisions
 
+## 2026-09-12 — Prefer à-la-carte dining over ordinary prix fixe
+- Decider: Anthony
+- Decision: Remove Yūshoku promotion from Mimi Kakushi while retaining the venue as an à-la-carte dinner candidate. Ordinary fixed-price menus are disliked; tasting menus remain an exception.
+- Supersedes: The original Mimi addition’s set-menu emphasis. Keep source research for provenance and the four-photo gallery; do not infer rejection of the restaurant.
+
+## 2026-09-12 — Add and publish Mimi Kakushi
+- Decider: Anthony
+- Decision: Add Mimi Kakushi after approval of its look and menu, alongside the already-committed Lola/Salero additions. Publish through the existing Minisite stack; prepare all current changes for commit without staging or committing.
+- Rationale: Same-night booking evidence supports current operation, but it is not a visit or persistent availability promise. Keep Yūshoku as the venue’s fixed-price dinner package with a shared dessert, fee and optional supplements; preserve standard dining and booking caveats.
+
 ## 2026-09-12 — Expand dinner choices around tapas
 - Decider: Anthony (preference), Codex (source-backed selection)
 - Decision: Add Lola Taberna Española and Salero as distinct, untested Spanish tapas candidates. Favor classic sharing plates and flamenco respectively; keep both cuisine/search terms in each blurb.

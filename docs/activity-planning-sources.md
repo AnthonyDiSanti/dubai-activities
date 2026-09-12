@@ -4,6 +4,14 @@ This ledger records the primary sources behind structured `facts`, `advisory`, s
 
 The final animal chapter was researched as a separate addendum and retains its source URLs in `src/data/activities.ts`, `docs/image-manifest.csv`, and `activities/Dubai Activities Addendum 3 - Wildlife.md`.
 
+## 12 September 2026 — Mimi Kakushi
+
+Anthony approved the venue’s look and menu during same-night dinner research; no firsthand visit or completed reservation was reported. Add `mimikakushi` to Long dinners without a verified marker or Plan ahead treatment. Later the same day, Anthony rejected the ordinary prix-fixe Yūshoku package while keeping the restaurant: public copy now recommends à-la-carte dining. Retain package research below only as historical evidence, not a recommendation.
+
+- [Official restaurant site](https://mimikakushi.ae/) supplies the Japanese/1920s Osaka concept, Restaurant Village at Four Seasons Resort Jumeirah location, daily noon–02:00 hours and exact-venue photographs. Do not generalize its dated 31 March–3 April kitchen notice into a permanent last-order claim.
+- [Current à-la-carte menu](https://mimikakushi.ae/wp-content/uploads/2026/07/MK_ALC-WEBSITE_17-JUL.pdf) supports the dish suggestions. [Published Yūshoku menu](https://mimikakushi.ae/wp-content/uploads/2026/06/MK-YUSHOKU_8-JUN-02_compressed.pdf) specifies the price, included starters/main and shared dessert, optional supplements, vegetarian/sushi variants and separately priced drinks. This is the restaurant’s dinner package; Yūshoku means evening meal and does not denote an omakase tradition.
+- [Live SevenRooms booking page](https://www.sevenrooms.com/reservations/mimikakushi) showed regular and Yūshoku restaurant tables for two at 22:45, 23:00 and 23:15 on 12 September. Both option dialogs confirmed the main dining area, table duration, dress and age rules, and cancellation/card-guarantee terms; the Yūshoku dialog says daily from 18:00. This is dated operating evidence, not a persistent availability promise. No booking was submitted. Recheck seasonal menu availability at reservation time.
+
 ## 12 September 2026 — Spanish tapas restaurants
 
 Anthony requested more restaurants and specifically loves tapas. Added two researched candidates to Long dinners; none carries a firsthand outcome.

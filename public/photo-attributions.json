@@ -8724,6 +8724,74 @@
       "creditBasis": "source_credit",
       "modifications": "Resized and converted to JPEG for web display and shown with responsive cropping.",
       "creditText": "Salero Tapas & Bodega — photo 3, via Kempinski Hotel Mall of the Emirates. Resized and converted to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "mimikakushi-01.jpg",
+      "activityId": "mimikakushi",
+      "activityName": "Mimi Kakushi",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Mimi Kakushi",
+        "url": "https://mimikakushi.ae/experiences/private-dining-events/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and converted from WebP to JPEG for web display; shown with responsive cropping.",
+      "creditText": "Mimi Kakushi — photo 1, via Mimi Kakushi. Resized and converted from WebP to JPEG for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "mimikakushi-02.jpg",
+      "activityId": "mimikakushi",
+      "activityName": "Mimi Kakushi",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Mimi Kakushi",
+        "url": "https://mimikakushi.ae/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted or re-encoded to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Mimi Kakushi — photo 2, via Mimi Kakushi. Converted or re-encoded to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "mimikakushi-03.jpg",
+      "activityId": "mimikakushi",
+      "activityName": "Mimi Kakushi",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Mimi Kakushi",
+        "url": "https://mimikakushi.ae/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted or re-encoded to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Mimi Kakushi — photo 3, via Mimi Kakushi. Converted or re-encoded to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "mimikakushi-04.jpg",
+      "activityId": "mimikakushi",
+      "activityName": "Mimi Kakushi",
+      "chapterName": "Long dinners",
+      "slot": 4,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Mimi Kakushi",
+        "url": "https://mimikakushi.ae/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted or re-encoded to JPEG for web display and shown with responsive cropping.",
+      "creditText": "Mimi Kakushi — photo 4, via Mimi Kakushi. Converted or re-encoded to JPEG for web display and shown with responsive cropping."
     }
   ]
 }

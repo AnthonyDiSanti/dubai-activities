@@ -55,6 +55,14 @@ Mountain Extreme is rejected after the 12 September 2026 visit despite very well
 
 Boulder Zone remains the firsthand liked option. GoClimb and Rock Republic were already active candidates; both are in Dubai Investment Park 1 (DIP), not DIFC, and neither has a firsthand verdict. Keep their separate existing IDs and galleries. Rock Republic's published terms prefer liquid to powder and welcome personal chalk bags; GoClimb sells powdered chalk but does not explicitly publish permission to use it on its walls. Preserve the dated source evidence and contact-first chalk caveats rather than declaring either gym powder-approved.
 
+## Restaurant menu preferences
+
+Anthony dislikes ordinary prix-fixe/set menus; tasting menus are the exception. Favor à-la-carte ordering when available and distinguish a chef’s tasting progression from a fixed-price starter/main/dessert package. A disliked package does not reject the restaurant itself.
+
+## Mimi Kakushi
+
+Keep Mimi Kakushi high in Long dinners as a Japanese date-night candidate approved from its atmosphere and menu, without inferring a firsthand verdict. Focus the card and booking CTA on à-la-carte sharing plates. Anthony explicitly rejected the Yūshoku package; omit its promotion, pricing and format from the public card while retaining the dated research in the source ledger. Preserve the restaurant’s dress, age and cancellation details. Same-night availability observed on 12 September supports inclusion but must not become an evergreen promise or a Plan ahead marker. The operator’s dated holiday kitchen hours are not a permanent last-order rule. See [activity-planning-sources.md](activity-planning-sources.md).
+
 ## Spanish tapas dinners
 
 Anthony explicitly loves tapas. Keep Lola Taberna Española and Salero in Long dinners with literal “Spanish” and “tapas” in their visible blurbs. Lola leads for a relaxed classic-tapas evening; Salero adds a scheduled flamenco dinner at Kempinski Mall of the Emirates. These are researched candidates, not firsthand verified visits. Preserve Lola’s missing Monday schedule and Salero’s separation between restaurant and performance hours. BOCA closed its DIFC venue on 31 March 2026 and has no verified reopening; exclude it until a dated reopening and current address are confirmed. Current evidence and the closed Jaleo exclusion live in [activity-planning-sources.md](activity-planning-sources.md).

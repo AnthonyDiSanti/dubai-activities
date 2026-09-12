@@ -29,6 +29,7 @@ const FACT_ENRICHED_IDS = [
   'amazonico',
   'lolataberna',
   'salero',
+  'mimikakushi',
   'tingirie',
   'nammos',
   'amritsr',
