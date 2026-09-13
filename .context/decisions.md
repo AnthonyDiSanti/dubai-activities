@@ -1,5 +1,9 @@
 # Decisions
 
+## 2026-09-13 — Preserve Brass Monkey’s firsthand food verdict
+- Decider: Anthony
+- Decision: Add really good bar food to the City Walk recommendation and retain the specific nacho portion, bar-qualified lamb chops, and literally fall-off-the-bone BBQ ribs in the firsthand note. This supplements the existing liked visit; it does not establish a new visit date.
+
 ## 2026-09-12 — Prefer à-la-carte dining over ordinary prix fixe
 - Decider: Anthony
 - Decision: Remove Yūshoku promotion from Mimi Kakushi while retaining the venue as an à-la-carte dinner candidate. Ordinary fixed-price menus are disliked; tasting menus remain an exception.

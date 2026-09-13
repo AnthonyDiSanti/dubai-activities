@@ -1,5 +1,9 @@
 # Tasks
 
+- id: 2026-09-13-brassmonkey-food — title: Record Brass Monkey food notes — owner: Codex — status: done — last update: 2026-09-13
+  - Result: Added the overall bar-food verdict to the card and all three dish observations to its firsthand note; preserved the original visit date and liked status.
+  - Verification: All 265 app tests, four Python tests, lint, TypeScript, build/content/static/photo/attribution audits pass. Published 522 objects, deleted only the superseded `assets/index-UMdw0E_5.js`, and completed invalidation `I8X3IJWTG13PW68CEQ2JO6SQU4`. Live HTML/CSS/JavaScript match the verified build with expected MIME/cache headers. The live Brass Monkey sheet shows all food notes, closes to `#loud`, and reports no console errors. Full dirty-tree commit prep is complete; index untouched and no commit performed.
+
 - id: 2026-09-12-mimi-alacarte — title: Focus Mimi on à-la-carte dining — owner: Codex — status: done — last update: 2026-09-12
   - Scope: Remove Yūshoku promotion, preserve the restaurant and general booking details, record the ordinary prix-fixe dislike with tasting-menu exception, then publish the correction.
   - Result: All 265 app tests and four Python tests plus release/asset gates pass. Published 522 objects with only the old JavaScript bundle deleted; invalidation `I4GAQQYVNBKEYZLW340ZU0NOWS` completed. Live document/bundles match the build with correct headers; corrected sheet/CTA, no visible Yūshoku, dinner return and console checks pass. No staging or commit.

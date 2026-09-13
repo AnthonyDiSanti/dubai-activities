@@ -33,7 +33,7 @@ export const ARCHIVE_ENTRIES = [
   {
     id: 'brassmonkey',
     name: 'Brass Monkey · City Walk',
-    note: 'Tried in person and liked. It is more an interactive game bar than an American-style Barcade, but the mini basketball, easy competition, and drinks made it a genuinely fun date.',
+    note: 'Tried in person and liked. It is more an interactive game bar than an American-style Barcade, but the mini basketball, easy competition, and drinks made it a genuinely fun date. The food is really good bar food: the nachos are more than three people can finish, the lamb chops are good for a bar, and the BBQ ribs literally fall off the bone—so tender you cannot even pick them up.',
     originalChapterKey: 'loud',
     originalChapterName: 'Nights that go loud',
     recordedOn: '2026-08-29',

@@ -71,7 +71,7 @@ For restaurant additions, check recent closure/relocation announcements explicit
 
 ## Adult arcade nights
 
-Keep both selected adult game bars in `Nights that go loud`. A firsthand visit established Brass Monkey City Walk as a fun date built around mini basketball, bowling, darts, and quick interactive games—not a deep American-style Barcade cabinet collection. It stays ahead of Triple 777 because the date worked in practice; Triple 777 follows later as the neon, later-running 21+ alternative. Each card should remain candid about format and live package details the venue does not publish.
+Keep both selected adult game bars in `Nights that go loud`. A firsthand visit established Brass Monkey City Walk as a fun date built around mini basketball, bowling, darts, and quick interactive games—not a deep American-style Barcade cabinet collection. The firsthand food follow-up praises really good bar food: nachos too large for three people to finish, lamb chops good for a bar, and BBQ ribs so tender they cannot be picked up without falling off the bone. Keep the overall food verdict in the card and the dish details in its firsthand note. It stays ahead of Triple 777 because the date worked in practice; Triple 777 follows later as the neon, later-running 21+ alternative. Each card should remain candid about format and live package details the venue does not publish.
 
 Wavehouse is intentionally excluded because its Atlantis setting and programming skew too family-focused, while BOOM Battle Bar is an activity bar rather than a meaningful arcade. HUSHH at Social Distrikt remains a screened but unpublished option: consider it only if a future refresh needs a polished Downtown barcade with fewer cabinets than Brass Monkey.
 
