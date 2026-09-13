@@ -33,6 +33,8 @@ describe('firsthand activity outcomes', () => {
       'amazonico',
       'tingirie',
       'vibrissae',
+      'citymax',
+      'mamashelter',
     ]);
     expect(activeIds.has('thewall')).toBe(false);
     expect(activeIds.has('mtnextreme')).toBe(false);
@@ -95,6 +97,28 @@ describe('firsthand activity outcomes', () => {
     expect(ITEMS.map(({ id }) => id)).not.toContain('fluffin');
     expect(ARCHIVE_ENTRIES.map(({ id }) => id)).not.toContain('fluffin');
     expect(ARCHIVE_ENTRIES.find(({ id }) => id === 'meowtropolis')?.status).toBe('tried');
+  });
+
+  it('keeps both near-office happy hours verified with their distinct firsthand advice', () => {
+    // Work proximity does not imply book-ahead friction or an interchangeable atmosphere.
+    for (const id of ['citymax', 'mamashelter']) {
+      const entry = ARCHIVE_ENTRIES.find((item) => item.id === id);
+      const activity = ITEMS.find((item) => item.id === id);
+      expect(entry).toMatchObject({ status: 'verified', originalChapterKey: 'loud' });
+      expect(activity).toMatchObject({ ch: 'loud', photos: 4 });
+      expect(activity).not.toHaveProperty('ahead');
+      expect(activity?.blurb).toContain('MultiBank office');
+      expect(activity?.blurb).toMatch(/happy.hour/i);
+    }
+    const citymax = ARCHIVE_ENTRIES.find(({ id }) => id === 'citymax');
+    const mama = ARCHIVE_ENTRIES.find(({ id }) => id === 'mamashelter');
+    expect(citymax?.note).toContain('friendly when approached');
+    expect(citymax?.note).toContain('pub food executed well');
+    expect(citymax?.note).toContain('occasional live music');
+    expect(mama?.note).toContain('lounge opposite the main bar');
+    expect(mama?.note).toContain('usually unstaffed');
+    expect(mama?.note).toContain('only appears while serving drinks');
+    expect(mama?.note).toContain('quiet');
   });
 
   it('records the scope of the Soho Garden visit without claiming the other rooms were open', () => {

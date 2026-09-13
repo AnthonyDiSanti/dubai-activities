@@ -89,6 +89,14 @@ Do not flatten those formats into generic “stand-up in Dubai” cards. Preserv
 
 Keep Courtyard Playhouse and Karak After Dark separate for the same reason. Courtyard is the dependable recurring improv room: Monday `This Is Impro & Sing It` and Wednesday audience-scored `Maestro`, both free but guest-list-first with no guaranteed seat. Karak After Dark is a dated, paid mixed bill at The Junction that combines improv, comedy, and music around audience suggestions. Refresh Courtyard's current dates as a living schedule; retire or advance Karak after its bounded 10 September event rather than turning it into an unsupported evergreen card.
 
+## Happy hour near the MultiBank office
+
+`citymax` uses the familiar display name **Citymax**, as Anthony requested; keep Brew House at Citymax Hotel Business Bay in its location and source details. Citymax and `mamashelter` are two separate firsthand Tried & liked options in Nights that go loud. Keep literal “MultiBank office” and “happy hour”/“happy-hour” in both visible blurbs so proximity and purpose are easy to find. This is user-supplied proximity, not a measured walking-time claim. Neither requires Plan ahead treatment.
+
+Citymax is the upscale pub choice: guests tend to be open and friendly when approached; the broad drinks selection, deals, occasional live music and well-executed pub food make the visit. Preserve the pizza praise as particularly good **for a bar**, not fine-dining or speakeasy-level food. Do not turn occasional music into a daily promise, or reproduce stale deal prices from retired operator pages.
+
+Mama Shelter is classy and usually quiet, with an attractive crowd when people turn up. Preserve the specific lounge recommendation: sit opposite the main bar, order at that bar or with the waiter, and have drinks brought over. The lounge’s own bar is usually unstaffed, and the waiter tends to appear only while serving drinks. Do not rewrite this as regular attentive table service or a crowded party venue. The hotel has several bar/restaurant spaces; the gallery provides venue context, not proof of the precise recommended seat. Current Mama happy-hour evidence and Citymax’s stale-link caveat live in the planning source ledger.
+
 ## Firsthand club nights
 
 Keep BLU Dubai high among the evergreen options in `Nights that go loud`. The 27 August 2026 Shutdown visit proved the Thursday crowd, hip-hop programming, and table-led energy strong enough for a major celebration. Stay candid that dancing happens mainly in the open space around the central bar rather than on a large dedicated floor. Complimentary tables and bottles for women materially shaped the successful crowd balance, but they are not part of the planning burden for a mixed group: a normal walk-in worked and BLU must not carry `ahead` guidance or a reservation CTA.

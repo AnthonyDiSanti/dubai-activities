@@ -14,14 +14,17 @@ describe('generated photo attribution catalog', () => {
       return counts;
     }, {});
 
-    expect(catalog.assets).toHaveLength(486);
-    expect(filenames.size).toBe(486);
+    expect(catalog.assets).toHaveLength(494);
+    expect(filenames.size).toBe(494);
     expect(basisCounts.creative_commons).toBe(54);
     expect(basisCounts.stock_license).toBe(8);
     expect(basisCounts.public_domain).toBe(2);
     expect(basisCounts.trademark).toBe(2);
     expect(basisCounts.creator_credit).toBe(17);
-    expect(basisCounts.source_credit).toBe(403);
+    expect(basisCounts.source_credit).toBe(411);
+
+    expect(catalog.assets.find(({ filename }) => filename === 'citymax-01.jpg')?.source.name).toBe('Brew House via Eat App');
+    expect(catalog.assets.find(({ filename }) => filename === 'mamashelter-01.jpg')?.source.name).toBe('Mama Shelter Dubai');
 
     // New venue galleries must retain their named source instead of a generic host fallback.
     expect(catalog.assets.find(({ filename }) => filename === 'brassmonkey-01.jpg')?.source.name).toBe(

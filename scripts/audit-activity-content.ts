@@ -37,7 +37,7 @@ const EXCLUDED_ACTIVITY_IDS = new Set([
 ]);
 const FIRST_PERSON = /\b(?:i|i['’](?:m|ve|d|ll)|me|my|mine|myself|we|we['’](?:re|ve|d|ll)|us|our|ours|ourselves|let['’]s)\b/i;
 const EXPECTED_CHAPTERS = 12;
-const EXPECTED_ACTIVITIES = 135;
+const EXPECTED_ACTIVITIES = 137;
 const EXPECTED_HEROES = 6;
 
 const errors: string[] = [];

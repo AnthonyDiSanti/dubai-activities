@@ -8559,54 +8559,6 @@
       "creditText": "Lock, Stock & Barrel Business Bay room in service, via Tripadvisor. Re-encoded for web display and shown with responsive cropping."
     },
     {
-      "filename": "icon-google-maps.svg",
-      "activityId": null,
-      "activityName": "Interface marks",
-      "chapterName": "Brand marks",
-      "slot": null,
-      "workTitle": "Google Maps app mark",
-      "creator": {
-        "name": "Google",
-        "type": "organization",
-        "url": "https://about.google/brand-resource-center/"
-      },
-      "source": {
-        "name": "Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg"
-      },
-      "license": {
-        "name": "Public-domain copyright status; trademark rules apply",
-        "url": "https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg"
-      },
-      "creditBasis": "trademark",
-      "modifications": null,
-      "creditText": "Google Maps app mark by Google, via Wikimedia Commons. Public-domain copyright status; trademark rules apply."
-    },
-    {
-      "filename": "icon-instagram.svg",
-      "activityId": null,
-      "activityName": "Interface marks",
-      "chapterName": "Brand marks",
-      "slot": null,
-      "workTitle": "Instagram gradient glyph",
-      "creator": {
-        "name": "Meta Platforms, Inc.",
-        "type": "organization",
-        "url": "https://about.meta.com/brand/resources/instagram/instagram-brand/"
-      },
-      "source": {
-        "name": "Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg"
-      },
-      "license": {
-        "name": "Public-domain copyright status; trademark rules apply",
-        "url": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg"
-      },
-      "creditBasis": "trademark",
-      "modifications": null,
-      "creditText": "Instagram gradient glyph by Meta Platforms, Inc., via Wikimedia Commons. Public-domain copyright status; trademark rules apply."
-    },
-    {
       "filename": "lolataberna-01.jpg",
       "activityId": "lolataberna",
       "activityName": "Lola Taberna Española",
@@ -8792,6 +8744,190 @@
       "creditBasis": "source_credit",
       "modifications": "Converted or re-encoded to JPEG for web display and shown with responsive cropping.",
       "creditText": "Mimi Kakushi — photo 4, via Mimi Kakushi. Converted or re-encoded to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "citymax-01.jpg",
+      "activityId": "citymax",
+      "activityName": "Citymax",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "Brew House via Eat App · venue gallery 01",
+      "creator": null,
+      "source": {
+        "name": "Brew House via Eat App",
+        "url": "https://eatapp.co/brew-house-business-bay-ground-floor-citymax-hotel-business-bay-al-amal-street-business-bay-dubai"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Brew House via Eat App · venue gallery 01, via Brew House via Eat App. Cropped and resized for web display."
+    },
+    {
+      "filename": "citymax-02.jpg",
+      "activityId": "citymax",
+      "activityName": "Citymax",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "Brew House via Eat App · venue gallery 02",
+      "creator": null,
+      "source": {
+        "name": "Brew House via Eat App",
+        "url": "https://eatapp.co/brew-house-business-bay-ground-floor-citymax-hotel-business-bay-al-amal-street-business-bay-dubai"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Brew House via Eat App · venue gallery 02, via Brew House via Eat App. Cropped and resized for web display."
+    },
+    {
+      "filename": "citymax-03.jpg",
+      "activityId": "citymax",
+      "activityName": "Citymax",
+      "chapterName": "Nights that go loud",
+      "slot": 3,
+      "workTitle": "Brew House via Eat App · venue gallery 03",
+      "creator": null,
+      "source": {
+        "name": "Brew House via Eat App",
+        "url": "https://eatapp.co/brew-house-business-bay-ground-floor-citymax-hotel-business-bay-al-amal-street-business-bay-dubai"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Brew House via Eat App · venue gallery 03, via Brew House via Eat App. Cropped and resized for web display."
+    },
+    {
+      "filename": "citymax-04.jpg",
+      "activityId": "citymax",
+      "activityName": "Citymax",
+      "chapterName": "Nights that go loud",
+      "slot": 4,
+      "workTitle": "Brew House via Eat App · venue gallery 04",
+      "creator": null,
+      "source": {
+        "name": "Brew House via Eat App",
+        "url": "https://eatapp.co/brew-house-business-bay-ground-floor-citymax-hotel-business-bay-al-amal-street-business-bay-dubai"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Brew House via Eat App · venue gallery 04, via Brew House via Eat App. Cropped and resized for web display."
+    },
+    {
+      "filename": "mamashelter-01.jpg",
+      "activityId": "mamashelter",
+      "activityName": "Mama Shelter · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "Mama Shelter Dubai · venue gallery 01",
+      "creator": null,
+      "source": {
+        "name": "Mama Shelter Dubai",
+        "url": "https://mamashelter.com/dubai/eat-drink/mamms-bar/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Mama Shelter Dubai · venue gallery 01, via Mama Shelter Dubai. Cropped and resized for web display."
+    },
+    {
+      "filename": "mamashelter-02.jpg",
+      "activityId": "mamashelter",
+      "activityName": "Mama Shelter · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "Mama Shelter Dubai · venue gallery 02",
+      "creator": null,
+      "source": {
+        "name": "Mama Shelter Dubai",
+        "url": "https://mamashelter.com/dubai/eat-drink/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Mama Shelter Dubai · venue gallery 02, via Mama Shelter Dubai. Cropped and resized for web display."
+    },
+    {
+      "filename": "mamashelter-03.jpg",
+      "activityId": "mamashelter",
+      "activityName": "Mama Shelter · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 3,
+      "workTitle": "Mama Shelter Dubai · venue gallery 03",
+      "creator": null,
+      "source": {
+        "name": "Mama Shelter Dubai",
+        "url": "https://mamashelter.com/dubai/eat-drink/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Mama Shelter Dubai · venue gallery 03, via Mama Shelter Dubai. Cropped and resized for web display."
+    },
+    {
+      "filename": "mamashelter-04.jpg",
+      "activityId": "mamashelter",
+      "activityName": "Mama Shelter · Business Bay",
+      "chapterName": "Nights that go loud",
+      "slot": 4,
+      "workTitle": "Mama Shelter Dubai · venue gallery 04",
+      "creator": null,
+      "source": {
+        "name": "Mama Shelter Dubai",
+        "url": "https://mamashelter.com/dubai/eat-drink/mamms-bar/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Mama Shelter Dubai · venue gallery 04, via Mama Shelter Dubai. Cropped and resized for web display."
+    },
+    {
+      "filename": "icon-google-maps.svg",
+      "activityId": null,
+      "activityName": "Interface marks",
+      "chapterName": "Brand marks",
+      "slot": null,
+      "workTitle": "Google Maps app mark",
+      "creator": {
+        "name": "Google",
+        "type": "organization",
+        "url": "https://about.google/brand-resource-center/"
+      },
+      "source": {
+        "name": "Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg"
+      },
+      "license": {
+        "name": "Public-domain copyright status; trademark rules apply",
+        "url": "https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg"
+      },
+      "creditBasis": "trademark",
+      "modifications": null,
+      "creditText": "Google Maps app mark by Google, via Wikimedia Commons. Public-domain copyright status; trademark rules apply."
+    },
+    {
+      "filename": "icon-instagram.svg",
+      "activityId": null,
+      "activityName": "Interface marks",
+      "chapterName": "Brand marks",
+      "slot": null,
+      "workTitle": "Instagram gradient glyph",
+      "creator": {
+        "name": "Meta Platforms, Inc.",
+        "type": "organization",
+        "url": "https://about.meta.com/brand/resources/instagram/instagram-brand/"
+      },
+      "source": {
+        "name": "Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg"
+      },
+      "license": {
+        "name": "Public-domain copyright status; trademark rules apply",
+        "url": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg"
+      },
+      "creditBasis": "trademark",
+      "modifications": null,
+      "creditText": "Instagram gradient glyph by Meta Platforms, Inc., via Wikimedia Commons. Public-domain copyright status; trademark rules apply."
     }
   ]
 }

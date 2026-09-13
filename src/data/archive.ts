@@ -68,6 +68,26 @@ export const ARCHIVE_ENTRIES = [
     status: 'verified',
   },
   {
+    id: 'citymax',
+    name: 'Citymax',
+    // Keep the user's praise grounded in pub food and approachable company, not fine dining.
+    note: 'Tried in person and liked. Citymax is an upscale pub with occasional live music and a crowd that tends to be very open and friendly when approached. The food is surprisingly good, especially the pizza for a bar: straight-up pub food executed well, rather than speakeasy-level dining. A wide selection of drinks, deals, friendly atmosphere, and live music make it an easy happy-hour choice near the MultiBank office.',
+    originalChapterKey: 'loud',
+    originalChapterName: 'Nights that go loud',
+    recordedOn: '2026-09-13',
+    status: 'verified',
+  },
+  {
+    id: 'mamashelter',
+    name: 'Mama Shelter · Business Bay',
+    // The practical service guidance comes from the visit, not the operator's nightlife marketing.
+    note: 'Tried in person and liked. Mama Shelter tends to be quiet, but the crowd it does draw is attractive and it is a classy place for a cocktail. Sit in the lounge opposite the main bar. The lounge has a bar too, but it is usually unstaffed. Drinks are brought to the lounge, but order at the main bar or with the waiter, who generally only appears while serving drinks. A good happy-hour option near the MultiBank office; expect a classy, quiet evening.',
+    originalChapterKey: 'loud',
+    originalChapterName: 'Nights that go loud',
+    recordedOn: '2026-09-13',
+    status: 'verified',
+  },
+  {
     id: 'meowtropolis',
     name: 'Meowtropolis Cat Café',
     note: 'Tried in person. It was okay, but not strong enough to keep as an active recommendation.',

@@ -5143,36 +5143,6 @@
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/icon-google-maps.svg",
-      "contentUrl": "./photos/icon-google-maps.svg",
-      "name": "Google Maps app mark",
-      "creditText": "Google Maps app mark by Google, via Wikimedia Commons. Public-domain copyright status; trademark rules apply.",
-      "isBasedOn": "https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg",
-      "encodingFormat": "image/svg+xml",
-      "creator": {
-        "@type": "Organization",
-        "name": "Google",
-        "url": "https://about.google/brand-resource-center/"
-      },
-      "license": "https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg"
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/icon-instagram.svg",
-      "contentUrl": "./photos/icon-instagram.svg",
-      "name": "Instagram gradient glyph",
-      "creditText": "Instagram gradient glyph by Meta Platforms, Inc., via Wikimedia Commons. Public-domain copyright status; trademark rules apply.",
-      "isBasedOn": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg",
-      "encodingFormat": "image/svg+xml",
-      "creator": {
-        "@type": "Organization",
-        "name": "Meta Platforms, Inc.",
-        "url": "https://about.meta.com/brand/resources/instagram/instagram-brand/"
-      },
-      "license": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg"
-    },
-    {
-      "@type": "ImageObject",
       "@id": "./photos/lolataberna-01.jpg",
       "contentUrl": "./photos/lolataberna-01.jpg",
       "name": "Lola Taberna Española — photo 1",
@@ -5280,6 +5250,116 @@
       "isBasedOn": "https://mimikakushi.ae/",
       "encodingFormat": "image/jpeg",
       "description": "Converted or re-encoded to JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/citymax-01.jpg",
+      "contentUrl": "./photos/citymax-01.jpg",
+      "name": "Brew House via Eat App · venue gallery 01",
+      "creditText": "Brew House via Eat App · venue gallery 01, via Brew House via Eat App. Cropped and resized for web display.",
+      "isBasedOn": "https://eatapp.co/brew-house-business-bay-ground-floor-citymax-hotel-business-bay-al-amal-street-business-bay-dubai",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/citymax-02.jpg",
+      "contentUrl": "./photos/citymax-02.jpg",
+      "name": "Brew House via Eat App · venue gallery 02",
+      "creditText": "Brew House via Eat App · venue gallery 02, via Brew House via Eat App. Cropped and resized for web display.",
+      "isBasedOn": "https://eatapp.co/brew-house-business-bay-ground-floor-citymax-hotel-business-bay-al-amal-street-business-bay-dubai",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/citymax-03.jpg",
+      "contentUrl": "./photos/citymax-03.jpg",
+      "name": "Brew House via Eat App · venue gallery 03",
+      "creditText": "Brew House via Eat App · venue gallery 03, via Brew House via Eat App. Cropped and resized for web display.",
+      "isBasedOn": "https://eatapp.co/brew-house-business-bay-ground-floor-citymax-hotel-business-bay-al-amal-street-business-bay-dubai",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/citymax-04.jpg",
+      "contentUrl": "./photos/citymax-04.jpg",
+      "name": "Brew House via Eat App · venue gallery 04",
+      "creditText": "Brew House via Eat App · venue gallery 04, via Brew House via Eat App. Cropped and resized for web display.",
+      "isBasedOn": "https://eatapp.co/brew-house-business-bay-ground-floor-citymax-hotel-business-bay-al-amal-street-business-bay-dubai",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mamashelter-01.jpg",
+      "contentUrl": "./photos/mamashelter-01.jpg",
+      "name": "Mama Shelter Dubai · venue gallery 01",
+      "creditText": "Mama Shelter Dubai · venue gallery 01, via Mama Shelter Dubai. Cropped and resized for web display.",
+      "isBasedOn": "https://mamashelter.com/dubai/eat-drink/mamms-bar/",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mamashelter-02.jpg",
+      "contentUrl": "./photos/mamashelter-02.jpg",
+      "name": "Mama Shelter Dubai · venue gallery 02",
+      "creditText": "Mama Shelter Dubai · venue gallery 02, via Mama Shelter Dubai. Cropped and resized for web display.",
+      "isBasedOn": "https://mamashelter.com/dubai/eat-drink/",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mamashelter-03.jpg",
+      "contentUrl": "./photos/mamashelter-03.jpg",
+      "name": "Mama Shelter Dubai · venue gallery 03",
+      "creditText": "Mama Shelter Dubai · venue gallery 03, via Mama Shelter Dubai. Cropped and resized for web display.",
+      "isBasedOn": "https://mamashelter.com/dubai/eat-drink/",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mamashelter-04.jpg",
+      "contentUrl": "./photos/mamashelter-04.jpg",
+      "name": "Mama Shelter Dubai · venue gallery 04",
+      "creditText": "Mama Shelter Dubai · venue gallery 04, via Mama Shelter Dubai. Cropped and resized for web display.",
+      "isBasedOn": "https://mamashelter.com/dubai/eat-drink/mamms-bar/",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped and resized for web display."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/icon-google-maps.svg",
+      "contentUrl": "./photos/icon-google-maps.svg",
+      "name": "Google Maps app mark",
+      "creditText": "Google Maps app mark by Google, via Wikimedia Commons. Public-domain copyright status; trademark rules apply.",
+      "isBasedOn": "https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg",
+      "encodingFormat": "image/svg+xml",
+      "creator": {
+        "@type": "Organization",
+        "name": "Google",
+        "url": "https://about.google/brand-resource-center/"
+      },
+      "license": "https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/icon-instagram.svg",
+      "contentUrl": "./photos/icon-instagram.svg",
+      "name": "Instagram gradient glyph",
+      "creditText": "Instagram gradient glyph by Meta Platforms, Inc., via Wikimedia Commons. Public-domain copyright status; trademark rules apply.",
+      "isBasedOn": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg",
+      "encodingFormat": "image/svg+xml",
+      "creator": {
+        "@type": "Organization",
+        "name": "Meta Platforms, Inc.",
+        "url": "https://about.meta.com/brand/resources/instagram/instagram-brand/"
+      },
+      "license": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg"
     }
   ]
 }

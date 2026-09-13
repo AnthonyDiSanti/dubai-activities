@@ -468,6 +468,11 @@ describe('App', () => {
     // The paired animal cafés add one verified outing and a fourth filtered chapter.
     const creekCafesCard = screen.getByRole('heading', { name: 'Cat Café Vibrissae & Fluffin · Creek Harbour' })
       .closest('.activity-card');
+    // These visits add two approachable happy hours to the existing nightlife chapter.
+    const citymaxCard = screen.getByRole('heading', { name: 'Citymax' })
+      .closest('.activity-card');
+    const mamaCard = screen.getByRole('heading', { name: 'Mama Shelter · Business Bay' })
+      .closest('.activity-card');
     const tingIrieCard = screen.getByRole('heading', { name: 'Ting Irie' })
       .closest('.activity-card');
     expect(boulderCard).not.toBeNull();
@@ -480,7 +485,7 @@ describe('App', () => {
       .toHaveClass('verified-stamp');
     expect(within(sohoCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
       .toHaveClass('verified-stamp');
-    for (const verifiedCard of [bluCard, brassMonkeyCard, amazonicoCard, tingIrieCard, creekCafesCard]) {
+    for (const verifiedCard of [bluCard, brassMonkeyCard, amazonicoCard, tingIrieCard, creekCafesCard, citymaxCard, mamaCard]) {
       expect(within(verifiedCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
         .toHaveClass('verified-stamp');
     }
@@ -490,7 +495,7 @@ describe('App', () => {
     }));
 
     expect(container.querySelectorAll('section.chapter')).toHaveLength(4);
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(7);
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(9);
     expect(screen.getByRole('heading', { name: 'Soho Garden, HIVE and CODE' }))
       .toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'BLU Dubai' })).toBeInTheDocument();

@@ -1,5 +1,11 @@
 # Decisions
 
+## 2026-09-13 — Add two tried-and-liked happy hours near work
+- Decider: Anthony
+- Decision: Add CityMax (Brew House, Business Bay) and Mama Shelter as distinct Tried & liked choices near the MultiBank office. Preserve CityMax’s friendly approached crowd, occasional music and well-executed pub food/pizza, and Mama’s quiet classy atmosphere, attractive crowd, lounge seat and proactive ordering guidance. Keep both searchable by MultiBank and happy hour, without Plan ahead.
+- Naming: Anthony confirmed the branch and requested the everyday display name **Citymax**; retain Brew House at Citymax Business Bay in location details.
+- Evidence: User-supplied visits/proximity and explicit confirmation of Brew House at Citymax Business Bay; current Mama calendar; exact Brew House booking listing. Old Citymax/Playbook links are stale, so avoid fixed pub deals/music schedules. Eight source-credited venue photos added; details live in the editorial/source docs.
+
 ## 2026-09-13 — Recommend the Creek Harbour café pair as one outing
 - Decider: Anthony
 - Decision: Combine Cat Café Vibrissae and Fluffin under the retained `vibrissae` ID and mark the pair Tried & liked after visiting both. Keep Vibrissae’s slightly-better-than-Meowtropolis-but-not-amazing verdict and Fluffin’s fun-but-child-oriented character. The across-the-street pairing, marina and nearby food justify the combined recommendation; Meowtropolis stays Tried.
