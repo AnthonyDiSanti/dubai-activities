@@ -6632,7 +6632,7 @@
     {
       "filename": "vibrissae-01.jpg",
       "activityId": "vibrissae",
-      "activityName": "Cat Café Vibrissae · Creek Harbour",
+      "activityName": "Cat Café Vibrissae & Fluffin · Creek Harbour",
       "chapterName": "Fur, feathers and scales",
       "slot": 1,
       "workTitle": null,
@@ -6644,14 +6644,14 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Cropped and resized for web display.",
-      "creditText": "Cat Café Vibrissae · Creek Harbour — photo 1, via Magicpin. Cropped and resized for web display."
+      "creditText": "Cat Café Vibrissae & Fluffin · Creek Harbour — photo 1, via Magicpin. Cropped and resized for web display."
     },
     {
-      "filename": "vibrissae-02.jpg",
+      "filename": "vibrissae-03.jpg",
       "activityId": "vibrissae",
-      "activityName": "Cat Café Vibrissae · Creek Harbour",
+      "activityName": "Cat Café Vibrissae & Fluffin · Creek Harbour",
       "chapterName": "Fur, feathers and scales",
-      "slot": 2,
+      "slot": 3,
       "workTitle": null,
       "creator": null,
       "source": {
@@ -6661,14 +6661,14 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Cropped and resized for web display.",
-      "creditText": "Cat Café Vibrissae · Creek Harbour — photo 2, via Vibrissae Cat Café. Cropped and resized for web display."
+      "creditText": "Cat Café Vibrissae & Fluffin · Creek Harbour — photo 3, via Vibrissae Cat Café. Cropped and resized for web display."
     },
     {
-      "filename": "vibrissae-03.jpg",
+      "filename": "vibrissae-05.jpg",
       "activityId": "vibrissae",
-      "activityName": "Cat Café Vibrissae · Creek Harbour",
+      "activityName": "Cat Café Vibrissae & Fluffin · Creek Harbour",
       "chapterName": "Fur, feathers and scales",
-      "slot": 3,
+      "slot": 5,
       "workTitle": null,
       "creator": null,
       "source": {
@@ -6678,14 +6678,14 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Cropped and resized for web display.",
-      "creditText": "Cat Café Vibrissae · Creek Harbour — photo 3, via Magicpin. Cropped and resized for web display."
+      "creditText": "Cat Café Vibrissae & Fluffin · Creek Harbour — photo 5, via Magicpin. Cropped and resized for web display."
     },
     {
-      "filename": "vibrissae-04.jpg",
+      "filename": "vibrissae-07.jpg",
       "activityId": "vibrissae",
-      "activityName": "Cat Café Vibrissae · Creek Harbour",
+      "activityName": "Cat Café Vibrissae & Fluffin · Creek Harbour",
       "chapterName": "Fur, feathers and scales",
-      "slot": 4,
+      "slot": 7,
       "workTitle": null,
       "creator": null,
       "source": {
@@ -6695,29 +6695,12 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Cropped and resized for web display.",
-      "creditText": "Cat Café Vibrissae · Creek Harbour — photo 4, via Magicpin. Cropped and resized for web display."
+      "creditText": "Cat Café Vibrissae & Fluffin · Creek Harbour — photo 7, via Magicpin. Cropped and resized for web display."
     },
     {
-      "filename": "fluffin-01.jpg",
-      "activityId": "fluffin",
-      "activityName": "Fluffin Dog Café",
-      "chapterName": "Fur, feathers and scales",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Fluffin",
-        "url": "https://fluffin.ae/gallery"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Cropped and resized for web display.",
-      "creditText": "Fluffin Dog Café — photo 1, via Fluffin. Cropped and resized for web display."
-    },
-    {
-      "filename": "fluffin-02.jpg",
-      "activityId": "fluffin",
-      "activityName": "Fluffin Dog Café",
+      "filename": "vibrissae-02.jpg",
+      "activityId": "vibrissae",
+      "activityName": "Cat Café Vibrissae & Fluffin · Creek Harbour",
       "chapterName": "Fur, feathers and scales",
       "slot": 2,
       "workTitle": null,
@@ -6729,29 +6712,12 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Cropped and resized for web display.",
-      "creditText": "Fluffin Dog Café — photo 2, via Fluffin. Cropped and resized for web display."
+      "creditText": "Cat Café Vibrissae & Fluffin · Creek Harbour — photo 2, via Fluffin. Cropped and resized for web display."
     },
     {
-      "filename": "fluffin-03.jpg",
-      "activityId": "fluffin",
-      "activityName": "Fluffin Dog Café",
-      "chapterName": "Fur, feathers and scales",
-      "slot": 3,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Fluffin",
-        "url": "https://fluffin.ae/gallery"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Cropped and resized for web display.",
-      "creditText": "Fluffin Dog Café — photo 3, via Fluffin. Cropped and resized for web display."
-    },
-    {
-      "filename": "fluffin-04.jpg",
-      "activityId": "fluffin",
-      "activityName": "Fluffin Dog Café",
+      "filename": "vibrissae-04.jpg",
+      "activityId": "vibrissae",
+      "activityName": "Cat Café Vibrissae & Fluffin · Creek Harbour",
       "chapterName": "Fur, feathers and scales",
       "slot": 4,
       "workTitle": null,
@@ -6763,7 +6729,41 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Cropped and resized for web display.",
-      "creditText": "Fluffin Dog Café — photo 4, via Fluffin. Cropped and resized for web display."
+      "creditText": "Cat Café Vibrissae & Fluffin · Creek Harbour — photo 4, via Fluffin. Cropped and resized for web display."
+    },
+    {
+      "filename": "vibrissae-06.jpg",
+      "activityId": "vibrissae",
+      "activityName": "Cat Café Vibrissae & Fluffin · Creek Harbour",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 6,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Fluffin",
+        "url": "https://fluffin.ae/gallery"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Cat Café Vibrissae & Fluffin · Creek Harbour — photo 6, via Fluffin. Cropped and resized for web display."
+    },
+    {
+      "filename": "vibrissae-08.jpg",
+      "activityId": "vibrissae",
+      "activityName": "Cat Café Vibrissae & Fluffin · Creek Harbour",
+      "chapterName": "Fur, feathers and scales",
+      "slot": 8,
+      "workTitle": null,
+      "creator": null,
+      "source": {
+        "name": "Fluffin",
+        "url": "https://fluffin.ae/gallery"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped and resized for web display.",
+      "creditText": "Cat Café Vibrissae & Fluffin · Creek Harbour — photo 8, via Fluffin. Cropped and resized for web display."
     },
     {
       "filename": "platinumcamel-01.jpg",

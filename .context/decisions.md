@@ -1,5 +1,10 @@
 # Decisions
 
+## 2026-09-13 — Recommend the Creek Harbour café pair as one outing
+- Decider: Anthony
+- Decision: Combine Cat Café Vibrissae and Fluffin under the retained `vibrissae` ID and mark the pair Tried & liked after visiting both. Keep Vibrissae’s slightly-better-than-Meowtropolis-but-not-amazing verdict and Fluffin’s fun-but-child-oriented character. The across-the-street pairing, marina and nearby food justify the combined recommendation; Meowtropolis stays Tried.
+- Implementation: Retain all eight original photographs, alternating cats/dogs with per-image sources intact. Remove the standalone `fluffin` entry. Preserve separate admission/booking details and distinguish Fluffin’s 21:00 last dog-area entry / 22:00 close from café hours. Sources are in `docs/activity-planning-sources.md`.
+
 ## 2026-09-13 — Preserve Brass Monkey’s firsthand food verdict
 - Decider: Anthony
 - Decision: Add really good bar food to the City Walk recommendation and retain the specific nacho portion, bar-qualified lamb chops, and literally fall-off-the-bone BBQ ribs in the firsthand note. This supplements the existing liked visit; it does not establish a new visit date.

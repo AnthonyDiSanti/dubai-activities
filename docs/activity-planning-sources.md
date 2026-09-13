@@ -4,6 +4,13 @@ This ledger records the primary sources behind structured `facts`, `advisory`, s
 
 The final animal chapter was researched as a separate addendum and retains its source URLs in `src/data/activities.ts`, `docs/image-manifest.csv`, and `activities/Dubai Activities Addendum 3 - Wildlife.md`.
 
+## 13 September 2026 — Pair the Creek Harbour animal cafés
+
+- Anthony visited both: Vibrissae was slightly better than Meowtropolis but not amazing; Fluffin was fun and distinctly child-oriented. Their across-the-street proximity, pleasant marina setting and good nearby food make the combined outing Tried & liked. Retain `vibrissae` for the single activity, merge all eight photos, and retire the standalone `fluffin` entry. Meowtropolis remains merely Tried.
+- [Vibrissae visit guide](https://www.vibrissaecafe.com/visit-us) confirms Creek Rise 1, Dubai Creek Harbour; 60/90/120-minute passes at AED 59/79/99 per person; weekday 10:00–22:00 and Friday–Sunday 10:00–00:00; booking recommended, with capacity-dependent walk-ins.
+- [Fluffin’s official homepage](https://fluffin.ae/), verified in its rendered page, confirms Creek Edge Tower 1, Retail Shop 1, Dubai Creek Harbour, with a waterfront promenade entrance. One-hour resident-dog sessions cost AED 80 Monday–Thursday / AED 90 Friday–Sunday per person and include about 50 minutes with the dogs. Last dog-area entry is 21:00; it closes at 22:00 daily even when the café runs until midnight. Walk-ins depend on capacity. The café itself has no admission charge; the card’s Fluffin price applies to the dog session.
+- Use **Dubai Creek Harbour marina** for the locality. The book action opens Vibrissae’s exact-branch booking page; the secondary Site action opens Fluffin. Allowing 2–3 hours before food/walking is editorial guidance based on the separate session lengths, not a combined ticket or operator package.
+
 ## 12 September 2026 — Mimi Kakushi
 
 Anthony approved the venue’s look and menu during same-night dinner research; no firsthand visit or completed reservation was reported. Add `mimikakushi` to Long dinners without a verified marker or Plan ahead treatment. Later the same day, Anthony rejected the ordinary prix-fixe Yūshoku package while keeping the restaurant: public copy now recommends à-la-carte dining. Retain package research below only as historical evidence, not a recommendation.

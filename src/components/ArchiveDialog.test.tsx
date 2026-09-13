@@ -47,7 +47,9 @@ describe('ArchiveDialog', () => {
     expect(verified).toHaveTextContent('BLU Dubai');
     expect(verified).toHaveTextContent('Brass Monkey · City Walk');
     expect(verified).toHaveTextContent('Amazónico Dubai');
+    // The paired café visit appears once in the liked group.
     expect(verified).toHaveTextContent('Ting Irie');
+    expect(verified).toHaveTextContent('Cat Café Vibrissae & Fluffin · Creek Harbour');
     expect(verified).not.toHaveTextContent('The Wall');
     expect(tried).toHaveTextContent('Meowtropolis Cat Café');
     expect(tried).toHaveTextContent("Roberto's");
@@ -61,12 +63,12 @@ describe('ArchiveDialog', () => {
     expect(rejected).toHaveTextContent('Fashion Avenue at Dubai Mall');
     expect(rejected).toHaveTextContent('The Pods');
     expect(rejected).not.toHaveTextContent('Boulder Zone');
-    expect(within(dialog).getAllByRole('article')).toHaveLength(16);
+    expect(within(dialog).getAllByRole('article')).toHaveLength(17);
     expect(within(verified).getAllByRole('img', { name: 'Tried and liked' }))
-      .toHaveLength(6);
+      .toHaveLength(7);
     // Outcome totals can match; scope each count to its labeled destination.
-    expect(within(dialog).getByRole('link', { name: 'Show 6 Tried & liked archive entries' }))
-      .toHaveTextContent('6');
+    expect(within(dialog).getByRole('link', { name: 'Show 7 Tried & liked archive entries' }))
+      .toHaveTextContent('7');
     expect(within(dialog).getByRole('link', { name: 'Show 6 Rejected archive entries' }))
       .toHaveTextContent('6');
     expect(within(tried).queryByRole('img', { name: 'Tried and liked' }))
@@ -180,7 +182,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    expect(document.querySelectorAll('.activity-card')).toHaveLength(16);
+    expect(document.querySelectorAll('.activity-card')).toHaveLength(17);
     expect(document.querySelector('#archive-activity-robertos .media-fill')).toHaveAttribute(
       'src',
       'photos/robertos-01.jpg',

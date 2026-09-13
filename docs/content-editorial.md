@@ -105,9 +105,9 @@ Fashion Avenue is rejected as an active shopping recommendation because a firsth
 
 `Fur, feathers and scales` is intentionally the twelfth and final chapter so it remains visibly new to readers of the earlier guide. Its curated order is:
 
-`rasalkhor` → `falconhospital` → `turtlerehab` → `platinumcamel` → `vibrissae` → `camelfarm` → `boomah` → `fluffin`
+`rasalkhor` → `falconhospital` → `turtlerehab` → `platinumcamel` → `vibrissae` → `camelfarm` → `boomah`
 
-The order leads with the most distinctive conservation experiences and strongest photography, keeps the three real book-ahead treatments at positions 2, 4, and 6, and places the venues with thinner public operating detail later. None is a true dated event. Butterfly Garden and Meowtropolis moved to the firsthand archive after real visits; Crocodile Park, Dubai Safari Park, The Cat Café Arjan, rescue meetups, and redundant or low-confidence venues remain outside the published roster.
+The order leads with the most distinctive conservation experiences and strongest photography, keeps the three real book-ahead treatments at positions 2, 4, and 6, and places the venues with thinner public operating detail later. The `vibrissae` entry now combines Cat Café Vibrissae and Fluffin as one Tried & liked Creek Harbour outing. Preserve the qualified firsthand verdicts: Vibrissae was slightly better than Meowtropolis but not amazing; Fluffin was fun but child-oriented. The across-the-street pairing, good food and marina walk earn the combined recommendation. Do not restore a separate `fluffin` card or upgrade Meowtropolis. The eight-photo gallery alternates Vibrissae cats and Fluffin dogs under the retained `vibrissae` ID; existing Vibrissae links remain valid. None is a true dated event. Butterfly Garden and Meowtropolis moved to the firsthand archive after real visits; Crocodile Park, Dubai Safari Park, The Cat Café Arjan, rescue meetups, and redundant or low-confidence venues remain outside the published roster.
 
 ## Hero carousel
 

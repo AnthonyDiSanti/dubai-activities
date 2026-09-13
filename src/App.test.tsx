@@ -48,7 +48,6 @@ describe('App', () => {
       'vibrissae',
       'camelfarm',
       'boomah',
-      'fluffin',
     ]);
     expect(animalItems.flatMap((item, index) => item.ahead ? [index] : [])).toEqual([1, 3, 5]);
     expect(animalItems.some(({ dated }) => Boolean(dated))).toBe(false);
@@ -94,7 +93,8 @@ describe('App', () => {
       .toHaveAttribute('aria-expanded', 'true');
     expect(screen.getByRole('button', { name: 'Nights that go loud' }))
       .toHaveAttribute('aria-expanded', 'false');
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(8);
+    // The two Creek Harbour cafés now occupy one of seven animal cards.
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(7);
     expect(screen.getByRole('heading', { name: 'Ras Al Khor Wildlife Sanctuary' }))
       .toBeInTheDocument();
   });
@@ -389,7 +389,8 @@ describe('App', () => {
         .toHaveAttribute('aria-pressed', 'false');
     });
     expect(window.location.hash).toBe('#animals');
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(8);
+    // The two Creek Harbour cafés now occupy one of seven animal cards.
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(7);
   });
 
   it('ignores invalid activity anchors and preserves favorites-list links', () => {
@@ -464,6 +465,9 @@ describe('App', () => {
       .closest('.activity-card');
     const amazonicoCard = screen.getByRole('heading', { name: 'Amazónico Dubai' })
       .closest('.activity-card');
+    // The paired animal cafés add one verified outing and a fourth filtered chapter.
+    const creekCafesCard = screen.getByRole('heading', { name: 'Cat Café Vibrissae & Fluffin · Creek Harbour' })
+      .closest('.activity-card');
     const tingIrieCard = screen.getByRole('heading', { name: 'Ting Irie' })
       .closest('.activity-card');
     expect(boulderCard).not.toBeNull();
@@ -476,7 +480,7 @@ describe('App', () => {
       .toHaveClass('verified-stamp');
     expect(within(sohoCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
       .toHaveClass('verified-stamp');
-    for (const verifiedCard of [bluCard, brassMonkeyCard, amazonicoCard, tingIrieCard]) {
+    for (const verifiedCard of [bluCard, brassMonkeyCard, amazonicoCard, tingIrieCard, creekCafesCard]) {
       expect(within(verifiedCard as HTMLElement).getByRole('img', { name: 'Tried and liked' }))
         .toHaveClass('verified-stamp');
     }
@@ -485,8 +489,8 @@ describe('App', () => {
       name: 'Show only tried and liked activities',
     }));
 
-    expect(container.querySelectorAll('section.chapter')).toHaveLength(3);
-    expect(container.querySelectorAll('.activity-card')).toHaveLength(6);
+    expect(container.querySelectorAll('section.chapter')).toHaveLength(4);
+    expect(container.querySelectorAll('.activity-card')).toHaveLength(7);
     expect(screen.getByRole('heading', { name: 'Soho Garden, HIVE and CODE' }))
       .toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'BLU Dubai' })).toBeInTheDocument();

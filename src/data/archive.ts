@@ -58,6 +58,16 @@ export const ARCHIVE_ENTRIES = [
     status: 'verified',
   },
   {
+    id: 'vibrissae',
+    name: 'Cat Café Vibrissae & Fluffin · Creek Harbour',
+    // The recommendation belongs to the paired outing, while each venue retains its qualified verdict.
+    note: 'Tried both in person and liked the combined outing. Cat Café Vibrissae was slightly better than Meowtropolis, but not amazing. Fluffin was fun, but definitely more child-oriented. They are across the street from each other and pair nicely as one activity. The Dubai Creek Harbour marina is a lovely area with good food, making a meal and waterfront walk part of the appeal.',
+    originalChapterKey: 'animals',
+    originalChapterName: 'Fur, feathers and scales',
+    recordedOn: '2026-09-13',
+    status: 'verified',
+  },
+  {
     id: 'meowtropolis',
     name: 'Meowtropolis Cat Café',
     note: 'Tried in person. It was okay, but not strong enough to keep as an active recommendation.',

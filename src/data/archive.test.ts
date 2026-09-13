@@ -32,6 +32,7 @@ describe('firsthand activity outcomes', () => {
       'brassmonkey',
       'amazonico',
       'tingirie',
+      'vibrissae',
     ]);
     expect(activeIds.has('thewall')).toBe(false);
     expect(activeIds.has('mtnextreme')).toBe(false);
@@ -78,6 +79,22 @@ describe('firsthand activity outcomes', () => {
     // A rejected record can preserve an explicit screening decision without inventing a visit.
     expect(thePods).toMatchObject({ status: 'rejected', originalChapterKey: 'dinners' });
     expect(thePods?.note).toMatch(/before a visit/i);
+  });
+
+  it('recommends the Creek Harbour pair once while preserving the individual verdicts', () => {
+    // Combining venues must not duplicate recommendations or promote Meowtropolis.
+    const entry = ARCHIVE_ENTRIES.find(({ id }) => id === 'vibrissae');
+    const activity = ITEMS.find(({ id }) => id === 'vibrissae');
+
+    expect(entry).toMatchObject({ status: 'verified', originalChapterKey: 'animals', recordedOn: '2026-09-13' });
+    expect(activity).toMatchObject({ name: entry?.name, photos: 8, site: 'https://fluffin.ae/' });
+    expect(activity).toMatchObject({ book: 'https://www.vibrissaecafe.com/book-now/dubai-creek-harbour' });
+    expect(entry?.note).toContain('slightly better than Meowtropolis, but not amazing');
+    expect(entry?.note).toContain('more child-oriented');
+    expect(entry?.note).toContain('across the street');
+    expect(ITEMS.map(({ id }) => id)).not.toContain('fluffin');
+    expect(ARCHIVE_ENTRIES.map(({ id }) => id)).not.toContain('fluffin');
+    expect(ARCHIVE_ENTRIES.find(({ id }) => id === 'meowtropolis')?.status).toBe('tried');
   });
 
   it('records the scope of the Soho Garden visit without claiming the other rooms were open', () => {
