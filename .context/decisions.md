@@ -1,5 +1,10 @@
 # Decisions
 
+## 2026-09-14 — Add Miss Lily’s as an untried Jamaican dinner
+- Decider: Anthony
+- Decision: Add Miss Lily’s because Ting Irie is a loved benchmark and the Jamaican dinner/music atmosphere looks similar. Keep the two adjacent in Long dinners; retain Ting Irie’s verified status and leave Miss Lily’s unverified until visited.
+- Evidence: Current official Dubai menu, FAQ and location pages; conflicting hours require direct confirmation. Source details live in the planning ledger.
+
 ## 2026-09-13 — Add two tried-and-liked happy hours near work
 - Decider: Anthony
 - Decision: Add CityMax (Brew House, Business Bay) and Mama Shelter as distinct Tried & liked choices near the MultiBank office. Preserve CityMax’s friendly approached crowd, occasional music and well-executed pub food/pizza, and Mama’s quiet classy atmosphere, attractive crowd, lounge seat and proactive ordering guidance. Keep both searchable by MultiBank and happy hour, without Plan ahead.

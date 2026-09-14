@@ -59,6 +59,10 @@ Boulder Zone remains the firsthand liked option. GoClimb and Rock Republic were 
 
 Anthony dislikes ordinary prix-fixe/set menus; tasting menus are the exception. Favor à-la-carte ordering when available and distinguish a chef’s tasting progression from a fixed-price starter/main/dessert package. A disliked package does not reject the restaurant itself.
 
+## Jamaican dinner candidates
+
+Anthony loves Ting Irie and requested Miss Lily’s because it appears to offer a similar food-and-music atmosphere. Keep `misslilys` immediately after `tingirie` in Long dinners as an untried candidate, with the Ting Irie connection explicit in its blurb. Do not add a verified archive outcome until a positive firsthand visit. Favor à-la-carte Jamaican dishes and rum cocktails over set-party packages; preserve the conflicting-hours and reservation-cancellation caveats.
+
 ## Mimi Kakushi
 
 Keep Mimi Kakushi high in Long dinners as a Japanese date-night candidate approved from its atmosphere and menu, without inferring a firsthand verdict. Focus the card and booking CTA on à-la-carte sharing plates. Anthony explicitly rejected the Yūshoku package; omit its promotion, pricing and format from the public card while retaining the dated research in the source ledger. Preserve the restaurant’s dress, age and cancellation details. Same-night availability observed on 12 September supports inclusion but must not become an evergreen promise or a Plan ahead marker. The operator’s dated holiday kitchen hours are not a permanent last-order rule. See [activity-planning-sources.md](activity-planning-sources.md).

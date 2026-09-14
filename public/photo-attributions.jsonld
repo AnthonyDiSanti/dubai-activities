@@ -5333,6 +5333,46 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/misslilys-01.jpg",
+      "contentUrl": "./photos/misslilys-01.jpg",
+      "name": "Miss Lily’s Dubai · bar",
+      "creditText": "Miss Lily’s Dubai · bar, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://misslilysdxb.com/locations/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/misslilys-02.jpg",
+      "contentUrl": "./photos/misslilys-02.jpg",
+      "name": "Miss Lily’s Dubai · Jamaican dishes",
+      "creditText": "Miss Lily’s Dubai · Jamaican dishes, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://misslilysdxb.com/locations/dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/misslilys-03.jpg",
+      "contentUrl": "./photos/misslilys-03.jpg",
+      "name": "Miss Lily’s Dubai · evening crowd",
+      "creditText": "Miss Lily’s Dubai · evening crowd, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://misslilysdxb.com/about/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/misslilys-04.jpg",
+      "contentUrl": "./photos/misslilys-04.jpg",
+      "name": "Miss Lily’s Dubai · record room",
+      "creditText": "Miss Lily’s Dubai · record room, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.misslilys.com/location/miss-lilys-dubai/",
+      "encodingFormat": "image/jpeg",
+      "description": "Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",

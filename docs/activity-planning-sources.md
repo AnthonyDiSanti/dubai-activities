@@ -4,6 +4,16 @@ This ledger records the primary sources behind structured `facts`, `advisory`, s
 
 The final animal chapter was researched as a separate addendum and retains its source URLs in `src/data/activities.ts`, `docs/image-manifest.csv`, and `activities/Dubai Activities Addendum 3 - Wildlife.md`.
 
+## 14 September 2026 — Miss Lily’s after Ting Irie
+
+Anthony loves Ting Irie and requested Miss Lily’s as a similar-vibe candidate; no visit or liked outcome is implied. Add `misslilys` next to Ting Irie in Long dinners, without Plan ahead merely for a standard table reservation.
+
+- [Official Dubai page](https://misslilysdxb.com/locations/dubai/) and [global Dubai listing](https://www.misslilys.com/location/miss-lilys-dubai/) agree on the fifth-floor Sheraton Grand Hotel, Sheikh Zayed Road address and +971 4 356 2900. An explicit closure/relocation search found no relevant closure announcement. The official booking route remains [SevenRooms](https://www.sevenrooms.com/reservations/misslilysdubai/ig); no reservation or live table availability was claimed.
+- Hours conflict: the Dubai location page gives 20:00 starts and Wednesday closed, with Friday/Saturday until 04:00; the [Dubai FAQ](https://misslilysdxb.com/about/faqs/) mostly gives 19:00 starts, Wednesday open and Friday/Saturday until 03:00. The global location page also says Wednesday open but differs on Tuesday closing. Keep a contact-first hours caveat instead of selecting a schedule as definitive. Avoid the older `misslilysdubai.com` site’s historical phone and hours.
+- The FAQ recommends dinner reservations, accepts bar walk-ins subject to space, requires a card guarantee with AED 150/person for cancellation within 24 hours, and requires physical ID and age 21+ after 22:00. Smart casual dress excludes athletic wear, flip-flops and tanks for men. WhatsApp +971 50 781 9044 is supplied for booking. Dining is non-smoking; the bar, lounge and yard allow smoking. Standard reservation availability does not justify an `ahead` flag.
+- [Dubai menus](https://misslilysdxb.com/menus/) support jerk corn, jerk chicken, oxtail and rum cocktails. The [official homepage](https://misslilysdxb.com/) describes reggae, soca, afrobeat and dancehall DJs; avoid fixed weekly performance claims. Favor à-la-carte ordering over the set party menus in keeping with Anthony’s preference.
+- Gallery: official Dubai location/about pages establish the colorful bar, crowded evening and Jamaican food images; the global Dubai gallery supplies the fourth room view. Preserve exact sources and dimensions in `.image-work/misslilys.csv`, the manifest and reviewed credits. No reuse license is implied.
+
 ## 13 September 2026 — Happy hours near the MultiBank office
 
 Anthony’s firsthand recommendations establish both visits and their proximity to the MultiBank office. Record the quiet/classy Mama Shelter atmosphere, attractive crowd, opposite-main-bar lounge and proactive ordering instructions; record CityMax’s approachable crowd, well-executed pub food (especially pizza for a bar), wide drinks selection, deals and occasional music. The dates record the report, not a claim that both visits happened today.

@@ -31,6 +31,7 @@ const FACT_ENRICHED_IDS = [
   'salero',
   'mimikakushi',
   'tingirie',
+  'misslilys',
   'nammos',
   'amritsr',
   'ossiano',

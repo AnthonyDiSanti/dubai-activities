@@ -8882,6 +8882,74 @@
       "creditText": "Mama Shelter Dubai · venue gallery 04, via Mama Shelter Dubai. Cropped and resized for web display."
     },
     {
+      "filename": "misslilys-01.jpg",
+      "activityId": "misslilys",
+      "activityName": "Miss Lily’s",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": "Miss Lily’s Dubai · bar",
+      "creator": null,
+      "source": {
+        "name": "Miss Lily’s Dubai",
+        "url": "https://misslilysdxb.com/locations/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Miss Lily’s Dubai · bar, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "misslilys-02.jpg",
+      "activityId": "misslilys",
+      "activityName": "Miss Lily’s",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": "Miss Lily’s Dubai · Jamaican dishes",
+      "creator": null,
+      "source": {
+        "name": "Miss Lily’s Dubai",
+        "url": "https://misslilysdxb.com/locations/dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Miss Lily’s Dubai · Jamaican dishes, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "misslilys-03.jpg",
+      "activityId": "misslilys",
+      "activityName": "Miss Lily’s",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": "Miss Lily’s Dubai · evening crowd",
+      "creator": null,
+      "source": {
+        "name": "Miss Lily’s Dubai",
+        "url": "https://misslilysdxb.com/about/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Miss Lily’s Dubai · evening crowd, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "misslilys-04.jpg",
+      "activityId": "misslilys",
+      "activityName": "Miss Lily’s",
+      "chapterName": "Long dinners",
+      "slot": 4,
+      "workTitle": "Miss Lily’s Dubai · record room",
+      "creator": null,
+      "source": {
+        "name": "Miss Lily’s Dubai",
+        "url": "https://www.misslilys.com/location/miss-lilys-dubai/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Re-encoded for web display and shown with responsive cropping.",
+      "creditText": "Miss Lily’s Dubai · record room, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping."
+    },
+    {
       "filename": "icon-google-maps.svg",
       "activityId": null,
       "activityName": "Interface marks",
