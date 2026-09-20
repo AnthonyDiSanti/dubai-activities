@@ -5373,6 +5373,46 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/clawbbq-01.jpg",
+      "contentUrl": "./photos/clawbbq-01.jpg",
+      "name": "CLAW BBQ JBR · bar",
+      "creditText": "CLAW BBQ JBR · bar, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://www.thebeach.ae/en/outlets/claw-bbq",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/clawbbq-02.jpg",
+      "contentUrl": "./photos/clawbbq-02.jpg",
+      "name": "CLAW BBQ JBR · fajitas",
+      "creditText": "CLAW BBQ JBR · fajitas, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://www.thebeach.ae/en/outlets/claw-bbq",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/clawbbq-03.jpg",
+      "contentUrl": "./photos/clawbbq-03.jpg",
+      "name": "CLAW BBQ JBR · arcade cabinets",
+      "creditText": "CLAW BBQ JBR · arcade cabinets, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://www.thebeach.ae/en/outlets/claw-bbq",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/clawbbq-04.jpg",
+      "contentUrl": "./photos/clawbbq-04.jpg",
+      "name": "CLAW BBQ JBR · cocktail",
+      "creditText": "CLAW BBQ JBR · cocktail, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping.",
+      "isBasedOn": "https://www.thebeach.ae/en/outlets/claw-bbq",
+      "encodingFormat": "image/jpeg",
+      "description": "Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",

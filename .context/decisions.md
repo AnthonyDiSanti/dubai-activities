@@ -1,5 +1,10 @@
 # Decisions
 
+## 2026-09-20 — Recommend CLAW’s JBR bar visit without rating the games
+- Decider: Anthony
+- Decision: Add CLAW BBQ at The Beach JBR as Tried & liked for the drinks, nostalgic American pop, people-watching and lively crowd. Preserve uneven food execution and the standout guacamole/fajitas. Games remain explicitly untested; do not turn a positive bar visit into a gameplay recommendation.
+- Evidence: Firsthand user report plus exact-branch official address/game/photo sources. Keep Palm and old Downtown details outside this record.
+
 ## 2026-09-14 — Add Miss Lily’s as an untried Jamaican dinner
 - Decider: Anthony
 - Decision: Add Miss Lily’s because Ting Irie is a loved benchmark and the Jamaican dinner/music atmosphere looks similar. Keep the two adjacent in Long dinners; retain Ting Irie’s verified status and leave Miss Lily’s unverified until visited.

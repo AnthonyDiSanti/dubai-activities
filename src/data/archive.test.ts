@@ -35,6 +35,7 @@ describe('firsthand activity outcomes', () => {
       'vibrissae',
       'citymax',
       'mamashelter',
+      'clawbbq',
     ]);
     expect(activeIds.has('thewall')).toBe(false);
     expect(activeIds.has('mtnextreme')).toBe(false);

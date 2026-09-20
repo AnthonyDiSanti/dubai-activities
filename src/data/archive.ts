@@ -88,6 +88,16 @@ export const ARCHIVE_ENTRIES = [
     status: 'verified',
   },
   {
+    id: 'clawbbq',
+    name: 'CLAW BBQ · JBR',
+    // Record the report date and distinguish a liked bar visit from untested arcade games.
+    note: 'Tried in person and liked. Another arcade bar, although none of the games were played on this visit. The drinks were good and the American food was mixed in execution, but the guacamole and fajitas were fantastic and are the way to go. The music was classic 1990s/2000s American pop. People-watching was top notch, everyone was getting sloppy, and the whole place had a good vibe.',
+    originalChapterKey: 'loud',
+    originalChapterName: 'Nights that go loud',
+    recordedOn: '2026-09-20',
+    status: 'verified',
+  },
+  {
     id: 'meowtropolis',
     name: 'Meowtropolis Cat Café',
     note: 'Tried in person. It was okay, but not strong enough to keep as an active recommendation.',

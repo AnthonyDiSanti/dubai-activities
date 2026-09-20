@@ -8950,6 +8950,74 @@
       "creditText": "Miss Lily’s Dubai · record room, via Miss Lily’s Dubai. Re-encoded for web display and shown with responsive cropping."
     },
     {
+      "filename": "clawbbq-01.jpg",
+      "activityId": "clawbbq",
+      "activityName": "CLAW BBQ · JBR",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "CLAW BBQ JBR · bar",
+      "creator": null,
+      "source": {
+        "name": "CLAW BBQ via The Beach JBR",
+        "url": "https://www.thebeach.ae/en/outlets/claw-bbq"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from AVIF to JPEG and shown with responsive cropping.",
+      "creditText": "CLAW BBQ JBR · bar, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "clawbbq-02.jpg",
+      "activityId": "clawbbq",
+      "activityName": "CLAW BBQ · JBR",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "CLAW BBQ JBR · fajitas",
+      "creator": null,
+      "source": {
+        "name": "CLAW BBQ via The Beach JBR",
+        "url": "https://www.thebeach.ae/en/outlets/claw-bbq"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from AVIF to JPEG and shown with responsive cropping.",
+      "creditText": "CLAW BBQ JBR · fajitas, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "clawbbq-03.jpg",
+      "activityId": "clawbbq",
+      "activityName": "CLAW BBQ · JBR",
+      "chapterName": "Nights that go loud",
+      "slot": 3,
+      "workTitle": "CLAW BBQ JBR · arcade cabinets",
+      "creator": null,
+      "source": {
+        "name": "CLAW BBQ via The Beach JBR",
+        "url": "https://www.thebeach.ae/en/outlets/claw-bbq"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from AVIF to JPEG and shown with responsive cropping.",
+      "creditText": "CLAW BBQ JBR · arcade cabinets, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "clawbbq-04.jpg",
+      "activityId": "clawbbq",
+      "activityName": "CLAW BBQ · JBR",
+      "chapterName": "Nights that go loud",
+      "slot": 4,
+      "workTitle": "CLAW BBQ JBR · cocktail",
+      "creator": null,
+      "source": {
+        "name": "CLAW BBQ via The Beach JBR",
+        "url": "https://www.thebeach.ae/en/outlets/claw-bbq"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Converted from AVIF to JPEG and shown with responsive cropping.",
+      "creditText": "CLAW BBQ JBR · cocktail, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
       "filename": "icon-google-maps.svg",
       "activityId": null,
       "activityName": "Interface marks",

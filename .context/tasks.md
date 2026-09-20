@@ -1,10 +1,16 @@
 # Tasks
 
+- id: 2026-09-20-clawbbq — title: Add CLAW BBQ JBR as tried and liked — owner: Codex — status: done — last update: 2026-09-20
+  - Result: Preserve the firsthand drinks, mixed food, guacamole/fajitas, nostalgic pop and lively crowd verdict; explicitly keep games untested. Add four exact-JBR photos, credits and branch-specific planning evidence.
+  - Verification: All 268 app tests and four Python tests plus lint/TypeScript/build/content/static/photo/attribution gates pass (139 activities, 500 JPEGs, 502 credits). Desktop and 390 px mobile checks confirm all four gallery images load, no horizontal overflow or console errors, and dismissal to `#loud`. Viewport restored.
+  - Release: Published 538 objects, deleted only `assets/index-CtVvAUUP.js`, and completed invalidation `IELP4UILW0XP4OZ5FNBXZ70731`. All nine checked live files (HTML, app bundles, both credit catalogs and four photos) match the verified build with expected MIME/cache headers. The live sheet preserves the review and Tried & liked status; all four gallery frames finish loading, Close returns to `#loud`, and no console errors occur.
+  - Follow-up: Full dirty-tree commit prep complete; index untouched and no commit performed. No release work remains. Miss Lily’s is committed in `1e35237` and deployed.
+
 - id: 2026-09-14-misslilys — title: Add Miss Lily’s after Ting Irie — owner: Codex — status: done — last update: 2026-09-15
   - Result: Add an untried Jamaican dinner candidate immediately after Ting Irie, with four official photos, practical ordering/entry/booking details and an explicit hours-conflict caveat. Keep verified status and Plan ahead unchanged.
   - Verification: 268 app tests and four Python tests plus full lint/TypeScript/build/content/static/photo/attribution gates pass. Desktop/mobile previews, four loaded gallery frames, no mobile overflow or console errors, and dismissal to `#dinners` verified. Viewport restored.
   - Release: Published 534 objects, deleted only `assets/index-D1CPige-.js`, and completed invalidation `IE7KXCV14CEH7B99WTYVS2OOYI`. All nine checked live files match the build with expected MIME/cache headers. The live sheet preserves the recommendation and closes to `#dinners`; all four gallery frames finish loading and no site console errors occur.
-  - Follow-up: Full uncommitted diff prepared for commit; no staging or commit. No release work remains. Citymax/Mama Shelter work is committed in `6223c8e` and deployed.
+  - Follow-up: Committed in `1e35237`; no release work remains. Citymax/Mama Shelter work is committed in `6223c8e` and deployed.
 
 - id: 2026-09-13-office-happy-hours — title: Add CityMax and Mama Shelter as liked happy hours — owner: Codex — status: done — last update: 2026-09-13
   - Result: Added two distinct Tried & liked entries near the MultiBank office with Anthony’s food, crowd, music and lounge-service guidance, current planning details, and four credited venue photos each. Anthony explicitly confirmed Brew House at Citymax Business Bay and requested the everyday display name Citymax; preserve the full venue identity in location details.

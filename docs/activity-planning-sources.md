@@ -4,6 +4,14 @@ This ledger records the primary sources behind structured `facts`, `advisory`, s
 
 The final animal chapter was researched as a separate addendum and retains its source URLs in `src/data/activities.ts`, `docs/image-manifest.csv`, and `activities/Dubai Activities Addendum 3 - Wildlife.md`.
 
+## 20 September 2026 — CLAW BBQ at The Beach JBR
+
+Anthony reported a liked Marina-area bar visit: good drinks, mixed American food with fantastic guacamole/fajitas, classic 1990s/2000s American pop, top-notch people-watching and a crowd getting sloppy. Games were present but not played. The record date is the report date, not an inferred visit date.
+
+- [The Beach’s official venue listing](https://www.thebeach.ae/en/outlets/claw-bbq) and [CLAW reservations](https://www.clawbbq.com/pages/reservations) identify Pavilion at The Beach, JBR, and +971 4 577 4357, matching the Marina-area description. Keep this branch separate from Hilton Dubai Palm Jumeirah. The old operator About page still says Souk Al Bahar, and its header retains an older phone; use the current JBR contact/address.
+- The Beach lists pool, interactive darts and a boxing machine, while exact-venue gallery photographs show arcade cabinets. These establish availability, not a firsthand game-quality verdict or a complete machine inventory. Its gallery also supplies the selected bar, fajitas and cocktail photographs. Canonical provenance lives in `.image-work/clawbbq.csv`, the manifest and reviewed credits.
+- The Beach’s displayed 08:00–23:00 timing conflicts with its wider dining-hours footer and late-night venue copy; no dependable current bar schedule or per-game tariff was established. Omit exact hours and game prices; direct visitors to confirm them. Do not import Palm-only offers, mechanical-bull claims or old Downtown games-room details.
+
 ## 14 September 2026 — Miss Lily’s after Ting Irie
 
 Anthony loves Ting Irie and requested Miss Lily’s as a similar-vibe candidate; no visit or liked outcome is implied. Add `misslilys` next to Ting Irie in Long dinners, without Plan ahead merely for a standard table reservation.
