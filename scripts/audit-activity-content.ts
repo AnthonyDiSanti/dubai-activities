@@ -25,6 +25,12 @@ const URL_FIELDS = ['book', 'site', 'ig'] as const satisfies readonly (keyof Act
 const RESERVED_FACT_LABELS = new Set(['date', 'when', 'where', 'book ahead']);
 // Guard both former cards and explicitly screened-out venues from an accidental refresh.
 const EXCLUDED_ACTIVITY_IDS = new Set([
+  'atb',
+  'chipcarving',
+  'karakafterdark',
+  'oakenfold',
+  'procreate',
+  'salonchocolat',
   'terrasolis',
   'cyanotype',
   'rawbarista',
@@ -37,7 +43,7 @@ const EXCLUDED_ACTIVITY_IDS = new Set([
 ]);
 const FIRST_PERSON = /\b(?:i|i['’](?:m|ve|d|ll)|me|my|mine|myself|we|we['’](?:re|ve|d|ll)|us|our|ours|ourselves|let['’]s)\b/i;
 const EXPECTED_CHAPTERS = 12;
-const EXPECTED_ACTIVITIES = 139;
+const EXPECTED_ACTIVITIES = 136;
 const EXPECTED_HEROES = 6;
 
 const errors: string[] = [];

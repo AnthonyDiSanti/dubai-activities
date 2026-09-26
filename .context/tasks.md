@@ -1,10 +1,16 @@
 # Tasks
 
+- id: 2026-09-26-autumn-calendar — title: Refresh expired events and add approved autumn alternatives — owner: Codex — status: done — last update: 2026-09-26
+  - Result: Retire six elapsed/cancelled entries and their assets; update recurring dates and In the Park uncertainty; add Mo Gilligan, From Clay to Table and ANOTR with credited galleries. Keep all personal outcomes unchanged.
+  - Verification: 276 app tests, four Python tests and all release audits pass; 136 activities, 39 Plan ahead, 491 JPEGs and 493 credits, zero duplicate candidates. Desktop/mobile detail and gallery QA passes, including corrected ANOTR and Speakeasy framing; viewport restored.
+  - Release: Published 529 objects, removed 15 retired photographs and the superseded JavaScript bundle, and completed invalidation `IDENW5MOIOVG7NRBI2WV5U83TA`. S3 inventory exactly matches the unchanged build; 14 live files match bytes and MIME/cache headers. Live inventory/filter, new details, booking caveats, ANOTR gallery, dismissal and console checks pass. Full dirty-tree commit prep complete; index untouched and no commit performed.
+  - Follow-up: Revisit provisional In the Park and date-bound recurring cards as their dates pass.
+
 - id: 2026-09-20-clawbbq — title: Add CLAW BBQ JBR as tried and liked — owner: Codex — status: done — last update: 2026-09-20
   - Result: Preserve the firsthand drinks, mixed food, guacamole/fajitas, nostalgic pop and lively crowd verdict; explicitly keep games untested. Add four exact-JBR photos, credits and branch-specific planning evidence.
   - Verification: All 268 app tests and four Python tests plus lint/TypeScript/build/content/static/photo/attribution gates pass (139 activities, 500 JPEGs, 502 credits). Desktop and 390 px mobile checks confirm all four gallery images load, no horizontal overflow or console errors, and dismissal to `#loud`. Viewport restored.
   - Release: Published 538 objects, deleted only `assets/index-CtVvAUUP.js`, and completed invalidation `IELP4UILW0XP4OZ5FNBXZ70731`. All nine checked live files (HTML, app bundles, both credit catalogs and four photos) match the verified build with expected MIME/cache headers. The live sheet preserves the review and Tried & liked status; all four gallery frames finish loading, Close returns to `#loud`, and no console errors occur.
-  - Follow-up: Full dirty-tree commit prep complete; index untouched and no commit performed. No release work remains. Miss Lily’s is committed in `1e35237` and deployed.
+  - Follow-up: Committed in `959cd1e`; no release work remains. Miss Lily’s is committed in `1e35237` and deployed.
 
 - id: 2026-09-14-misslilys — title: Add Miss Lily’s after Ting Irie — owner: Codex — status: done — last update: 2026-09-15
   - Result: Add an untried Jamaican dinner candidate immediately after Ting Irie, with four official photos, practical ordering/entry/booking details and an explicit hours-conflict caveat. Keep verified status and Plan ahead unchanged.

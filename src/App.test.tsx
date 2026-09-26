@@ -447,7 +447,7 @@ describe('App', () => {
     expect(container.querySelectorAll('.activity-card')).toHaveLength(planAheadActivities.length);
     expect(container.querySelectorAll('section.chapter')).toHaveLength(planAheadChapterCount);
     expect(screen.queryByRole('heading', { name: 'Honeycomb Hi-Fi' })).not.toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: 'ATB, Solarstone & Steve Allen' }))
+    expect(screen.getByRole('heading', { level: 3, name: 'ANOTR at Playa Pacha' }))
       .toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: 'The Nest by Nara' }))
       .toBeInTheDocument();

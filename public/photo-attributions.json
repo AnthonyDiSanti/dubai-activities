@@ -342,98 +342,6 @@
       "creditText": "UNTOLD Dubai — photo 5, via UNTOLD Dubai. Converted to JPEG and resized for web display; shown with responsive cropping."
     },
     {
-      "filename": "atb-01.jpg",
-      "activityId": "atb",
-      "activityName": "ATB, Solarstone & Steve Allen",
-      "chapterName": "Nights that go loud",
-      "slot": 1,
-      "workTitle": null,
-      "creator": {
-        "name": "Marian Sarau",
-        "type": "person",
-        "url": null
-      },
-      "source": {
-        "name": "Gigxels",
-        "url": "https://gigxels.com/photo/atb-Cluj-Napoca-august-2022-b0a8f7df7e"
-      },
-      "license": {
-        "name": "Gigxels Free License",
-        "url": "https://gigxels.com/free-license"
-      },
-      "creditBasis": "stock_license",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "ATB, Solarstone & Steve Allen — photo 1 by Marian Sarau, via Gigxels. Gigxels Free License. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "atb-02.jpg",
-      "activityId": "atb",
-      "activityName": "ATB, Solarstone & Steve Allen",
-      "chapterName": "Nights that go loud",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "The Agenda",
-        "url": "https://www.theagenda.com/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "ATB, Solarstone & Steve Allen — photo 2, via The Agenda. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "oakenfold-01.jpg",
-      "activityId": "oakenfold",
-      "activityName": "Paul Oakenfold & Markus Schulz",
-      "chapterName": "Nights that go loud",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Paul Oakenfold",
-        "url": "https://pauloakenfold.com/about/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Paul Oakenfold & Markus Schulz — photo 1, via Paul Oakenfold. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "oakenfold-02.jpg",
-      "activityId": "oakenfold",
-      "activityName": "Paul Oakenfold & Markus Schulz",
-      "chapterName": "Nights that go loud",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Markus Schulz",
-        "url": "https://www.markusschulz.com/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Cropped and resized for web display.",
-      "creditText": "Paul Oakenfold & Markus Schulz — photo 2, via Markus Schulz. Cropped and resized for web display."
-    },
-    {
-      "filename": "oakenfold-03.jpg",
-      "activityId": "oakenfold",
-      "activityName": "Paul Oakenfold & Markus Schulz",
-      "chapterName": "Nights that go loud",
-      "slot": 3,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "The Agenda",
-        "url": "https://www.theagenda.com/services"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Cropped and resized for web display.",
-      "creditText": "Paul Oakenfold & Markus Schulz — photo 3, via The Agenda. Cropped and resized for web display."
-    },
-    {
       "filename": "lostfreq-01.jpg",
       "activityId": "lostfreq",
       "activityName": "Lost Frequencies at Bohemia",
@@ -2163,71 +2071,6 @@
       "creditText": "L'ÉCOLE · the jeweller's bench — photo 4, via L’ÉCOLE, School of Jewelry Arts. Resized for web display and shown with responsive cropping."
     },
     {
-      "filename": "chipcarving-01.jpg",
-      "activityId": "chipcarving",
-      "activityName": "Chip carving, three sessions",
-      "chapterName": "Things we'd take home",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Tashkeel",
-        "url": "https://tashkeel.org/workshops/chip-carving-letters-and-patters-series"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Chip carving, three sessions — photo 1, via Tashkeel. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "chipcarving-02.jpg",
-      "activityId": "chipcarving",
-      "activityName": "Chip carving, three sessions",
-      "chapterName": "Things we'd take home",
-      "slot": 2,
-      "workTitle": "Carvingknives",
-      "creator": {
-        "name": "Kaiserb",
-        "type": "person",
-        "url": "https://en.wikipedia.org/wiki/User:Kaiserb"
-      },
-      "source": {
-        "name": "Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Carvingknives.JPG"
-      },
-      "license": {
-        "name": "CC BY-SA 2.5",
-        "url": "https://creativecommons.org/licenses/by-sa/2.5"
-      },
-      "creditBasis": "creative_commons",
-      "modifications": "Resized for web display and shown with responsive cropping. Local adaptation remains under the same license.",
-      "creditText": "Carvingknives by Kaiserb, via Wikimedia Commons. CC BY-SA 2.5. Resized for web display and shown with responsive cropping. Local adaptation remains under the same license."
-    },
-    {
-      "filename": "chipcarving-03.jpg",
-      "activityId": "chipcarving",
-      "activityName": "Chip carving, three sessions",
-      "chapterName": "Things we'd take home",
-      "slot": 3,
-      "workTitle": "ChipCarving",
-      "creator": {
-        "name": "Jonathunder",
-        "type": "person",
-        "url": "https://commons.wikimedia.org/wiki/User:Jonathunder"
-      },
-      "source": {
-        "name": "Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:ChipCarving.JPG"
-      },
-      "license": {
-        "name": "CC BY-SA 3.0",
-        "url": "https://creativecommons.org/licenses/by-sa/3.0"
-      },
-      "creditBasis": "creative_commons",
-      "modifications": "Resized for web display and shown with responsive cropping. Local adaptation remains under the same license.",
-      "creditText": "ChipCarving by Jonathunder, via Wikimedia Commons. CC BY-SA 3.0. Resized for web display and shown with responsive cropping. Local adaptation remains under the same license."
-    },
-    {
       "filename": "limba-01.jpg",
       "activityId": "limba",
       "activityName": "Pottery on the wheel",
@@ -2464,40 +2307,6 @@
       "creditBasis": "source_credit",
       "modifications": "Resized for web display and shown with responsive cropping.",
       "creditText": "Mirzam chocolate workshop — photo 3, via Mirzam Chocolate Makers. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "procreate-01.jpg",
-      "activityId": "procreate",
-      "activityName": "Procreate fashion illustration",
-      "chapterName": "Things we'd take home",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "iMore",
-        "url": "https://www.imore.com/ipad-air-5-vs-ipad-2021"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Procreate fashion illustration — photo 1, via iMore. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "procreate-02.jpg",
-      "activityId": "procreate",
-      "activityName": "Procreate fashion illustration",
-      "chapterName": "Things we'd take home",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Franckie Alarcon",
-        "url": "https://www.franckiealarcon.com/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Procreate fashion illustration — photo 2, via Franckie Alarcon. Resized for web display and shown with responsive cropping."
     },
     {
       "filename": "gemology-01.jpg",
@@ -2804,57 +2613,6 @@
       "creditBasis": "source_credit",
       "modifications": "Resized for web display and shown with responsive cropping.",
       "creditText": "Anantara · Spice Spoons — photo 3, via Anantara. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "salonchocolat-01.jpg",
-      "activityId": "salonchocolat",
-      "activityName": "Salon du Chocolat",
-      "chapterName": "Cooking and drinking",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Salon du Chocolat Dubai",
-        "url": "https://www.salonduchocolatdubai.com/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Salon du Chocolat — photo 1, via Salon du Chocolat Dubai. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "salonchocolat-02.jpg",
-      "activityId": "salonchocolat",
-      "activityName": "Salon du Chocolat",
-      "chapterName": "Cooking and drinking",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Salon du Chocolat Dubai",
-        "url": "https://www.salonduchocolatdubai.com/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Salon du Chocolat — photo 2, via Salon du Chocolat Dubai. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "salonchocolat-03.jpg",
-      "activityId": "salonchocolat",
-      "activityName": "Salon du Chocolat",
-      "chapterName": "Cooking and drinking",
-      "slot": 3,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Salon du Chocolat Dubai",
-        "url": "https://www.salonduchocolatdubai.com/photos1"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Salon du Chocolat — photo 3, via Salon du Chocolat Dubai. Resized for web display and shown with responsive cropping."
     },
     {
       "filename": "dimsum-01.jpg",
@@ -8411,16 +8169,16 @@
       "activityName": "Comedy at the Speakeasy",
       "chapterName": "Genuinely strange",
       "slot": 2,
-      "workTitle": "Comedy at the Speakeasy artwork",
+      "workTitle": "A cocktail at Moon Bar by SANA",
       "creator": null,
       "source": {
-        "name": "Mad Cat Comedy",
-        "url": "https://www.madcatcomedy.com/events/september-20th-sunday-comedy-at-the-speakeasy-moon-bar-by-sana"
+        "name": "SANA",
+        "url": "https://sanarestaurants.com/sana-moon-bar"
       },
       "license": null,
       "creditBasis": "source_credit",
-      "modifications": "Re-encoded for web display and shown with responsive cropping.",
-      "creditText": "Comedy at the Speakeasy artwork, via Mad Cat Comedy. Re-encoded for web display and shown with responsive cropping."
+      "modifications": "Cropped around the cocktail, resized and JPEG-encoded; shown with responsive cropping.",
+      "creditText": "A cocktail at Moon Bar by SANA, via SANA. Cropped around the cocktail, resized and JPEG-encoded; shown with responsive cropping."
     },
     {
       "filename": "laughterfactory-01.jpg",
@@ -8428,16 +8186,16 @@
       "activityName": "The Laughter Factory",
       "chapterName": "Genuinely strange",
       "slot": 1,
-      "workTitle": "The Laughter Factory September 2026 bill",
+      "workTitle": "Marlon Davis portrait",
       "creator": null,
       "source": {
-        "name": "The Laughter Factory",
-        "url": "https://thelaughterfactory.com/the-laughter-factory-30-years-of-bringing-people-together-through-laughter/"
+        "name": "Marlon Davis",
+        "url": "https://www.marlondavis.net/gallery/"
       },
       "license": null,
       "creditBasis": "source_credit",
-      "modifications": "Re-encoded for web display and shown with responsive cropping.",
-      "creditText": "The Laughter Factory September 2026 bill, via The Laughter Factory. Re-encoded for web display and shown with responsive cropping."
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "Marlon Davis portrait, via Marlon Davis. Resized and JPEG-encoded for web display; shown with responsive cropping."
     },
     {
       "filename": "laughterfactory-02.jpg",
@@ -8445,50 +8203,16 @@
       "activityName": "The Laughter Factory",
       "chapterName": "Genuinely strange",
       "slot": 2,
-      "workTitle": "The Laughter Factory September 2026 schedule",
+      "workTitle": "George Zach portrait",
       "creator": null,
       "source": {
-        "name": "The Laughter Factory",
-        "url": "https://thelaughterfactory.com/the-laughter-factory-30-years-of-bringing-people-together-through-laughter/"
+        "name": "George Zacharopoulos",
+        "url": "https://www.georgezacharopoulos.com/"
       },
       "license": null,
       "creditBasis": "source_credit",
-      "modifications": "Enlarged to a 900 px long edge and re-encoded for web display with responsive cropping.",
-      "creditText": "The Laughter Factory September 2026 schedule, via The Laughter Factory. Enlarged to a 900 px long edge and re-encoded for web display with responsive cropping."
-    },
-    {
-      "filename": "karakafterdark-01.jpg",
-      "activityId": "karakafterdark",
-      "activityName": "Karak After Dark Vol. 3",
-      "chapterName": "Genuinely strange",
-      "slot": 1,
-      "workTitle": "Karak After Dark Vol. 3 event artwork",
-      "creator": null,
-      "source": {
-        "name": "District UAE",
-        "url": "https://www.district.ae/events/karak-after-dark-vol-3-back-to-school-edition-buy-tickets"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Converted from PNG to JPEG and shown with responsive cropping.",
-      "creditText": "Karak After Dark Vol. 3 event artwork, via District UAE. Converted from PNG to JPEG and shown with responsive cropping."
-    },
-    {
-      "filename": "karakafterdark-02.jpg",
-      "activityId": "karakafterdark",
-      "activityName": "Karak After Dark Vol. 3",
-      "chapterName": "Genuinely strange",
-      "slot": 2,
-      "workTitle": "The Junction audience",
-      "creator": null,
-      "source": {
-        "name": "Alserkal Avenue",
-        "url": "https://alserkal.online/community/the-junction/"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Re-encoded for web display and shown with responsive cropping.",
-      "creditText": "The Junction audience, via Alserkal Avenue. Re-encoded for web display and shown with responsive cropping."
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "George Zach portrait, via George Zacharopoulos. Resized and JPEG-encoded for web display; shown with responsive cropping."
     },
     {
       "filename": "lockstockbarrel-01.jpg",
@@ -9016,6 +8740,108 @@
       "creditBasis": "source_credit",
       "modifications": "Converted from AVIF to JPEG and shown with responsive cropping.",
       "creditText": "CLAW BBQ JBR · cocktail, via CLAW BBQ via The Beach JBR. Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "filename": "mogilligan-01.jpg",
+      "activityId": "mogilligan",
+      "activityName": "Mo Gilligan at Dubai Opera",
+      "chapterName": "Genuinely strange",
+      "slot": 1,
+      "workTitle": "Mo Gilligan performing on stage",
+      "creator": null,
+      "source": {
+        "name": "Mo Gilligan",
+        "url": "https://mogilligan.com/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "Mo Gilligan performing on stage, via Mo Gilligan. Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "mogilligan-02.jpg",
+      "activityId": "mogilligan",
+      "activityName": "Mo Gilligan at Dubai Opera",
+      "chapterName": "Genuinely strange",
+      "slot": 2,
+      "workTitle": "Mo Gilligan arena performance",
+      "creator": null,
+      "source": {
+        "name": "Mo Gilligan",
+        "url": "https://mogilligan.com/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "Mo Gilligan arena performance, via Mo Gilligan. Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "tableware-01.jpg",
+      "activityId": "tableware",
+      "activityName": "From Clay to Table",
+      "chapterName": "Things worth taking home",
+      "slot": 1,
+      "workTitle": "Decorated ceramic tableware",
+      "creator": null,
+      "source": {
+        "name": "Tashkeel",
+        "url": "https://tashkeel.org/workshops/from-clay-to-table-a-three-day-tableware-series"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "Decorated ceramic tableware, via Tashkeel. Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "tableware-02.jpg",
+      "activityId": "tableware",
+      "activityName": "From Clay to Table",
+      "chapterName": "Things worth taking home",
+      "slot": 2,
+      "workTitle": "Tashkeel Makerspace pottery studio",
+      "creator": null,
+      "source": {
+        "name": "Tashkeel Makerspace via Make Works",
+        "url": "https://make.works/companies/Tashkeel_uae"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "Tashkeel Makerspace pottery studio, via Tashkeel Makerspace via Make Works. Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "anotr-01.jpg",
+      "activityId": "anotr",
+      "activityName": "ANOTR at Playa Pacha",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "ANOTR artist portrait",
+      "creator": null,
+      "source": {
+        "name": "Pacha ICONS",
+        "url": "https://www.pachaicons.com/artist/anotr"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped to a wide two-person portrait, resized and JPEG-encoded; shown with responsive cropping.",
+      "creditText": "ANOTR artist portrait, via Pacha ICONS. Cropped to a wide two-person portrait, resized and JPEG-encoded; shown with responsive cropping."
+    },
+    {
+      "filename": "anotr-02.jpg",
+      "activityId": "anotr",
+      "activityName": "ANOTR at Playa Pacha",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "Playa Pacha night crowd and FIVE LUXE skyline",
+      "creator": null,
+      "source": {
+        "name": "Pacha ICONS",
+        "url": "https://www.pachaicons.com/dubai/events/131126-anotr-five-luxe"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "Playa Pacha night crowd and FIVE LUXE skyline, via Pacha ICONS. Resized and JPEG-encoded for web display; shown with responsive cropping."
     },
     {
       "filename": "icon-google-maps.svg",

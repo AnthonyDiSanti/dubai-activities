@@ -1,5 +1,10 @@
 # Decisions
 
+## 2026-09-26 — Refresh elapsed events and add three autumn alternatives
+- Decider: Anthony, approving the researched shortlist.
+- Decision: Retire six elapsed events/courses; refresh Speakeasy, ARTE and Laughter Factory; flag In the Park’s provisional 8 November date. Add Mo Gilligan, From Clay to Table and ANOTR without inferring a visit. Leave optional Procreate and I Hate Models out.
+- Rationale: Keep the calendar actionable while distinguishing recurring schedules, cancelled/elapsed editions and unresolved dates. Current Laughter Factory tickets supersede the old sold-out URL; exact sources are in `docs/activity-planning-sources.md`.
+
 ## 2026-09-20 — Recommend CLAW’s JBR bar visit without rating the games
 - Decider: Anthony
 - Decision: Add CLAW BBQ at The Beach JBR as Tried & liked for the drinks, nostalgic American pop, people-watching and lively crowd. Preserve uneven food execution and the standout guacamole/fajitas. Games remain explicitly untested; do not turn a positive bar visit into a gameplay recommendation.

@@ -21,7 +21,9 @@ const FACT_ENRICHED_IDS = [
   'krasota',
   'jokehub',
   'laughterfactory',
-  'karakafterdark',
+  'mogilligan',
+  'tableware',
+  'anotr',
   'speakeasy',
   'chaoskarts',
   'motf',
@@ -72,6 +74,12 @@ const FACT_ENRICHED_IDS = [
 
 describe('activity planning content', () => {
   it.each([
+    'atb',
+    'chipcarving',
+    'karakafterdark',
+    'oakenfold',
+    'procreate',
+    'salonchocolat',
     'terrasolis',
     'cyanotype',
     'rawbarista',
@@ -102,12 +110,10 @@ describe('activity planning content', () => {
     const dated = takehome.filter((activity) => activity.dated);
 
     expect(dated.map(({ id, dated: date }) => [id, date?.on])).toEqual([
-      ['chipcarving', '2026-08-29'],
-      ['procreate', '2026-08-30'],
+      ['tableware', '2026-10-17'],
       ['makerspace', '2026-11-03'],
     ]);
     expect(dated.map((activity) => getActivityTreatment(activity))).toEqual([
-      'dated',
       'dated',
       'dated',
     ]);
@@ -119,7 +125,7 @@ describe('activity planning content', () => {
 
   it('keeps unannounced seasonal openings out of the dated stream', () => {
     expect(activitiesById.get('globalvillage')?.dated).toBeUndefined();
-    expect(activitiesById.get('artemarket')?.dated?.on).toBe('2026-08-29');
+    expect(activitiesById.get('artemarket')?.dated?.on).toBe('2026-10-03');
   });
 
   it('keeps OPA actionable without promising an unpublished plate stack', () => {
@@ -181,24 +187,23 @@ describe('activity planning content', () => {
     expect(jokeHub && isPlanAheadActivity(jokeHub)).toBe(true);
     expect(laughterFactory).toMatchObject({
       ch: 'strange',
-      dated: { on: '2026-09-10' },
+      dated: { on: '2026-10-02' },
       photos: 2,
     });
-    expect(laughterFactory?.facts?.find(({ label }) => label === 'Bill')?.value).toMatch(/Aideen McQueen/i);
+    expect(laughterFactory?.facts?.find(({ label }) => label === 'Bill')?.value).toMatch(/Marlon Davis/i);
     expect(speakeasy).toMatchObject({
       ch: 'strange',
-      dated: { on: '2026-09-20' },
+      dated: { on: '2026-10-04' },
       where: 'Moon Bar by SANA, Mina Al Salam',
       photos: 2,
     });
     expect(speakeasy?.advisory).toMatch(/Seating is first come/i);
   });
 
-  it('separates recurring Courtyard improv from the dated Karak mixed bill', () => {
+  it('keeps recurring Courtyard improv after retiring the Karak one-off', () => {
     const playhouse = activitiesById.get('playhouse');
-    const karakAfterDark = activitiesById.get('karakafterdark');
 
-    // The weekly room and one-off mixed bill remain separately useful and honestly time-bound.
+    // Retiring an elapsed one-off must not remove the recurring improv room.
     expect(playhouse).toMatchObject({
       ch: 'strange',
       when: 'Mon & Wed · 20:00–22:00',
@@ -208,14 +213,6 @@ describe('activity planning content', () => {
       .toMatch(/audience-scored elimination/i);
     expect(playhouse?.advisory).toMatch(/does not guarantee a seat/i);
     expect(playhouse && isPlanAheadActivity(playhouse)).toBe(true);
-    expect(karakAfterDark).toMatchObject({
-      ch: 'strange',
-      when: 'Thu 10 Sep · 20:00–21:30',
-      dated: { on: '2026-09-10' },
-      photos: 2,
-    });
-    expect(karakAfterDark?.facts?.find(({ label }) => label === 'Entry')?.value).toMatch(/AED 89/i);
-    expect(karakAfterDark?.book).toMatch(/district\.ae\/events\/karak-after-dark/i);
   });
 
   it('keeps BLU practical about its Thursday crowd and compact dance area', () => {

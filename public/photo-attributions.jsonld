@@ -203,61 +203,6 @@
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/atb-01.jpg",
-      "contentUrl": "./photos/atb-01.jpg",
-      "name": "ATB, Solarstone & Steve Allen — photo 1",
-      "creditText": "ATB, Solarstone & Steve Allen — photo 1 by Marian Sarau, via Gigxels. Gigxels Free License. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://gigxels.com/photo/atb-Cluj-Napoca-august-2022-b0a8f7df7e",
-      "encodingFormat": "image/jpeg",
-      "creator": {
-        "@type": "Person",
-        "name": "Marian Sarau"
-      },
-      "license": "https://gigxels.com/free-license",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/atb-02.jpg",
-      "contentUrl": "./photos/atb-02.jpg",
-      "name": "ATB, Solarstone & Steve Allen — photo 2",
-      "creditText": "ATB, Solarstone & Steve Allen — photo 2, via The Agenda. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.theagenda.com/",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/oakenfold-01.jpg",
-      "contentUrl": "./photos/oakenfold-01.jpg",
-      "name": "Paul Oakenfold & Markus Schulz — photo 1",
-      "creditText": "Paul Oakenfold & Markus Schulz — photo 1, via Paul Oakenfold. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://pauloakenfold.com/about/",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/oakenfold-02.jpg",
-      "contentUrl": "./photos/oakenfold-02.jpg",
-      "name": "Paul Oakenfold & Markus Schulz — photo 2",
-      "creditText": "Paul Oakenfold & Markus Schulz — photo 2, via Markus Schulz. Cropped and resized for web display.",
-      "isBasedOn": "https://www.markusschulz.com/",
-      "encodingFormat": "image/jpeg",
-      "description": "Cropped and resized for web display."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/oakenfold-03.jpg",
-      "contentUrl": "./photos/oakenfold-03.jpg",
-      "name": "Paul Oakenfold & Markus Schulz — photo 3",
-      "creditText": "Paul Oakenfold & Markus Schulz — photo 3, via The Agenda. Cropped and resized for web display.",
-      "isBasedOn": "https://www.theagenda.com/services",
-      "encodingFormat": "image/jpeg",
-      "description": "Cropped and resized for web display."
-    },
-    {
-      "@type": "ImageObject",
       "@id": "./photos/lostfreq-01.jpg",
       "contentUrl": "./photos/lostfreq-01.jpg",
       "name": "Lost Frequencies at Bohemia — photo 1",
@@ -1290,48 +1235,6 @@
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/chipcarving-01.jpg",
-      "contentUrl": "./photos/chipcarving-01.jpg",
-      "name": "Chip carving, three sessions — photo 1",
-      "creditText": "Chip carving, three sessions — photo 1, via Tashkeel. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://tashkeel.org/workshops/chip-carving-letters-and-patters-series",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/chipcarving-02.jpg",
-      "contentUrl": "./photos/chipcarving-02.jpg",
-      "name": "Carvingknives",
-      "creditText": "Carvingknives by Kaiserb, via Wikimedia Commons. CC BY-SA 2.5. Resized for web display and shown with responsive cropping. Local adaptation remains under the same license.",
-      "isBasedOn": "https://commons.wikimedia.org/wiki/File:Carvingknives.JPG",
-      "encodingFormat": "image/jpeg",
-      "creator": {
-        "@type": "Person",
-        "name": "Kaiserb",
-        "url": "https://en.wikipedia.org/wiki/User:Kaiserb"
-      },
-      "license": "https://creativecommons.org/licenses/by-sa/2.5",
-      "description": "Resized for web display and shown with responsive cropping. Local adaptation remains under the same license."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/chipcarving-03.jpg",
-      "contentUrl": "./photos/chipcarving-03.jpg",
-      "name": "ChipCarving",
-      "creditText": "ChipCarving by Jonathunder, via Wikimedia Commons. CC BY-SA 3.0. Resized for web display and shown with responsive cropping. Local adaptation remains under the same license.",
-      "isBasedOn": "https://commons.wikimedia.org/wiki/File:ChipCarving.JPG",
-      "encodingFormat": "image/jpeg",
-      "creator": {
-        "@type": "Person",
-        "name": "Jonathunder",
-        "url": "https://commons.wikimedia.org/wiki/User:Jonathunder"
-      },
-      "license": "https://creativecommons.org/licenses/by-sa/3.0",
-      "description": "Resized for web display and shown with responsive cropping. Local adaptation remains under the same license."
-    },
-    {
-      "@type": "ImageObject",
       "@id": "./photos/limba-01.jpg",
       "contentUrl": "./photos/limba-01.jpg",
       "name": "Pottery on the wheel — photo 1",
@@ -1467,26 +1370,6 @@
       "name": "Mirzam chocolate workshop — photo 3",
       "creditText": "Mirzam chocolate workshop — photo 3, via Mirzam Chocolate Makers. Resized for web display and shown with responsive cropping.",
       "isBasedOn": "https://mirzam.com/collections/workshops",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/procreate-01.jpg",
-      "contentUrl": "./photos/procreate-01.jpg",
-      "name": "Procreate fashion illustration — photo 1",
-      "creditText": "Procreate fashion illustration — photo 1, via iMore. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.imore.com/ipad-air-5-vs-ipad-2021",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/procreate-02.jpg",
-      "contentUrl": "./photos/procreate-02.jpg",
-      "name": "Procreate fashion illustration — photo 2",
-      "creditText": "Procreate fashion illustration — photo 2, via Franckie Alarcon. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.franckiealarcon.com/",
       "encodingFormat": "image/jpeg",
       "description": "Resized for web display and shown with responsive cropping."
     },
@@ -1667,36 +1550,6 @@
       "name": "Anantara · Spice Spoons — photo 3",
       "creditText": "Anantara · Spice Spoons — photo 3, via Anantara. Resized for web display and shown with responsive cropping.",
       "isBasedOn": "https://www.anantara.com/en/palm-dubai/restaurants/spice-spoons",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/salonchocolat-01.jpg",
-      "contentUrl": "./photos/salonchocolat-01.jpg",
-      "name": "Salon du Chocolat — photo 1",
-      "creditText": "Salon du Chocolat — photo 1, via Salon du Chocolat Dubai. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.salonduchocolatdubai.com/",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/salonchocolat-02.jpg",
-      "contentUrl": "./photos/salonchocolat-02.jpg",
-      "name": "Salon du Chocolat — photo 2",
-      "creditText": "Salon du Chocolat — photo 2, via Salon du Chocolat Dubai. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.salonduchocolatdubai.com/",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/salonchocolat-03.jpg",
-      "contentUrl": "./photos/salonchocolat-03.jpg",
-      "name": "Salon du Chocolat — photo 3",
-      "creditText": "Salon du Chocolat — photo 3, via Salon du Chocolat Dubai. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.salonduchocolatdubai.com/photos1",
       "encodingFormat": "image/jpeg",
       "description": "Resized for web display and shown with responsive cropping."
     },
@@ -5055,51 +4908,31 @@
       "@type": "ImageObject",
       "@id": "./photos/speakeasy-02.jpg",
       "contentUrl": "./photos/speakeasy-02.jpg",
-      "name": "Comedy at the Speakeasy artwork",
-      "creditText": "Comedy at the Speakeasy artwork, via Mad Cat Comedy. Re-encoded for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.madcatcomedy.com/events/september-20th-sunday-comedy-at-the-speakeasy-moon-bar-by-sana",
+      "name": "A cocktail at Moon Bar by SANA",
+      "creditText": "A cocktail at Moon Bar by SANA, via SANA. Cropped around the cocktail, resized and JPEG-encoded; shown with responsive cropping.",
+      "isBasedOn": "https://sanarestaurants.com/sana-moon-bar",
       "encodingFormat": "image/jpeg",
-      "description": "Re-encoded for web display and shown with responsive cropping."
+      "description": "Cropped around the cocktail, resized and JPEG-encoded; shown with responsive cropping."
     },
     {
       "@type": "ImageObject",
       "@id": "./photos/laughterfactory-01.jpg",
       "contentUrl": "./photos/laughterfactory-01.jpg",
-      "name": "The Laughter Factory September 2026 bill",
-      "creditText": "The Laughter Factory September 2026 bill, via The Laughter Factory. Re-encoded for web display and shown with responsive cropping.",
-      "isBasedOn": "https://thelaughterfactory.com/the-laughter-factory-30-years-of-bringing-people-together-through-laughter/",
+      "name": "Marlon Davis portrait",
+      "creditText": "Marlon Davis portrait, via Marlon Davis. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://www.marlondavis.net/gallery/",
       "encodingFormat": "image/jpeg",
-      "description": "Re-encoded for web display and shown with responsive cropping."
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
     },
     {
       "@type": "ImageObject",
       "@id": "./photos/laughterfactory-02.jpg",
       "contentUrl": "./photos/laughterfactory-02.jpg",
-      "name": "The Laughter Factory September 2026 schedule",
-      "creditText": "The Laughter Factory September 2026 schedule, via The Laughter Factory. Enlarged to a 900 px long edge and re-encoded for web display with responsive cropping.",
-      "isBasedOn": "https://thelaughterfactory.com/the-laughter-factory-30-years-of-bringing-people-together-through-laughter/",
+      "name": "George Zach portrait",
+      "creditText": "George Zach portrait, via George Zacharopoulos. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://www.georgezacharopoulos.com/",
       "encodingFormat": "image/jpeg",
-      "description": "Enlarged to a 900 px long edge and re-encoded for web display with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/karakafterdark-01.jpg",
-      "contentUrl": "./photos/karakafterdark-01.jpg",
-      "name": "Karak After Dark Vol. 3 event artwork",
-      "creditText": "Karak After Dark Vol. 3 event artwork, via District UAE. Converted from PNG to JPEG and shown with responsive cropping.",
-      "isBasedOn": "https://www.district.ae/events/karak-after-dark-vol-3-back-to-school-edition-buy-tickets",
-      "encodingFormat": "image/jpeg",
-      "description": "Converted from PNG to JPEG and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/karakafterdark-02.jpg",
-      "contentUrl": "./photos/karakafterdark-02.jpg",
-      "name": "The Junction audience",
-      "creditText": "The Junction audience, via Alserkal Avenue. Re-encoded for web display and shown with responsive cropping.",
-      "isBasedOn": "https://alserkal.online/community/the-junction/",
-      "encodingFormat": "image/jpeg",
-      "description": "Re-encoded for web display and shown with responsive cropping."
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
     },
     {
       "@type": "ImageObject",
@@ -5410,6 +5243,66 @@
       "isBasedOn": "https://www.thebeach.ae/en/outlets/claw-bbq",
       "encodingFormat": "image/jpeg",
       "description": "Converted from AVIF to JPEG and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mogilligan-01.jpg",
+      "contentUrl": "./photos/mogilligan-01.jpg",
+      "name": "Mo Gilligan performing on stage",
+      "creditText": "Mo Gilligan performing on stage, via Mo Gilligan. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://mogilligan.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/mogilligan-02.jpg",
+      "contentUrl": "./photos/mogilligan-02.jpg",
+      "name": "Mo Gilligan arena performance",
+      "creditText": "Mo Gilligan arena performance, via Mo Gilligan. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://mogilligan.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/tableware-01.jpg",
+      "contentUrl": "./photos/tableware-01.jpg",
+      "name": "Decorated ceramic tableware",
+      "creditText": "Decorated ceramic tableware, via Tashkeel. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://tashkeel.org/workshops/from-clay-to-table-a-three-day-tableware-series",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/tableware-02.jpg",
+      "contentUrl": "./photos/tableware-02.jpg",
+      "name": "Tashkeel Makerspace pottery studio",
+      "creditText": "Tashkeel Makerspace pottery studio, via Tashkeel Makerspace via Make Works. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://make.works/companies/Tashkeel_uae",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/anotr-01.jpg",
+      "contentUrl": "./photos/anotr-01.jpg",
+      "name": "ANOTR artist portrait",
+      "creditText": "ANOTR artist portrait, via Pacha ICONS. Cropped to a wide two-person portrait, resized and JPEG-encoded; shown with responsive cropping.",
+      "isBasedOn": "https://www.pachaicons.com/artist/anotr",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped to a wide two-person portrait, resized and JPEG-encoded; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/anotr-02.jpg",
+      "contentUrl": "./photos/anotr-02.jpg",
+      "name": "Playa Pacha night crowd and FIVE LUXE skyline",
+      "creditText": "Playa Pacha night crowd and FIVE LUXE skyline, via Pacha ICONS. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://www.pachaicons.com/dubai/events/131126-anotr-five-luxe",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
     },
     {
       "@type": "ImageObject",
