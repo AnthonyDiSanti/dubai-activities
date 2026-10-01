@@ -134,6 +134,16 @@ export const ARCHIVE_ENTRIES = [
     status: 'tried',
   },
   {
+    id: 'nola',
+    name: 'Nola Bijou Bistro & Bar · City Walk',
+    // Keep the enjoyable evening separate from an explicit decision not to recommend it.
+    note: 'Visited the City Walk location on 30 September 2026. The vibe was fun and the live music was great. The food was pretty good but underseasoned; requesting salt fixed it immediately. An enjoyable evening, but not a place to recommend to others.',
+    originalChapterKey: 'dinners',
+    originalChapterName: 'Long dinners',
+    recordedOn: '2026-10-01',
+    status: 'tried',
+  },
+  {
     id: 'thewall',
     name: 'The Wall',
     note: 'Checked in person. The experience did not clear the bar, so it is out of the live guide.',
@@ -227,6 +237,15 @@ export const ARCHIVE_ACTIVITY_DETAILS = [
     facts: [{ label: 'Opening', value: 'Mon–Fri 16:00 · Sat 15:00 · Sun 14:00' }, { label: 'Format', value: 'Party bar · live music · DJs · sport' }, { label: 'Dress', value: 'Smart casual' }],
     advisory: 'This sheet covers the Business Bay room only; the firsthand verdict does not apply to the separate Barsha Heights or JBR locations.',
     cta: 'See the Business Bay location', site: 'https://www.marriott.com/en-us/dining/restaurant-bar/dxbrb-renaissance-business-bay-hotel-dubai/7172498-lock-stock-barrel.mi', photos: 4,
+  },
+  {
+    id: 'nola', ch: 'dinners', name: 'Nola Bijou Bistro & Bar · City Walk',
+    // Describe the venue here; the separate firsthand note owns the recommendation verdict.
+    blurb: 'New Orleans-inspired dining meets a marble-topped bar, art-lined rooms, and live music at Nola’s City Walk branch. Sharing plates, raw-bar seafood, and signature mains anchor the menu in a lively bistro setting.',
+    eyebrow: 'New Orleans at City Walk', when: 'Sun–Thu · 12:00–00:00; Fri–Sat · 12:00–01:00', where: 'C2, City Walk',
+    facts: [{ label: 'Cuisine', value: 'New Orleans-inspired · sharing plates and seafood' }, { label: 'Contact', value: '+971 4 334 4098' }],
+    advisory: 'This record covers City Walk only, not Nola’s separate JLT location. Confirm the current live-music lineup directly before planning around a performance.',
+    cta: 'See Nola City Walk', site: 'https://www.noladubai.com/citywalk', photos: 3,
   },
   {
     id: 'thewall', ch: 'getgood', name: 'The Wall',

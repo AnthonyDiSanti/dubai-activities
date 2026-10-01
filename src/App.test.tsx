@@ -268,7 +268,7 @@ describe('App', () => {
     const archive = screen.getByRole('dialog', { name: 'Tried & decided' });
 
     fireEvent.click(within(archive).getByRole('link', {
-      name: 'Show 4 Tried archive entries',
+      name: 'Show 5 Tried archive entries',
     }));
 
     expect(window.location.hash).toBe('#archive-tried');

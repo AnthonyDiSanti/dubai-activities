@@ -1,5 +1,11 @@
 # Tasks
 
+- id: 2026-10-01-nola — title: Add Nola City Walk to Tried and deploy — owner: Codex — status: done — last update: 2026-10-01
+  - Result: Add an archive-only record and full sheet for the 30 September visit; preserve the mixed firsthand verdict and explicit non-recommendation. Add three official City Walk photographs and credits. Active and liked inventories remain unchanged.
+  - Verification: 277 app tests and four Python tests plus full lint/TypeScript/build/content/static/photo/strict-attribution gates pass; zero similarity candidates. Desktop/mobile checks confirm the note and all three loaded frames; 999/1000px checks show no overflow. Viewport restored.
+  - Release: Published 532 objects, removed only `assets/index-CyS0-sZj.js`, and completed invalidation `I5S8HKZQOV3BENHVVUXRO0VOQ`. Remote inventory matches the unchanged build; eight live files match bytes and MIME/cache headers. Tried-only classification, review, all three loaded gallery images, dismissal to `#archive-tried` and clean console verified.
+  - Follow-up: Full dirty-tree commit prep complete; nothing staged or committed. No release work remains.
+
 - id: 2026-09-26-autumn-calendar — title: Refresh expired events and add approved autumn alternatives — owner: Codex — status: done — last update: 2026-09-26
   - Result: Retire six elapsed/cancelled entries and their assets; update recurring dates and In the Park uncertainty; add Mo Gilligan, From Clay to Table and ANOTR with credited galleries. Keep all personal outcomes unchanged.
   - Verification: 276 app tests, four Python tests and all release audits pass; 136 activities, 39 Plan ahead, 491 JPEGs and 493 credits, zero duplicate candidates. Desktop/mobile detail and gallery QA passes, including corrected ANOTR and Speakeasy framing; viewport restored.

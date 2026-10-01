@@ -8844,6 +8844,57 @@
       "creditText": "Playa Pacha night crowd and FIVE LUXE skyline, via Pacha ICONS. Resized and JPEG-encoded for web display; shown with responsive cropping."
     },
     {
+      "filename": "nola-01.jpg",
+      "activityId": "nola",
+      "activityName": "Nola Bijou Bistro & Bar · City Walk",
+      "chapterName": "Long dinners",
+      "slot": 1,
+      "workTitle": "Nola City Walk dining room and terrace",
+      "creator": null,
+      "source": {
+        "name": "Nola Bijou Bistro & Bar · City Walk",
+        "url": "https://www.noladubai.com/citywalk"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized or re-encoded as JPEG for web display and shown with responsive cropping.",
+      "creditText": "Nola City Walk dining room and terrace, via Nola Bijou Bistro & Bar · City Walk. Resized or re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "nola-02.jpg",
+      "activityId": "nola",
+      "activityName": "Nola Bijou Bistro & Bar · City Walk",
+      "chapterName": "Long dinners",
+      "slot": 2,
+      "workTitle": "Nola City Walk marble-topped bar",
+      "creator": null,
+      "source": {
+        "name": "Nola Bijou Bistro & Bar · City Walk",
+        "url": "https://www.noladubai.com/citywalk"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized or re-encoded as JPEG for web display and shown with responsive cropping.",
+      "creditText": "Nola City Walk marble-topped bar, via Nola Bijou Bistro & Bar · City Walk. Resized or re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "filename": "nola-03.jpg",
+      "activityId": "nola",
+      "activityName": "Nola Bijou Bistro & Bar · City Walk",
+      "chapterName": "Long dinners",
+      "slot": 3,
+      "workTitle": "Nola City Walk sharing plates and cocktails",
+      "creator": null,
+      "source": {
+        "name": "Nola Bijou Bistro & Bar · City Walk",
+        "url": "https://www.noladubai.com/citywalk"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized or re-encoded as JPEG for web display and shown with responsive cropping.",
+      "creditText": "Nola City Walk sharing plates and cocktails, via Nola Bijou Bistro & Bar · City Walk. Resized or re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
       "filename": "icon-google-maps.svg",
       "activityId": null,
       "activityName": "Interface marks",

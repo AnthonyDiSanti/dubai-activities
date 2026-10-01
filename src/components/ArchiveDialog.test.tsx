@@ -58,6 +58,10 @@ describe('ArchiveDialog', () => {
     expect(tried).toHaveTextContent("Roberto's");
     expect(tried).toHaveTextContent('Salmon Guru');
     expect(tried).toHaveTextContent('Lock, Stock & Barrel · Business Bay');
+    // Nola belongs only to Tried, despite the enjoyable atmosphere and music.
+    expect(tried).toHaveTextContent('Nola Bijou Bistro & Bar · City Walk');
+    expect(verified).not.toHaveTextContent('Nola');
+    expect(rejected).not.toHaveTextContent('Nola');
     expect(tried).not.toHaveTextContent('Boulder Zone');
     expect(rejected).toHaveTextContent('The Wall');
     expect(rejected).toHaveTextContent('Mountain Extreme');
@@ -66,7 +70,7 @@ describe('ArchiveDialog', () => {
     expect(rejected).toHaveTextContent('Fashion Avenue at Dubai Mall');
     expect(rejected).toHaveTextContent('The Pods');
     expect(rejected).not.toHaveTextContent('Boulder Zone');
-    expect(within(dialog).getAllByRole('article')).toHaveLength(20);
+    expect(within(dialog).getAllByRole('article')).toHaveLength(21);
     expect(within(verified).getAllByRole('img', { name: 'Tried and liked' }))
       .toHaveLength(10);
     // Outcome totals can match; scope each count to its labeled destination.
@@ -113,7 +117,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    const triedSummary = screen.getByRole('link', { name: 'Show 4 Tried archive entries' });
+    const triedSummary = screen.getByRole('link', { name: 'Show 5 Tried archive entries' });
     expect(triedSummary).toHaveAttribute('href', '#archive-tried');
     fireEvent.click(triedSummary);
 
@@ -185,7 +189,7 @@ describe('ArchiveDialog', () => {
       />,
     );
 
-    expect(document.querySelectorAll('.activity-card')).toHaveLength(20);
+    expect(document.querySelectorAll('.activity-card')).toHaveLength(21);
     expect(document.querySelector('#archive-activity-robertos .media-fill')).toHaveAttribute(
       'src',
       'photos/robertos-01.jpg',

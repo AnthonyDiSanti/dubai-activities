@@ -1,5 +1,10 @@
 # Decisions
 
+## 2026-10-01 — Archive Nola City Walk as merely tried
+- Decider: Anthony
+- Decision: Add Nola Bijou Bistro & Bar at City Walk only under Tried after the 30 September visit. Preserve the fun vibe, great live music, and pretty good but underseasoned food immediately improved with requested salt; Anthony would not recommend it.
+- Scope: City Walk only, not JLT. Retain a full archived sheet and three official branch-specific photos, without promoting it into active recommendations or Tried & liked.
+
 ## 2026-09-26 — Refresh elapsed events and add three autumn alternatives
 - Decider: Anthony, approving the researched shortlist.
 - Decision: Retire six elapsed events/courses; refresh Speakeasy, ARTE and Laughter Factory; flag In the Park’s provisional 8 November date. Add Mo Gilligan, From Clay to Table and ANOTR without inferring a visit. Leave optional Procreate and I Hate Models out.

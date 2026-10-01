@@ -31,6 +31,8 @@ A preference established at another branch or in another city may justify adding
 
 Lock, Stock & Barrel is the canonical branch-scoped nightlife outcome. Keep the record tied to Business Bay and preserve the sheet advisory that its dance-floor and crowd observations do not apply to the separate Barsha Heights or JBR locations. Its gallery must depict Business Bay only; never let chain-wide operator copy turn one branch visit into a verdict on every room.
 
+Nola Bijou Bistro & Bar at City Walk is archive-only Tried after the 30 September 2026 visit. Preserve the fun vibe, great live music, and pretty good but underseasoned food that improved immediately with requested salt. Anthony explicitly would not recommend it; positive atmosphere does not justify Tried & liked. Keep the verdict and gallery specific to City Walk, with no inferred outcome for JLT.
+
 ## Chapter ordering and treatments
 
 Array position is the recommendation rank for undated activities within a chapter. `orderChapterItems` applies the shared dated-event rule:

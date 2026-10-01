@@ -4,6 +4,14 @@ This ledger records the primary sources behind structured `facts`, `advisory`, s
 
 The final animal chapter was researched as a separate addendum and retains its source URLs in `src/data/activities.ts`, `docs/image-manifest.csv`, and `activities/Dubai Activities Addendum 3 - Wildlife.md`.
 
+## 1 October 2026 — Nola City Walk, archive-only Tried
+
+Anthony confirmed the City Walk branch and a visit the previous night (30 September): fun vibe, great live music, pretty good but underseasoned food, immediately fixed with requested salt. He would not recommend it. Record `nola` under Tried with a 1 October report date, outside active recommendations and Tried & liked.
+
+- [Official City Walk page](https://www.noladubai.com/citywalk) identifies Nola Bijou Bistro & Bar at C2, City Walk, +971 4 334 4098. Hours: Sunday–Thursday 12:00–00:00, Friday–Saturday 12:00–01:00. The menu centers on sharing plates, raw-bar seafood and mains in a New Orleans-inspired setting.
+- Do not import JLT’s Tuesday/Saturday jazz schedule or its location/contact details. The City Walk performance was firsthand; no fixed future lineup is promised.
+- Three official City Walk gallery photographs show the dining room/terrace, bar and food/cocktails. Exact URLs, dimensions and credits are retained in `.image-work/nola.csv`, the manifest and attribution ledger; no reuse license is implied.
+
 ## 20 September 2026 — CLAW BBQ at The Beach JBR
 
 Anthony reported a liked Marina-area bar visit: good drinks, mixed American food with fantastic guacamole/fajitas, classic 1990s/2000s American pop, top-notch people-watching and a crowd getting sloppy. Games were present but not played. The record date is the report date, not an inferred visit date.

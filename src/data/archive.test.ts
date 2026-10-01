@@ -24,7 +24,7 @@ describe('firsthand activity outcomes', () => {
       'fashionavenue',
       'thepods',
     ]);
-    expect(triedIds).toEqual(['meowtropolis', 'robertos', 'salmonguru', 'lockstockbarrel']);
+    expect(triedIds).toEqual(['meowtropolis', 'robertos', 'salmonguru', 'lockstockbarrel', 'nola']);
     expect(verifiedIds).toEqual([
       'boulderzone',
       'sohogarden',
@@ -158,6 +158,21 @@ describe('firsthand activity outcomes', () => {
     expect(detail?.where).toBe('Renaissance Business Bay Hotel · Al Abraj Street');
     if (!detail || !('advisory' in detail)) throw new Error('Expected a scoped archive advisory');
     expect(detail.advisory).toMatch(/does not apply.*Barsha Heights or JBR/i);
+  });
+
+  it('keeps Nola City Walk merely tried while preserving the mixed firsthand verdict', () => {
+    const entry = ARCHIVE_ENTRIES.find(({ id }) => id === 'nola');
+    const detail = ARCHIVE_ACTIVITY_DETAILS.find(({ id }) => id === 'nola');
+
+    // Positive atmosphere and an easy seasoning fix must not imply a liked recommendation.
+    expect(entry).toMatchObject({ status: 'tried', recordedOn: '2026-10-01', originalChapterKey: 'dinners' });
+    expect(entry?.note).toMatch(/30 September 2026/);
+    expect(entry?.note).toMatch(/vibe was fun.*live music was great/);
+    expect(entry?.note).toMatch(/pretty good but underseasoned.*salt fixed it immediately/);
+    expect(entry?.note).toMatch(/not a place to recommend/);
+    expect(new Set<string>(ITEMS.map(({ id }) => id)).has('nola')).toBe(false);
+    expect(detail).toMatchObject({ where: 'C2, City Walk', photos: 3 });
+    expect(detail && 'advisory' in detail && detail.advisory).toMatch(/City Walk only.*separate JLT/);
   });
 
   it('records the visited Brunch & Cake branch and the chain-wide rejection separately', () => {

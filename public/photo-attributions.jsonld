@@ -5306,6 +5306,36 @@
     },
     {
       "@type": "ImageObject",
+      "@id": "./photos/nola-01.jpg",
+      "contentUrl": "./photos/nola-01.jpg",
+      "name": "Nola City Walk dining room and terrace",
+      "creditText": "Nola City Walk dining room and terrace, via Nola Bijou Bistro & Bar · City Walk. Resized or re-encoded as JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.noladubai.com/citywalk",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized or re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nola-02.jpg",
+      "contentUrl": "./photos/nola-02.jpg",
+      "name": "Nola City Walk marble-topped bar",
+      "creditText": "Nola City Walk marble-topped bar, via Nola Bijou Bistro & Bar · City Walk. Resized or re-encoded as JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.noladubai.com/citywalk",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized or re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/nola-03.jpg",
+      "contentUrl": "./photos/nola-03.jpg",
+      "name": "Nola City Walk sharing plates and cocktails",
+      "creditText": "Nola City Walk sharing plates and cocktails, via Nola Bijou Bistro & Bar · City Walk. Resized or re-encoded as JPEG for web display and shown with responsive cropping.",
+      "isBasedOn": "https://www.noladubai.com/citywalk",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized or re-encoded as JPEG for web display and shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
       "@id": "./photos/icon-google-maps.svg",
       "contentUrl": "./photos/icon-google-maps.svg",
       "name": "Google Maps app mark",
