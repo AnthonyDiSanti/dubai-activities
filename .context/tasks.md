@@ -4,7 +4,7 @@
   - Result: Inclusive date-window audit; retire elapsed/cancelled shows and their assets; add three events, concretize Black Coffee and refresh recurring dates/changed workshop format. Sources and credits synchronized; firsthand outcomes unchanged.
   - Verification: 287 app tests, four Python tests, full release audits and desktop/mobile gallery QA pass.
   - Release: Published 526 objects, deleted exactly 12 retired photos and the old JS bundle, and completed `I7QTAKNK8L6P9UTPHLUAS23TDL`. Remote inventory and 11 live-file byte/header checks match the build. Live filter/gallery/dismissal/console checks pass. Full dirty-tree commit prep complete; deployed refresh committed and pushed as `c3ea14d` with matching local/remote heads.
-  - Next: Tonight’s stage/crowd research complete; Frequency 971 fanpit leads, with Sonny Fodera/Robin Schulz outdoor alternatives. Sources, current selector prices and conflicting ticket-channel status recorded in the planning ledger.
+  - Next: Tonight’s research revised: exclude arena shows after Anthony’s size clarification. Toman and Sonny Fodera lead; Vigro Deep is an Amapiano alternative. Soho-sized warehouse parties are the maximum, while small artist-led club nights qualify. Sources, current selector prices and conflicting ticket-channel status recorded in the planning ledger.
 
 - id: 2026-10-01-nola — title: Add Nola City Walk to Tried and deploy — owner: Codex — status: done — last update: 2026-10-01
   - Result: Add an archive-only record and full sheet for the 30 September visit; preserve the mixed firsthand verdict and explicit non-recommendation. Add three official City Walk photographs and credits. Active and liked inventories remain unchanged.

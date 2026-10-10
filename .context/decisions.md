@@ -1,5 +1,10 @@
 # Decisions
 
+## 2026-10-10 — Prefer artist-led club shows within a Soho-sized ceiling
+- Decider: Anthony.
+- Decision: Exclude arena/stadium DJ shows. Soho Garden-sized warehouse parties are the upper end of the preferred scale; small club shows also qualify. The key is an event people attend to see the named DJ, rather than a dance venue that happens to have DJ programming.
+- Application: Replace the arena-first tonight recommendation with Toman/Sonny Fodera and an optional Vigro Deep Amapiano booking. Do not dismiss a ticketed touring-artist night solely because it takes place in a club, or promise everyone’s motives/attendance from a lineup. Evidence and current entry details are in `docs/activity-planning-sources.md`.
+
 ## 2026-10-10 — Curate the inclusive October–November event window
 - Decider: Anthony (window and release), Codex (source-backed selection).
 - Decision: Keep dated recommendations within 10 October–15 November 2026. Retire elapsed Lost Frequencies/Carl Cox and cancelled elrow; advance recurring series and continuing ranges to remaining occurrences. Convert the existing Ushuaïa card to Black Coffee and add The Fridge, linocut and Adriatique with credited context photographs. Preserve all firsthand outcomes.
