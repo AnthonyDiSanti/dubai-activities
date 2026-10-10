@@ -51,7 +51,7 @@ describe('App', () => {
     ]);
     expect(animalItems.flatMap((item, index) => item.ahead ? [index] : [])).toEqual([1, 3, 5]);
     expect(animalItems.some(({ dated }) => Boolean(dated))).toBe(false);
-    expect(HERO).toEqual(['nest', 'teamlab', 'rasalkhor', 'elrow', 'skydive', 'laperle']);
+    expect(HERO).toEqual(['nest', 'teamlab', 'rasalkhor', 'ushuaia', 'skydive', 'laperle']);
   });
 
   it('opens details from passive card space', () => {

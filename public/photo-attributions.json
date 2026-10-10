@@ -2,159 +2,6 @@
   "schemaVersion": 1,
   "assets": [
     {
-      "filename": "elrow-01.jpg",
-      "activityId": "elrow",
-      "activityName": "elrow Nowmads",
-      "chapterName": "Nights that go loud",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "UNVRS",
-        "url": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "elrow Nowmads — photo 1, via UNVRS. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "elrow-02.jpg",
-      "activityId": "elrow",
-      "activityName": "elrow Nowmads",
-      "chapterName": "Nights that go loud",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "UNVRS",
-        "url": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "elrow Nowmads — photo 2, via UNVRS. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "elrow-03.jpg",
-      "activityId": "elrow",
-      "activityName": "elrow Nowmads",
-      "chapterName": "Nights that go loud",
-      "slot": 3,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "UNVRS",
-        "url": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "elrow Nowmads — photo 3, via UNVRS. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "elrow-04.jpg",
-      "activityId": "elrow",
-      "activityName": "elrow Nowmads",
-      "chapterName": "Nights that go loud",
-      "slot": 4,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "UNVRS",
-        "url": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "elrow Nowmads — photo 4, via UNVRS. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "elrow-05.jpg",
-      "activityId": "elrow",
-      "activityName": "elrow Nowmads",
-      "chapterName": "Nights that go loud",
-      "slot": 5,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "UNVRS",
-        "url": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "elrow Nowmads — photo 5, via UNVRS. Resized for web display and shown with responsive cropping."
-    },
-    {
-      "filename": "carlcox-01.jpg",
-      "activityId": "carlcox",
-      "activityName": "Carl Cox at Playa Pacha",
-      "chapterName": "Nights that go loud",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Pacha ICONS",
-        "url": "https://www.pachaicons.com/about-us"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "creditText": "Carl Cox at Playa Pacha — photo 1, via Pacha ICONS. Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "filename": "carlcox-02.jpg",
-      "activityId": "carlcox",
-      "activityName": "Carl Cox at Playa Pacha",
-      "chapterName": "Nights that go loud",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Numéro Netherlands",
-        "url": "https://www.numeronetherlands.com/events/carl-cox-brings-the-beat-to-playa-pacha-dubai"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "creditText": "Carl Cox at Playa Pacha — photo 2, via Numéro Netherlands. Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "filename": "carlcox-03.jpg",
-      "activityId": "carlcox",
-      "activityName": "Carl Cox at Playa Pacha",
-      "chapterName": "Nights that go loud",
-      "slot": 3,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Numéro Netherlands",
-        "url": "https://www.numeronetherlands.com/events/carl-cox-brings-the-beat-to-playa-pacha-dubai"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "creditText": "Carl Cox at Playa Pacha — photo 3, via Numéro Netherlands. Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "filename": "carlcox-04.jpg",
-      "activityId": "carlcox",
-      "activityName": "Carl Cox at Playa Pacha",
-      "chapterName": "Nights that go loud",
-      "slot": 4,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Numéro Netherlands",
-        "url": "https://www.numeronetherlands.com/events/carl-cox-brings-the-beat-to-playa-pacha-dubai"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "creditText": "Carl Cox at Playa Pacha — photo 4, via Numéro Netherlands. Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
       "filename": "sonnyfodera-01.jpg",
       "activityId": "sonnyfodera",
       "activityName": "Sonny Fodera",
@@ -342,57 +189,6 @@
       "creditText": "UNTOLD Dubai — photo 5, via UNTOLD Dubai. Converted to JPEG and resized for web display; shown with responsive cropping."
     },
     {
-      "filename": "lostfreq-01.jpg",
-      "activityId": "lostfreq",
-      "activityName": "Lost Frequencies at Bohemia",
-      "chapterName": "Nights that go loud",
-      "slot": 1,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Bohemia Dubai",
-        "url": "https://www.bohemiadubai.com/events/bohemia-presents-lost-frequencies-season-opening-party-03102026"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "creditText": "Lost Frequencies at Bohemia — photo 1, via Bohemia Dubai. Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "filename": "lostfreq-02.jpg",
-      "activityId": "lostfreq",
-      "activityName": "Lost Frequencies at Bohemia",
-      "chapterName": "Nights that go loud",
-      "slot": 2,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Bohemia Dubai",
-        "url": "https://www.bohemiadubai.com/events/bohemia-presents-lost-frequencies-season-opening-party-03102026"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "creditText": "Lost Frequencies at Bohemia — photo 2, via Bohemia Dubai. Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "filename": "lostfreq-03.jpg",
-      "activityId": "lostfreq",
-      "activityName": "Lost Frequencies at Bohemia",
-      "chapterName": "Nights that go loud",
-      "slot": 3,
-      "workTitle": null,
-      "creator": null,
-      "source": {
-        "name": "Bohemia Dubai",
-        "url": "https://www.bohemiadubai.com/events/bohemia-presents-lost-frequencies-season-opening-party-03102026"
-      },
-      "license": null,
-      "creditBasis": "source_credit",
-      "modifications": "Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "creditText": "Lost Frequencies at Bohemia — photo 3, via Bohemia Dubai. Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
       "filename": "inthepark-01.jpg",
       "activityId": "inthepark",
       "activityName": "In the Park",
@@ -565,7 +361,7 @@
     {
       "filename": "ushuaia-01.jpg",
       "activityId": "ushuaia",
-      "activityName": "Ushuaïa Dubai Harbour",
+      "activityName": "Black Coffee at Ushuaïa Dubai Harbour",
       "chapterName": "Nights that go loud",
       "slot": 1,
       "workTitle": null,
@@ -577,12 +373,12 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Cropped and resized for web display.",
-      "creditText": "Ushuaïa Dubai Harbour — photo 1, via Ushuaïa Dubai Harbour Experience. Cropped and resized for web display."
+      "creditText": "Black Coffee at Ushuaïa Dubai Harbour — photo 1, via Ushuaïa Dubai Harbour Experience. Cropped and resized for web display."
     },
     {
       "filename": "ushuaia-02.jpg",
       "activityId": "ushuaia",
-      "activityName": "Ushuaïa Dubai Harbour",
+      "activityName": "Black Coffee at Ushuaïa Dubai Harbour",
       "chapterName": "Nights that go loud",
       "slot": 2,
       "workTitle": null,
@@ -594,12 +390,12 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Ushuaïa Dubai Harbour — photo 2, via Ushuaïa Dubai Harbour Experience. Resized for web display and shown with responsive cropping."
+      "creditText": "Black Coffee at Ushuaïa Dubai Harbour — photo 2, via Ushuaïa Dubai Harbour Experience. Resized for web display and shown with responsive cropping."
     },
     {
       "filename": "ushuaia-03.jpg",
       "activityId": "ushuaia",
-      "activityName": "Ushuaïa Dubai Harbour",
+      "activityName": "Black Coffee at Ushuaïa Dubai Harbour",
       "chapterName": "Nights that go loud",
       "slot": 3,
       "workTitle": null,
@@ -611,7 +407,7 @@
       "license": null,
       "creditBasis": "source_credit",
       "modifications": "Resized for web display and shown with responsive cropping.",
-      "creditText": "Ushuaïa Dubai Harbour — photo 3, via Ushuaïa Dubai Harbour Experience. Resized for web display and shown with responsive cropping."
+      "creditText": "Black Coffee at Ushuaïa Dubai Harbour — photo 3, via Ushuaïa Dubai Harbour Experience. Resized for web display and shown with responsive cropping."
     },
     {
       "filename": "honeycomb-01.jpg",
@@ -8941,6 +8737,108 @@
       "creditBasis": "trademark",
       "modifications": null,
       "creditText": "Instagram gradient glyph by Meta Platforms, Inc., via Wikimedia Commons. Public-domain copyright status; trademark rules apply."
+    },
+    {
+      "filename": "fridge-01.jpg",
+      "activityId": "fridge",
+      "activityName": "The Fridge · Concert Series 50",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "The Fridge Warehouse stage and seating",
+      "creator": null,
+      "source": {
+        "name": "The Fridge Warehouse",
+        "url": "https://www.thefridgewarehouse.com/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "The Fridge Warehouse stage and seating, via The Fridge Warehouse. Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "fridge-02.jpg",
+      "activityId": "fridge",
+      "activityName": "The Fridge · Concert Series 50",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "The Fridge Warehouse live performance",
+      "creator": null,
+      "source": {
+        "name": "The Fridge Warehouse",
+        "url": "https://www.thefridgewarehouse.com/"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "The Fridge Warehouse live performance, via The Fridge Warehouse. Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "adriatique-01.jpg",
+      "activityId": "adriatique",
+      "activityName": "Adriatique present X",
+      "chapterName": "Nights that go loud",
+      "slot": 1,
+      "workTitle": "Adriatique X stage and audience in Dubai",
+      "creator": null,
+      "source": {
+        "name": "Ushuaïa Dubai",
+        "url": "https://www.theushuaiaexperience.com/club/es/news/adriatique-are-returning-to-ushuaia-dubai-harbour-experience"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Cropped to the stage and audience, resized and JPEG-encoded; shown with responsive cropping.",
+      "creditText": "Adriatique X stage and audience in Dubai, via Ushuaïa Dubai. Cropped to the stage and audience, resized and JPEG-encoded; shown with responsive cropping."
+    },
+    {
+      "filename": "adriatique-02.jpg",
+      "activityId": "adriatique",
+      "activityName": "Adriatique present X",
+      "chapterName": "Nights that go loud",
+      "slot": 2,
+      "workTitle": "Adriatique X stage production",
+      "creator": null,
+      "source": {
+        "name": "Platinumlist",
+        "url": "https://dubai.platinumlist.net/event-tickets/108106/adriatique-present-x-at-ushuaia-dubai-harbour-experience"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "Adriatique X stage production, via Platinumlist. Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "linocut-01.jpg",
+      "activityId": "linocut",
+      "activityName": "Linocut · carve and print",
+      "chapterName": "Things worth taking home",
+      "slot": 1,
+      "workTitle": "The Workshop Dubai creative workshop table",
+      "creator": null,
+      "source": {
+        "name": "The Workshop Dubai",
+        "url": "https://www.theworkshopdubai.com/events-1/linocut/monotype-printmaking-workshop-ryw5e-mkgdf-trffy"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "The Workshop Dubai creative workshop table, via The Workshop Dubai. Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "filename": "linocut-02.jpg",
+      "activityId": "linocut",
+      "activityName": "Linocut · carve and print",
+      "chapterName": "Things worth taking home",
+      "slot": 2,
+      "workTitle": "The Workshop Dubai art gallery wall",
+      "creator": null,
+      "source": {
+        "name": "The Workshop Dubai",
+        "url": "https://www.theworkshopdubai.com/events-1/linocut/monotype-printmaking-workshop-ryw5e-mkgdf-trffy"
+      },
+      "license": null,
+      "creditBasis": "source_credit",
+      "modifications": "Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "creditText": "The Workshop Dubai art gallery wall, via The Workshop Dubai. Resized and JPEG-encoded for web display; shown with responsive cropping."
     }
   ]
 }

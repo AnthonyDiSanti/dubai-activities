@@ -14,14 +14,14 @@ describe('generated photo attribution catalog', () => {
       return counts;
     }, {});
 
-    expect(catalog.assets).toHaveLength(496);
-    expect(filenames.size).toBe(496);
+    expect(catalog.assets).toHaveLength(490);
+    expect(filenames.size).toBe(490);
     expect(basisCounts.creative_commons).toBe(52);
     expect(basisCounts.stock_license).toBe(7);
     expect(basisCounts.public_domain).toBe(2);
     expect(basisCounts.trademark).toBe(2);
     expect(basisCounts.creator_credit).toBe(17);
-    expect(basisCounts.source_credit).toBe(416);
+    expect(basisCounts.source_credit).toBe(410);
 
     expect(catalog.assets.find(({ filename }) => filename === 'citymax-01.jpg')?.source.name).toBe('Brew House via Eat App');
     expect(catalog.assets.find(({ filename }) => filename === 'mamashelter-01.jpg')?.source.name).toBe('Mama Shelter Dubai');

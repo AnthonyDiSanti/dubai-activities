@@ -1,5 +1,11 @@
 # Tasks
 
+- id: 2026-10-10-event-window — title: Refresh October–November events and publish — owner: Codex — status: done — last update: 2026-10-10
+  - Result: Inclusive date-window audit; retire elapsed/cancelled shows and their assets; add three events, concretize Black Coffee and refresh recurring dates/changed workshop format. Sources and credits synchronized; firsthand outcomes unchanged.
+  - Verification: 287 app tests, four Python tests, full release audits and desktop/mobile gallery QA pass.
+  - Release: Published 526 objects, deleted exactly 12 retired photos and the old JS bundle, and completed `I7QTAKNK8L6P9UTPHLUAS23TDL`. Remote inventory and 11 live-file byte/header checks match the build. Live filter/gallery/dismissal/console checks pass. Full dirty-tree commit prep complete; commit and push authorized.
+  - Next: Research tonight’s 10 October stage/crowd DJ options after Git publication.
+
 - id: 2026-10-01-nola — title: Add Nola City Walk to Tried and deploy — owner: Codex — status: done — last update: 2026-10-01
   - Result: Add an archive-only record and full sheet for the 30 September visit; preserve the mixed firsthand verdict and explicit non-recommendation. Add three official City Walk photographs and credits. Active and liked inventories remain unchanged.
   - Verification: 277 app tests and four Python tests plus full lint/TypeScript/build/content/static/photo/strict-attribution gates pass; zero similarity candidates. Desktop/mobile checks confirm the note and all three loaded frames; 999/1000px checks show no overflow. Viewport restored.

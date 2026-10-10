@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 import { CHAPTERS, HERO, ITEMS } from '../src/data/activities';
 import { ARCHIVE_ACTIVITY_DETAILS, ARCHIVE_ENTRIES } from '../src/data/archive';
-import { TRIP_START_DATE_KEY } from '../src/config/site';
+import { EVENT_WINDOW_START_DATE_KEY, EVENT_WINDOW_END_DATE_KEY } from '../src/config/site';
 import { orderChapterItems, type Activity } from '../src/domain/activity';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -26,6 +26,9 @@ const RESERVED_FACT_LABELS = new Set(['date', 'when', 'where', 'book ahead']);
 // Guard both former cards and explicitly screened-out venues from an accidental refresh.
 const EXCLUDED_ACTIVITY_IDS = new Set([
   'atb',
+  'elrow',
+  'lostfreq',
+  'carlcox',
   'chipcarving',
   'karakafterdark',
   'oakenfold',
@@ -136,14 +139,16 @@ for (const item of ITEMS) {
     }
   }
   if (item.dated) {
-    // Calendar cards must remain both renderable and actionable for the configured trip.
+    // Calendar cards must remain both renderable and actionable for the curated window.
     if (![item.dated.d, item.dated.m, item.dated.w].every((part) => part.trim())) {
       fail(`${item.id} has an incomplete dated display.`);
     }
     if (!isRealIsoDate(item.dated.on)) {
       fail(`${item.id} has an invalid dated.on value: ${item.dated.on || '(missing)'}`);
-    } else if (item.dated.on < TRIP_START_DATE_KEY) {
-      fail(`${item.id} occurs before the ${TRIP_START_DATE_KEY} trip start: ${item.dated.on}`);
+    } else if (item.dated.on < EVENT_WINDOW_START_DATE_KEY) {
+      fail(`${item.id} occurs before the ${EVENT_WINDOW_START_DATE_KEY} event window start: ${item.dated.on}`);
+    } else if (item.dated.on > EVENT_WINDOW_END_DATE_KEY) {
+      fail(`${item.id} occurs after the ${EVENT_WINDOW_END_DATE_KEY} event window end: ${item.dated.on}`);
     }
   }
   if (!Number.isInteger(item.photos) || item.photos < 2) {

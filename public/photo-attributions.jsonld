@@ -3,96 +3,6 @@
   "@graph": [
     {
       "@type": "ImageObject",
-      "@id": "./photos/elrow-01.jpg",
-      "contentUrl": "./photos/elrow-01.jpg",
-      "name": "elrow Nowmads — photo 1",
-      "creditText": "elrow Nowmads — photo 1, via UNVRS. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/elrow-02.jpg",
-      "contentUrl": "./photos/elrow-02.jpg",
-      "name": "elrow Nowmads — photo 2",
-      "creditText": "elrow Nowmads — photo 2, via UNVRS. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/elrow-03.jpg",
-      "contentUrl": "./photos/elrow-03.jpg",
-      "name": "elrow Nowmads — photo 3",
-      "creditText": "elrow Nowmads — photo 3, via UNVRS. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/elrow-04.jpg",
-      "contentUrl": "./photos/elrow-04.jpg",
-      "name": "elrow Nowmads — photo 4",
-      "creditText": "elrow Nowmads — photo 4, via UNVRS. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/elrow-05.jpg",
-      "contentUrl": "./photos/elrow-05.jpg",
-      "name": "elrow Nowmads — photo 5",
-      "creditText": "elrow Nowmads — photo 5, via UNVRS. Resized for web display and shown with responsive cropping.",
-      "isBasedOn": "https://www.unvrs.com/es/actualizaciones/elrow-2-0-is-born-an-odyssey-of-music-art-and-fantasy-takes-off-at-unvrs-19534",
-      "encodingFormat": "image/jpeg",
-      "description": "Resized for web display and shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/carlcox-01.jpg",
-      "contentUrl": "./photos/carlcox-01.jpg",
-      "name": "Carl Cox at Playa Pacha — photo 1",
-      "creditText": "Carl Cox at Playa Pacha — photo 1, via Pacha ICONS. Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "isBasedOn": "https://www.pachaicons.com/about-us",
-      "encodingFormat": "image/jpeg",
-      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/carlcox-02.jpg",
-      "contentUrl": "./photos/carlcox-02.jpg",
-      "name": "Carl Cox at Playa Pacha — photo 2",
-      "creditText": "Carl Cox at Playa Pacha — photo 2, via Numéro Netherlands. Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "isBasedOn": "https://www.numeronetherlands.com/events/carl-cox-brings-the-beat-to-playa-pacha-dubai",
-      "encodingFormat": "image/jpeg",
-      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/carlcox-03.jpg",
-      "contentUrl": "./photos/carlcox-03.jpg",
-      "name": "Carl Cox at Playa Pacha — photo 3",
-      "creditText": "Carl Cox at Playa Pacha — photo 3, via Numéro Netherlands. Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "isBasedOn": "https://www.numeronetherlands.com/events/carl-cox-brings-the-beat-to-playa-pacha-dubai",
-      "encodingFormat": "image/jpeg",
-      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/carlcox-04.jpg",
-      "contentUrl": "./photos/carlcox-04.jpg",
-      "name": "Carl Cox at Playa Pacha — photo 4",
-      "creditText": "Carl Cox at Playa Pacha — photo 4, via Numéro Netherlands. Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "isBasedOn": "https://www.numeronetherlands.com/events/carl-cox-brings-the-beat-to-playa-pacha-dubai",
-      "encodingFormat": "image/jpeg",
-      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
       "@id": "./photos/sonnyfodera-01.jpg",
       "contentUrl": "./photos/sonnyfodera-01.jpg",
       "name": "Sonny Fodera — photo 1",
@@ -203,36 +113,6 @@
     },
     {
       "@type": "ImageObject",
-      "@id": "./photos/lostfreq-01.jpg",
-      "contentUrl": "./photos/lostfreq-01.jpg",
-      "name": "Lost Frequencies at Bohemia — photo 1",
-      "creditText": "Lost Frequencies at Bohemia — photo 1, via Bohemia Dubai. Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "isBasedOn": "https://www.bohemiadubai.com/events/bohemia-presents-lost-frequencies-season-opening-party-03102026",
-      "encodingFormat": "image/jpeg",
-      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/lostfreq-02.jpg",
-      "contentUrl": "./photos/lostfreq-02.jpg",
-      "name": "Lost Frequencies at Bohemia — photo 2",
-      "creditText": "Lost Frequencies at Bohemia — photo 2, via Bohemia Dubai. Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "isBasedOn": "https://www.bohemiadubai.com/events/bohemia-presents-lost-frequencies-season-opening-party-03102026",
-      "encodingFormat": "image/jpeg",
-      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "./photos/lostfreq-03.jpg",
-      "contentUrl": "./photos/lostfreq-03.jpg",
-      "name": "Lost Frequencies at Bohemia — photo 3",
-      "creditText": "Lost Frequencies at Bohemia — photo 3, via Bohemia Dubai. Converted to JPEG and resized for web display; shown with responsive cropping.",
-      "isBasedOn": "https://www.bohemiadubai.com/events/bohemia-presents-lost-frequencies-season-opening-party-03102026",
-      "encodingFormat": "image/jpeg",
-      "description": "Converted to JPEG and resized for web display; shown with responsive cropping."
-    },
-    {
-      "@type": "ImageObject",
       "@id": "./photos/inthepark-01.jpg",
       "contentUrl": "./photos/inthepark-01.jpg",
       "name": "In the Park — photo 1",
@@ -335,8 +215,8 @@
       "@type": "ImageObject",
       "@id": "./photos/ushuaia-01.jpg",
       "contentUrl": "./photos/ushuaia-01.jpg",
-      "name": "Ushuaïa Dubai Harbour — photo 1",
-      "creditText": "Ushuaïa Dubai Harbour — photo 1, via Ushuaïa Dubai Harbour Experience. Cropped and resized for web display.",
+      "name": "Black Coffee at Ushuaïa Dubai Harbour — photo 1",
+      "creditText": "Black Coffee at Ushuaïa Dubai Harbour — photo 1, via Ushuaïa Dubai Harbour Experience. Cropped and resized for web display.",
       "isBasedOn": "https://www.ushuaiadubai.com/",
       "encodingFormat": "image/jpeg",
       "description": "Cropped and resized for web display."
@@ -345,8 +225,8 @@
       "@type": "ImageObject",
       "@id": "./photos/ushuaia-02.jpg",
       "contentUrl": "./photos/ushuaia-02.jpg",
-      "name": "Ushuaïa Dubai Harbour — photo 2",
-      "creditText": "Ushuaïa Dubai Harbour — photo 2, via Ushuaïa Dubai Harbour Experience. Resized for web display and shown with responsive cropping.",
+      "name": "Black Coffee at Ushuaïa Dubai Harbour — photo 2",
+      "creditText": "Black Coffee at Ushuaïa Dubai Harbour — photo 2, via Ushuaïa Dubai Harbour Experience. Resized for web display and shown with responsive cropping.",
       "isBasedOn": "https://www.ushuaiadubai.com/",
       "encodingFormat": "image/jpeg",
       "description": "Resized for web display and shown with responsive cropping."
@@ -355,8 +235,8 @@
       "@type": "ImageObject",
       "@id": "./photos/ushuaia-03.jpg",
       "contentUrl": "./photos/ushuaia-03.jpg",
-      "name": "Ushuaïa Dubai Harbour — photo 3",
-      "creditText": "Ushuaïa Dubai Harbour — photo 3, via Ushuaïa Dubai Harbour Experience. Resized for web display and shown with responsive cropping.",
+      "name": "Black Coffee at Ushuaïa Dubai Harbour — photo 3",
+      "creditText": "Black Coffee at Ushuaïa Dubai Harbour — photo 3, via Ushuaïa Dubai Harbour Experience. Resized for web display and shown with responsive cropping.",
       "isBasedOn": "https://www.ushuaiadubai.com/",
       "encodingFormat": "image/jpeg",
       "description": "Resized for web display and shown with responsive cropping."
@@ -5363,6 +5243,66 @@
         "url": "https://about.meta.com/brand/resources/instagram/instagram-brand/"
       },
       "license": "https://commons.wikimedia.org/wiki/File:Instagram_Glyph_Gradient_RGB_logo.svg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/fridge-01.jpg",
+      "contentUrl": "./photos/fridge-01.jpg",
+      "name": "The Fridge Warehouse stage and seating",
+      "creditText": "The Fridge Warehouse stage and seating, via The Fridge Warehouse. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://www.thefridgewarehouse.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/fridge-02.jpg",
+      "contentUrl": "./photos/fridge-02.jpg",
+      "name": "The Fridge Warehouse live performance",
+      "creditText": "The Fridge Warehouse live performance, via The Fridge Warehouse. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://www.thefridgewarehouse.com/",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/adriatique-01.jpg",
+      "contentUrl": "./photos/adriatique-01.jpg",
+      "name": "Adriatique X stage and audience in Dubai",
+      "creditText": "Adriatique X stage and audience in Dubai, via Ushuaïa Dubai. Cropped to the stage and audience, resized and JPEG-encoded; shown with responsive cropping.",
+      "isBasedOn": "https://www.theushuaiaexperience.com/club/es/news/adriatique-are-returning-to-ushuaia-dubai-harbour-experience",
+      "encodingFormat": "image/jpeg",
+      "description": "Cropped to the stage and audience, resized and JPEG-encoded; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/adriatique-02.jpg",
+      "contentUrl": "./photos/adriatique-02.jpg",
+      "name": "Adriatique X stage production",
+      "creditText": "Adriatique X stage production, via Platinumlist. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://dubai.platinumlist.net/event-tickets/108106/adriatique-present-x-at-ushuaia-dubai-harbour-experience",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/linocut-01.jpg",
+      "contentUrl": "./photos/linocut-01.jpg",
+      "name": "The Workshop Dubai creative workshop table",
+      "creditText": "The Workshop Dubai creative workshop table, via The Workshop Dubai. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://www.theworkshopdubai.com/events-1/linocut/monotype-printmaking-workshop-ryw5e-mkgdf-trffy",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "./photos/linocut-02.jpg",
+      "contentUrl": "./photos/linocut-02.jpg",
+      "name": "The Workshop Dubai art gallery wall",
+      "creditText": "The Workshop Dubai art gallery wall, via The Workshop Dubai. Resized and JPEG-encoded for web display; shown with responsive cropping.",
+      "isBasedOn": "https://www.theworkshopdubai.com/events-1/linocut/monotype-printmaking-workshop-ryw5e-mkgdf-trffy",
+      "encodingFormat": "image/jpeg",
+      "description": "Resized and JPEG-encoded for web display; shown with responsive cropping."
     }
   ]
 }

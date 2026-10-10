@@ -1,5 +1,11 @@
 # Decisions
 
+## 2026-10-10 — Curate the inclusive October–November event window
+- Decider: Anthony (window and release), Codex (source-backed selection).
+- Decision: Keep dated recommendations within 10 October–15 November 2026. Retire elapsed Lost Frequencies/Carl Cox and cancelled elrow; advance recurring series and continuing ranges to remaining occurrences. Convert the existing Ushuaïa card to Black Coffee and add The Fridge, linocut and Adriatique with credited context photographs. Preserve all firsthand outcomes.
+- Evidence: Current operator/ticket pages, including elrow’s cancellation and Tashkeel’s changed ready-made ceramic painting format; see `docs/activity-planning-sources.md`. Enforce both window boundaries in the content audit.
+- Release: Anthony explicitly requested deployment, commit prep, commit and push after completion.
+
 ## 2026-10-01 — Archive Nola City Walk as merely tried
 - Decider: Anthony
 - Decision: Add Nola Bijou Bistro & Bar at City Walk only under Tried after the 30 September visit. Preserve the fun vibe, great live music, and pretty good but underseasoned food immediately improved with requested salt; Anthony would not recommend it.

@@ -7,6 +7,7 @@ import {
   type Activity,
 } from '../domain/activity';
 import { ITEMS } from './activities';
+import { EVENT_WINDOW_START_DATE_KEY, EVENT_WINDOW_END_DATE_KEY } from '../config/site';
 
 const activities: readonly Activity[] = ITEMS;
 const activitiesById = new Map(activities.map((activity) => [activity.id, activity]));
@@ -24,6 +25,10 @@ const FACT_ENRICHED_IDS = [
   'mogilligan',
   'tableware',
   'anotr',
+  'ushuaia',
+  'fridge',
+  'adriatique',
+  'linocut',
   'speakeasy',
   'chaoskarts',
   'motf',
@@ -75,6 +80,9 @@ const FACT_ENRICHED_IDS = [
 describe('activity planning content', () => {
   it.each([
     'atb',
+    'elrow',
+    'lostfreq',
+    'carlcox',
     'chipcarving',
     'karakafterdark',
     'oakenfold',
@@ -98,6 +106,39 @@ describe('activity planning content', () => {
     },
   );
 
+  it('keeps every dated recommendation inside the inclusive October–November window', () => {
+    // Explicit bounds catch both stale occurrences and additions beyond the requested end date.
+    expect(EVENT_WINDOW_START_DATE_KEY).toBe('2026-10-10');
+    expect(EVENT_WINDOW_END_DATE_KEY).toBe('2026-11-15');
+    for (const activity of activities) {
+      if (!activity.dated) continue;
+      expect(activity.dated.on >= EVENT_WINDOW_START_DATE_KEY, activity.id).toBe(true);
+      expect(activity.dated.on <= EVENT_WINDOW_END_DATE_KEY, activity.id).toBe(true);
+    }
+    expect(activitiesById.get('imgworlds')?.when).toMatch(/remaining dates 10–31 Oct/i);
+    expect(activitiesById.get('speakeasy')?.when).toBe('11, 18 & 25 Oct · 19:00–21:30');
+    expect(activitiesById.get('artemarket')?.facts).toEqual([
+      { label: 'Mercato', value: '17 & 18 Oct · 7 Nov' },
+      { label: 'Times Square', value: '10, 24 & 31 Oct · 14 Nov' },
+    ]);
+  });
+
+  it('describes the revised ceramic workshop without promising hand-building or same-day collection', () => {
+    // The operator changed the technique; retaining the old title must not retain the old promise.
+    const tableware = activitiesById.get('tableware');
+    expect(tableware?.blurb).toMatch(/ready-made ceramic/i);
+    expect(tableware?.facts?.find(({ label }) => label === 'Technique')?.value).toMatch(/Surface painting/);
+    expect(tableware?.advisory).toMatch(/not hand-building.*collected later/i);
+  });
+
+  it('keeps November comedy separate from the October bill and the free Fridge reunion registration explicit', () => {
+    const laughter = activitiesById.get('laughterfactory');
+    expect(laughter?.when).toBe('10 Oct · 6, 7, 13 & 14 Nov · 21+');
+    expect(laughter?.facts?.find(({ label }) => label === 'November bill')?.value).toMatch(/John Fothergill/);
+    expect(activitiesById.get('fridge')?.facts?.find(({ label }) => label === '27 Oct')?.value)
+      .toMatch(/free.*preregistration required/);
+  });
+
   it.each(FACT_ENRICHED_IDS)('gives %s a focused practical fact set', (id) => {
     const activity = activitiesById.get(id);
     expect(activity, `${id} must remain in the guide`).toBeDefined();
@@ -111,21 +152,23 @@ describe('activity planning content', () => {
 
     expect(dated.map(({ id, dated: date }) => [id, date?.on])).toEqual([
       ['tableware', '2026-10-17'],
+      ['linocut', '2026-10-22'],
       ['makerspace', '2026-11-03'],
     ]);
     expect(dated.map((activity) => getActivityTreatment(activity))).toEqual([
       'dated',
       'dated',
+      'dated',
     ]);
     for (let index = 1; index < takehome.length; index += 1) {
-      // With six undated cards available, no two workshop stamps need to touch.
+      // With the undated cards available, no two workshop stamps need to touch.
       expect(takehome[index - 1]?.dated && takehome[index]?.dated).toBeFalsy();
     }
   });
 
   it('keeps unannounced seasonal openings out of the dated stream', () => {
     expect(activitiesById.get('globalvillage')?.dated).toBeUndefined();
-    expect(activitiesById.get('artemarket')?.dated?.on).toBe('2026-10-03');
+    expect(activitiesById.get('artemarket')?.dated?.on).toBe('2026-10-10');
   });
 
   it('keeps OPA actionable without promising an unpublished plate stack', () => {
@@ -187,13 +230,13 @@ describe('activity planning content', () => {
     expect(jokeHub && isPlanAheadActivity(jokeHub)).toBe(true);
     expect(laughterFactory).toMatchObject({
       ch: 'strange',
-      dated: { on: '2026-10-02' },
+      dated: { on: '2026-10-10' },
       photos: 2,
     });
-    expect(laughterFactory?.facts?.find(({ label }) => label === 'Bill')?.value).toMatch(/Marlon Davis/i);
+    expect(laughterFactory?.facts?.find(({ label }) => label === 'October bill')?.value).toMatch(/Marlon Davis/i);
     expect(speakeasy).toMatchObject({
       ch: 'strange',
-      dated: { on: '2026-10-04' },
+      dated: { on: '2026-10-11' },
       where: 'Moon Bar by SANA, Mina Al Salam',
       photos: 2,
     });
